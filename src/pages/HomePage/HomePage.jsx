@@ -1,14 +1,18 @@
-// import { Header } from "../../../src/components/Header/Header.jsx";
-import { DashboardPage } from "../Cabinet/DashboardPage/DashboardPage.jsx";
-// import { Footer } from "../../../src/components/Footer/Footer.jsx";
+import { Header } from "../../components/Header/Header.jsx";
+// import { Footer } from "../../components/Footer/Footer.jsx";
+import { CreateOrder } from "../CabinetPage/CreateOrder/CreateOrder.jsx";
+import { CatalogSection } from "../CatalogPage/CatalogPage.jsx";
+import { MiniCatalog } from "../../components/MiniCatalog/MiniCatalog.jsx";
+
 
 export const HomePage = () => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <main>
-        <h1>test</h1>
-        <DashboardPage />
+        <MiniCatalog />
+        <CatalogSection />
+        <CreateOrder />
       </main>
       {/* <Footer /> */}
     </>

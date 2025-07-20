@@ -1,4 +1,4 @@
-import { ShoppingDetails } from "./ShoppingDetails/ShoppingDetails";
+import { ShippingDetails } from "./ShippingDetails/ShippingDetails";
 
 export const CreateOrder = () => {
   return (
@@ -20,7 +20,7 @@ export const CreateOrder = () => {
             <div className="step__conf">1{/* <svg></svg> */}</div>
             <div className="step__line"></div>
           </div>
-          <p className="step__stage">Shopping</p>
+          <p className="step__stage">Shipping</p>
         </div>
         <div className="step__rp">
           <div className="step__subwrap">
@@ -31,7 +31,7 @@ export const CreateOrder = () => {
           <p className="step__stage">Review & Payments</p>
         </div>
       </div>
-      <ShoppingDetails />
+      <ShippingDetails />
       </>
   );
 };
