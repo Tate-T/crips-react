@@ -4,8 +4,9 @@ import FullCatalog from "./Catalog/FullCatalog.jsx";
 export const CatalogSection = () => {
   return (
     <>
-      <FullCatalog />
+      <section className="catalog">
+        <FullCatalog />
+      </section>
     </>
   );
-}
-
+};
