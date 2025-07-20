@@ -1,0 +1,41 @@
+.mini-catalog {
+	padding-top: 67px;
+
+	&__top-wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__title {
+		font-family: Oswald;
+		font-weight: 400;
+		font-size: 24px;
+		leading-trim: NONE;
+		line-height: 68px;
+		letter-spacing: 0%;
+		vertical-align: middle;
+	}
+
+	&__list {
+		display: flex;
+	}
+
+	&__item {
+		width: 353px;
+		height: 533px;
+
+		&-image {
+			width: 353px;
+			height: 450px;
+		}
+
+		&-category {
+			margin-top: 14px;
+		}
+
+		&-price {
+			margin-top: 18px;
+		}
+	}
+}
