@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+.catalog-filtration__form-color-btn{
+  border: none;
+  width: 17px;
+  height: 17px;
+  cursor: pointer;
+}
