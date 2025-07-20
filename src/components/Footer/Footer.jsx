@@ -157,6 +157,10 @@ export const footer = () => {
           </li>
         </ul>
       </div>
+      <div className="footer-bottom">
+        <hr className="footer-bottom-hr" />
+        <p className="footer-bottom-text">© 2019. Crisp theme Developed by Belvg</p>
+      </div>
     </footer>
   );
 };
