@@ -1,9 +1,11 @@
 import Catalog from "./Catalog.jsx";
 import catalogData from "../../../data/catalog-data.js";
+import {Sorting} from "../Sorting/Sorting.jsx"
 
 function FullCatalog() {
   return (
     <>
+    <Sorting />
       <ul className="catalog__list">
         {catalogData.map((test, index) => (
           <Catalog {...test} key={index} />
