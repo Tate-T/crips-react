@@ -1,7 +1,7 @@
 // import {Header} from '../../components/Header/Header'
 import FullCatalog from "./Catalog/FullCatalog.jsx";
 
-function CatalogSection() {
+export const CatalogSection = () => {
   return (
     <>
       <FullCatalog />
@@ -9,4 +9,3 @@ function CatalogSection() {
   );
 }
 
-export default CatalogSection;
