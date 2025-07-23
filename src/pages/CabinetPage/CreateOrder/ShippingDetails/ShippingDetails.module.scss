@@ -1,0 +1,76 @@
+.ship {
+  &__form {
+    width: 606px;
+  }
+  &__title {
+    font-size: 24px;
+    line-height: 283%;
+  }
+  &__row {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+  }
+  &__row:not(:last-child) {
+    margin-bottom: 24px;
+  }
+  &__row:nth-child(4) {
+    margin-bottom: 10px;
+  }
+  &__label {
+    font-size: 16px;
+    line-height: 125%;
+    color: #3f3f3f;
+  }
+  &__required {
+    color: #eb5757;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    .ship__input:not(:last-child) {
+      margin-bottom: 13px;
+    }
+  }
+  &__input,
+  &__select {
+    font-size: 16px;
+    line-height: 125%;
+    padding: 11px 258px 11px 15px;
+    border: 1px solid #c4c4c4;
+  }
+  &__select {
+    padding: 11px 121px 11px 15px;
+  }
+  &__text {
+    font-size: 14px;
+    line-height: 143%;
+    color: #828282;
+    margin-bottom: 24px;
+  }
+  &__btns {
+    margin-bottom: 36px;
+  }
+  &__btn--login {
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #000000;
+    padding: 15px 40px;
+    margin-right: 25px;
+  }
+  &__btn--restore {
+    font-size: 14px;
+    line-height: 143%;
+    color: #0f6db1;
+    background-color: transparent;
+  }
+  &__line {
+    height: 1px;
+    width: 606px;
+    margin-bottom: 39px;
+    background-color: #c4c4c4;
+  }
+}
