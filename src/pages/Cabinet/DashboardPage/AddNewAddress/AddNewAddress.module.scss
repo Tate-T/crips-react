@@ -1,0 +1,123 @@
+@import "../../../../sass/utils/variables.scss";
+
+.address {
+    background-color: $white;
+    padding: 13px 0 67px;
+
+    &__subtitle {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 4.85714;
+        text-align: center;
+        color: $gray1;
+        margin-bottom: 13px;
+    }
+
+    &__title {
+        font-family: "Oswald", sans-serif;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 1.41667;
+        text-align: center;
+        color: $black;
+        margin-bottom: 17px;
+    }
+
+    &__wrap {
+        display: flex;
+        gap: 108px;
+        border: 1px solid $divider;
+        max-width: 1454px;
+        padding: 73px 0 171px;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 49px;
+    }
+
+    &__header {
+        font-family: "Oswald", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 2.83333;
+        color: $black;
+        margin-bottom: 28px;
+    }
+
+    &__labels {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    &__label {
+        display: flex;
+        justify-content: space-between;
+        width: 541px;
+    }
+
+    &__desc {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.25;
+        color: $black2;
+    }
+
+    &__red {
+        color: $main2;
+    }
+
+    &__inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &__input {
+        width: 392px;
+        height: 44px;
+        padding: 0 14px;
+        border: 1px solid $divider;
+        background-color: $white;
+
+        &::placeholder {
+            font-family: "Roboto", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.25;
+            color: $black2;
+        }
+    }
+
+    &__select {
+        width: 392px;
+        height: 44px;
+        border: 1px solid $divider;
+        background-color: $white;
+        padding: 0 14px;
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.25;
+        color: $gray1;
+    }
+
+    &__btn {
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        text-align: center;
+        color: $white;
+        width: 140px;
+        height: 50px;
+        background-color: $black;
+    }
+}
