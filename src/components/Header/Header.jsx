@@ -3,40 +3,46 @@ import Search from "../../images/search.svg";
 import Bag from "../../images/bag.svg";
 import Heart from "../../images/heart.svg";
 
+// import style from "./Header.module.scss";
+
 export const Header = () => {
   return (
-    <header>
-      <img src={Logo} alt="Logo SVG" />
-      <div>
-        <nav>
-          <ul>
-            <li><a href=".">HOME</a></li>
-            <li><a href=".">SHOP</a></li>
-            <li><a href=".">BLOG</a></li>
-            <li><a href=".">SALE</a></li>
-            <li><a href=".">CONTACT US</a></li>
-          </ul>
-        </nav>
-        <div>
-          <img src={Search} alt="Search SVG" />
-          <input type="text" placeholder="SEARCH" />
-        </div>
-      </div>
-      <div>
-        <div>
-          <a href=".">SIGN IN</a>
-          <a href=".">CREATE AN ACCOUNT</a>
-        </div>
-        <button>
-          <img src={Heart} alt="Heart SVG" />
-        </button>
-        <a href=".">
-          <img src={Bag} alt="Bag SVG" />
-          <div>
-            <p>Shopping Cart</p>
-            <p>0,00 EUR</p>
+    <header className={style.header}>
+      <div className={style.container}>
+        <div className={style.header__wrap}>
+          <img className={style.header__logo} src={Logo} alt="Logo SVG" />
+          <div className={style.header__center}>
+            <nav className={style.header__nav}>
+              <ul className={style.nav__list}>
+                <li className={style.nav__item}><a href="." className={style.nav__link}>HOME</a></li>
+                <li className={style.nav__item}><a href="." className={style.nav__link}>SHOP</a></li>
+                <li className={style.nav__item}><a href="." className={style.nav__link}>BLOG</a></li>
+                <li className={style.nav__item}><a href="." className={style.nav__link}>SALE</a></li>
+                <li className={style.nav__item}><a href="." className={style.nav__link}>CONTACT US</a></li>
+              </ul>
+            </nav>
+            <div className={style.header__search}>
+              <img className={style.search__icon} src={Search} alt="Search SVG" />
+              <input className={style.search__input} type="text" placeholder="SEARCH" />
+            </div>
           </div>
-        </a>
+          <div className={style.header__right}>
+            <div className={style.header__authentication}>
+              <a className={style.header__sign_in} href=".">SIGN IN</a>
+              <a className={style.header__create} href=".">CREATE AN ACCOUNT</a>
+            </div>
+            <button className={style.header__like}>
+              <img src={Heart} alt="Heart SVG" className={style.header__like_svg} />
+            </button>
+            <a href=".">
+              <img src={Bag} alt="Bag SVG" />
+              <div>
+                <p>Shopping Cart</p>
+                <p>0,00 EUR</p>
+              </div>
+            </a>
+          </div>
+        </div>
       </div>
     </header>
   )
