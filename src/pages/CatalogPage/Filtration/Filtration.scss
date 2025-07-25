@@ -1,0 +1,205 @@
+.filtration {
+    width: 400px;
+    border-right: 1px solid grey;
+    margin-top: 100px;
+    position: relative;
+    padding-right: 18px;
+    padding-left: 21px;
+}
+
+.catalog-way {
+    position: absolute;
+    top: -65px;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 4.85;
+    vertical-align: middle;
+    color: rgba(130, 130, 130, 1);
+}
+
+.catalog-filtration__wrap {}
+
+.catalog-filtration__title {
+    font-family: Oswald;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 68px;
+    vertical-align: middle;
+
+}
+
+.catalog-filtration__brand {}
+
+.catalog-filtration__filtr-name-brand {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-filtration__brand-form {}
+
+.catalog-filtration__brand-input-wrap,
+.catalog-filtration__dress-length-input-wrap {
+    display: flex;
+    gap: 9px;
+}
+
+.catalog-filtration__brand-input,
+.catalog-filtration__dress-length-input {}
+
+.catalog-filtration__brand-input-name,
+.catalog-filtration__dress-length-name {
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 3;
+    vertical-align: middle;
+    text-transform: uppercase;
+
+}
+
+.catalog-filtration__size {}
+
+.catalog-filtration__size-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 270px;
+}
+
+.catalog-filtration__size-button {
+    font-family: Oswald;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+    background: none;
+    border: 1px solid rgba(130, 130, 130, 1);
+    width: 46px;
+    height: 46px;
+
+}
+
+.catalog-filtration__dress-length {}
+
+.catalog-filtration__dress-length-form {}
+
+.catalog-filtration__color {}
+
+.catalog-filtration__form-color {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 270px;
+}
+
+.catalog-filtration__form-color-btn {
+    width: 17px;
+    height: 17px;
+}
+
+.catalog-filtration__price {}
+
+.catalog-filtration__about-dresses {}
+
+.catalog-filtration__about-dresses-title {
+    font-family: Oswald;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 68px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+}
+
+.catalog-filtration__about-dresses-text {
+    font-family: Roboto Light;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 1%;
+
+}
+
+.catalog-filtration__filtr-name-brand {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-filtration__filtr-name-size {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-filtration__filtr-name-dress-length {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-filtration__filtr-name-color {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-filtration__filtr-name-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+.catalog-filtration__name-brand {
+    font-family: Oswald;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 68px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+}
+
+.catalog-filtration__name-size {
+    font-family: Oswald;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 68px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+}
+
+.catalog-filtration__name-dress-length {
+    font-family: Oswald;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 68px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+}
+
+.catalog-filtration__name-color {
+    font-family: Oswald;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 68px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+}
+
+.catalog-filtration__name-price {
+    font-family: Oswald;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 68px;
+    letter-spacing: 0%;
+    vertical-align: middle;
+
+}
+
+.catalog-filtration__filtr-name-close {
+    cursor: pointer;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 68px;
+    letter-spacing: 0%;
+}
