@@ -1,23 +1,40 @@
-export const banners = () => {
+import style from './Banners.module.scss';
+
+export const Banners = () => {
   return (
-    <section className="banners container">
-        <div className="banners-double-centre">
-      <div
-        className="banners-item banner-1"
-        style={{
-          backgroundImage: "url('')",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "left",
-        }}
-      >
-        <h2 className="banners-title-ChooseYL">choosе your look</h2>
-        <p className="banners-description">See our clothing collections</p>
-        <button className="banners-button">see offers</button>
+    <section className={`${style.banners} ${style.container}`}>
+      <div className={style.bannersDoubleCentre}>
+        <div
+          className={`${style.bannersItem} ${style.banner1}`}
+          style={{
+            backgroundImage: "url('')",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "left",
+          }}
+        >
+          <h2 className={style.bannersTitleChooseYL}>choose your look</h2>
+          <p className={style.bannersDescription}>See our clothing collections</p>
+          <button className={style.bannersButton}>see offers</button>
+        </div>
+
+        <div
+          className={`${style.bannersItem} ${style.banner2}`}
+          style={{
+            backgroundImage: "url('')",
+            backgroundSize: "cover",
+            backgroundRepeat: "no-repeat",
+            backgroundPosition: "right",
+          }}
+        >
+          <h2 className={style.bannersTitleBrandNS}>brand new style</h2>
+          <p className={style.bannersDescription}>Popular clothing brands</p>
+          <button className={style.bannersButton}>see offers</button>
+        </div>
       </div>
 
       <div
-        className="banners-item banner-2"
+        className={`${style.bannersItem} ${style.banners3}`}
         style={{
           backgroundImage: "url('')",
           backgroundSize: "cover",
@@ -25,23 +42,9 @@ export const banners = () => {
           backgroundPosition: "right",
         }}
       >
-        <h2 className="banners-title-BrandNS">brand new style</h2>
-        <p className="banners-description">Popular clothing brands</p>
-        <button className="banners-button">see offers</button>
-      </div>
-      </div>
-      <div
-        className="banners-item banners-3"
-        style={{
-          backgroundImage: "url('')",
-          backgroundSize: "cover",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "right",
-        }}
-      >
-        <h2 className="banners-title-UpToOff">Up to 40% off</h2>
-        <p className="banners-description">Special offers and great deals</p>
-        <button className="banners-button">shop now</button>
+        <h2 className={style.bannersTitleUpToOff}>Up to 40% off</h2>
+        <p className={style.bannersDescription}>Special offers and great deals</p>
+        <button className={style.bannersButton}>shop now</button>
       </div>
     </section>
   );
