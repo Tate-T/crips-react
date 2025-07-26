@@ -1,6 +1,9 @@
+@import '../../../sass/utils/mixins.scss';
+@import '../../../sass/utils/variables.scss';
+
 .filtration {
     width: 400px;
-    border-right: 1px solid grey;
+    border-right: 1px solid $outline-color;
     margin-top: 100px;
     position: relative;
     padding-right: 18px;
@@ -10,22 +13,14 @@
 .catalog-way {
     position: absolute;
     top: -65px;
-    font-family: Roboto;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 4.85;
-    vertical-align: middle;
-    color: rgba(130, 130, 130, 1);
+    @include typography(Roboto, 400, 14px, 4.85, 0, left);
+    color: $secondary-text-color;
 }
 
 // .catalog-filtration__wrap {}
 
 .catalog-filtration__title {
-    font-family: Oswald;
-    font-weight: 400;
-    font-size: 32px;
-    line-height: 68px;
-    vertical-align: middle;
+    @include typography(Oswald, 400, 32px, 68px, 0, left);
 
 }
 
@@ -51,12 +46,8 @@
 
 .catalog-filtration__brand-input-name,
 .catalog-filtration__dress-length-name {
-    font-family: Roboto;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 3;
-    vertical-align: middle;
     text-transform: uppercase;
+    @include typography(Roboto, 400, 14px, 3, 0, left);
 
 }
 
@@ -70,26 +61,23 @@
 }
 
 .catalog-filtration__size-button {
-    font-family: Oswald;
-    font-weight: 400;
-    font-size: 14px;
-    text-align: center;
-    vertical-align: middle;
+    @include typography(Oswald, 400, 14px, 40px, 0, center);
     text-transform: uppercase;
     background: none;
-    border: 2px solid rgba(196, 196, 196, 1);
-    color: rgba(196, 196, 196, 1);
+    border: 2px solid $outline-color;
+    color: $outline-color;
     width: 46px;
     height: 46px;
-    transition: 150ms ease-in;
+    transition: $st-transition;
 
     &:hover {
-        color: rgba(130, 130, 130, 1);
-        border: 2px solid rgba(130, 130, 130, 1);
+        color: $secondary-text-color;
+        border: 2px solid $secondary-text-color;
     }
+
     &.active {
-        color: rgba(0, 0, 0, 1);
-        border: 2px solid rgba(0, 0, 0, 1);
+        color: $main-text-color;
+        border: 2px solid $main-text-color;
     }
 
 }
@@ -110,16 +98,17 @@
 .catalog-filtration__form-color-btn {
     width: 17px;
     height: 17px;
-    transition: 150ms;
-    
-    &:hover{
-    outline: 1px solid rgba(196, 196, 196, 1);
-    border: 2px solid white;
-   }
-    &.active{
-    outline: 1px solid rgba(0, 0, 0, 1);
-    border: 2px solid white;
-   }
+    transition: $st-transition;
+
+    &:hover {
+        outline: 1px solid $outline-color;
+        border: 2px solid $bg-color;
+    }
+
+    &.active {
+        outline: 1px solid $main-text-color;
+        border: 2px solid $bg-color;
+    }
 }
 
 // .catalog-filtration__price {}
@@ -127,97 +116,35 @@
 // .catalog-filtration__about-dresses {}
 
 .catalog-filtration__about-dresses-title {
-    font-family: Oswald;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 68px;
-    letter-spacing: 0%;
-    vertical-align: middle;
+    @include typography(Oswald, 400, 24px, 68px, 0, left);
 }
 
 .catalog-filtration__about-dresses-text {
-    font-family: Roboto Light;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 28px;
     letter-spacing: 1%;
+    @include typography(Roboto, 400, 18px, 28px, 1%, left);
 
 }
 
-.catalog-filtration__filtr-name-brand {
-    display: flex;
-    justify-content: space-between;
-}
-
-.catalog-filtration__filtr-name-size {
-    display: flex;
-    justify-content: space-between;
-}
-
-.catalog-filtration__filtr-name-dress-length {
-    display: flex;
-    justify-content: space-between;
-}
-
-.catalog-filtration__filtr-name-color {
-    display: flex;
-    justify-content: space-between;
-}
-
+.catalog-filtration__filtr-name-brand,
+.catalog-filtration__filtr-name-size,
+.catalog-filtration__filtr-name-dress-length,
+.catalog-filtration__filtr-name-color,
 .catalog-filtration__filtr-name-price {
     display: flex;
     justify-content: space-between;
 }
 
-.catalog-filtration__name-brand {
-    font-family: Oswald;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 68px;
-    letter-spacing: 0%;
-    vertical-align: middle;
+
+
+.catalog-filtration__name-brand,
+.catalog-filtration__name-size,
+.catalog-filtration__name-dress-length,
+.catalog-filtration__name-color,
+.catalog-filtration__name-price  {
+    @include typography(Oswald, 400, 24px, 68px, 0, left);
 
 }
 
-.catalog-filtration__name-size {
-    font-family: Oswald;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 68px;
-    letter-spacing: 0%;
-    vertical-align: middle;
-
-}
-
-.catalog-filtration__name-dress-length {
-    font-family: Oswald;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 68px;
-    letter-spacing: 0%;
-    vertical-align: middle;
-
-}
-
-.catalog-filtration__name-color {
-    font-family: Oswald;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 68px;
-    letter-spacing: 0%;
-    vertical-align: middle;
-
-}
-
-.catalog-filtration__name-price {
-    font-family: Oswald;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 68px;
-    letter-spacing: 0%;
-    vertical-align: middle;
-
-}
 
 .catalog-filtration__filtr-name-close {
     cursor: pointer;
@@ -225,10 +152,10 @@
     font-weight: 400;
     line-height: 68px;
     letter-spacing: 0%;
-    color: rgba(130, 130, 130, 1);
-    transition: 300ms ease-in;
+    color: $secondary-text-color;
+    transition: $st-transition;
 
     &:hover {
-        color: rgb(0, 0, 0);
+        color: $main-text-color;
     }
 }
