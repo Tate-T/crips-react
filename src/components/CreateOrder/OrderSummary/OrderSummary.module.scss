@@ -1,14 +1,17 @@
+@import '../../../sass/utils/variables.scss';
 .order {
   &__wrap {
-    border: 2px solid #c4c4c4;
-    background-color: #f0f2f2;
+    border: 2px solid $outline-color;
+    background-color: $form-bg-color;
     padding: 11px 30px 50px 30px;
     height: fit-content;
+    width: 530px;
   }
   &__title {
     font-weight: 400;
     font-size: 24px;
     line-height: 283%;
+    color: $main-text-color;
   }
   &__ans {
     .order__list {
@@ -28,7 +31,7 @@
     justify-content: space-between;
     padding-top: 23px;
     margin-bottom: 19px;
-    border-top: 1px solid #C4C4C4;
+    border-top: 1px solid $outline-color;
     p,
     span {
       font-weight: 500;
@@ -79,15 +82,15 @@
     font-weight: 400;
     font-size: 14px;
     text-transform: uppercase;
-    color: #bdbdbd;
+    color: $subtitle-text-color;
     span {
-      color: #3f3f3f;
+      color: $inactive-color;
     }
   }
   &__viewBtn {
     font-weight: 400;
     font-size: 14px;
-    color: #3f3f3f;
+    color: $inactive-color;
     display: flex;
     align-items: center;
     margin-top: 3px;

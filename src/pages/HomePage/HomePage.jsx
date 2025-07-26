@@ -10,8 +10,8 @@ export const HomePage = () => {
     <>
       <Header />
       <main>
-        <MiniCatalog />
-        <CatalogSection />
+        {/* <MiniCatalog />
+        <CatalogSection /> */}
         <CreateOrder />
         <Blog />
       </main>
