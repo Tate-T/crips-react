@@ -13,7 +13,6 @@ export const HomePage = () => {
         <MiniCatalog />
         <CatalogSection />
         <CreateOrder />
-        <Blog />
       </main>
       {/* <Footer /> */}
     </>
