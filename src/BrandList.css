@@ -1,0 +1,63 @@
+
+
+.brand-selector {
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.section-title hr {
+  flex: 1;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.section-title span {
+  font-weight: bold;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.brand-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.brand-list li {
+  font-family: 'Georgia', serif;
+  font-size: 1.2rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 4px;
+}
+
+.brand-list li.active {
+  background: #f1f2f3;
+  font-weight: bold;
+}
+
+.brand-list li:hover {
+  background: #f5f5f5;
+  color: #000;
+}
+
+@media (min-width: 768px) {
+  .brand-list li {
+    font-size: 1.4rem;
+  }
+}
