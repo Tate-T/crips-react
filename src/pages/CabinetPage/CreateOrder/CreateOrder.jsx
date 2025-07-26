@@ -44,7 +44,7 @@ export const CreateOrder = ({ children }) => {
                 <div className={s.order__wrapper}>
                   <div className={s.order__subwrap}>
                     <div className={s.order__line}></div>
-                    <div className={s.order__conf}>2{/* <svg></svg> */}</div>
+                    <div className={s.order__conf}>2</div>
                     <div className={s.order__line}></div>
                   </div>
                   <p className={s.order__stage}>Review & Payments</p>
