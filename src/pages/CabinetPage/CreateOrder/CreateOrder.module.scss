@@ -1,0 +1,153 @@
+.order {
+  &__mainwrap {
+    margin: 0 auto;
+  }
+  &__breadcrumb {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  &__list {
+    display: flex;
+  }
+  &__list &__item {
+    display: inline-block;
+    position: relative;
+    color: #828282;
+    font-size: 14px;
+    line-height: 486%;
+  }
+  &__list &__item + &__item {
+    padding-left: 12px;
+  }
+  &__list &__item + &__item:before {
+    content: "/";
+    position: absolute;
+    left: 3px;
+  }
+  &__link {
+    color: #828282;
+  }
+  &__wrap {
+    display: flex;
+    justify-content: center;
+  }
+  &__wrapper {
+    text-align: center;
+  }
+  &__subwrap,
+  &__subwrap--active {
+    display: flex;
+    align-items: center;
+  }
+  &__subwrap--active {
+    .order__line {
+      background-color: #57a4eb;
+    }
+    .order__conf {
+      border: 6px solid #57a4eb;
+    }
+  }
+  &__line {
+    height: 6px;
+    width: 75px;
+    background-color: #c4c4c4;
+  }
+  &__conf {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 6px solid #c4c4c4;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  &__checkmark {
+    width: 13px;
+    height: 11px;
+  }
+  &__stage {
+    margin-top: 14px;
+  }
+}
+
+.order {
+    &__mainwrap {
+        margin: 0 auto;
+
+    }
+  &__breadcrumb {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+  }
+  &__list {
+    display: flex;
+  }
+  &__list &__item {
+    display: inline-block;
+    position: relative;
+    color: #828282;
+    font-size: 14px;
+    line-height: 486%;
+  }
+  &__list &__item + &__item {
+    padding-left: 12px;
+  }
+  &__list &__item + &__item:before {
+    content: "/";
+    position: absolute;
+    left: 3px;
+  }
+  &__link {
+    color: #828282;
+  }
+  &__wrap {
+    display: flex;
+    justify-content: center;
+  }
+  &__wrapper {
+    text-align: center;
+  }
+  &__subwrap, &__subwrap--active {
+    display: flex;
+    align-items: center;
+  }
+  &__subwrap--active {
+    .order__line {
+        background-color: #57a4eb;
+    }
+    .order__conf {
+        border: 6px solid #57a4eb;
+    }
+  }
+  &__line {
+    height: 6px;
+    width: 75px;
+    background-color: #C4C4C4;
+  }
+  &__conf {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: 6px solid #C4C4C4;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 160%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  &__checkmark {
+    width: 13px;
+    height: 11px;
+  }
+  &__stage {
+    margin-top: 14px;
+  }
+}

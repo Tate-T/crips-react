@@ -5,7 +5,7 @@ import { Container } from "../../../components/Container/Container";
 export const Blog = ({ children }) => {
     return (
         <section className={style.blog}>
-            {/* <Container> */}
+            <Container>
                 <h1 className={style.blog__title}>Blog</h1>
                 <ul className={style.blog__list}>
                     <li className={style.blog__item}>
@@ -37,7 +37,7 @@ export const Blog = ({ children }) => {
                         <p className={style.blog__date_item}>21 January 2018 by guido</p>
                     </li>
                 </ul>
-            {/* </Container> */}
+            </Container>
         </section >
     )
 }

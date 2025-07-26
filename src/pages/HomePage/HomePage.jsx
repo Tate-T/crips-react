@@ -5,6 +5,7 @@ import { CatalogSection } from "../CatalogPage/CatalogPage.jsx";
 import { MiniCatalog } from "../../components/MiniCatalog/MiniCatalog.jsx";
 import { Blog } from "../main-page/blog/blog.jsx"
 
+
 export const HomePage = () => {
   return (
     <>

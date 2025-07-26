@@ -1,4 +1,5 @@
 .blog {
+    width: 1920px;
     background: #F8F9FB;
 
 
@@ -18,10 +19,10 @@
 
 
     &__item {
-        width:380px;
+        width: 447px;
         height: 420px;
         padding: 24px;
-        margin: 0 30px 0 0;
+        margin-right: 30px;
         flex-shrink: 0;
         background: #FFF;
         position: relative;
