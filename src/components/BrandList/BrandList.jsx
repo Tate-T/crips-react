@@ -1,5 +1,5 @@
-
-import './BrandList.css';
+import React from "react";
+import "./BrandList.css";
 
 const BrandList = () => {
   return (
