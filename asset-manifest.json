@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/crips-react/static/css/main.673ffd99.css",
-    "main.js": "/crips-react/static/js/main.141b19d1.js",
+    "main.css": "/crips-react/static/css/main.b98538b1.css",
+    "main.js": "/crips-react/static/js/main.c5762d11.js",
     "static/media/mini-catalog-02.jpg": "/crips-react/static/media/mini-catalog-02.157e608136d056698247.jpg",
     "static/media/mini-catalog-10.jpg": "/crips-react/static/media/mini-catalog-10.643485b11115440c1cd1.jpg",
     "static/media/mini-catalog-04.jpg": "/crips-react/static/media/mini-catalog-04.08a4111846e6441a4716.jpg",
@@ -27,13 +27,15 @@
     "static/media/logo.svg": "/crips-react/static/media/logo.90bc0fe766d4f92e243b27126b715a6b.svg",
     "index.html": "/crips-react/index.html",
     "static/media/heart.svg": "/crips-react/static/media/heart.69559629b7037cbe6fb891bf46b68c44.svg",
+    "static/media/ckeckmark.svg": "/crips-react/static/media/ckeckmark.a532f2ff25f4dc3eeab174e939050d66.svg",
     "static/media/bag.svg": "/crips-react/static/media/bag.903127c56e30d282f2ff3595f10c4371.svg",
     "static/media/search.svg": "/crips-react/static/media/search.c44d283716304b5d880cff1deea0394a.svg",
-    "main.673ffd99.css.map": "/crips-react/static/css/main.673ffd99.css.map",
-    "main.141b19d1.js.map": "/crips-react/static/js/main.141b19d1.js.map"
+    "static/media/arrow-bottom.svg": "/crips-react/static/media/arrow-bottom.a6919a6eee728764e81356e644e42765.svg",
+    "main.b98538b1.css.map": "/crips-react/static/css/main.b98538b1.css.map",
+    "main.c5762d11.js.map": "/crips-react/static/js/main.c5762d11.js.map"
   },
   "entrypoints": [
-    "static/css/main.673ffd99.css",
-    "static/js/main.141b19d1.js"
+    "static/css/main.b98538b1.css",
+    "static/js/main.c5762d11.js"
   ]
 }
