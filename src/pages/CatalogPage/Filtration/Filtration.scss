@@ -111,7 +111,11 @@
     }
 }
 
-// .catalog-filtration__price {}
+.catalog-filtration__price {
+    display: flex;
+    flex-direction: column;
+
+}
 
 // .catalog-filtration__about-dresses {}
 
@@ -140,7 +144,7 @@
 .catalog-filtration__name-size,
 .catalog-filtration__name-dress-length,
 .catalog-filtration__name-color,
-.catalog-filtration__name-price  {
+.catalog-filtration__name-price {
     @include typography(Oswald, 400, 24px, 68px, 0, left);
 
 }
@@ -158,4 +162,59 @@
     &:hover {
         color: $main-text-color;
     }
+}
+
+.catalog-filtration__price-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#amount,
+#amountLast {
+    text-transform: uppercase;
+    @include typography(Roboto, 400, 14px, 40px, 0, left);
+    color: $main-text-color !important;
+    border: none;
+    background: transparent;
+}
+
+#amountLast {
+    text-align: right;
+}
+
+.ui-slider-range {
+    background: $main-text-color !important;
+    height: 2px !important;
+}
+
+#slider-range {
+    background: $outline-color !important;
+    height: 2px !important;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    border-radius: 1px;
+}
+
+
+.ui-state-default {
+    width: 6px !important;
+    height: 16px !important;
+    background: $main-text-color !important;
+    border-radius: 2px;
+    top: -7px !important;
+    border: none;
+}
+
+.catalog-filtration__apply {
+    text-transform: uppercase;
+    @include typography(Oswald, 500, 14px, 40px, 0.5px, center);
+    border: 1px solid $outline-color;
+    background-color: $main-hover-color;
+    color: $secondary-text-color;
+    align-self: end;
+    margin-top: 25px;
+    width: 114px;
+    height: 40px;
 }
