@@ -18,7 +18,7 @@
     color: rgba(130, 130, 130, 1);
 }
 
-.catalog-filtration__wrap {}
+// .catalog-filtration__wrap {}
 
 .catalog-filtration__title {
     font-family: Oswald;
@@ -29,14 +29,14 @@
 
 }
 
-.catalog-filtration__brand {}
+// .catalog-filtration__brand {}
 
 .catalog-filtration__filtr-name-brand {
     display: flex;
     justify-content: space-between;
 }
 
-.catalog-filtration__brand-form {}
+// .catalog-filtration__brand-form {}
 
 .catalog-filtration__brand-input-wrap,
 .catalog-filtration__dress-length-input-wrap {
@@ -45,7 +45,9 @@
 }
 
 .catalog-filtration__brand-input,
-.catalog-filtration__dress-length-input {}
+.catalog-filtration__dress-length-input {
+    cursor: pointer;
+}
 
 .catalog-filtration__brand-input-name,
 .catalog-filtration__dress-length-name {
@@ -58,7 +60,7 @@
 
 }
 
-.catalog-filtration__size {}
+// .catalog-filtration__size {}
 
 .catalog-filtration__size-form {
     display: flex;
@@ -75,17 +77,28 @@
     vertical-align: middle;
     text-transform: uppercase;
     background: none;
-    border: 1px solid rgba(130, 130, 130, 1);
+    border: 2px solid rgba(196, 196, 196, 1);
+    color: rgba(196, 196, 196, 1);
     width: 46px;
     height: 46px;
+    transition: 150ms ease-in;
+
+    &:hover {
+        color: rgba(130, 130, 130, 1);
+        border: 2px solid rgba(130, 130, 130, 1);
+    }
+    &.active {
+        color: rgba(0, 0, 0, 1);
+        border: 2px solid rgba(0, 0, 0, 1);
+    }
 
 }
 
-.catalog-filtration__dress-length {}
+// .catalog-filtration__dress-length {}
 
-.catalog-filtration__dress-length-form {}
+// .catalog-filtration__dress-length-form {}
 
-.catalog-filtration__color {}
+// .catalog-filtration__color {}
 
 .catalog-filtration__form-color {
     display: flex;
@@ -97,11 +110,21 @@
 .catalog-filtration__form-color-btn {
     width: 17px;
     height: 17px;
+    transition: 150ms;
+    
+    &:hover{
+    outline: 1px solid rgba(196, 196, 196, 1);
+    border: 2px solid white;
+   }
+    &.active{
+    outline: 1px solid rgba(0, 0, 0, 1);
+    border: 2px solid white;
+   }
 }
 
-.catalog-filtration__price {}
+// .catalog-filtration__price {}
 
-.catalog-filtration__about-dresses {}
+// .catalog-filtration__about-dresses {}
 
 .catalog-filtration__about-dresses-title {
     font-family: Oswald;
@@ -202,4 +225,10 @@
     font-weight: 400;
     line-height: 68px;
     letter-spacing: 0%;
+    color: rgba(130, 130, 130, 1);
+    transition: 300ms ease-in;
+
+    &:hover {
+        color: rgb(0, 0, 0);
+    }
 }

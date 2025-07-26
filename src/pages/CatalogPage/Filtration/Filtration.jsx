@@ -68,7 +68,7 @@ export const Filtration = () => {
             <button className="catalog-filtration__size-button">w29</button>
             <button className="catalog-filtration__size-button">w30</button>
             <button className="catalog-filtration__size-button">w31</button>
-            <button className="catalog-filtration__size-button">w32</button>
+            <button className="catalog-filtration__size-button active">w32</button>
             <button className="catalog-filtration__size-button">w33</button>
             <button className="catalog-filtration__size-button">w34</button>
             <button className="catalog-filtration__size-button">w35</button>
@@ -142,7 +142,7 @@ export const Filtration = () => {
             ></button>
             <button
               style={{ backgroundColor: "rgba(41, 42, 45, 1)" }}
-              className="catalog-filtration__form-color-btn"
+              className="catalog-filtration__form-color-btn active"
             ></button>
             <button
               style={{ backgroundColor: "rgba(102, 102, 137, 1)" }}
