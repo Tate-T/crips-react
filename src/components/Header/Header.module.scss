@@ -3,9 +3,14 @@
 
 .header {
   background-color: black;
+  padding: 36px 0;
 
   &__wrap {
     @include flex(space-between, center, 0, nowrap, row);
+  }
+
+  &__gap {
+    @include flex(start, center, 615px, nowrap, row);
   }
 
   &__logo {
@@ -25,18 +30,43 @@
     @include flex(start, center, 31px, nowrap, row);
   }
 
-  // &__actions {
-  //   @include flex(start, center, 31px, nowrap, row);
-  // }
+  &__actions {
+    @include flex(start, center, 20px, nowrap, row);
+  }
   
   &__authentication { 
     @include flex(start, center, 12px, nowrap, row);
+  }
+
+  &__like {
+    background-color: black;
+  }
+
+  &__cart {
+    @include flex(start, center, 11px, nowrap, row);
+  }
+
+  &__bag {
+    height: 20px;
+    width: 18px;
+  }
+}
+
+.price {
+  &__caption {
+    @include typography("Roboto Medium", 400, 12px, 100%, 0%, start);
+    color: $contrast-text-color;
+  }
+
+  &__quantity {
+    @include typography(Roboto, 700, 14px, 100%, 0%, start);
+    color: $contrast-text-color;
   }
 }
 
 .auth {
   &__link {
-    color: white;
+    color: $contrast-text-color;
     @include typography(Oswald, 600, 14px, 100%, 0%, start);
   }
 }
@@ -57,7 +87,7 @@
     @include typography(Oswald, 600, 14px, 100%, 0%, start);
 
     &::placeholder {
-      color: white;
+      color: $contrast-text-color;
       text-transform: uppercase;
 
       @include typography(Oswald, 600, 14px, 100%, 0%, start);
@@ -73,7 +103,7 @@
   &__link {
     display: block;
     text-transform: uppercase;
-    color: white;
+    color: $contrast-text-color;
 
     @include typography(Oswald, 600, 14px, 100%, 0%, center);
   }
