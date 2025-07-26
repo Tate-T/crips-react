@@ -3,12 +3,12 @@ import Search from "../../images/search.svg";
 import Bag from "../../images/bag.svg";
 import Heart from "../../images/heart.svg";
 
-// import style from "./Header.module.scss";
+import style from "./Header.module.scss";
 
 export const Header = () => {
   return (
     <header className={style.header}>
-      <div className={style.container}>
+      <div className="container">
         <div className={style.header__wrap}>
           <img className={style.header__logo} src={Logo} alt="Logo SVG" />
           <div className={style.header__center}>

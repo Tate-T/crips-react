@@ -8,11 +8,11 @@ export const HomePage = () => {
   return (
     <>
       <Header />
-      <main>
-        <MiniCatalog />
-        <CatalogSection />
-        <CreateOrder />
-      </main>
+      {/* <main> */}
+      {/*   <MiniCatalog /> */}
+      {/*   <CatalogSection /> */}
+      {/*   <CreateOrder /> */}
+      {/* </main> */}
       {/* <Footer /> */}
     </>
   );

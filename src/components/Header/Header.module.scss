@@ -1,0 +1,19 @@
+.header {
+  background-color: black;
+
+  &__wrap {
+    display: flex;
+    padding: 36px 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 94px;
+    height: 44px;
+  }
+
+  &__center {
+    display: flex;
+  }
+}
