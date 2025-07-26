@@ -60,19 +60,19 @@
 
 			@include typography(Oswald, 600, 12px, 22px, 0%, _);
 			text-transform: uppercase;
-			color: $gray4;
+			color: $subtitle-text-color;
 		}
 
 		&-title {
             @include typography(Oswald, 300, 18px, 22px, 0%, _);
-            color: $black;
+            color: $main-text-color;
 		}
 
 		&-price {
 			margin-top: 18px;
             @include typography(Oswald, 500, 22px, 22px, 0%, _);
 			text-transform: uppercase;
-            color: $black;
+            color: $main-text-color;
 		}
 	}
 }
