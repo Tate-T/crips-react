@@ -1,11 +1,11 @@
+@import "../../sass/utils/variables.scss";
+@import "../../sass/utils/mixins.scss";
+
 .header {
   background-color: black;
 
   &__wrap {
-    display: flex;
-    padding: 36px 0;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center, 0, nowrap, row);
   }
 
   &__logo {
@@ -14,6 +14,67 @@
   }
 
   &__center {
-    display: flex;
+    @include flex(start, center, 29px, nowrap, row);
+  }
+
+  &__search {
+    @include flex(start, flex-end, 8px, nowrap, row);
+  }
+
+  &__right { 
+    @include flex(start, center, 31px, nowrap, row);
+  }
+
+  // &__actions {
+  //   @include flex(start, center, 31px, nowrap, row);
+  // }
+  
+  &__authentication { 
+    @include flex(start, center, 12px, nowrap, row);
+  }
+}
+
+.auth {
+  &__link {
+    color: white;
+    @include typography(Oswald, 600, 14px, 100%, 0%, start);
+  }
+}
+
+.search {
+  &__icon {
+    width: 16px;
+    height: 21px;
+  }
+
+  &__input {
+    outline: none;
+    border: none;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+
+    @include typography(Oswald, 600, 14px, 100%, 0%, start);
+
+    &::placeholder {
+      color: white;
+      text-transform: uppercase;
+
+      @include typography(Oswald, 600, 14px, 100%, 0%, start);
+    }
+  }
+}
+
+.nav {
+  &__list {
+    @include flex(start, center, 29px, nowrap, row);
+  }
+
+  &__link {
+    display: block;
+    text-transform: uppercase;
+    color: white;
+
+    @include typography(Oswald, 600, 14px, 100%, 0%, center);
   }
 }
