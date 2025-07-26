@@ -1,0 +1,259 @@
+.cardImgBox{
+    background-color: brown;
+    width: 76px;
+
+}
+
+.cardImgList{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cardImg{
+    width: 76px;
+    height: 96px;
+    flex-shrink: 0;
+}
+
+.mainImgBox{
+    width: 624px;
+    outline: solid blue 2px;
+}
+
+.mainImg{
+    width: 624px;
+    height: 790px;
+    flex-shrink: 0;
+}
+
+.mainImgText{
+    color: var(--Black, #000);
+    font-family: Oswald;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 68px; /* 566.667% */
+    text-transform: uppercase;
+}
+
+.mainIconListBox{
+     display: flex;
+     outline: solid red 2px;
+}
+
+.mainIconList{
+    display: flex;
+}
+
+.mainIconMedia{
+    fill: #000;
+}
+
+.catalogeMainBox{
+    outline: solid green 2px;
+    width: 550px;
+}
+
+.catalogeTitle{
+    color: var(--Gray-1, #828282);
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 68px; /* 485.714% */
+}
+
+.catalogeSubTitle {
+    color: #000;
+    font-family: Oswald;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 56px; /* 116.667% */
+    width: 493px;
+}
+
+.catalogeText{
+    color: var(--Black, #000);
+    font-family: Oswald;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+.catalogeColorList{
+   width: 101px;
+   display: flex;
+   gap: 10px; 
+}
+
+.catalogeColorList .catalogeColorItem:nth-child(1) {
+     width: 20px;
+    height: 20px;
+    background-color: #24426A;
+}
+
+.catalogeColorList .catalogeColorItem:nth-child(2) {
+     width: 20px;
+    height: 20px;
+    background-color: wheat;
+}
+
+.catalogeColorList .catalogeColorItem:last-child {
+    width: 20px;
+    height: 20px;
+    background-color: #666689;
+}
+
+.selectBox{
+    display: flex;
+}
+
+.selectText{
+    color: var(--Black, #000);
+    font-family: Oswald;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    width: 139px;
+}
+
+.selectLink{
+    color: var(--Link, #0F6DB1);
+    text-align: right;
+    font-family: Roboto;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+    text-decoration-thickness: auto;
+    text-underline-offset: auto;
+    text-underline-position: from-font;
+    width: 410px;
+}
+
+.sizeList{
+    
+    display: flex;
+    flex-wrap: wrap;
+    width: 550px;
+    gap: 9px;
+}
+
+.sizeItem{
+    width: 46px;
+    height: 46px;
+    outline: solid #C4C4C4 1.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sizeText{
+    color: var(--Gray-1, #828282);
+    text-align: center;
+    font-family: Oswald;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 68px; /* 485.714% */
+    text-transform: uppercase;
+}
+
+.quantityBox{
+    display: flex;
+}
+
+.quantityText{
+    color: var(--Black, #000);
+    font-family: Oswald;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    width: 84px;
+}
+
+.quantityTextSub{
+    color: var(--Black, #000);
+    font-family: Oswald;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+
+    width: 360px;
+}
+
+.btnBox{
+    display: flex;
+    gap: 18.5px;
+}
+
+.btnAdd{
+    color: #FFF;
+    text-align: center;
+    font-family: Oswald;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: #000;
+
+    width: 221px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.btnSave{
+    
+    text-align: center;
+
+    font-family: Oswald;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background-color: #fff;
+
+
+    width: 221px;
+    height: 50px;
+    flex-shrink: 0;
+
+    border: 2px solid var(--Divider, #C4C4C4);
+}
+
+.btnSaveText{
+color: #3F3F3F;
+}
+
+.underBtnList{
+    display: flex;
+    gap: 15px;
+}
+
+.underBtnText{
+    color: var(--Gray-1, #828282);
+    font-family: Oswald;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 68px; /* 566.667% */
+    text-transform: uppercase;
+}
