@@ -1,5 +1,14 @@
+@import "../../sass/utils/variables.scss";
+@import "../../sass/utils/mixins.scss";
+
 .mini-catalog {
 	padding-top: 67px;
+
+    &__list-wrap {
+        &--popular {
+            margin-top: 79px;
+        }
+    }
 
 	&__top-wrap {
 		display: flex;
@@ -8,17 +17,33 @@
 	}
 
 	&__title {
-		font-family: Oswald;
-		font-weight: 400;
-		font-size: 24px;
-		leading-trim: NONE;
-		line-height: 68px;
-		letter-spacing: 0%;
-		vertical-align: middle;
+		@include typography(Oswald, 400, 24px, 68px, 0%, _);
 	}
+
+    &__button-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 84px;
+        height: 40px;
+    }
+
+    &__button {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.9);
+    }
 
 	&__list {
 		display: flex;
+        justify-content: space-between;
+        align-items: center;
+
 	}
 
 	&__item {
@@ -32,10 +57,22 @@
 
 		&-category {
 			margin-top: 14px;
+
+			@include typography(Oswald, 600, 12px, 22px, 0%, _);
+			text-transform: uppercase;
+			color: $gray4;
+		}
+
+		&-title {
+            @include typography(Oswald, 300, 18px, 22px, 0%, _);
+            color: $black;
 		}
 
 		&-price {
 			margin-top: 18px;
+            @include typography(Oswald, 500, 22px, 22px, 0%, _);
+			text-transform: uppercase;
+            color: $black;
 		}
 	}
 }
