@@ -1,18 +1,27 @@
 import PropTypes from "prop-types";
-const Catalog = (props, index) => {
+export const Catalog = ({ img, top, name, price, colors, styles }) => {
   return (
-    <li className="catalog__item" key={index}>
-      <img className="catalog__img" src={props.img} alt="" width="345px" height="450px"/>
-      <p className="catalog__tag">{props.top}</p>
-      <h3 className="catalog__name">{props.name}</h3>
-      <h4 className="catalog__price">{props.price}</h4>
-      <ul className="catalog__colors">
-        {props.colors.map((item, index) => (
-          <li
-            className="catalog__color"
-            key={index}
-            style={{ backgroundColor: item }}
-          ></li>
+    <li className={styles.catalog__item}>
+      <img
+        className={styles.catalog__img}
+        src={img}
+        alt=""
+        // width="345px"
+        // height="450px"
+      />
+      <p className={styles.catalog__top}>{top}</p>
+      <h3 className={styles.catalog__name}>{name}</h3>
+      <h4 className={styles.catalog__price}>{price}</h4>
+      <ul className={styles.catalog__colors}>
+        {colors.map((item, index) => (
+          <li className={styles.colors__item} key={index}>
+            <button type="button" className={styles.catalog__color}>
+              <div
+                className={styles.color}
+                style={{ backgroundColor: item }}
+              ></div>
+            </button>
+          </li>
         ))}
       </ul>
     </li>
@@ -20,11 +29,10 @@ const Catalog = (props, index) => {
 };
 
 Catalog.propTypes = {
-  image: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  tag: PropTypes.string.isRequired,
+  top: PropTypes.string.isRequired,
   colors: PropTypes.array.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  styles: PropTypes.object.isRequired,
 };
-
-export default Catalog;
