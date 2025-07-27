@@ -3,6 +3,7 @@ import { Container } from "../../../components/Container/Container";
 import { OrderSummary } from "../../../components/CreateOrder/OrderSummary/OrderSummary";
 import s from "./CreateOrder.module.scss";
 import checkmark from "../../../images/CreateOrder/ckeckmark.svg";
+import { PaymentDetails } from "./PaymentDetails/PaymentDetails";
 
 export const CreateOrder = ({ children }) => {
   return (
@@ -51,6 +52,9 @@ export const CreateOrder = ({ children }) => {
                 </div>
               </div>
             </div>
+            {/* <PaymentDetails>
+              <OrderSummary />
+            </PaymentDetails> */}
             <ShippingDetails>
               <OrderSummary />
             </ShippingDetails>
