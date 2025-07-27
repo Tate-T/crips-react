@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/crips-react/static/css/main.6ea59564.css",
-    "main.js": "/crips-react/static/js/main.0b3a7a94.js",
+    "main.css": "/crips-react/static/css/main.dabd200c.css",
+    "main.js": "/crips-react/static/js/main.b87a6d6a.js",
     "static/media/mini-catalog-02.jpg": "/crips-react/static/media/mini-catalog-02.157e608136d056698247.jpg",
     "static/media/mini-catalog-10.jpg": "/crips-react/static/media/mini-catalog-10.643485b11115440c1cd1.jpg",
     "static/media/mini-catalog-04.jpg": "/crips-react/static/media/mini-catalog-04.08a4111846e6441a4716.jpg",
@@ -33,11 +33,11 @@
     "static/media/arrow-left.svg": "/crips-react/static/media/arrow-left.274eb932d244a18ed5f0c6c9997c4580.svg",
     "static/media/arrow-right.svg": "/crips-react/static/media/arrow-right.a36726b55724340367d7de75ef0523ea.svg",
     "static/media/arrow-bottom.svg": "/crips-react/static/media/arrow-bottom.a6919a6eee728764e81356e644e42765.svg",
-    "main.6ea59564.css.map": "/crips-react/static/css/main.6ea59564.css.map",
-    "main.0b3a7a94.js.map": "/crips-react/static/js/main.0b3a7a94.js.map"
+    "main.dabd200c.css.map": "/crips-react/static/css/main.dabd200c.css.map",
+    "main.b87a6d6a.js.map": "/crips-react/static/js/main.b87a6d6a.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ea59564.css",
-    "static/js/main.0b3a7a94.js"
+    "static/css/main.dabd200c.css",
+    "static/js/main.b87a6d6a.js"
   ]
 }
