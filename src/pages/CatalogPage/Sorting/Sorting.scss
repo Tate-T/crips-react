@@ -1,0 +1,31 @@
+@import '../../../sass/utils/mixins.scss';
+@import '../../../sass/utils/variables.scss';
+.sorting__form {
+    margin-bottom: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.sorting__select-sortBy,
+.sorting__select-sortNum {
+    text-transform: uppercase;
+    border-radius: none;
+    border: 1px solid $outline-color;
+    background: none;
+    padding: 11px;
+    @include typography(Oswald, 400, 14px, 68px, 0, left);
+    transition: $st-transition;
+    &:hover {
+        background-color: $main-hover-color;
+    }
+}
+
+.sorting__select-sortBy {
+    width: 255px;
+    height: 46px;
+}
+
+.sorting__select-sortNum {
+    width: 69px;
+    height: 46px;
+}

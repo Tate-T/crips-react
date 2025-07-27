@@ -6,6 +6,7 @@ import { Banners } from "../../components/Banners/BannersSection.jsx";
 import { MiniCatalog } from "../../components/MiniCatalog/MiniCatalog.jsx";
 import { Blog } from "../main-page/blog/blog.jsx"
 
+
 export const HomePage = () => {
   return (
     <>
@@ -14,6 +15,7 @@ export const HomePage = () => {
         <Banners/>
         <MiniCatalog />
         <CatalogSection />
+
         <CreateOrder />
         <Blog />
       </main>
