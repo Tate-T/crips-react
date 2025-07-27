@@ -1,28 +1,19 @@
-@import '../../../../sass/utils/variables.scss';
+@import "../../../../sass/utils/variables.scss";
+
 .ship {
-  &__wrap {
-    display: flex;
-    justify-content: center;
-    gap: 106px;
-    margin-top: 57px;
-  }
-  &__form {
-    width: 606px;
-  }
   &__title {
     font-size: 24px;
     line-height: 283%;
   }
   &__row {
     display: flex;
-    align-items: start;
-    justify-content: space-between;
+    flex-direction: column;
   }
   &__row:not(:last-child) {
-    margin-bottom: 24px;
+    margin-bottom: 12px;
   }
   &__row:nth-child(4) {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   &__label {
     font-size: 16px;
@@ -46,11 +37,7 @@
     padding: 0;
     margin: 0;
     border: 1px solid $outline-color;
-    width: 410px;
     padding: 11px 15px;
-  }
-  &__select {
-    width: 440px;
   }
   &__text {
     font-size: 14px;
@@ -62,95 +49,129 @@
     margin-bottom: 36px;
   }
   &__btn--login,
-  &__btn--next {
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: $contrast-text-color;
-    background-color: $main-text-color;
-    border: 1px solid $main-text-color;
-    padding: 15px 40px;
-    margin-right: 25px;
-    transition: all $st-transition;
-  }
-  &__btn--login:hover {
-    background-color: transparent;
-    color: $main-text-color;
-  }
-  &__btn--next:hover {
-    background-color: transparent;
-    color: $main-text-color;
-  }
-  &__btn--restore {
-    font-size: 14px;
-    line-height: 143%;
-    color: $link-color;
-    background-color: transparent;
-    transition: all $st-transition;
-  }
-  &__btn--restore:hover {
-    color: #57a4eb;
-  }
-  &__line {
-    height: 1px;
-    width: 606px;
-    margin-bottom: 39px;
-    background-color: $outline-color;
-  }
-  &__item {
-    display: flex;
-    gap: 13px;
-    align-items: center;
-    padding: 12px 0;
-    border-top: 1px solid $outline-color;
-    input[type="radio"] {
-      margin-right: 16px;
-      accent-color: $main-text-color;
-      width: 10px;
-      height: 10px;
+    &__btn--next {
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: $contrast-text-color;
+      background-color: $main-text-color;
+      border: 1px solid $main-text-color;
+      padding: 15px 40px;
+      margin-right: 25px;
+      transition: all $st-transition;
     }
-  }
-  &__item:first-child .ship__rate {
-    color: $main-text-color;
-  }
-  &__item:last-child {
-    width: 443px;
-  }
-  &__methods {
-    display: flex;
-    justify-content: space-evenly;
-    float: left;
-  }
-  &__rate,
-  .ship__type {
-    font-size: 14px;
-    line-height: 143%;
-    color: $inactive-color;
-  }
-  &__rate {
-    margin-right: 107px;
-    width: 58px;
-  }
-  &__type:not(:last-child) {
-    width: 79px;
-    margin-right: 65px;
-  }
-  &__navigation {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 24px;
-  }
-  &__btn--back {
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    background-color: transparent;
-    color: $secondary-text-color;
-    transition: all $st-transition;
-  }
-  &__btn--back:hover {
-    color: $main-text-color;
+    &__btn--login:hover {
+      background-color: transparent;
+      color: $main-text-color;
+    }
+    &__btn--next:hover {
+      background-color: transparent;
+      color: $main-text-color;
+    }
+    &__btn--restore {
+      font-size: 14px;
+      line-height: 143%;
+      color: $link-color;
+      background-color: transparent;
+      transition: all $st-transition;
+    }
+    &__btn--restore:hover {
+      color: #57a4eb;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+  .ship {
+    &__wrap {
+      display: flex;
+      justify-content: center;
+      gap: 106px;
+      margin-top: 57px;
+    }
+    &__form {
+      width: 606px;
+    }
+    &__row {
+      align-items: start;
+      justify-content: space-between;
+    }
+    &__row:not(:last-child) {
+      margin-bottom: 24px;
+    }
+    &__row:nth-child(4) {
+      margin-bottom: 10px;
+    }
+    &__input,
+    &__select {
+      width: 410px;
+    }
+    &__select {
+      width: 440px;
+    }
+
+    
+    
+    &__line {
+      height: 1px;
+      width: 606px;
+      margin-bottom: 39px;
+      background-color: $outline-color;
+    }
+    &__item {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+      padding: 12px 0;
+      border-top: 1px solid $outline-color;
+      input[type="radio"] {
+        margin-right: 16px;
+        accent-color: $main-text-color;
+        width: 10px;
+        height: 10px;
+      }
+    }
+    &__item:first-child .ship__rate {
+      color: $main-text-color;
+    }
+    &__item:last-child {
+      width: 443px;
+    }
+    &__methods {
+      display: flex;
+      justify-content: space-evenly;
+      float: left;
+    }
+    &__rate,
+    .ship__type {
+      font-size: 14px;
+      line-height: 143%;
+      color: $inactive-color;
+    }
+    &__rate {
+      margin-right: 107px;
+      width: 58px;
+    }
+    &__type:not(:last-child) {
+      width: 79px;
+      margin-right: 65px;
+    }
+    &__navigation {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 24px;
+    }
+    &__btn--back {
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background-color: transparent;
+      color: $secondary-text-color;
+      transition: all $st-transition;
+    }
+    &__btn--back:hover {
+      color: $main-text-color;
+    }
   }
 }
