@@ -202,9 +202,8 @@
     width: 6px !important;
     height: 16px !important;
     background: $main-text-color !important;
-    border-radius: 2px;
     top: -7px !important;
-    border: none;
+    border: none !important;
 }
 
 .catalog-filtration__apply {
@@ -217,4 +216,8 @@
     margin-top: 25px;
     width: 114px;
     height: 40px;
+    transition: $st-transition;
+    &:hover{
+        border: 1px solid $secondary-text-color;
+    }
 }
