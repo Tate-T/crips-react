@@ -9,7 +9,7 @@ export const CardInfo = () => {
       {/* <Header /> */}
       <main>
         
-        <div>
+        <div className={s.mainWrapper}>
           <div className={s.cardImgBox}>
             <ul className={s.cardImgList}>
               <li className={s.cardImgItem}>
@@ -70,7 +70,7 @@ export const CardInfo = () => {
           </div>
 
           
-        </div>
+        
 
         <div className={s.catalogeMainBox}>
             <h2 className={s.catalogeTitle}>Home / Womens Dress / Angels malu</h2>
@@ -86,7 +86,7 @@ export const CardInfo = () => {
             </ul>
             <div className={s.selectBox}>
                 <p className={s.selectText}>Select size (Inches)</p>
-                <a className={s.selectLink}>Size guide</a>
+                <a href="./" className={s.selectLink}>Size guide</a>
             </div>
             <ul className={s.sizeList}>
                 <li className={s.sizeItem}>
@@ -186,6 +186,7 @@ export const CardInfo = () => {
                 </ul>
             </div>
         </div>
+    </div>
         
       </main>
       {/* <Footer /> */}

@@ -1,0 +1,76 @@
+
+
+
+
+.banners{
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+}
+
+.bannersDoubleCentre{
+    width: 705px;
+    display: flex;
+    flex-direction: column;
+}
+.banner1 {
+  position: relative;
+  width: 705px;
+  height: 434px;
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient(to top, #F1EFF0 , #F1F0F0 , #F3F0EF);
+}
+
+.bannersBacImage1 {
+  width: 420px; 
+  height: 100%;
+  background-image: url('../../images/banners-hatWomen.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  flex-shrink: 0;
+}
+
+.banner2 {
+  position: relative;
+  width: 100%;
+  height: 434px;
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient( to right, #F7E0D5 0% , #F3DCD2 86% , #F3DCD224 14%);
+}
+
+.bannersBacImage2 {
+  width: 420px; 
+  height: 100%;
+  background-image: url('../../images/banners-sittingWomen.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+  flex-shrink: 0;
+}
+
+.banner3 {
+  position: relative;
+  width: 705px;
+  padding-left: 85px;
+  height: 898px;
+  display: flex;
+  align-items: center;
+
+  background: linear-gradient(to top, #F1EFF0 , #F1F0F0 , #F3F0EF);
+}
+
+.bannersBacImage3 {
+  width: 620px; 
+  height: 100%;
+  background-image: url('../../images/banners-standingWomen.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  flex-shrink: 0;
+}
+

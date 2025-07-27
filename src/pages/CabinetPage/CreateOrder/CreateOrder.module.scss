@@ -51,7 +51,7 @@
   }
   &__line {
     height: 6px;
-    width: 75px;
+    width: 30px;
     background-color: $outline-color;
   }
   &__conf {
@@ -72,6 +72,18 @@
     height: 11px;
   }
   &__stage {
+    font-size: 10px;
     margin-top: 14px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .order {
+    &__line {
+      width: 75px;
+    }
+    &__stage {
+      font-size: 16px;
+    }
   }
 }

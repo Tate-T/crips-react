@@ -11,6 +11,11 @@
         margin-bottom: 13px;
     }
 
+    &__cont {
+        display: flex;
+        justify-content: center;
+    }
+
     &__main {
         display: flex;
         gap: 108px;
