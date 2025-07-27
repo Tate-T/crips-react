@@ -1,25 +1,18 @@
 import Catalog from "./Catalog.jsx";
 import catalogData from "../../../data/catalog-data.js";
-import {Sorting} from "../Sorting/Sorting.jsx"
+import { Sorting } from "../Sorting/Sorting.jsx"
+import Banner from "../Banner/Banner.jsx";
 
 function FullCatalog() {
   return (
     <>
-    <Sorting />
+      <Sorting />
       <ul className="catalog__list">
         {catalogData.map((test, index) => (
           <Catalog {...test} key={index} />
         ))}
       </ul>
-      <div className="catalog__banner">
-        <h2 className="banner__title">shoping without limits.</h2>
-        <p className="banner__subtitle">
-          You can choose the best option for you, and it does not matter whether
-          you are in Prague or San Francisco. We will deliver your purchase
-          anywhere!
-        </p>
-        <button className="banner__button">shop now</button>
-      </div>
+      <Banner />
       <ul className="catalog__list">
         {catalogData.map((test, index) => (
           <Catalog {...test} key={index} />
