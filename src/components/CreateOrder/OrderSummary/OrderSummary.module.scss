@@ -1,11 +1,11 @@
-@import '../../../sass/utils/variables.scss';
+@import "../../../sass/utils/variables.scss";
 .order {
   &__wrap {
     border: 2px solid $outline-color;
     background-color: $form-bg-color;
     padding: 11px 30px 50px 30px;
     height: fit-content;
-    width: 530px;
+    margin-top: 20px;
   }
   &__title {
     font-weight: 400;
@@ -15,7 +15,7 @@
   }
   &__ans {
     .order__list {
-        margin-bottom: 25px;
+      margin-bottom: 25px;
     }
     .order__item {
       justify-content: space-between;
@@ -23,6 +23,7 @@
         font-weight: 500;
         font-size: 18px;
         line-height: 133%;
+        color: $secondary-text-color;
       }
     }
   }
@@ -69,14 +70,14 @@
   &__subwrap {
     margin-left: 17px;
     display: flex;
-    gap: 94px;
+    flex-direction: column;
+
   }
   &__subtitle {
     font-weight: 500;
-    font-size: 18px;
+    font-size: 14px;
     line-height: 133%;
     margin-bottom: 3px;
-    width: 190px;
   }
   &__quantity {
     font-weight: 400;
@@ -98,8 +99,36 @@
       margin-left: 12px;
     }
   }
+  &__sum {
+    color: $inactive-color;
+  }
 }
 button {
   padding: 0;
   margin: 0;
+}
+@media screen and (min-width: 480px) {
+  .order {
+    &__subwrap {
+      flex-direction: row;
+    }
+    &__subtitle {
+      width: 190px;
+    }
+  }
+}
+@media screen and (min-width: 768px) {
+  .order {
+    &__wrap {
+      width: 530px;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+    &__subwrap {
+      gap: 94px;
+    }
+    &__subtitle {
+      font-size: 18px;
+    }
+  }
 }

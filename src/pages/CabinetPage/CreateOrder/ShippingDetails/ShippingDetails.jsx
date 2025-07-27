@@ -81,9 +81,9 @@ export const ShippingDetails = ({ children }) => {
                 <option value="base" disabled selected hidden>
                   Please select a region, state or province
                 </option>
-                <option value="base" disabled selected hidden>
+                <option value="first" >
                   Please select a region, state or province
-                </option><option value="base" disabled selected hidden>
+                </option><option value="second">
                   Please select a region, state or province
                 </option>
               </select>
