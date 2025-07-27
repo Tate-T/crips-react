@@ -8,7 +8,7 @@ export const CatalogSection = () => {
       <Header />
       <main className="container">
         <FullCatalog />
-        <Filtration />
+        {/* <Filtration /> */}
       </main>
       {/* <Footer /> */}
     </>
