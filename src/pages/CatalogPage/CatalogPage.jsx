@@ -1,12 +1,16 @@
-// import {Header} from '../../components/Header/Header'
-import { FullCatalog } from "./Catalog/FullCatalog.jsx";
+import { Filtration } from "./Filtration/Filtration.jsx";
+import {Header} from '../../components/Header/Header'
+import FullCatalog from "./Catalog/FullCatalog.jsx";
 
 export const CatalogSection = () => {
   return (
     <>
-      <section className="catalog">
+      <Header />
+      <main className="container">
         <FullCatalog />
-      </section>
+        {/* <Filtration /> */}
+      </main>
+      {/* <Footer /> */}
     </>
   );
 };

@@ -1,90 +1,98 @@
-export const ShippingDetails = () => {
+import s from "./ShippingDetails.module.scss";
+export const ShippingDetails = ({ children }) => {
   return (
     <>
-      <div>
-        <div className="shipping__wrap">
-          <form className="ship-form">
-            <h2 className="ship-form__title">Shipping Address</h2>
-            <div className="ship-form__row">
-              <label htmlFor="#">
-                Email Address <span className="ship-form__reqired">*</span>
+      <div className={s.ship__wrap}>
+        <div>
+          <form className={s.ship__form}>
+            <h2 className={s.ship__title}>Shipping Address</h2>
+            <div className={s.ship__row}>
+              <label className={s.ship__label}>
+                Email Address <span className={s.ship__required}>*</span>
               </label>
               <input
-                className="ship-form__input"
+                className={s.ship__input}
                 type="email"
                 placeholder="roni_cost@example.com"
                 required
               />
             </div>
-            <div className="ship-form__row">
-              <label htmlFor="#">Password</label>
+            <div className={s.ship__row}>
+              <label className={s.ship__label}>Password</label>
               <input
-                className="ship-form__input"
+                className={s.ship__input}
                 type="password"
                 placeholder="******************"
               />
             </div>
-            <div className="ship-form__row">
-              <label htmlFor="#">Zip/Postal Code</label>
-              <input className="ship-form__input" type="number" />
+            <div className={s.ship__row}>
+              <label className={s.ship__label}>Zip/Postal Code</label>
+              <input className={s.ship__input} type="number" min={0}/>
             </div>
-            <p className="ship-form__text">
+            <p className={s.ship__text}>
               You already have an account with us. Sign in or continue as guest.
             </p>
-            <div className="ship-form__btns">
-              <button className="ship-form__btn--login">Login</button>
-              <button className="ship-form__btn--restore">
+            <div className={s.ship__btns}>
+              <button className={s['ship__btn--login']}>Login</button>
+              <button className={s['ship__btn--restore']}>
                 Forgot Your Password?
               </button>
             </div>
           </form>
-          <div className="shipping__line"></div>
-          <form className="ship-form">
-            <div className="ship-form__row">
-              <label htmlFor="#">
-                First Name <span className="ship-form__reqired">*</span>
+          <div className={s.ship__line}></div>
+          <form className={s.ship__form}>
+            <div className={s.ship__row}>
+              <label className={s.ship__label}>
+                First Name <span className={s.ship__required}>*</span>
               </label>
-              <input className="ship-form__input" type="text" required />
+              <input className={s.ship__input} type="text" required />
             </div>
-            <div className="ship-form__row">
-              <label htmlFor="#">
-                Last Name <span className="ship-form__reqired">*</span>
+            <div className={s.ship__row}>
+              <label className={s.ship__label}>
+                Last Name <span className={s.ship__required}>*</span>
               </label>
-              <input className="ship-form__input" type="text" required />
+              <input className={s.ship__input} type="text" required />
             </div>
-            <div className="ship-form__row">
-              <label htmlFor="#">Company</label>
-              <input className="ship-form__input" type="text" />
+            <div className={s.ship__row}>
+              <label className={s.ship__label}>Company</label>
+              <input className={s.ship__input} type="text" />
             </div>
-            <div className="ship-form__row">
-              <label htmlFor="#">
-                Street Address <span className="ship-form__reqired">*</span>
+            <div className={s.ship__row}>
+              <label className={s.ship__label}>
+                Street Address <span className={s.ship__required}>*</span>
               </label>
-              <input className="ship-form__input" type="text" required />
-              <input className="ship-form__input" type="text" required />
-              <input className="ship-form__input" type="text" required />
+              <div className={s.ship__wrapper}>
+                <input className={s.ship__input} type="text" required />
+                <input className={s.ship__input} type="text" required />
+                <input className={s.ship__input} type="text" required />
+              </div>
             </div>
-            <div className="ship-form__row">
-              <label htmlFor="#">
-                Country <span className="ship-form__reqired">*</span>
+            <div className={s.ship__row}>
+              <label className={s.ship__label}>
+                Country <span className={s.ship__required}>*</span>
               </label>
-              <input className="ship-form__input" type="text" required />
+              <input className={s.ship__input} type="text" required />
             </div>
-            <div className="ship-form__row">
-              <label htmlFor="#">
-                State/Province <span className="ship-form__reqired">*</span>
+            <div className={s.ship__row}>
+              <label className={s.ship__label}>
+                State/Province <span className={s.ship__required}>*</span>
               </label>
-              <select name="regiond" id="#">
+              <select name="regions" id="#" className={s.ship__select}>
                 <option value="base" disabled selected hidden>
+                  Please select a region, state or province
+                </option>
+                <option value="base" disabled selected hidden>
+                  Please select a region, state or province
+                </option><option value="base" disabled selected hidden>
                   Please select a region, state or province
                 </option>
               </select>
             </div>
           </form>
-          <form className="ship-form">
-            <h2 className="ship-form__title">Shipping Methods</h2>
+          <form className={s.ship__form}>
+            <h2 className={s.ship__title}>Shipping Methods</h2>
             <div className="ship-form__list">
-              <label className="ship-form__item">
+              <label className={s.ship__item}>
                 <input
                   className="ship-form__radio"
                   type="radio"
@@ -92,96 +100,33 @@ export const ShippingDetails = () => {
                   value="fixed"
                   defaultChecked
                 />
-                <div className="ship-form__methods">
-                  <p className="ship-form__rate">$5.00</p>
-                  <p className="ship-form__type">Fixed</p>
-                  <p className="ship-form__type">Flat Rate</p>
+                <div className={s.ship__methods}>
+                  <p className={s.ship__rate}>$5.00</p>
+                  <p className={s.ship__type}>Fixed</p>
+                  <p className={s.ship__type}>Flat Rate</p>
                 </div>
               </label>
-              <label className="ship-form__item ship-form__item--disabled">
+              <label className={s.ship__item}>
                 <input
                   className="ship-form__radio"
                   type="radio"
                   name="shipping"
                   value="table"
                 />
-                <div className="ship-form__methods">
-                  <p className="ship-form__rate">$10.00</p>
-                  <p className="ship-form__type">Table Rate</p>
-                  <p className="ship-form__type">Best Way</p>
+                <div className={s.ship__methods}>
+                  <p className={s.ship__rate}>$10.00</p>
+                  <p className={s.ship__type}>Table Rate</p>
+                  <p className={s.ship__type}>Best Way</p>
                 </div>
               </label>
             </div>
-            <div className="ship-form__navigation">
-              <button className="ship-form__btn--next">Next</button>
-              <button className="ship-form__btn--back">Back</button>
+            <div className={s.ship__navigation}>
+              <button className={s['ship__btn--next']}>Next</button>
+              <button className={s['ship__btn--back']}>Back</button>
             </div>
           </form>
         </div>
-        <div>
-          <h2>Order Summary</h2>
-          <div>
-            <div>
-              <ul>
-                <li>
-                  <p>Cart Subtotal</p>
-                  <p>$56.25</p>
-                </li>
-                <li>
-                  <p>Shipping</p>
-                  <p>$5.00</p>
-                </li>
-                <li>
-                  <p>Flat Rate - Fixed</p>
-                </li>
-              </ul>
-              <div>
-                <p>Order Total</p>
-                <span>120.00 EUR</span>
-              </div>
-            </div>
-            <div>
-              <p>1 Item in Cart</p>
-              {/* <svg>
-              <use href="#"></use>
-            </svg> */}
-            </div>
-          </div>
-          <ul>
-            <li>
-              <img src="#" alt="dress" />
-              <div>
-                <div>
-                  <h3>Angels malu zip jeans slim black used</h3>
-                  <p>
-                    Qty: <span>1</span>
-                  </p>
-                  <button>
-                    View Details
-                    {/* <svg><use></use></svg> */}
-                  </button>
-                </div>
-                <p>129,00 EUR</p>
-              </div>
-            </li>
-            <li>
-              <img src="#" alt="dress" />
-              <div>
-                <div>
-                  <h3>Angels malu zip jeans slim black used</h3>
-                  <p>
-                    Qty: <span>1</span>
-                  </p>
-                  <button>
-                    View Details
-                    {/* <svg><use></use></svg> */}
-                  </button>
-                </div>
-                <p>129,00 EUR</p>
-              </div>
-            </li>
-          </ul>
-        </div>
+        {children}
       </div>
     </>
   );
