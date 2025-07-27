@@ -10,6 +10,8 @@
 		flex-direction: column;
 		width: 100%;
 
+		margin: 0 auto;
+
 		&--popular {
 			margin-top: 79px;
 		}
@@ -23,7 +25,7 @@
 	}
 
 	&__title {
-		@include typography(Oswald, 400, 24px, 68px, 0%, _);
+		@include typography(Oswald, 400, 18px, 68px, 0%, _);
 	}
 
 	&__button-wrap {
@@ -50,8 +52,8 @@
 		justify-content: center;
 		align-items: center;
 		flex-wrap: wrap;
-		max-width: 353px;
-		gap: 27px;
+		width: 100%;
+		gap: 14px;
 	}
 
 	&__item {
@@ -91,8 +93,14 @@
 
 @media screen and (min-width: 768px) {
 	.mini-catalog {
+		&__list-wrap {
+			max-width: 598px;
+		}
+
 		&__list {
 			max-width: 100%;
+			flex-wrap: nowrap;
+			justify-content: space-between;
 		}
 
 		&__item {
@@ -102,9 +110,19 @@
 
 @media screen and (min-width: 1200px) {
 	.mini-catalog {
-        &__button-wrap {
-            display: flex;
-        }
+		&__button-wrap {
+			display: flex;
+		}
+
+		&__list-wrap {
+			max-width: 100%;
+		}
+
+		&__list {
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			gap: 31px;
+		}
 
 		&__item {
 			width: 210px;
@@ -114,15 +132,16 @@
 				display: inline-block;
 			}
 		}
+
+		&__title {
+			@include typography(Oswald, 400, 24px, 68px, 0%, _);
+		}
 	}
 }
 
 @media screen and (min-width: 1920px) {
 	.mini-catalog {
 		&__list {
-			max-width: 1980px;
-			flex-wrap: nowrap;
-			justify-content: space-between;
 			gap: 31px;
 		}
 
