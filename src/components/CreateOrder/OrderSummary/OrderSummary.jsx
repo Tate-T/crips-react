@@ -45,7 +45,7 @@ export const OrderSummary = () => {
                 <img className={s.order__icon} src={arrow} alt="arrow icon" />
               </button>
             </div>
-            <p>129,00 EUR</p>
+            <p className={s.order__sum}>129,00 EUR</p>
           </div>
         </li>
         <li className={s.order__item}>
@@ -61,7 +61,7 @@ export const OrderSummary = () => {
                 <img className={s.order__icon} src={arrow} alt="arrow icon" />
               </button>
             </div>
-            <p>129,00 EUR</p>
+            <p className={s.order__sum}>129,00 EUR</p>
           </div>
         </li>
       </ul>
