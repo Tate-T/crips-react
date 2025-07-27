@@ -4,13 +4,19 @@
 .mini-catalog {
 	padding-top: 67px;
 
-    &__list-wrap {
-        &--popular {
-            margin-top: 79px;
-        }
-    }
+	&__list-wrap {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+
+		&--popular {
+			margin-top: 79px;
+		}
+	}
 
 	&__top-wrap {
+		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -20,39 +26,41 @@
 		@include typography(Oswald, 400, 24px, 68px, 0%, _);
 	}
 
-    &__button-wrap {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 84px;
-        height: 40px;
-    }
+	&__button-wrap {
+		display: none;
+		justify-content: space-between;
+		align-items: center;
+		width: 84px;
+		height: 40px;
+	}
 
-    &__button {
-        width: 40px;
-        height: 40px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        background: transparent;
-        border: 2px solid rgba(255, 255, 255, 0.9);
-    }
+	&__button {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		background: transparent;
+		border: 2px solid rgba(255, 255, 255, 0.9);
+	}
 
 	&__list {
 		display: flex;
-        justify-content: space-between;
-        align-items: center;
-
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		max-width: 353px;
+		gap: 27px;
 	}
 
 	&__item {
-		width: 353px;
-		height: 533px;
+		width: 139px;
+		height: 260px;
 
 		&-image {
-			width: 353px;
-			height: 450px;
+			width: 100%;
+			height: auto;
 		}
 
 		&-category {
@@ -64,15 +72,67 @@
 		}
 
 		&-title {
-            @include typography(Oswald, 300, 18px, 22px, 0%, _);
-            color: $main-text-color;
+			@include typography(Oswald, 300, 18px, 22px, 0%, _);
+			color: $main-text-color;
 		}
 
 		&-price {
 			margin-top: 18px;
-            @include typography(Oswald, 500, 22px, 22px, 0%, _);
+			@include typography(Oswald, 500, 22px, 22px, 0%, _);
 			text-transform: uppercase;
-            color: $main-text-color;
+			color: $main-text-color;
+		}
+
+		&:last-child {
+			display: none;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.mini-catalog {
+		&__list {
+			max-width: 100%;
+		}
+
+		&__item {
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.mini-catalog {
+        &__button-wrap {
+            display: flex;
+        }
+
+		&__item {
+			width: 210px;
+			height: 420px;
+
+			&:last-child {
+				display: inline-block;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.mini-catalog {
+		&__list {
+			max-width: 1980px;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			gap: 31px;
+		}
+
+		&__item {
+			width: 353px;
+			height: 548px;
+
+			&:last-child {
+				display: inline-block;
+			}
 		}
 	}
 }
