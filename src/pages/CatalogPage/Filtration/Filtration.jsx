@@ -1,7 +1,41 @@
+import { useEffect, useRef } from "react";
 import { FiltrName } from "./Filtration-Components/FiltrationName.jsx";
+import "jquery-ui/themes/base/all.css";
 import "./Filtration.scss";
+import $ from "jquery";
+import "jquery-ui/ui/widgets/slider";
 
 export const Filtration = () => {
+  const sliderRef = useRef(null);
+  const amountRef = useRef(null);
+  const amountLastRef = useRef(null); 
+
+  useEffect(() => {
+    const $slider = $(sliderRef.current);
+    const $amount = $(amountRef.current);
+    const $amountLast = $(amountLastRef.current);
+
+    $slider.slider({
+      range: true,
+      min: 0,
+      max: 500,
+      values: [0, 500],
+      slide: function (event, ui) {
+        $amount.val(`${ui.values[0]}.00 EUR`);
+        $amountLast.val(`${ui.values[1]}.00 EUR`);
+      }
+    });
+
+    const initialValues = $slider.slider("values");
+    $amount.val(`${initialValues[0]}.00 EUR`);
+    $amountLast.val(`${initialValues[1]}.00 EUR`);
+
+    return () => {
+      if ($slider.hasClass("ui-slider")) {
+        $slider.slider("destroy");
+      }
+    };
+  }, []);
   return (
     <>
       <section className="filtration">
@@ -179,8 +213,26 @@ export const Filtration = () => {
           </form>
         </div>
         <div className="catalog-filtration__price">
-          <FiltrName className="price" filtrName="Price Range" />
-        </div>
+      <FiltrName className="price" filtrName="Price Range" />
+      <p className="catalog-filtration__price-text">
+        <input
+          type="text"
+          id="amount"
+          readOnly
+          ref={amountRef}
+          style={{ border: 0, color: "#f6931f", fontWeight: "bold" }}
+        />
+        <input
+          type="text"
+          id="amountLast"
+          readOnly
+          ref={amountLastRef}
+          style={{ border: 0, color: "#f6931f", fontWeight: "bold" }}
+        />
+      </p>
+      <div id="slider-range" ref={sliderRef}></div>
+    <button className="catalog-filtration__apply">Apply</button>
+    </div>
         <div className="catalog-filtration__about-dresses">
           <h2 className="catalog-filtration__about-dresses-title">
             About Dresses
