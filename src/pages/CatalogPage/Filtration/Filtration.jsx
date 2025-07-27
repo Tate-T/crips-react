@@ -1,41 +1,124 @@
 import { useEffect, useRef } from "react";
 import { FiltrName } from "./Filtration-Components/FiltrationName.jsx";
-import "jquery-ui/themes/base/all.css";
 import "./Filtration.scss";
-import $ from "jquery";
-import "jquery-ui/ui/widgets/slider";
+
 
 export const Filtration = () => {
-  const sliderRef = useRef(null);
-  const amountRef = useRef(null);
-  const amountLastRef = useRef(null); 
+  const fromSliderRef = useRef(null);
+  const toSliderRef = useRef(null);
+  const fromInputRef = useRef(null);
+  const toInputRef = useRef(null);
 
   useEffect(() => {
-    const $slider = $(sliderRef.current);
-    const $amount = $(amountRef.current);
-    const $amountLast = $(amountLastRef.current);
+    const fromSlider = fromSliderRef.current;
+    const toSlider = toSliderRef.current;
+    const fromInput = fromInputRef.current;
+    const toInput = toInputRef.current;
 
-    $slider.slider({
-      range: true,
-      min: 0,
-      max: 500,
-      values: [0, 500],
-      slide: function (event, ui) {
-        $amount.val(`${ui.values[0]}.00 EUR`);
-        $amountLast.val(`${ui.values[1]}.00 EUR`);
-      }
-    });
+    const updateFromSlider = () => controlFromSlider(fromSlider, toSlider, fromInput);
+    const updateToSlider = () => controlToSlider(fromSlider, toSlider, toInput);
+    const updateFromInput = () => controlFromInput(fromSlider, fromInput, toInput, toSlider);
+    const updateToInput = () => controlToInput(toSlider, fromInput, toInput, toSlider);
 
-    const initialValues = $slider.slider("values");
-    $amount.val(`${initialValues[0]}.00 EUR`);
-    $amountLast.val(`${initialValues[1]}.00 EUR`);
+    fromSlider.addEventListener("input", updateFromSlider);
+    toSlider.addEventListener("input", updateToSlider);
+    fromInput.addEventListener("input", updateFromInput);
+    toInput.addEventListener("input", updateToInput);
+
+    fillSlider(fromSlider, toSlider, "#C6C6C6", "#000", toSlider);
+    setToggleAccessible(toSlider);
+
+    fromInput.value = formatCurrency(fromSlider.value);
+    toInput.value = formatCurrency(toSlider.value);
 
     return () => {
-      if ($slider.hasClass("ui-slider")) {
-        $slider.slider("destroy");
-      }
+      fromSlider.removeEventListener("input", updateFromSlider);
+      toSlider.removeEventListener("input", updateToSlider);
+      fromInput.removeEventListener("input", updateFromInput);
+      toInput.removeEventListener("input", updateToInput);
     };
   }, []);
+
+  function formatCurrency(value) {
+    return `${Number(value).toFixed(2)} EUR`;
+  }
+
+  function getParsed(currentFrom, currentTo) {
+    const from = Number(currentFrom.value.replace(/[^0-9.]/g, ''));
+    const to = Number(currentTo.value.replace(/[^0-9.]/g, ''));
+    return [from, to];
+  }
+
+  function fillSlider(from, to, sliderColor, rangeColor, controlSlider) {
+    const rangeDistance = to.max - to.min;
+    const fromPosition = from.value - to.min;
+    const toPosition = to.value - to.min;
+    controlSlider.style.background = `linear-gradient(
+      to right,
+      ${sliderColor} 0%,
+      ${sliderColor} ${(fromPosition / rangeDistance) * 100}%,
+      ${rangeColor} ${(fromPosition / rangeDistance) * 100}%,
+      ${rangeColor} ${(toPosition / rangeDistance) * 100}%,
+      ${sliderColor} ${(toPosition / rangeDistance) * 100}%,
+      ${sliderColor} 100%)`;
+  }
+
+  function setToggleAccessible(currentTarget) {
+    const toSlider = toSliderRef.current;
+    if (Number(currentTarget.value) <= 0) {
+      toSlider.style.zIndex = 2;
+    } else {
+      toSlider.style.zIndex = 0;
+    }
+  }
+
+  function controlFromInput(fromSlider, fromInput, toInput, controlSlider) {
+    const [from, to] = getParsed(fromInput, toInput);
+    fillSlider(fromInput, toInput, '#C6C6C6', '#000', controlSlider);
+    if (from > to) {
+      fromSlider.value = to;
+      fromInput.value = formatCurrency(to);
+    } else {
+      fromSlider.value = from;
+      fromInput.value = formatCurrency(from);
+    }
+  }
+
+  function controlToInput(toSlider, fromInput, toInput, controlSlider) {
+    const [from, to] = getParsed(fromInput, toInput);
+    fillSlider(fromInput, toInput, '#C6C6C6', '#000', controlSlider);
+    setToggleAccessible(toInput);
+    if (from <= to) {
+      toSlider.value = to;
+      toInput.value = formatCurrency(to);
+    } else {
+      toInput.value = formatCurrency(from);
+    }
+  }
+
+  function controlFromSlider(fromSlider, toSlider, fromInput) {
+    const [from, to] = getParsed(fromSlider, toSlider);
+    fillSlider(fromSlider, toSlider, '#C6C6C6', '#000', toSlider);
+    if (from > to) {
+      fromSlider.value = to;
+      fromInput.value = formatCurrency(to);
+    } else {
+      fromInput.value = formatCurrency(from);
+    }
+  }
+
+  function controlToSlider(fromSlider, toSlider, toInput) {
+    const [from, to] = getParsed(fromSlider, toSlider);
+    fillSlider(fromSlider, toSlider,'#C6C6C6', '#000',  toSlider);
+    setToggleAccessible(toSlider);
+    if (from <= to) {
+      toSlider.value = to;
+      toInput.value = formatCurrency(to);
+    } else {
+      toInput.value = formatCurrency(from);
+      toSlider.value = from;
+    }
+  }
   return (
     <>
       <section className="filtration">
@@ -214,24 +297,39 @@ export const Filtration = () => {
         </div>
         <div className="catalog-filtration__price">
       <FiltrName className="price" filtrName="Price Range" />
-      <p className="catalog-filtration__price-text">
-        <input
-          type="text"
-          id="amount"
-          readOnly
-          ref={amountRef}
-          style={{ border: 0, color: "#f6931f", fontWeight: "bold" }}
-        />
-        <input
-          type="text"
-          id="amountLast"
-          readOnly
-          ref={amountLastRef}
-          style={{ border: 0, color: "#f6931f", fontWeight: "bold" }}
-        />
-      </p>
-      <div id="slider-range" ref={sliderRef}></div>
-    <button className="catalog-filtration__apply">Apply</button>
+      <div className="form_control">
+        <div className="form_control_container">
+          <input
+            className="form_control_container__time__input control-left-input"
+            type="text"
+            id="fromInput"
+            ref={fromInputRef}
+            defaultValue="0"
+            min="0"
+            max="500"
+            readOnly
+          />
+        </div>
+        <div className="form_control_container">
+          <input
+            className="form_control_container__time__input"
+            type="text"
+            id="toInput"
+            ref={toInputRef}
+            defaultValue="500"
+            min="0"
+            max="500"
+            readOnly
+          />
+        </div>
+      </div>
+      <div className="range_container">
+        <div className="sliders_control">
+          <input id="fromSlider" ref={fromSliderRef} type="range" defaultValue={0} min="0" max="500" />
+          <input id="toSlider" ref={toSliderRef} type="range" defaultValue={500} min="0" max="500" />
+        </div>
+      </div>
+      <button className="catalog-filtration__apply">Apply</button>
     </div>
         <div className="catalog-filtration__about-dresses">
           <h2 className="catalog-filtration__about-dresses-title">
