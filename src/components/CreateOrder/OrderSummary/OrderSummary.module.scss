@@ -1,0 +1,105 @@
+@import '../../../sass/utils/variables.scss';
+.order {
+  &__wrap {
+    border: 2px solid $outline-color;
+    background-color: $form-bg-color;
+    padding: 11px 30px 50px 30px;
+    height: fit-content;
+    width: 530px;
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 283%;
+    color: $main-text-color;
+  }
+  &__ans {
+    .order__list {
+        margin-bottom: 25px;
+    }
+    .order__item {
+      justify-content: space-between;
+      p {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 133%;
+      }
+    }
+  }
+  &__total-wrap {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 23px;
+    margin-bottom: 19px;
+    border-top: 1px solid $outline-color;
+    p,
+    span {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 133%;
+    }
+  }
+  &__que {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 13px;
+  }
+  &__info {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 125%;
+  }
+  &__icon {
+    width: 12px;
+    height: 10px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  &__item {
+    display: flex;
+  }
+  &__img {
+    width: 83px;
+    height: 103px;
+  }
+  &__subwrap {
+    margin-left: 17px;
+    display: flex;
+    gap: 94px;
+  }
+  &__subtitle {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 133%;
+    margin-bottom: 3px;
+    width: 190px;
+  }
+  &__quantity {
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $subtitle-text-color;
+    span {
+      color: $inactive-color;
+    }
+  }
+  &__viewBtn {
+    font-weight: 400;
+    font-size: 14px;
+    color: $inactive-color;
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+    img {
+      margin-left: 12px;
+    }
+  }
+}
+button {
+  padding: 0;
+  margin: 0;
+}
