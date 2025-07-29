@@ -1,43 +1,13 @@
 {
   "files": {
-    "main.css": "/crips-react/static/css/main.dabd200c.css",
-    "main.js": "/crips-react/static/js/main.b87a6d6a.js",
-    "static/media/mini-catalog-02.jpg": "/crips-react/static/media/mini-catalog-02.157e608136d056698247.jpg",
-    "static/media/mini-catalog-10.jpg": "/crips-react/static/media/mini-catalog-10.643485b11115440c1cd1.jpg",
-    "static/media/mini-catalog-04.jpg": "/crips-react/static/media/mini-catalog-04.08a4111846e6441a4716.jpg",
-    "static/media/mini-catalog-03.jpg": "/crips-react/static/media/mini-catalog-03.f2cb5d22f50a3651a17c.jpg",
-    "static/media/mini-catalog-09.jpg": "/crips-react/static/media/mini-catalog-09.f2cb5d22f50a3651a17c.jpg",
-    "static/media/mini-catalog-08.jpg": "/crips-react/static/media/mini-catalog-08.04e0663fe200d5b2f2c2.jpg",
-    "static/media/mini-catalog-05.jpg": "/crips-react/static/media/mini-catalog-05.6db784c5a86081027105.jpg",
-    "static/media/mini-catalog-06.jpg": "/crips-react/static/media/mini-catalog-06.2de734633fc732d02a5d.jpg",
-    "static/media/mini-catalog-01.jpg": "/crips-react/static/media/mini-catalog-01.02199c26db0e1b8f9a6b.jpg",
-    "static/media/mini-catalog-07.jpg": "/crips-react/static/media/mini-catalog-07.28734b6e8486b9694892.jpg",
-    "static/media/catalog-image-3.jpg": "/crips-react/static/media/catalog-image-3.bcc9f7d7a875168a8fae.jpg",
-    "static/media/catalog-image-2.jpg": "/crips-react/static/media/catalog-image-2.91a1f4bfb03c8ea03556.jpg",
-    "static/media/catalog-image-7.jpg": "/crips-react/static/media/catalog-image-7.91a1f4bfb03c8ea03556.jpg",
-    "static/media/catalog-image-10.jpg": "/crips-react/static/media/catalog-image-10.b14d978d6e1197a1643a.jpg",
-    "static/media/catalogImage1.jpg": "/crips-react/static/media/catalogImage1.b14d978d6e1197a1643a.jpg",
-    "static/media/catalog-image-6.jpg": "/crips-react/static/media/catalog-image-6.9545b1633b0e00da2b40.jpg",
-    "static/media/catalog-image-12.jpg": "/crips-react/static/media/catalog-image-12.fddf75de98b0ff6da92a.jpg",
-    "static/media/catalog-image-8.jpg": "/crips-react/static/media/catalog-image-8.fddf75de98b0ff6da92a.jpg",
-    "static/media/catalog-image-4.jpg": "/crips-react/static/media/catalog-image-4.e4bdd34ebf079b27b8a1.jpg",
-    "static/media/catalog-image-9.jpg": "/crips-react/static/media/catalog-image-9.e4bdd34ebf079b27b8a1.jpg",
-    "static/media/catalog-image-11.jpg": "/crips-react/static/media/catalog-image-11.f1175931dc9eced2e60e.jpg",
-    "static/media/catalog-image-5.jpg": "/crips-react/static/media/catalog-image-5.f1175931dc9eced2e60e.jpg",
-    "static/media/logo.svg": "/crips-react/static/media/logo.90bc0fe766d4f92e243b27126b715a6b.svg",
+    "main.css": "/crips-react/static/css/main.2188fe7b.css",
+    "main.js": "/crips-react/static/js/main.d2bfb9b5.js",
     "index.html": "/crips-react/index.html",
-    "static/media/heart.svg": "/crips-react/static/media/heart.69559629b7037cbe6fb891bf46b68c44.svg",
-    "static/media/ckeckmark.svg": "/crips-react/static/media/ckeckmark.a532f2ff25f4dc3eeab174e939050d66.svg",
-    "static/media/bag.svg": "/crips-react/static/media/bag.903127c56e30d282f2ff3595f10c4371.svg",
-    "static/media/search.svg": "/crips-react/static/media/search.c44d283716304b5d880cff1deea0394a.svg",
-    "static/media/arrow-left.svg": "/crips-react/static/media/arrow-left.274eb932d244a18ed5f0c6c9997c4580.svg",
-    "static/media/arrow-right.svg": "/crips-react/static/media/arrow-right.a36726b55724340367d7de75ef0523ea.svg",
-    "static/media/arrow-bottom.svg": "/crips-react/static/media/arrow-bottom.a6919a6eee728764e81356e644e42765.svg",
-    "main.dabd200c.css.map": "/crips-react/static/css/main.dabd200c.css.map",
-    "main.b87a6d6a.js.map": "/crips-react/static/js/main.b87a6d6a.js.map"
+    "main.2188fe7b.css.map": "/crips-react/static/css/main.2188fe7b.css.map",
+    "main.d2bfb9b5.js.map": "/crips-react/static/js/main.d2bfb9b5.js.map"
   },
   "entrypoints": [
-    "static/css/main.dabd200c.css",
-    "static/js/main.b87a6d6a.js"
+    "static/css/main.2188fe7b.css",
+    "static/js/main.d2bfb9b5.js"
   ]
 }
