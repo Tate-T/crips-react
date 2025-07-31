@@ -58,7 +58,7 @@ export const CreateOrder = ({ children }) => {
               <OrderSummary className={s.order__mobile} />
               <PaymentDetails>
                 <OrderSummary className={s.order__tablet} />
-                <PaymentInfo />
+                <PaymentInfo className={s.order__tablet}/>
                 <OrderSummaryModal>
                   <PaymentInfo />
                 </OrderSummaryModal>
