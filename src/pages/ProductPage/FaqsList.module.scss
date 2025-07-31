@@ -1,6 +1,46 @@
 .mainWrapper{
-    outline: solid orange 2px;
+    // outline: solid orange 2px;
     display: flex;
+    margin-left: 339px;
+    background-color: #F8F9FB;
+    width: 1242px;
+    padding-bottom: 19px;
+    margin-bottom: 10px;
+}
+
+.detailTextBox {
+    background-color: #F8F9FB;
+    display: flex;
+    margin-left: 339px;
+    width: 1242px;
+
+
+    border-bottom: 1px solid #C4C4C4;
+
+}
+
+.detailText{
+    // padding-top: 25px;
+    // padding-bottom: 25px;
+    padding-left: 27px;
+
+    color: #000;
+
+    font-family: Oswald;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 68px; /* 283.333% */
+}
+
+.aboutWrapper{
+    margin-left: 27px;
+
+}
+
+.aboutBox{
+    margin-top: 32px;
+    margin-bottom: 15px;
 }
 
 .aboutTitle{
@@ -23,6 +63,10 @@
     width: 567px;
 }
 
+.advantBox{
+    margin-bottom: 15px;
+}
+
 .advantTitle{
     color: var(--Black-2, #3F3F3F);
     font-family: Roboto;
@@ -41,6 +85,12 @@
     line-height: 20px;
 
     width: 189px;
+}
+
+.shippingBox{
+    margin-top: 32px;
+    padding-left: 52px;
+    padding-bottom: 19px;
 }
 
 .shippingTitle{
