@@ -91,6 +91,7 @@ export const ShippingDetails = ({ children }) => {
           </form>
           <form className={s.ship__form}>
             <h2 className={s.ship__title}>Shipping Methods</h2>
+            <p className={s['ship__type-text']}>Flate Rate</p>
             <div className="ship-form__list">
               <label className={s.ship__item}>
                 <input
