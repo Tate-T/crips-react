@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/crips-react/static/css/main.2188fe7b.css",
-    "main.js": "/crips-react/static/js/main.d2bfb9b5.js",
+    "main.css": "/crips-react/static/css/main.7a283cab.css",
+    "main.js": "/crips-react/static/js/main.966c574a.js",
     "index.html": "/crips-react/index.html",
-    "main.2188fe7b.css.map": "/crips-react/static/css/main.2188fe7b.css.map",
-    "main.d2bfb9b5.js.map": "/crips-react/static/js/main.d2bfb9b5.js.map"
+    "main.7a283cab.css.map": "/crips-react/static/css/main.7a283cab.css.map",
+    "main.966c574a.js.map": "/crips-react/static/js/main.966c574a.js.map"
   },
   "entrypoints": [
-    "static/css/main.2188fe7b.css",
-    "static/js/main.d2bfb9b5.js"
+    "static/css/main.7a283cab.css",
+    "static/js/main.966c574a.js"
   ]
 }
