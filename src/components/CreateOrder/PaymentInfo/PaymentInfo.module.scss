@@ -1,0 +1,88 @@
+@import "../../../sass/utils/variables.scss";
+.payment {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  &__title {
+    color: $secondary-text-color;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin-bottom: 11px;
+  }
+  &__btn--change {
+    width: 24px;
+    height: 24px;
+    margin-top: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $functional-bg-color;
+    transition: all $st-transition;
+    img {
+      width: 11px;
+      height: 11px;
+    }
+  }
+  &__btn--change:hover {
+    background-color: $functional-bg-hover-color;
+  }
+  &__address,
+  &__num {
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 158%;
+    color: $secondary-text-color;
+    display: flex;
+    width: 230px;
+  }
+  &__num {
+    color: $link-color;
+  }
+  &__rate {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 164%;
+    color: $secondary-text-color;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .payment {
+    &__address,
+    &__num {
+      line-height: 164%;
+    }
+    &__title {
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 283%;
+      color: $main-text-color;
+    }
+    &__list {
+      flex-direction: row;
+      gap: 50px;
+      margin-top: 12px;
+    }
+    &__item {
+      gap: 15px;
+    }
+  }
+}
+@media screen and (min-width: 1200px) {
+  .payment {
+    &__list {
+      flex-direction: column;
+      gap: 18px;
+    }
+  }
+}

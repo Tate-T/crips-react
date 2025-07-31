@@ -4,6 +4,8 @@ import { OrderSummary } from "../../../components/CreateOrder/OrderSummary/Order
 import s from "./CreateOrder.module.scss";
 import checkmark from "../../../images/CreateOrder/ckeckmark.svg";
 import { PaymentDetails } from "./PaymentDetails/PaymentDetails";
+import { OrderSummaryModal } from "../../../components/CreateOrder/OrderSummaryModal/OrderSummaryModal";
+import { PaymentInfo } from "../../../components/CreateOrder/PaymentInfo/PaymentInfo";
 
 export const CreateOrder = ({ children }) => {
   return (
@@ -52,12 +54,22 @@ export const CreateOrder = ({ children }) => {
                 </div>
               </div>
             </div>
-            {/* <PaymentDetails>
-              <OrderSummary />
-            </PaymentDetails> */}
-            <ShippingDetails>
-              <OrderSummary />
-            </ShippingDetails>
+            <div className={s.order__addition}>
+              <OrderSummary className={s.order__mobile} />
+              <PaymentDetails>
+                <OrderSummary className={s.order__tablet} />
+                <PaymentInfo />
+                <OrderSummaryModal>
+                  <PaymentInfo />
+                </OrderSummaryModal>
+              </PaymentDetails>
+              <ShippingDetails>
+                <OrderSummary className={s.order__tablet} />
+                <OrderSummaryModal>
+                  <PaymentInfo />
+                </OrderSummaryModal>
+              </ShippingDetails>
+            </div>
           </div>
         </Container>
       </section>
