@@ -1,8 +1,8 @@
 import {Catalog} from "./Catalog.jsx";
 import {catalogData} from "../../../data/catalog-data.js";
 import {Sorting} from "../Sorting/Sorting.jsx"
-import { Catalog } from "./Catalog.jsx";
-import { catalogData } from "../../../data/catalog-data.js";
+// import { Catalog } from "./Catalog.jsx";
+// import { catalogData } from "../../../data/catalog-data.js";
 import stule from "./Catalog.module.scss";
 
 export const FullCatalog = () => {
