@@ -1,1 +1,97 @@
-.dashboard {}
+.dashboard {
+    padding: 13px 0 64px;
+
+    &__way {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 2.57;
+        text-align: center;
+        color: #828282;
+        margin-bottom: 13px;
+    }
+
+    &__cont {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__main {
+        display: flex;
+        gap: 108px;
+        padding: 73px 212px 0;
+        height: 716px;
+        border: 1px solid #c4c4c4;
+        justify-content: center;
+        width: 1454px;
+
+    }
+
+    &__title {
+        font-family: "Oswald", sans-serif;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 1.42;
+        text-align: center;
+        color: #000;
+        margin-bottom: 17px;
+    }
+
+    &__parts {
+        display: flex;
+        flex-direction: column;
+        gap: 64px;
+    }
+
+    &__subtitle {
+        font-family: "Oswald", sans-serif;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 1;
+        color: #000;
+        margin-bottom: 27px;
+    }
+
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        width: 316px;
+    }
+
+    &__info {
+        font-family: "Oswald", sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: #3f3f3f;
+        margin: 0;
+        margin-bottom: 12px;
+    }
+
+    &__desc {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 1.25;
+        color: #828282;
+        margin-bottom: 10px;
+    }
+
+    &__btns {
+        display: flex;
+        gap: 12px;
+    }
+
+    &__btn {
+        font-family: "Roboto", sans-serif;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 1.42857;
+        text-align: center;
+        color: #000;
+        background-color: #e6f1fa;
+    }
+}

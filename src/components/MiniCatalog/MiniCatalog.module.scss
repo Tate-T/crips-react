@@ -1,0 +1,78 @@
+@import "../../sass/utils/variables.scss";
+@import "../../sass/utils/mixins.scss";
+
+.mini-catalog {
+	padding-top: 67px;
+
+    &__list-wrap {
+        &--popular {
+            margin-top: 79px;
+        }
+    }
+
+	&__top-wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__title {
+		@include typography(Oswald, 400, 24px, 68px, 0%, _);
+	}
+
+    &__button-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 84px;
+        height: 40px;
+    }
+
+    &__button {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.9);
+    }
+
+	&__list {
+		display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+	}
+
+	&__item {
+		width: 353px;
+		height: 533px;
+
+		&-image {
+			width: 353px;
+			height: 450px;
+		}
+
+		&-category {
+			margin-top: 14px;
+
+			@include typography(Oswald, 600, 12px, 22px, 0%, _);
+			text-transform: uppercase;
+			color: $subtitle-text-color;
+		}
+
+		&-title {
+            @include typography(Oswald, 300, 18px, 22px, 0%, _);
+            color: $main-text-color;
+		}
+
+		&-price {
+			margin-top: 18px;
+            @include typography(Oswald, 500, 22px, 22px, 0%, _);
+			text-transform: uppercase;
+            color: $main-text-color;
+		}
+	}
+}

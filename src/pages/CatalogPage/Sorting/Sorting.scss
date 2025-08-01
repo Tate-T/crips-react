@@ -1,3 +1,5 @@
+@import '../../../sass/utils/mixins.scss';
+@import '../../../sass/utils/variables.scss';
 .sorting__form {
     margin-bottom: 50px;
     display: flex;
@@ -6,16 +8,16 @@
 
 .sorting__select-sortBy,
 .sorting__select-sortNum {
-    font-family: Oswald;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 68px;
-    vertical-align: middle;
     text-transform: uppercase;
     border-radius: none;
-    border: 1px solid rgba(196, 196, 196, 1);
+    border: 1px solid $outline-color;
     background: none;
     padding: 11px;
+    @include typography(Oswald, 400, 14px, 68px, 0, left);
+    transition: $st-transition;
+    &:hover {
+        background-color: $main-hover-color;
+    }
 }
 
 .sorting__select-sortBy {

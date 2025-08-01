@@ -1,24 +1,38 @@
+import styles from "./DashboardSidebar.module.scss";
+
 export const DashboardSidebar = () => {
   return (
-    <div>
-      <ul>
-        <li>
-          <a href="#">Account Dashboard</a>
+    <div className={styles.dashbar}>
+      <ul className={styles.dashbar__list}>
+        <li className={styles.dashbar__item__active}>
+          <a className={styles.dashbar__link__active} href="#">
+            Account Dashboard
+          </a>
         </li>
-        <li>
-          <a href="#">Account Information</a>
+        <li className={styles.dashbar__item}>
+          <a className={styles.dashbar__link} href="#">
+            Account Information
+          </a>
         </li>
-        <li>
-          <a href="#">Address Book</a>
+        <li className={styles.dashbar__item}>
+          <a className={styles.dashbar__link} href="#">
+            Address Book
+          </a>
         </li>
-        <li>
-          <a href="#">My Orders</a>
+        <li className={styles.dashbar__item}>
+          <a className={styles.dashbar__link} href="#">
+            My Orders
+          </a>
         </li>
-        <li>
-          <a href="#">My Wishlist</a>
+        <li className={styles.dashbar__item}>
+          <a className={styles.dashbar__link} href="#">
+            My Wishlist
+          </a>
         </li>
-        <li>
-          <a href="#">Про нас</a>
+        <li className={styles.dashbar__item}>
+          <a className={styles.dashbar__link} href="#">
+            Newsletter Subscriptions
+          </a>
         </li>
       </ul>
     </div>
