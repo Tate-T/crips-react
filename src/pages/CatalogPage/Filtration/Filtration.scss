@@ -87,6 +87,29 @@ main{
             border-right: 1px solid $outline-color;
         }
 
+        & .catalog-filtration__size-button{
+            width: 46px;
+            height: 46px;
+        }
+
+        & .catalog-filtration__size-form{
+            gap: 10px;
+            width: 270px;
+        }
+
+        & .catalog-filtration__form-color-btn{
+            width: 17px;
+            height: 17px;
+        }
+
+        & .catalog-filtration__form-color{
+            width: 270px;
+        }
+
+        & .range_container{
+    margin: 50px 0 0 25px;
+
+        }
     }
 }
 
@@ -135,8 +158,8 @@ main{
 .catalog-filtration__size-form {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    width: 270px;
+    gap: 9px;
+    width: 90%;
 }
 
 .catalog-filtration__size-button {
@@ -145,8 +168,8 @@ main{
     background: none;
     border: 2px solid $outline-color;
     color: $outline-color;
-    width: 46px;
-    height: 46px;
+    width: 39px;
+    height: 39px;
     transition: $st-transition;
 
     &:hover {
@@ -171,12 +194,12 @@ main{
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    width: 270px;
+    width: 90%;
 }
 
 .catalog-filtration__form-color-btn {
-    width: 17px;
-    height: 17px;
+    width: 15px;
+    height: 15px;
     transition: $st-transition;
 
     &:hover {
@@ -272,7 +295,8 @@ main{
     display: flex;
     flex-direction: column;
     width: 80%;
-    margin: 50px 0 0 25px;
+    margin: 50px 0 0 15px;
+
 }
 
 .form_control_container__time__input {
@@ -280,6 +304,7 @@ main{
     text-transform: uppercase;
     text-align: right;
     @include typography(Roboto, 400, 14px, 3, 0, right);
+    width: 100%;
 }
 
 .control-left-input {
@@ -292,12 +317,19 @@ main{
     min-height: 50px;
 }
 
+.form-control_container {
+    display: flex;
+    flex-direction: column;
+    width: 50% !important;
+}
+
 .form_control {
     position: relative;
     display: flex;
     justify-content: space-between;
     font-size: 24px;
     color: #635a5a;
+    width: 100%;
 }
 
 input[type=range]::-webkit-slider-thumb {
