@@ -3,23 +3,69 @@
 
 .header {
   background-color: black;
-  padding: 36px 0;
+  padding: 15px 0;
+
+  @media screen and (min-width: 768px) {
+    padding: 36px 0;
+  }
+
+  &__menu {
+    background-color: transparent;
+
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__price {
+    display: none;
+
+    @media screen and (min-width: 1200px) {
+      display: block;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+  }
 
   &__wrap {
     @include flex(space-between, center, 0, nowrap, row);
   }
 
-  &__gap {
-    @include flex(start, center, 615px, nowrap, row);
-  }
-
   &__logo {
-    width: 94px;
-    height: 44px;
+    width: 63px;
+    height: 29px;
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media screen and (min-width: 768px) {
+      position: static;
+      left: 0;
+      transform: none;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: 80px;
+      height: 36px;
+    }
   }
 
   &__center {
     @include flex(start, center, 29px, nowrap, row);
+    margin-left: auto;
+    margin-right: 15px;
+
+    @media screen and (min-width: 768px) {
+      margin: 0;
+    }
   }
 
   &__search {
@@ -27,7 +73,11 @@
   }
 
   &__right { 
-    @include flex(start, center, 31px, nowrap, row);
+    @include flex(start, center, 25px, nowrap, row);
+
+    @media screen and (min-width: 1200px) {  
+      @include flex(start, center, 31px, nowrap, row);
+    }
   }
 
   &__actions {
@@ -35,11 +85,20 @@
   }
   
   &__authentication { 
-    @include flex(start, center, 12px, nowrap, row);
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      @include flex(start, center, 12px, nowrap, row);
+    }
   }
 
   &__like {
     background-color: black;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
   }
 
   &__cart {
@@ -73,8 +132,8 @@
 
 .search {
   &__icon {
-    width: 16px;
-    height: 21px;
+    width: 19px;
+    height: 19px;
   }
 
   &__input {
@@ -83,6 +142,16 @@
     background-color: black;
     color: white;
     text-transform: uppercase;
+    width: 50px;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: auto;
+    }
 
     @include typography(Oswald, 600, 14px, 100%, 0%, start);
 
@@ -97,7 +166,11 @@
 
 .nav {
   &__list {
-    @include flex(start, center, 29px, nowrap, row);
+    @include flex(start, center, 15px, nowrap, row);
+
+    @media screen and (min-width: 1200px) { 
+      @include flex(start, center, 29px, nowrap, row);
+    }
   }
 
   &__link {

@@ -8,7 +8,7 @@ import { Blog } from "../main-page/blog/blog.jsx"
 export const HomePage = () => {
   return (
     <>
-      <Header />
+      <Header activePage="home" />
       <main>
         <MiniCatalog />
         <CatalogSection />
