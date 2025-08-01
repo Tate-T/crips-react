@@ -1,13 +1,13 @@
-// import { HomePage } from "./pages/HomePage/HomePage.jsx";
-// import { ProductPage } from "./pages/ProductPage/ProductPage.jsx";
-import {CreateOrder} from './pages/CabinetPage/CreateOrder/CreateOrder.jsx';
+import { HomePage } from "./pages/HomePage/HomePage.jsx";
+import { ProductPage } from "./pages/ProductPage/ProductPage.jsx";
+import { CreateOrder } from './pages/CabinetPage/CreateOrder/CreateOrder.jsx';
 
 function App() {
   return (
     <>
-      {/* <HomePage /> */}
+      <HomePage />
       <CreateOrder></CreateOrder>
-      {/* <ProductPage/> */}
+      <ProductPage />
     </>
   );
 }
