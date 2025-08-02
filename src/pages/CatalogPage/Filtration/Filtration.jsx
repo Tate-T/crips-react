@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { FiltrName } from "./Filtration-Components/FiltrationName.jsx";
 import "./Filtration.scss";
-
+import arrowDown from "../../../images/arrow-down.svg";
 
 export const Filtration = () => {
   const fromSliderRef = useRef(null);
@@ -109,7 +109,7 @@ export const Filtration = () => {
 
   function controlToSlider(fromSlider, toSlider, toInput) {
     const [from, to] = getParsed(fromSlider, toSlider);
-    fillSlider(fromSlider, toSlider,'#C6C6C6', '#000',  toSlider);
+    fillSlider(fromSlider, toSlider, '#C6C6C6', '#000', toSlider);
     setToggleAccessible(toSlider);
     if (from <= to) {
       toSlider.value = to;
@@ -119,10 +119,24 @@ export const Filtration = () => {
       toSlider.value = from;
     }
   }
+ function phoneButtonClick() {
+    const filtrationSection = document.querySelector('.filtration');
+    const phoneButton = document.querySelector('.catalog-filtration__phone-button');
+    if (filtrationSection.classList.contains('active')) {
+      filtrationSection.classList.remove('active');
+      phoneButton.classList.remove('active');
+    } else {
+      filtrationSection.classList.add('active');
+      phoneButton.classList.add('active');
+    }
+ }
   return (
     <>
+      <p className="catalog-way">Home / Womens Dress / Best Chose</p>
+      <button className="catalog-filtration__phone-button" onClick={phoneButtonClick}>Filtration
+        <img src={arrowDown} alt="" />
+      </button>
       <section className="filtration">
-        <p className="catalog-way">Home / Womens Dress / Best Chose</p>
         <div className="catalog-filtration__wrap">
           <h2 className="catalog-filtration__title">Filter</h2>
         </div>
@@ -296,41 +310,41 @@ export const Filtration = () => {
           </form>
         </div>
         <div className="catalog-filtration__price">
-      <FiltrName className="price" filtrName="Price Range" />
-      <div className="form_control">
-        <div className="form_control_container">
-          <input
-            className="form_control_container__time__input control-left-input"
-            type="text"
-            id="fromInput"
-            ref={fromInputRef}
-            defaultValue="0"
-            min="0"
-            max="500"
-            readOnly
-          />
+          <FiltrName className="price" filtrName="Price Range" />
+          <div className="form_control">
+            <div className="form_control_container">
+              <input
+                className="form_control_container__time__input control-left-input"
+                type="text"
+                id="fromInput"
+                ref={fromInputRef}
+                defaultValue="0"
+                min="0"
+                max="500"
+                readOnly
+              />
+            </div>
+            <div className="form_control_container">
+              <input
+                className="form_control_container__time__input"
+                type="text"
+                id="toInput"
+                ref={toInputRef}
+                defaultValue="500"
+                min="0"
+                max="500"
+                readOnly
+              />
+            </div>
+          </div>
+          <div className="range_container">
+            <div className="sliders_control">
+              <input id="fromSlider" ref={fromSliderRef} type="range" defaultValue={0} min="0" max="500" />
+              <input id="toSlider" ref={toSliderRef} type="range" defaultValue={500} min="0" max="500" />
+            </div>
+          </div>
+          <button className="catalog-filtration__apply">Apply</button>
         </div>
-        <div className="form_control_container">
-          <input
-            className="form_control_container__time__input"
-            type="text"
-            id="toInput"
-            ref={toInputRef}
-            defaultValue="500"
-            min="0"
-            max="500"
-            readOnly
-          />
-        </div>
-      </div>
-      <div className="range_container">
-        <div className="sliders_control">
-          <input id="fromSlider" ref={fromSliderRef} type="range" defaultValue={0} min="0" max="500" />
-          <input id="toSlider" ref={toSliderRef} type="range" defaultValue={500} min="0" max="500" />
-        </div>
-      </div>
-      <button className="catalog-filtration__apply">Apply</button>
-    </div>
         <div className="catalog-filtration__about-dresses">
           <h2 className="catalog-filtration__about-dresses-title">
             About Dresses
