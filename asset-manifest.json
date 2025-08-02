@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/crips-react/static/css/main.b0533241.css",
-    "main.js": "/crips-react/static/js/main.5d97f6b3.js",
+    "main.css": "/crips-react/static/css/main.3988e04a.css",
+    "main.js": "/crips-react/static/js/main.3d618930.js",
     "static/media/banners-standingWomen.jpg": "/crips-react/static/media/banners-standingWomen.57b1b83502ce336d78f6.jpg",
     "static/media/mini-catalog-02.jpg": "/crips-react/static/media/mini-catalog-02.157e608136d056698247.jpg",
     "static/media/mini-catalog-10.jpg": "/crips-react/static/media/mini-catalog-10.643485b11115440c1cd1.jpg",
@@ -15,27 +15,35 @@
     "static/media/mini-catalog-01.jpg": "/crips-react/static/media/mini-catalog-01.02199c26db0e1b8f9a6b.jpg",
     "static/media/mini-catalog-07.jpg": "/crips-react/static/media/mini-catalog-07.28734b6e8486b9694892.jpg",
     "static/media/banners-sittingWomen.jpg": "/crips-react/static/media/banners-sittingWomen.5c10d7b057731932287c.jpg",
+    "static/media/card-list-3.webp": "/crips-react/static/media/card-list-3.1931f7912ab341c059b2.webp",
+    "static/media/card-list-2.webp": "/crips-react/static/media/card-list-2.4ebf11727e0f90027623.webp",
+    "static/media/card-list-7.webp": "/crips-react/static/media/card-list-7.4ebf11727e0f90027623.webp",
+    "static/media/card-list-1.webp": "/crips-react/static/media/card-list-1.808ddc45893450595541.webp",
+    "static/media/card-list-10.webp": "/crips-react/static/media/card-list-10.808ddc45893450595541.webp",
+    "static/media/card-list-6.webp": "/crips-react/static/media/card-list-6.bd92f1270173bd01dc55.webp",
+    "static/media/card-list-12.webp": "/crips-react/static/media/card-list-12.0a28821976c8732e2622.webp",
+    "static/media/card-list-8.webp": "/crips-react/static/media/card-list-8.0a28821976c8732e2622.webp",
+    "static/media/card-list-4.webp": "/crips-react/static/media/card-list-4.2c8ba8cbdf58d8b4eb3d.webp",
+    "static/media/card-list-9.webp": "/crips-react/static/media/card-list-9.2c8ba8cbdf58d8b4eb3d.webp",
+    "static/media/card-list-11.webp": "/crips-react/static/media/card-list-11.f3fcb0adca10cb911d80.webp",
+    "static/media/card-list-5.webp": "/crips-react/static/media/card-list-5.f3fcb0adca10cb911d80.webp",
     "static/media/logo.svg": "/crips-react/static/media/logo.90bc0fe766d4f92e243b27126b715a6b.svg",
     "static/media/instagram.svg": "/crips-react/static/media/instagram.b119d9e246a35bc4352b9ed0a3365826.svg",
     "static/media/twitter.svg": "/crips-react/static/media/twitter.325c82f72e8f51092de60f4e757c4842.svg",
     "index.html": "/crips-react/index.html",
-    "static/media/change.svg": "/crips-react/static/media/change.c7f16e04b1e6a295c5d55903797cddfb.svg",
     "static/media/heart.svg": "/crips-react/static/media/heart.69559629b7037cbe6fb891bf46b68c44.svg",
-    "static/media/bag.svg": "/crips-react/static/media/bag.903127c56e30d282f2ff3595f10c4371.svg",
     "static/media/facebook.svg": "/crips-react/static/media/facebook.62312f337e4e90d82466119b6634fc9a.svg",
-    "static/media/ckeckmark.svg": "/crips-react/static/media/ckeckmark.a532f2ff25f4dc3eeab174e939050d66.svg",
+    "static/media/bag.svg": "/crips-react/static/media/bag.903127c56e30d282f2ff3595f10c4371.svg",
     "static/media/search.svg": "/crips-react/static/media/search.c44d283716304b5d880cff1deea0394a.svg",
     "static/media/menu.svg": "/crips-react/static/media/menu.40b3e89b53321e5c916e9f6eac1e3d99.svg",
     "static/media/arrow-left.svg": "/crips-react/static/media/arrow-left.274eb932d244a18ed5f0c6c9997c4580.svg",
     "static/media/arrow-right.svg": "/crips-react/static/media/arrow-right.a36726b55724340367d7de75ef0523ea.svg",
-    "static/media/close.svg": "/crips-react/static/media/close.ae48d6411cd0054b337976690e7597f3.svg",
     "static/media/check.svg": "/crips-react/static/media/check.1ad3b620437b5e3af9d318ea22af4d6d.svg",
-    "static/media/arrow-bottom.svg": "/crips-react/static/media/arrow-bottom.a6919a6eee728764e81356e644e42765.svg",
-    "main.b0533241.css.map": "/crips-react/static/css/main.b0533241.css.map",
-    "main.5d97f6b3.js.map": "/crips-react/static/js/main.5d97f6b3.js.map"
+    "main.3988e04a.css.map": "/crips-react/static/css/main.3988e04a.css.map",
+    "main.3d618930.js.map": "/crips-react/static/js/main.3d618930.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0533241.css",
-    "static/js/main.5d97f6b3.js"
+    "static/css/main.3988e04a.css",
+    "static/js/main.3d618930.js"
   ]
 }
