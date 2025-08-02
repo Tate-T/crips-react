@@ -1,21 +1,51 @@
 .mainWrapper{
     // outline: solid orange 2px;
-    display: flex;
-    margin-left: 339px;
+    
     background-color: #F8F9FB;
-    width: 1242px;
+    display: none;
     padding-bottom: 19px;
     margin-bottom: 10px;
+    width: 320px;
+
+    @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @media screen and (min-width: 1920px) {
+        margin-left: 339px;
+        width: 1242px;
+        
+        margin-right: 0;
+       
+    }
 }
 
 .detailTextBox {
     background-color: #F8F9FB;
     display: flex;
-    margin-left: 339px;
-    width: 1242px;
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
 
 
     border-bottom: 1px solid #C4C4C4;
+
+    @media screen and (min-width: 768px) {
+        width: 768px;
+    }
+    @media screen and (min-width: 1200px) {
+        width: 1200px;
+    }
+    @media screen and (min-width: 1920px) {
+        margin-left: 339px;
+        width: 1242px;
+       
+    }
 
 }
 
@@ -27,10 +57,22 @@
     color: #000;
 
     font-family: Oswald;
-    font-size: 24px;
+    font-size: 12px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 68px; /* 283.333% */
+
+    @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+        font-size: 24px;
+        font-weight: 400;
+
+    }
+    @media screen and (min-width: 1920px) {
+       
+    }
 }
 
 .aboutWrapper{

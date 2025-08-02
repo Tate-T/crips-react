@@ -1,6 +1,30 @@
+.mainTitle{
+    color: var(--Gray-1, #828282);
+    font-family: Roboto;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 68px; /* 680% */
+    display: block;
+
+     @media screen and (min-width: 1920px) {
+        display: none;
+    }
+}
+
 .mainWrapper{
-    display: flex;
-    margin-top: 57px;
+   
+
+    @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+          display: flex;
+          margin-top: 57px;
+    }
+    @media screen and (min-width: 1920px) {
+       
+    }
 }
 
 .cardImgBox{
@@ -8,30 +32,72 @@
     width: 76px;
     margin-left: 243px;
     margin-right: 20px;
+    @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+         display: none;
+    }
+    @media screen and (min-width: 1920px) {
+       
+    }
 }
 
 .cardImgList{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    display: none;
+
+
+    @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+    }
+    @media screen and (min-width: 1920px) {
+       
+    }
 }
 
 .cardImg{
     width: 76px;
     height: 96px;
     flex-shrink: 0;
+
+   
 }
 
 .mainImgBox{
-    width: 624px;
     outline: solid blue 2px;
-    margin-right: 69px;
+   
+     @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+        width: 624px;
+        margin-right: 69px;
+    }
+    @media screen and (min-width: 1920px) {
+       
+    }
 }
 
 .mainImg{
-    width: 624px;
-    height: 790px;
+    width: 320px;
+    height: 255px;
     flex-shrink: 0;
+
+    @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+        width: 624px;
+        height: 790px;
+    }
+    @media screen and (min-width: 1920px) {
+        
+    }
 }
 
 .mainImgText{
@@ -69,7 +135,17 @@
 
 .catalogeMainBox{
     outline: solid green 2px;
-    width: 550px;
+   
+
+    @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+        width: 550px;
+    }
+    @media screen and (min-width: 1920px) {
+        
+    }
 }
 
 .catalogeTitle{
@@ -79,31 +155,113 @@
     font-style: normal;
     font-weight: 400;
     line-height: 68px; /* 485.714% */
+    display: none;
+
+     @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+        display: block;
+
+    }
+    @media screen and (min-width: 1920px) {
+       
+    }
+
+}
+
+.fendiWrapper{
+    display: flex;
+
+    @media screen and (min-width: 768px) {
+	
+    }
+
+    @media screen and (min-width: 1200px) {
+        display: block;
+        order: 1;
+    }
+
+    @media screen and (min-width: 1920px) {
+        
+    }
 }
 
 .fendiBox {
     background: var(--Light-Blue-Hover, #F0F2F2);
-
-    width: 75px;
-    height: 35px;
+    width: 48px;
+    height: 22px;
+   
     flex-shrink: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-left: 18px;
+    order: 2;
+
+    @media screen and (min-width: 768px) {
+	
+    }
+
+    @media screen and (min-width: 1200px) {
+        margin-left: 0;
+        width: 75px;
+        height: 35px;
+        order: 1;
+    }
+
+    @media screen and (min-width: 1920px) {
+        
+    }
 }
 
+.fendiIcon {
+    width: 32.639px;
+    height: 8.969px;
+    flex-shrink: 0;
+    @media screen and (min-width: 768px) {
+	
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 51px;
+        height: 15px;
+
+
+    }
+
+    @media screen and (min-width: 1920px) {
+        
+    }
+}
 
 
 .catalogeSubTitle {
     color: #000;
     font-family: Oswald;
-    font-size: 48px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 500;
-    line-height: 56px; /* 116.667% */
-    width: 493px;
+    line-height: 23px;
+    width: 216px;
     margin-bottom: 28px;
+    // order: 2;
+
+    @media screen and (min-width: 768px) {
+	
+    }
+
+    @media screen and (min-width: 1200px) {
+        font-size: 48px;
+        line-height: 56px; /* 116.667% */
+        width: 493px;
+        // order: 1;
+    }
+
+    @media screen and (min-width: 1920px) {
+        
+    }
 }
 
 .catalogeText{
@@ -145,6 +303,7 @@
 .selectBox{
     display: flex;
     margin-bottom: 10px;
+    order: 2;
 }
 
 .selectText{
@@ -172,17 +331,40 @@
     text-decoration-thickness: auto;
     text-underline-offset: auto;
     text-underline-position: from-font;
+    width: 150px;
+
+    @media screen and (min-width: 768px) {
+	
+    }
+
+    @media screen and (min-width: 1200px) {
     width: 410px;
+        
+    }
+
+    @media screen and (min-width: 1920px) {
+        
+    }
 }
 
 .sizeList{
     
-    display: flex;
-    flex-wrap: wrap;
+    display: none;
     width: 550px;
     gap: 9px;
 
     margin-bottom: 36px;
+
+    @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+       display: flex;
+        flex-wrap: wrap;
+    }
+    @media screen and (min-width: 1920px) {
+        
+    }
 }
 
 .sizeItem{
@@ -207,6 +389,7 @@
 
 .quantityBox{
     display: flex;
+    order: 1;
 }
 
 .quantityText{
@@ -305,9 +488,22 @@
     text-transform: uppercase;
     background-color: #000;
 
-    width: 221px;
-    height: 50px;
-    flex-shrink: 0;
+    
+
+    width: 139px;
+    height: 38px;
+
+    @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+       width: 221px;
+        height: 50px;
+        flex-shrink: 0;
+    }
+    @media screen and (min-width: 1920px) {
+        
+    }
 }
 
 .btnSave{
@@ -323,12 +519,23 @@
     text-transform: uppercase;
     background-color: #fff;
 
-
-    width: 221px;
-    height: 50px;
     flex-shrink: 0;
+    width: 139px;
+    height: 38px;
+
 
     border: 2px solid var(--Divider, #C4C4C4);
+
+    @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+       width: 221px;
+        height: 50px;
+    }
+    @media screen and (min-width: 1920px) {
+        
+    }
 }
 
 .btnSaveText{
@@ -338,6 +545,19 @@ color: #3F3F3F;
 .underBtnList{
     display: flex;
     gap: 15px;
+    width: 290px;
+    flex-wrap: wrap; 
+
+    @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+       width: 500px;
+        flex-wrap: nowrap; 
+    }
+    @media screen and (min-width: 1920px) {
+        
+    }
 }
 
 .underBtnText{
@@ -346,6 +566,17 @@ color: #3F3F3F;
     font-size: 12px;
     font-style: normal;
     font-weight: 400;
-    line-height: 68px; /* 566.667% */
+    line-height: 18px;
     text-transform: uppercase;
+
+    @media screen and (min-width: 768px) {
+	
+    }
+    @media screen and (min-width: 1200px) {
+    line-height: 68px; 
+      
+    }
+    @media screen and (min-width: 1920px) {
+        
+    }
 }

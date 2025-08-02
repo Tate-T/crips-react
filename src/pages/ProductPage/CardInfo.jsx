@@ -1,14 +1,17 @@
 // import { Header } from "../../../src/components/Header/Header.jsx";
 // import { Footer } from "../../../src/components/Footer/Footer.jsx";
+import { Container } from "../../components/Container/Container";
 
 import s from "./CardInfo.module.scss"
 
 export const CardInfo = () => {
   return (
     <>
-      {/* <Header /> */}
+     
       <main>
-        
+
+        <Container>
+            <h2 className={s.mainTitle}>Home   /   Womens Dress   /   Best Chose</h2>
         <div className={s.mainWrapper}>
           <div className={s.cardImgBox}>
             <ul className={s.cardImgList}>
@@ -88,8 +91,11 @@ export const CardInfo = () => {
         <div className={s.catalogeMainBox}>
             <h2 className={s.catalogeTitle}>Home / Womens Dress / Angels malu</h2>
             
+            <div className={s.fendiWrapper}>
+
+            
             <div className={s.fendiBox}>
-                <svg className={s.fendiIcon} xmlns="http://www.w3.org/2000/svg" width="51" height="15" viewBox="0 0 51 15" fill="none">
+                <svg className={s.fendiIcon} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 51 15" fill="none">
                     <path d="M0.000944025 0.00596801C3.04251 0.00596801 6.08343 0.00862889 9.125 0.00463867C9.12827 0.835934 9.13154 1.66723 9.12369 2.49919C6.97582 2.49852 4.82729 2.49719 2.67876 2.49985C2.68006 3.5433 2.67745 4.5874 2.68006 5.63085C4.56101 5.62686 6.44196 5.63018 8.32225 5.62952C8.33271 6.45815 8.32028 7.28679 8.32879 8.11542C6.44588 8.11343 4.56363 8.11742 2.68137 8.11343C2.67679 10.0793 2.67876 12.0451 2.68006 14.011C1.78833 14.001 0.896601 14.001 0.0048695 14.0103C-0.00494413 9.34241 0.00356099 4.67386 0.000944025 0.00596801Z" fill="#3F3F3F"/>
                     <path d="M10.8991 14.0104C10.8958 9.3405 10.8952 4.67062 10.8998 0.000732422C14.0427 0.010708 17.1864 0.00538825 20.33 0.00339314C20.3307 0.835354 20.3267 1.66731 20.332 2.49861C18.0624 2.49861 15.7922 2.49462 13.5226 2.50127C13.5298 3.47754 13.5233 4.45448 13.5259 5.43142C15.6103 5.4261 17.6941 5.42943 19.7785 5.42943C19.7706 6.2574 19.7798 7.08603 19.7726 7.914C17.6908 7.916 15.6083 7.91733 13.5265 7.91267C13.5213 9.11107 13.5318 10.3095 13.5213 11.5072C15.8936 11.5152 18.2659 11.5085 20.6388 11.5105C20.6447 12.3418 20.6447 13.1731 20.6388 14.0051C17.3925 14.0077 14.1454 13.9964 10.8991 14.0104Z" fill="#3F3F3F"/>
                     <path d="M22.6522 0.000732422C23.5969 0.00804782 24.5416 0.0100429 25.4864 0.000732422C27.1907 3.25475 28.8943 6.50878 30.6019 9.7608C30.6078 6.50944 30.6071 3.25808 30.6019 0.00738319C31.4347 0.00272794 32.2676 0.00871407 33.1004 0.00405882C33.1043 4.67195 33.1037 9.33983 33.1011 14.0077C32.21 14.0011 31.3189 14.0051 30.4285 14.0051C28.6804 10.6726 26.9283 7.34207 25.171 4.01423C25.1717 7.34606 25.1723 10.6772 25.1704 14.0091C24.331 14.0017 23.4909 13.9984 22.6509 14.011C22.6568 9.34116 22.6541 4.67062 22.6522 0.000732422Z" fill="#3F3F3F"/>
@@ -99,6 +105,7 @@ export const CardInfo = () => {
             </div>
             
             <h2 className={s.catalogeSubTitle}>Women Black Checked Fit and Flare Dress</h2>
+            </div>
             <p className={s.catalogeText}>Select Color</p>
             <ul className={s.catalogeColorList}>
                 <li className={s.catalogeColorItem}></li>
@@ -213,9 +220,9 @@ export const CardInfo = () => {
             </div>
         </div>
     </div>
-        
+        </Container>
       </main>
-      {/* <Footer /> */}
+      
     </>
   );
 };
