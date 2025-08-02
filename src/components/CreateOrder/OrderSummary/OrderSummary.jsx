@@ -4,7 +4,6 @@ import dress1 from "../../../images/mini-catalog-04.jpg";
 import dress2 from "../../../images/mini-catalog-02.jpg";
 import bag from "../../../images/CreateOrder/bag.svg";
 export const OrderSummary = ({ className }) => {
-  console.log(className)
   return (
     <div className={className}>
       <div className={s.order__wrap}>
