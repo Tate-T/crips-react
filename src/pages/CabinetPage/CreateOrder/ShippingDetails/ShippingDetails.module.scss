@@ -2,24 +2,29 @@
 
 .ship {
   &__title {
-    font-size: 24px;
-    line-height: 283%;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: $secondary-text-color;
+    margin-bottom: 9px;
+    font-family: "Oswald", sans-serif;
   }
   &__row {
     display: flex;
     flex-direction: column;
   }
   &__row:not(:last-child) {
-    margin-bottom: 12px;
+    margin-bottom: 9px;
   }
   &__row:nth-child(4) {
-    margin-bottom: 5px;
+    margin-bottom: 6px;
   }
   &__label {
-    font-size: 16px;
-    line-height: 125%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 167%;
     color: $inactive-color;
-    margin-bottom: 10px;
+    font-family: "Roboto", sans-serif;
   }
   &__required {
     color: $accent-color;
@@ -29,28 +34,33 @@
     flex-direction: column;
     margin-bottom: 12px;
     .ship__input:not(:last-child) {
-      margin-bottom: 13px;
+      margin-bottom: 5px;
     }
   }
   &__input,
   &__select {
-    font-size: 16px;
-    line-height: 125%;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 167%;
     padding: 0;
     margin: 0;
+    padding: 10px 11px;
     border: 1px solid $outline-color;
-    padding: 11px 15px;
+  }
+  &__select {
+    margin-bottom: 32px;
   }
   &__text {
-    font-size: 14px;
-    line-height: 143%;
+    font-weight: 400;
+    font-size: 10px;
+    margin-bottom: 6px;
     color: $secondary-text-color;
-    margin-bottom: 24px;
+    font-family: "Roboto", sans-serif;
   }
   &__btns {
     display: flex;
     flex-direction: column;
-    margin-bottom: 36px;
+    margin-bottom: 20px;
     gap: 15px;
   }
   &__btn--login,
@@ -62,7 +72,7 @@
     color: $contrast-text-color;
     background-color: $main-text-color;
     border: 1px solid $main-text-color;
-    padding: 15px 40px;
+    padding: 10px 57px;
     transition: all $st-transition;
   }
   &__btn--login:hover {
@@ -79,16 +89,22 @@
     color: $link-color;
     background-color: transparent;
     transition: all $st-transition;
+    font-family: "Roboto", sans-serif;
   }
   &__btn--restore:hover {
     color: #57a4eb;
+  }
+  &__line {
+    height: 1px;
+    margin-bottom: 21px;
+    background-color: $outline-color;
   }
   &__item {
     display: flex;
     gap: 13px;
     align-items: center;
     padding: 12px 0;
-    border-top: 1px solid $outline-color;
+    border-bottom: 2px solid $main-hover-color;
     input[type="radio"] {
       margin-right: 16px;
       accent-color: $main-text-color;
@@ -105,11 +121,19 @@
     float: left;
     gap: 15px;
   }
-  &__rate,
-  .ship__type {
+  &__type-text {
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
     font-size: 14px;
-    line-height: 143%;
+    color: $main-text-color;
+    margin-bottom: 10px;
+  }
+  &__rate,
+  &__type {
+    font-weight: 400;
+    font-size: 10px;
     color: $inactive-color;
+    font-family: "Roboto", sans-serif;
   }
   &__rate {
     width: 58px;
@@ -140,17 +164,21 @@
   .ship {
     &__wrap {
       display: flex;
-      // gap: 106px;
       flex-direction: column;
       margin-top: 57px;
     }
     &__form {
       width: 606px;
-      margin: 0 auto;
+    }
+    &__title {
+      font-size: 24px;
+      line-height: 283%;
+      color: $main-text-color;
     }
     &__row {
       align-items: start;
       justify-content: space-between;
+      flex-direction: row;
     }
     &__row:not(:last-child) {
       margin-bottom: 24px;
@@ -158,9 +186,23 @@
     &__row:nth-child(4) {
       margin-bottom: 10px;
     }
+    &__label {
+      font-size: 16px;
+      line-height: 125%;
+      margin-bottom: 10px;
+      margin-bottom: 4px;
+    }
     &__input,
     &__select {
+      font-size: 16px;
+      line-height: 125%;
+      padding: 11px 15px;
       width: 410px;
+    }
+    &__text {
+      font-size: 14px;
+      line-height: 143%;
+      margin-bottom: 24px;
     }
     &__btns {
       flex-direction: row;
@@ -169,18 +211,32 @@
     &__btn--login,
     &__btn--next {
       margin-right: 25px;
+      padding: 15px 40px;
     }
-    &__select {
-      width: 440px;
+    &__wrapper {
+      .ship__input:not(:last-child) {
+        margin-bottom: 13px;
+      }
+    }
+    &__type-text {
+      display: none;
+    }
+    &__rate,
+    &__type {
+      font-size: 14px;
+      line-height: 143%;
+    }
+    &__btns {
+      margin-bottom: 36px;
     }
     &__line {
-      height: 1px;
-      width: 606px;
-      margin: 0 auto;
+      width: 410px;
       margin-bottom: 39px;
-      background-color: $outline-color;
     }
-
+    &__item {
+      border-top: 1px solid $outline-color;
+      border-bottom: none;
+    }
     &__item:last-child {
       width: 443px;
     }
@@ -189,6 +245,38 @@
     }
     &__type:not(:last-child) {
       margin-right: 65px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .ship {
+    &__wrap {
+      display: flex;
+      flex-direction: row;
+      gap: 25px;
+      margin: 0 auto;
+      margin-top: 57px;
+    }
+    &__line {
+      width: 550px;
+    }
+    &__form {
+      width: 550px;
+    }
+  }
+}
+
+@media screen and (min-width:1920px) {
+  .ship {
+    &__wrap {
+      gap: 106px;
+    }
+    &__line {
+      width: 606px;
+    }
+    &__form {
+      width: 606px;
     }
   }
 }

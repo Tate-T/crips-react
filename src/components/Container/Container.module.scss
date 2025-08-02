@@ -1,25 +1,22 @@
 .container {
-	width: 100%;
-	padding: 0 14px;
-	margin: 0 auto;
-	outline: 1px solid red;
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 auto;
 }
-
-@media screen and (min-width: 320px) {
-	.container {
-		width: 320px;
-	}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 480px;
+  }
 }
 @media screen and (min-width: 768px) {
-	.container {
-		width: 768px;
-	}
+  .container {
+    width: 768px;
+  }
 }
 @media screen and (min-width: 1200px) {
-	.container {
-		width: 1200px;
-        padding: 0 21px;
-	}
+  .container {
+    width: 1200px;
+  }
 }
 @media screen and (min-width: 1920px) {
 	.container {
