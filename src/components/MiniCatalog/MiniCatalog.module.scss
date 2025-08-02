@@ -53,7 +53,7 @@
 		align-items: center;
 		flex-wrap: wrap;
 		width: 100%;
-		gap: 14px;
+		gap: 20px;
 	}
 
 	&__item {
@@ -101,9 +101,7 @@
 			max-width: 100%;
 			flex-wrap: nowrap;
 			justify-content: space-between;
-		}
-
-		&__item {
+            gap: 14px;
 		}
 	}
 }
