@@ -1,6 +1,10 @@
 .container {
-    width: 1920px;
-    outline: red solid;
+  width: 326px;
+  padding: 0 14px;
+  margin: 0 auto;
+
+  @media (min-width: 1200px) {
+    width: 1836px;
     padding: 0 21px;
-    margin: 0 auto;
+  }
 }
