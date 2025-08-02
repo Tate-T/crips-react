@@ -4,7 +4,8 @@ import { Footer } from "../../components/Footer/Footer.jsx";
 // import { CatalogSection } from "../CatalogPage/CatalogPage.jsx";
 import { Banners } from "../../components/Banners/BannersSection.jsx";
 import { MiniCatalog } from "../../components/MiniCatalog/MiniCatalog.jsx";
-import { Blog } from "../main-page/blog/blog.jsx";
+import SpecialList from "../../components/SpecialList/SpecialList.jsx";
+import { Blog } from "../main-page/blog/blog.jsx"
 
 export const HomePage = () => {
   return (
@@ -13,6 +14,9 @@ export const HomePage = () => {
       <main>
         <Banners />
         <MiniCatalog />
+        <CatalogSection />
+        <CreateOrder />
+        <SpecialList title="Most Popular" />
         {/* <CatalogSection /> */}
         {/* <CreateOrder /> */}
         <Blog />
