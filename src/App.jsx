@@ -6,8 +6,8 @@ import { ArticlePage } from "./pages/ArticlePage/ArticlePage.jsx";
 function App() {
   return (
     <>
-      {/* <HomePage /> */}
-      <ArticlePage/>
+      <HomePage />
+      {/* <ArticlePage/> */}
     </>
   );
 }
