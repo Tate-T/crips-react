@@ -1,11 +1,12 @@
-import "./App.css";
-// import { HomePage } from "./pages/HomePage/HomePage.jsx";
-import {ShoppingPage } from "./pages/ShoppingCartPage/ShoppingCartPage";
+import { HomePage } from "./pages/HomePage/HomePage.jsx";
+// import { ProductPage } from "./pages/ProductPage/ProductPage.jsx";
+import { ProductPage } from "./pages/ProductPage/ProductPage.jsx";
 
 function App() {
   return (
     <>
-      <ShoppingPage />
+      <HomePage />
+      {/* <ProductPage/> */}
     </>
   );
 }
