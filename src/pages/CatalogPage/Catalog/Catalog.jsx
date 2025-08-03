@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-export const Catalog = ({ img, top, name, price, colors, styles }) => {
+import styles from "./Catalog.module.scss"
+export const Catalog = ({ img, top, name, price, colors }) => {
   return (
     <li className={styles.catalog__item}>
       <img

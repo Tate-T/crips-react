@@ -10,7 +10,7 @@ import catalog9 from "../images/catalog/catalog-image-9.jpg";
 import catalog10 from "../images/catalog/catalog-image-10.jpg";
 import catalog11 from "../images/catalog/catalog-image-11.jpg";
 import catalog12 from "../images/catalog/catalog-image-12.jpg";
-export const catalogData = [
+export default [
   {
     img: catalog1,
     top: "Top Woman",

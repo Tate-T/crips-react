@@ -14,13 +14,13 @@ export const HomePage = () => {
       <Header activePage="home" />
       <main>
         <Banners />
-        <MiniCatalog />
+        {/* <MiniCatalog /> */}
+        <Blog />
         <CatalogSection />
         <CreateOrder />
         <SpecialList title="Most Popular" />
         {/* <CatalogSection /> */}
         {/* <CreateOrder /> */}
-        <Blog />
         <CardList />
       </main>
       <Footer />
