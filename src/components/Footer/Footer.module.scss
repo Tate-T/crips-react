@@ -1,0 +1,154 @@
+
+
+.footer { 
+    background-color: rgba(0,0,0,255);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.topFooter{
+    width: 100%;
+    height: 100px;
+    background-color: #E6F1FA;
+    display: flex;
+    justify-content: center;
+}
+.topFooterList{
+    display: flex;
+    column-gap: 100px;
+    justify-content: center;
+    align-items: center;
+}
+.topFooterItem{
+    display: flex;
+    align-items: center;
+    column-gap: 22px;
+ 
+   
+}
+.topFooterSvg{
+    padding-top: 2px;
+    width: 14px;
+    height: 9px;
+}
+
+
+.mainFooter{
+    background-color: rgba(0,0,0,255);
+    padding-top: 64px;
+    padding-bottom: 134px;
+    
+}
+.footerFeaturesList{
+    display: flex;
+flex-direction: column;
+    row-gap: 15px;
+}
+.footerMenuList{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.mainFooterSvg{
+    width: 102.3374px;
+    height: 44px;
+}
+.mainFooterItemTitle{
+  text-transform: uppercase;
+    color: #FFFFFF;
+  
+}
+.mainFooterList{
+    display: flex;
+    justify-content: center;
+    column-gap: 85px;
+}
+.footerFeaturesItemLink{
+    text-transform: uppercase;
+    color: #828282;
+}
+.footerMenuItemLink{
+    text-transform: uppercase;
+    color: #828282;
+}
+.footerContactUsList{
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+}
+.mainFooterItemSubtitle{
+      text-transform: uppercase;
+    color: #FFFFFF;
+    margin: 0;
+    margin-bottom: 5px;
+}
+.mainFooterItemContacts{
+    color: #828282;
+}
+.footerFollowUsIcon{
+    width: 21px;
+    height: 21px;
+}
+.footerFollowUsSocialMedia{
+    color : #828282;
+}
+.mainFooterSubscribeText{
+    margin-top: -7px;
+    color: #828282;
+    margin-bottom: 3px;
+}
+.footerFollowUsList{
+    display: flex;
+    flex-direction: column;
+    row-gap: 21px;
+}
+.footerFollowUsItem{
+    display: flex;
+    column-gap: 18.7px;
+}
+.footerBottom{
+    width: 97%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 40px;
+ 
+}
+.footerBottomHr{
+    width: 100%;
+ border: none;
+  border-top: 1px solid #4F4F4F;
+}
+.footerBottomText{
+    color: #FFFFFF;
+}
+
+.mainFooterSubscribe{
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+}
+.mainFooterItemTitle{
+    margin-bottom: 30px;
+}
+.mainFooterSubscribeInput::placeholder{
+    color: #FFFFFF;
+ opacity: 1;
+  
+}
+.mainFooterSubscribeInput{
+    display: flex;
+    align-items: start;
+    width: 280px;
+    height: 43.2px;
+    background-color: #000000;
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    padding-left: 15px;
+}
+.mainFooterSubscribeButton{
+    width: 280px;
+    height: 40px;
+    color: #3F3F3F;
+      text-transform: uppercase;
+}

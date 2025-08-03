@@ -1,4 +1,4 @@
-@import '../../../sass/utils/variables.scss';
+@import "../../../sass/utils/variables.scss";
 .order {
   &__mainwrap {
     margin: 0 auto;
@@ -6,7 +6,6 @@
   &__breadcrumb {
     display: flex;
     margin: 0 auto;
-    justify-content: center;
   }
   &__list {
     display: flex;
@@ -15,7 +14,7 @@
     display: inline-block;
     position: relative;
     color: $secondary-text-color;
-    font-size: 14px;
+    font-size: 10px;
     line-height: 486%;
   }
   &__list &__item + &__item {
@@ -51,7 +50,7 @@
   }
   &__line {
     height: 6px;
-    width: 75px;
+    width: 55px;
     background-color: $outline-color;
   }
   &__conf {
@@ -72,6 +71,45 @@
     height: 11px;
   }
   &__stage {
+    font-size: 10px;
     margin-top: 14px;
+  }
+  &__addition {
+    display: flex;
+    flex-direction: column;
+  }
+  &__tablet {
+      display: none;
+    }
+}
+
+@media screen and (min-width: 768px) {
+  .order {
+    &__mainwrap {
+      margin: 0;
+    }
+    &__breadcrumb {
+      justify-content: center;
+    }
+    &__mobile {
+      display: none;
+    }
+    &__tablet {
+      display: block;
+    }
+    &__list &__item {
+      font-size: 18px;
+    }
+    &__line {
+      width: 75px;
+    }
+    &__stage {
+      font-size: 16px;
+    }
+    &__addition {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   }
 }

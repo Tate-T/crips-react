@@ -10,7 +10,7 @@ import catalog9 from "../images/catalog/catalog-image-9.jpg";
 import catalog10 from "../images/catalog/catalog-image-10.jpg";
 import catalog11 from "../images/catalog/catalog-image-11.jpg";
 import catalog12 from "../images/catalog/catalog-image-12.jpg";
-const catalogData = [
+export const catalogData = [
   {
     img: catalog1,
     top: "Top Woman",
@@ -109,4 +109,3 @@ const catalogData = [
   },
 ];
 
-export default catalogData;

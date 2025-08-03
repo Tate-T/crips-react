@@ -1,7 +1,13 @@
+.mainWrapper{
+    display: flex;
+    margin-top: 57px;
+}
+
 .cardImgBox{
     background-color: brown;
     width: 76px;
-
+    margin-left: 243px;
+    margin-right: 20px;
 }
 
 .cardImgList{
@@ -19,6 +25,7 @@
 .mainImgBox{
     width: 624px;
     outline: solid blue 2px;
+    margin-right: 69px;
 }
 
 .mainImg{
@@ -72,6 +79,7 @@
     font-weight: 500;
     line-height: 56px; /* 116.667% */
     width: 493px;
+    margin-bottom: 28px;
 }
 
 .catalogeText{
@@ -82,12 +90,14 @@
     font-weight: 400;
     line-height: normal;
     text-transform: uppercase;
+    margin-bottom: 10px;
 }
 
 .catalogeColorList{
    width: 101px;
    display: flex;
    gap: 10px; 
+   margin-bottom: 22px;
 }
 
 .catalogeColorList .catalogeColorItem:nth-child(1) {
@@ -110,6 +120,7 @@
 
 .selectBox{
     display: flex;
+    margin-bottom: 10px;
 }
 
 .selectText{
@@ -146,6 +157,8 @@
     flex-wrap: wrap;
     width: 550px;
     gap: 9px;
+
+    margin-bottom: 36px;
 }
 
 .sizeItem{
