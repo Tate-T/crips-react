@@ -1,0 +1,260 @@
+@import '../../../sass/utils/mixins.scss';
+@import '../../../sass/utils/variables.scss';
+
+.filtration {
+    width: 400px;
+    border-right: 1px solid $outline-color;
+    margin-top: 100px;
+    position: relative;
+    padding-right: 18px;
+    padding-left: 21px;
+}
+
+.catalog-way {
+    position: absolute;
+    top: -65px;
+    @include typography(Roboto, 400, 14px, 4.85, 0, left);
+    color: $secondary-text-color;
+}
+
+// .catalog-filtration__wrap {}
+
+.catalog-filtration__title {
+    @include typography(Oswald, 400, 32px, 68px, 0, left);
+
+}
+
+// .catalog-filtration__brand {}
+
+.catalog-filtration__filtr-name-brand {
+    display: flex;
+    justify-content: space-between;
+}
+
+// .catalog-filtration__brand-form {}
+
+.catalog-filtration__brand-input-wrap,
+.catalog-filtration__dress-length-input-wrap {
+    display: flex;
+    gap: 9px;
+}
+
+.catalog-filtration__brand-input,
+.catalog-filtration__dress-length-input {
+    cursor: pointer;
+}
+
+.catalog-filtration__brand-input-name,
+.catalog-filtration__dress-length-name {
+    text-transform: uppercase;
+    @include typography(Roboto, 400, 14px, 3, 0, left);
+
+}
+
+// .catalog-filtration__size {}
+
+.catalog-filtration__size-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    width: 270px;
+}
+
+.catalog-filtration__size-button {
+    @include typography(Oswald, 400, 14px, 40px, 0, center);
+    text-transform: uppercase;
+    background: none;
+    border: 2px solid $outline-color;
+    color: $outline-color;
+    width: 46px;
+    height: 46px;
+    transition: $st-transition;
+
+    &:hover {
+        color: $secondary-text-color;
+        border: 2px solid $secondary-text-color;
+    }
+
+    &.active {
+        color: $main-text-color;
+        border: 2px solid $main-text-color;
+    }
+
+}
+
+// .catalog-filtration__dress-length {}
+
+// .catalog-filtration__dress-length-form {}
+
+// .catalog-filtration__color {}
+
+.catalog-filtration__form-color {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 270px;
+}
+
+.catalog-filtration__form-color-btn {
+    width: 17px;
+    height: 17px;
+    transition: $st-transition;
+
+    &:hover {
+        outline: 1px solid $outline-color;
+        border: 2px solid $bg-color;
+    }
+
+    &.active {
+        outline: 1px solid $main-text-color;
+        border: 2px solid $bg-color;
+    }
+}
+
+.catalog-filtration__price {
+    display: flex;
+    flex-direction: column;
+
+}
+
+// .catalog-filtration__about-dresses {}
+
+.catalog-filtration__about-dresses-title {
+    @include typography(Oswald, 400, 24px, 68px, 0, left);
+}
+
+.catalog-filtration__about-dresses-text {
+    letter-spacing: 1%;
+    @include typography(Roboto, 400, 18px, 28px, 1%, left);
+
+}
+
+.catalog-filtration__filtr-name-brand,
+.catalog-filtration__filtr-name-size,
+.catalog-filtration__filtr-name-dress-length,
+.catalog-filtration__filtr-name-color,
+.catalog-filtration__filtr-name-price {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+.catalog-filtration__name-brand,
+.catalog-filtration__name-size,
+.catalog-filtration__name-dress-length,
+.catalog-filtration__name-color,
+.catalog-filtration__name-price {
+    @include typography(Oswald, 400, 24px, 68px, 0, left);
+
+}
+
+
+.catalog-filtration__filtr-name-close {
+    cursor: pointer;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 68px;
+    letter-spacing: 0%;
+    color: $secondary-text-color;
+    transition: $st-transition;
+
+    &:hover {
+        color: $main-text-color;
+    }
+}
+
+.catalog-filtration__price-text {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+.catalog-filtration__apply {
+    text-transform: uppercase;
+    @include typography(Oswald, 500, 14px, 40px, 0.5px, center);
+    border: 1px solid $outline-color;
+    background-color: $main-hover-color;
+    color: $secondary-text-color;
+    align-self: end;
+    margin-top: 25px;
+    width: 114px;
+    height: 40px;
+    transition: $st-transition;
+
+    &:hover {
+        border: 1px solid $secondary-text-color;
+    }
+}
+
+.range_container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 50px 0 0 25px;
+}
+
+.form_control_container__time__input {
+    border: none;
+    text-transform: uppercase;
+    text-align: right;
+    @include typography(Roboto, 400, 14px, 3, 0, right);
+}
+.control-left-input{
+    text-align: left;
+
+}
+
+.sliders_control {
+    position: relative;
+    min-height: 50px;
+}
+
+.form_control {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    color: #635a5a;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 6px;
+    height: 20px;
+    background-color: $main-text-color;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 6px;
+    height: 20px;
+    background-color: $main-text-color;
+    cursor: pointer;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    background-color: $main-text-color;
+    pointer-events: none;
+}
+
+#fromSlider {
+    height: 0;
+    z-index: 1;
+}

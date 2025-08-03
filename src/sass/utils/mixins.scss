@@ -1,0 +1,19 @@
+@mixin typography($font-family, $font-weight, $font-size, $line-height, $letter-spacing, $text-align) {
+	font-family: $font-family;
+	font-weight: $font-weight;
+	leading-trim: NONE;
+	font-size: $font-size;
+	line-height: $line-height;
+	letter-spacing: $letter-spacing;
+	text-align: $text-align;
+	vertical-align: middle;
+}
+
+@mixin flex($justify-content: center, $align-items: center, $gap: 0, $flex-wrap: wrap, $flex-direction: row) {
+	display: flex;
+	justify-content: $justify-content;
+	align-items: $align-items;
+	gap: $gap;
+	flex-wrap: $flex-wrap;
+	flex-direction: $flex-direction;
+}

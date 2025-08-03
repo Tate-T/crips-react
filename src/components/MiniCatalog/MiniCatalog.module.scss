@@ -1,0 +1,164 @@
+@import "../../sass/utils/variables.scss";
+@import "../../sass/utils/mixins.scss";
+
+.mini-catalog {
+	padding-top: 67px;
+
+	&__list-wrap {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		width: 100%;
+
+		margin: 0 auto;
+
+		&--popular {
+			margin-top: 79px;
+		}
+	}
+
+	&__top-wrap {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__title {
+		@include typography(Oswald, 400, 18px, 68px, 0%, _);
+	}
+
+	&__button-wrap {
+		display: none;
+		justify-content: space-between;
+		align-items: center;
+		width: 84px;
+		height: 40px;
+	}
+
+	&__button {
+		width: 40px;
+		height: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 0;
+		background: transparent;
+		border: 2px solid rgba(255, 255, 255, 0.9);
+	}
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		width: 100%;
+		gap: 20px;
+	}
+
+	&__item {
+		width: 139px;
+        padding: 20px;
+
+		&-image {
+			width: 100%;
+			height: auto;
+		}
+
+		&-category {
+			margin-top: 14px;
+
+			@include typography(Oswald, 600, 12px, 22px, 0%, _);
+			text-transform: uppercase;
+			color: $subtitle-text-color;
+		}
+
+		&-title {
+			@include typography(Oswald, 400, 12px, 32px, 0%, _);
+			color: $main-text-color;
+		}
+
+		&-price {
+			margin-top: 18px;
+			@include typography(Oswald, 500, 16px, 16px, 0%, _);
+			text-transform: uppercase;
+			color: $main-text-color;
+		}
+
+		&:last-child {
+			display: none;
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.mini-catalog {
+		&__list-wrap {
+			max-width: 598px;
+		}
+
+		&__list {
+			max-width: 100%;
+			flex-wrap: nowrap;
+			justify-content: space-between;
+            gap: 14px;
+		}
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.mini-catalog {
+        padding: 0;
+		&__button-wrap {
+			display: flex;
+		}
+
+		&__list-wrap {
+			max-width: 100%;
+		}
+
+		&__list {
+			flex-wrap: nowrap;
+			justify-content: space-between;
+			gap: 31px;
+		}
+
+		&__item {
+			width: 210px;
+			height: 420px;
+
+			&-title {
+				@include typography(Oswald, 300, 18px, 22px, 0%, _);
+			}
+
+			&-price {
+				@include typography(Oswald, 500, 22px, 22px, 0%, _);
+			}
+
+			&:last-child {
+				display: inline-block;
+			}
+		}
+
+		&__title {
+			@include typography(Oswald, 400, 24px, 68px, 0%, _);
+		}
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.mini-catalog {
+		&__list {
+			gap: 31px;
+		}
+
+		&__item {
+			width: 353px;
+			height: 548px;
+
+			&:last-child {
+				display: inline-block;
+			}
+		}
+	}
+}
