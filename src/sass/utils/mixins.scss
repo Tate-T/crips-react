@@ -9,7 +9,7 @@
 	vertical-align: middle;
 }
 
-@mixin flex($justify-content, $align-items, $gap, $flex-wrap, $flex-direction) {
+@mixin flex($justify-content: center, $align-items: center, $gap: 0, $flex-wrap: wrap, $flex-direction: row) {
 	display: flex;
 	justify-content: $justify-content;
 	align-items: $align-items;
