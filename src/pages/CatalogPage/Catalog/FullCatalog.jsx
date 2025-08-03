@@ -1,9 +1,9 @@
-import Catalog from "./Catalog.jsx";
+import {Catalog} from "./Catalog.jsx";
 import catalogData from "../../../data/catalog-data.js";
 import { Sorting } from "../Sorting/Sorting.jsx"
 import Banner from "../Banner/Banner.jsx";
 
-function FullCatalog() {
+export function FullCatalog() {
   return (
     <>
       <Sorting />
@@ -21,5 +21,3 @@ function FullCatalog() {
     </>
   );
 }
-
-export default FullCatalog;
