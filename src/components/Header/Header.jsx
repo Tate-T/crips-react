@@ -4,32 +4,35 @@ import Logo from "../../images/logo.svg";
 import Search from "../../images/search.svg";
 import Bag from "../../images/bag.svg";
 import Heart from "../../images/heart.svg";
+import Menu from "../../images/menu.svg";
 
 import style from "./Header.module.scss";
 
-export const Header = () => {
+// activePage може бути "home", "shop", "blog", "sale", "contact us"
+export const Header = ({ activePage }) => {
   return (
     <header className={style.header}>
       <Container>
         <div className={style.header__wrap}>
-          <div className={style.header__gap}>
-            <img className={style.header__logo} src={Logo} alt="Logo SVG" />
-            <div className={style.header__center}>
-              <nav className={style.header__nav}>
-                <ul className={style.nav__list}>
-                  <li className={style.nav__item}><a href="." className={style.nav__link}>HOME</a></li>
-                  <li className={style.nav__item}><a href="." className={style.nav__link}>SHOP</a></li>
-                  <li className={style.nav__item}><a href="." className={style.nav__link}>BLOG</a></li>
-                  <li className={style.nav__item}><a href="." className={style.nav__link}>SALE</a></li>
-                  <li className={style.nav__item}><a href="." className={style.nav__link}>CONTACT US</a></li>
-                </ul>
-              </nav>
-              <div className={style.header__search}>
-                <label htmlFor="search">
-                  <img className={style.search__icon} src={Search} alt="Search SVG" />
-                </label>
-                <input className={style.search__input} type="text" placeholder="SEARCH" id="search" />
-              </div>
+          <button className={style.header__menu}>
+            <img className={style.menu__icon} src={Menu} alt="Menu SVG" />
+          </button>
+          <img className={style.header__logo} src={Logo} alt="Logo SVG" />
+          <div className={style.header__center}>
+            <nav className={style.header__nav}>
+              <ul className={style.nav__list}>
+                <li className={style.nav__item}><a href="." className={style.nav__link}>HOME</a></li>
+                <li className={style.nav__item}><a href="." className={style.nav__link}>SHOP</a></li>
+                <li className={style.nav__item}><a href="." className={style.nav__link}>BLOG</a></li>
+                <li className={style.nav__item}><a href="." className={style.nav__link}>SALE</a></li>
+                <li className={style.nav__item}><a href="." className={style.nav__link}>CONTACT US</a></li>
+              </ul>
+            </nav>
+            <div className={style.header__search}>
+              <label htmlFor="search">
+                <img className={style.search__icon} src={Search} alt="Search SVG" />
+              </label>
+              <input className={style.search__input} type="text" placeholder="SEARCH" id="search" />
             </div>
           </div>
           <div className={style.header__right}>

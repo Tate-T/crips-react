@@ -1,6 +1,6 @@
-// import { Filtration } from "./Filtration/Filtration.jsx";
+import { Filtration } from "./Filtration/Filtration.jsx";
 import {Header} from '../../components/Header/Header'
-import FullCatalog from "./Catalog/FullCatalog.jsx";
+import {FullCatalog} from "./Catalog/FullCatalog.jsx";
 
 export const CatalogSection = () => {
   return (
@@ -8,7 +8,7 @@ export const CatalogSection = () => {
       <Header />
       <main className="container">
         <FullCatalog />
-        {/* <Filtration /> */}
+        <Filtration />
       </main>
       {/* <Footer /> */}
     </>

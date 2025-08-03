@@ -1,13 +1,12 @@
-// import { HomePage } from "./pages/HomePage/HomePage.jsx";
+import { HomePage } from "./pages/HomePage/HomePage.jsx";
 // import { ProductPage } from "./pages/ProductPage/ProductPage.jsx";
-import {CreateOrder} from './pages/CabinetPage/CreateOrder/CreateOrder.jsx';
-// import {CreateNewAcount} from './pages/CabinetPage/CreateOrder/CreateNewAcountPage/CreateNewAcount'
+import { ProductPage } from "./pages/ProductPage/ProductPage.jsx";
+
 
 function App() {
   return (
     <>
-      {/* <HomePage /> */}
-      <CreateOrder></CreateOrder>
+      <HomePage />
       {/* <ProductPage/> */}
       {/* <CreateNewAcount></CreateNewAcount> */}
     </>
