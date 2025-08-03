@@ -1,19 +1,25 @@
-import { Catalog } from "./Catalog.jsx";
-import { Sorting } from "../Sorting/Sorting.jsx";
-import { catalogData } from "../../../data/catalog-data.js";
-import stule from "./Catalog.module.scss";
+import Catalog from "./Catalog.jsx";
+import catalogData from "../../../data/catalog-data.js";
+import { Sorting } from "../Sorting/Sorting.jsx"
+import Banner from "../Banner/Banner.jsx";
 
-export const FullCatalog = () => {
-	return (
-		<>
-			<Sorting />
-			<div className={stule.catalog__container}>
-				<ul className={stule.catalog__list}>
-					{catalogData.map((item, index) => (
-						<Catalog {...item} styles={stule} key={index} />
-					))}
-				</ul>
-			</div>
-		</>
-	);
-};
+function FullCatalog() {
+  return (
+    <>
+      <Sorting />
+      <ul className="catalog__list">
+        {catalogData.map((test, index) => (
+          <Catalog {...test} key={index} />
+        ))}
+      </ul>
+      <Banner />
+      <ul className="catalog__list">
+        {catalogData.map((test, index) => (
+          <Catalog {...test} key={index} />
+        ))}
+      </ul>
+    </>
+  );
+}
+
+export default FullCatalog;
