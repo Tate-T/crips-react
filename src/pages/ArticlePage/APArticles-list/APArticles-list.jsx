@@ -1,9 +1,12 @@
-export const ArticlesList = () => {
+import styles from "../../../pages/ArticlePage/APArticles-list/APArticle-list.module.scss";
+
+
+export const APArticlesList = () => {
   return (
     <>
-      <div className="articles__list-box">
-        <h3 className="articles__list-title">The Dress</h3>
-        <p className="articles__list-text">
+      <div className={styles.articleslist__box}>
+        <h3 className={styles.articleslist__title}>The Dress</h3>
+        <p className={styles.articleslist__text1}>
           It’s a tricky thing, being a wedding guest. Among the endless list of
           requirements – buy a present, arrange accommodation, practise your
           small talk – there’s one obligation that trumps them all in terms of
@@ -22,9 +25,9 @@ export const ArticlesList = () => {
           from industry experts on the trends and colours you need to know about
           this season .
         </p>
-        <img src={item.img} alt="" />
-        <h3 className="articles__list-title">The Dress</h3>
-        <p className="articles__list-text">
+        <img className={styles.articleslist__dresses} src="" alt="Dresses" />
+        <h3 className={styles.articleslist__title}>The Dress</h3>
+        <p className={styles.articleslist__text2}>
           It’s a tricky thing, being a wedding guest. Among the endless list of
           requirements – buy a present, arrange accommodation, practise your
           small talk – there’s one obligation that trumps them all in terms of
