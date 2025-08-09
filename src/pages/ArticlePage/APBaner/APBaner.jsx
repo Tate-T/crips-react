@@ -1,5 +1,6 @@
 import styles from "../../../pages/ArticlePage/APBaner/APBaner.module.scss";
 
+
 export const APBaner = () => {
   return (
     <>
