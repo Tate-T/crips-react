@@ -70,7 +70,7 @@ main.container {
     padding-right: 18px;
     padding-left: 21px;
     padding-bottom: 20px;
-    
+
     @media screen and (min-width: 768px) {
         height: 100%;
         border: none;
@@ -373,4 +373,44 @@ input[type="range"] {
 #fromSlider {
     height: 0;
     z-index: 1;
+}
+
+.catalog-filtration__filtr-close-text {
+    text-transform: uppercase;
+    @include typography(Oswald, 400, 14px, 48px, 0, left);
+}
+
+.catalog-filtration__filtr-close {
+    transform: rotate(45deg);
+    width: 12px;
+    height: 12px;
+    color: $main-text-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.catalog-filtration__filtr-close-wrap {
+    height:100%;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+}
+
+.catalog-filtration__title-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.catalog-filtration__wrap{
+    border: 1px solid $main-text-color;
+    padding: 15px;
+}
+.catalog-filtration__title-wrap{
+display: flex;
+justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }

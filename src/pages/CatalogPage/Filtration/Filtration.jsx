@@ -139,7 +139,11 @@ export const Filtration = () => {
           <p className="catalog-way">Home / Womens Dress / Best Chose</p>
         <div className="filtration">
           <div className="catalog-filtration__wrap">
-            <h2 className="catalog-filtration__title">Filter</h2>
+           <div className="catalog-filtration__title-wrap"> <h2 className="catalog-filtration__title">Filter</h2>
+            <div className="catalog-filtration__filtr-close-wrap">
+              <p className="catalog-filtration__filtr-close">+</p>
+              <p className="catalog-filtration__filtr-close-text">Reset all</p>
+            </div></div>
           </div>
           <div className="catalog-filtration__brand">
             <FiltrName className="brand" filtrName="Brand" />
