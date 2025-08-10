@@ -125,25 +125,26 @@ export const Filtration = () => {
     if (filtrationSection.classList.contains('active')) {
       filtrationSection.classList.remove('active');
       phoneButton.classList.remove('active');
-    } else {
+    }
+    else {
       filtrationSection.classList.add('active');
       phoneButton.classList.add('active');
     }
   }
   return (
     <>
+      <p className="catalog-way">Home / Womens Dress / Best Chose</p>
       <button className="catalog-filtration__phone-button" onClick={phoneButtonClick}>Filtration
         <img src={arrowDown} alt="" />
       </button>
       <section className="catalog-filtration">
-          <p className="catalog-way">Home / Womens Dress / Best Chose</p>
         <div className="filtration">
           <div className="catalog-filtration__wrap">
-           <div className="catalog-filtration__title-wrap"> <h2 className="catalog-filtration__title">Filter</h2>
-            <div className="catalog-filtration__filtr-close-wrap">
-              <p className="catalog-filtration__filtr-close">+</p>
-              <p className="catalog-filtration__filtr-close-text">Reset all</p>
-            </div></div>
+            <div className="catalog-filtration__title-wrap"> <h2 className="catalog-filtration__title">Filter</h2>
+              <div className="catalog-filtration__filtr-close-wrap">
+                <p className="catalog-filtration__filtr-close">+</p>
+                <p className="catalog-filtration__filtr-close-text">Reset all</p>
+              </div></div>
           </div>
           <div className="catalog-filtration__brand">
             <FiltrName className="brand" filtrName="Brand" />

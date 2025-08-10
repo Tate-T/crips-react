@@ -57,7 +57,7 @@ main.container {
     overflow-y: auto;
     padding-bottom: 20px;
     background-color: $bg-color;
-    top: 384px;
+    top: -21px;
     z-index: 1000;
     transition: $st-transition;
 
@@ -125,6 +125,19 @@ main.container {
 }
 
 // .catalog-filtration__wrap {}
+
+.catalog-filtration{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+        align-items: start;
+        justify-content: start;
+        
+    }
+}
 
 .catalog-filtration__title {
     @include typography(Oswald, 400, 32px, 68px, 0, left);
