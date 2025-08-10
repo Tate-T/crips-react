@@ -15,7 +15,9 @@ export const HomePage = () => {
       <Header activePage="home" />
       <main>
         <Banners />
-        {/* <MiniCatalog /> */}
+        {/* <MiniCatalog />
+        <CatalogSection /> */}
+        <CreateOrder />
         <Blog />
         <CatalogSection />
         <CreateOrder />
