@@ -6,14 +6,15 @@ import { Banners } from "../../components/Banners/BannersSection.jsx";
 import { MiniCatalog } from "../../components/MiniCatalog/MiniCatalog.jsx";
 import { Blog } from "../main-page/blog/blog.jsx"
 
+
 export const HomePage = () => {
   return (
     <>
       <Header />
       <main>
-        <Banners/>
-        <MiniCatalog />
-        <CatalogSection />
+        <Banners />
+        {/* <MiniCatalog />
+        <CatalogSection /> */}
         <CreateOrder />
         <Blog />
       </main>

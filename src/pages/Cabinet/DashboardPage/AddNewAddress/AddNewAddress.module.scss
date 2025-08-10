@@ -1,123 +1,218 @@
 @import "../../../../sass/utils/variables.scss";
 
 .address {
-    background-color: $white;
+    background-color: $bg-color;
     padding: 13px 0 67px;
 
     &__subtitle {
-        font-family: "Roboto", sans-serif;
+        font-family: "Roboto",
+            sans-serif;
         font-weight: 400;
         font-size: 14px;
         line-height: 4.85714;
         text-align: center;
-        color: $gray1;
+        color: $secondary-text-color;
         margin-bottom: 13px;
     }
 
     &__title {
-        font-family: "Oswald", sans-serif;
+        font-family: "Oswald",
+            sans-serif;
         font-weight: 400;
         font-size: 48px;
         line-height: 1.41667;
         text-align: center;
-        color: $black;
+        color: $main-text-color;
         margin-bottom: 17px;
     }
 
     &__wrap {
         display: flex;
-        gap: 108px;
-        border: 1px solid $divider;
-        max-width: 1454px;
-        padding: 73px 0 171px;
-        justify-content: center;
-        margin: 0 auto;
+        flex-direction: column;
+        gap: 32px;
+        border: 1px solid $divider-color;
+        padding: 40px 20px;
+        width: 100%;
+        align-items: center;
+
+        @media screen and (min-width:1200px) {
+            flex-direction: row;
+            gap: 108px;
+            max-width: 1454px;
+            padding: 73px 0 171px;
+            margin: 0 auto;
+            align-items: start;
+            justify-content: center;
+        }
+
     }
 
     &__form {
         display: flex;
         flex-direction: column;
-        gap: 49px;
+        gap: 20px;
+        width: 100%;
+        max-width: 400px;
+
+        @media screen and (min-width:1200px) {
+            gap: 49px;
+            width: min-content;
+            max-width: min-content;
+        }
+
     }
 
     &__header {
-        font-family: "Oswald", sans-serif;
+        font-family: "Oswald",
+            sans-serif;
+        text-align: center;
         font-weight: 400;
         font-size: 24px;
         line-height: 2.83333;
-        color: $black;
-        margin-bottom: 28px;
+        color: $main-text-color;
+        margin-bottom: 12px;
+
+        @media screen and (min-width:1200px) {
+            text-align: left;
+            margin-bottom: 28px;
+        }
+
     }
 
     &__labels {
         display: flex;
         flex-direction: column;
-        gap: 15px;
+        gap: 8px;
+
+        @media screen and (min-width:1200px) {
+            gap: 15px;
+        }
+
     }
 
     &__label {
-        display: flex;
-        justify-content: space-between;
-        width: 541px;
+        @media screen and (min-width:1200px) {
+            display: flex;
+            justify-content: space-between;
+            width: 541px;
+        }
+
     }
 
     &__desc {
-        font-family: "Roboto", sans-serif;
+        font-family: "Roboto",
+            sans-serif;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 14px;
         line-height: 1.25;
-        color: $black2;
+        color: $inactive-color;
+        margin-bottom: 4px;
+
+        @media screen and (min-width:1200px) {
+            margin: 0;
+            font-size: 16px;
+        }
+
     }
 
     &__red {
-        color: $main2;
+        color: $accent-color;
     }
 
     &__inputs {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 4px;
+
+        @media screen and (min-width:1200px) {
+            gap: 10px;
+        }
+
     }
 
     &__input {
-        width: 392px;
-        height: 44px;
-        padding: 0 14px;
-        border: 1px solid $divider;
-        background-color: $white;
+        width: 100%;
+        height: 28px;
+        padding: 0 8px;
+        border: 1px solid $divider-color;
+        background-color: $bg-color;
+        font-family: "Roboto",
+            sans-serif;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 1.25;
+        color: $main-text-color;
+
+        @media screen and (min-width:1200px) {
+            width: 392px;
+            height: 44px;
+            padding: 0 14px;
+            font-size: 16px;
+        }
 
         &::placeholder {
-            font-family: "Roboto", sans-serif;
+            font-family: "Roboto",
+                sans-serif;
             font-weight: 400;
-            font-size: 16px;
+            font-size: 13px;
             line-height: 1.25;
-            color: $black2;
+            color: $inactive-color;
+
+            @media screen and (min-width:1200px) {
+                font-size: 16px;
+            }
+
         }
     }
 
     &__select {
-        width: 392px;
-        height: 44px;
-        border: 1px solid $divider;
-        background-color: $white;
-        padding: 0 14px;
-        font-family: "Roboto", sans-serif;
+        width: 100%;
+        height: 28px;
+        padding: 0 8px;
+        border: 1px solid $divider-color;
+        background-color: $bg-color;
+        font-family: "Roboto",
+            sans-serif;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 13px;
         line-height: 1.25;
-        color: $gray1;
+        color: $secondary-text-color;
+
+        @media screen and (min-width:1200px) {
+            width: 392px;
+            height: 44px;
+            padding: 0 14px;
+            font-size: 16px;
+        }
+
     }
 
     &__btn {
-        font-family: "Oswald", sans-serif;
+        font-family: "Oswald",
+            sans-serif;
         font-weight: 500;
         font-size: 14px;
         letter-spacing: 0.04em;
         text-transform: uppercase;
         text-align: center;
-        color: $white;
-        width: 140px;
-        height: 50px;
-        background-color: $black;
+        color: $bg-color;
+        width: 100%;
+        height: 40px;
+        background-color: $main-text-color;
+
+        @media screen and (min-width:1200px) {
+            font-family: "Oswald",
+                sans-serif;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-align: center;
+            color: $bg-color;
+            width: 140px;
+            height: 50px;
+            background-color: $main-text-color;
+        }
+
     }
 }
