@@ -1,97 +1,278 @@
 .dashboard {
-    padding: 13px 0 64px;
+    padding-bottom: 36px;
+
+    @media screen and (min-width: 768px) {
+        padding: 8px 48px;
+    }
+
+
+    @media screen and (min-width: 1200px) {
+        padding: 11px 0 54px;
+    }
+
+    @media screen and (min-width: 1920px) {
+        padding: 13px 0 64px;
+    }
 
     &__way {
         font-family: "Roboto", sans-serif;
         font-weight: 400;
-        font-size: 14px;
-        line-height: 2.57;
-        text-align: center;
+        font-size: 10px;
+        line-height: 3.6;
         color: #828282;
-        margin-bottom: 13px;
+        text-align: center;
+        margin-bottom: 10px;
+
+        @media screen and (min-width: 768px) {
+            font-size: 12px;
+            line-height: 3.2;
+            margin-bottom: 11px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            margin-bottom: 12px;
+        }
+
+        @media screen and (min-width: 1920px) {
+            font-size: 14px;
+            line-height: 2.57;
+            margin-bottom: 13px;
+        }
     }
 
     &__cont {
         display: flex;
         justify-content: center;
+
+        @media screen and (min-width: 768px) {}
+
+        @media screen and (min-width: 1200px) {}
+
+        @media screen and (min-width: 1920px) {}
     }
 
     &__main {
         display: flex;
-        gap: 108px;
-        padding: 73px 212px 0;
-        height: 716px;
-        border: 1px solid #c4c4c4;
-        justify-content: center;
-        width: 1454px;
+        flex-direction: column;
+        gap: 18px;
+        height: auto;
+
+        @media screen and (min-width: 768px) {
+            gap: 36px;
+        }
+
+
+        @media screen and (min-width: 1200px) {
+            flex-direction: row;
+            gap: 56px;
+            padding: 40px 78px 0;
+            height: 460px;
+            border: 1px solid #c4c4c4;
+            justify-content: center;
+        }
+
+
+        @media screen and (min-width: 1920px) {
+            flex-direction: row;
+            gap: 108px;
+            padding: 73px 212px 0;
+            height: 716px;
+            width: 1454px;
+        }
 
     }
 
     &__title {
-        font-family: "Oswald", sans-serif;
-        font-weight: 400;
-        font-size: 48px;
-        line-height: 1.42;
-        text-align: center;
-        color: #000;
-        margin-bottom: 17px;
+        display: none;
+
+        @media screen and (min-width: 768px) {
+            display: block;
+            font-family: "Oswald", sans-serif;
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 1.24;
+            text-align: center;
+            color: #000;
+            margin-bottom: 32px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            margin-bottom: 16px;
+            font-size: 42px;
+            line-height: 1.35;
+        }
+
+        @media screen and (min-width: 1920px) {
+            font-size: 48px;
+            line-height: 1.42;
+            margin-bottom: 17px;
+        }
     }
 
     &__parts {
         display: flex;
         flex-direction: column;
-        gap: 64px;
+        gap: 20px;
+
+        @media screen and (min-width: 768px) {
+            gap: 32px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            gap: 48px;
+        }
+
+        @media screen and (min-width: 1920px) {
+
+            gap: 64px;
+        }
     }
 
     &__subtitle {
         font-family: "Oswald", sans-serif;
         font-weight: 400;
-        font-size: 24px;
-        line-height: 1;
-        color: #000;
-        margin-bottom: 27px;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: #828282;
+
+        @media screen and (min-width: 768px) {
+            margin-bottom: 6px;
+            font-size: 16px;
+            line-height: 1;
+            margin-bottom: 16px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            margin-bottom: 6px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media screen and (min-width: 1920px) {
+            margin-bottom: 6px;
+            font-size: 24px;
+            color: #000;
+            margin-bottom: 27px;
+        }
     }
 
     &__list {
         display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        @media screen and (min-width: 768px) {
+            gap: 32px;
+        }
+
+
+        @media screen and (min-width: 1200px) {
+            flex-direction: row;
+            gap: 40px;
+        }
+
+
+        @media screen and (min-width: 1920px) {
+            gap: 0;
+            flex-direction: row;
+        }
     }
 
     &__item {
-        width: 316px;
+
+        @media screen and (min-width: 1200px) {
+            width: 280px;
+        }
+
+        @media screen and (min-width: 1920px) {
+            width: 316px;
+        }
     }
 
     &__info {
         font-family: "Oswald", sans-serif;
-        font-weight: 500;
-        font-size: 18px;
-        letter-spacing: 0.03em;
-        text-transform: uppercase;
-        color: #3f3f3f;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 1.83333;
+        color: #000;
         margin: 0;
-        margin-bottom: 12px;
+
+        @media screen and (min-width: 768px) {
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            font-weight: 500;
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        @media screen and (min-width: 1920px) {
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 0.03em;
+            color: #3f3f3f;
+            margin-bottom: 12px;
+        }
     }
 
     &__desc {
         font-family: "Roboto", sans-serif;
         font-weight: 400;
-        font-size: 16px;
-        line-height: 1.25;
+        font-size: 12px;
+        line-height: 1.33333;
         color: #828282;
-        margin-bottom: 10px;
+        margin-bottom: 8px;
+
+        @media screen and (min-width: 768px) {
+            font-size: 13px;
+        }
+
+        @media screen and (min-width: 1200px) {
+            font-size: 15px;
+            line-height: 1.25;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (min-width: 1920px) {
+            font-size: 16px;
+        }
     }
 
     &__btns {
         display: flex;
-        gap: 12px;
+        gap: 9px;
+
+        @media screen and (min-width: 768px) {
+            gap: 10px;
+        }
+
+        @media screen and (min-width: 1920px) {
+            gap: 12px;
+        }
     }
 
     &__btn {
         font-family: "Roboto", sans-serif;
         font-weight: 500;
-        font-size: 14px;
-        line-height: 1.42857;
+        font-size: 10px;
+        line-height: 2;
         text-align: center;
         color: #000;
         background-color: #e6f1fa;
+        padding: 0 9px;
+
+        @media screen and (min-width: 768px) {
+            font-size: 12px;
+            line-height: 1.8;
+            padding: 0 4px;
+        }
+
+        @media screen and (min-width: 1920px) {
+            font-size: 14px;
+            line-height: 1.42857;
+            padding: 0;
+        }
     }
 }

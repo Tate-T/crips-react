@@ -1,20 +1,122 @@
 @import '../../../sass/utils/mixins.scss';
 @import '../../../sass/utils/variables.scss';
 
+main{
+    display: flex;
+    flex-direction: column;
+}
+
+.catalog-filtration__phone-button {
+    background: none;
+    border: 1px solid $divider-color;
+    display: flex;
+    width: 60vw;
+    height: 40px;
+    @include typography(Oswald, 500, 14px, 40px, 0.5px, center);
+    padding-right: 10px;
+    padding-left: 10px;
+    justify-content: space-between;
+    align-items: center;
+    align-self: center;
+    margin-bottom: 20px;
+    transition: $st-transition;
+    @media screen and (min-width: 768px) {
+        display: none;
+
+    }
+
+    & img {
+        width: 15px;
+        height: 15px;
+    }
+
+    &.active{
+        background-color: $main-text-color;
+        color: $bg-color;
+    }
+    &.active img{
+        filter: invert(1);
+        transform: rotate(180deg);
+    }
+}
+
 .filtration {
-    width: 400px;
-    border-right: 1px solid $outline-color;
-    margin-top: 100px;
+    border: 1px solid $outline-color;
     position: relative;
     padding-right: 18px;
     padding-left: 21px;
+    flex-direction: column;
+    display: none;
+    width: 60%;
+    align-self: center;
+    height: 770px;
+    overflow-y: auto;
+    padding-bottom: 20px;
+    background-color: $bg-color;
+    top: 384px;
+    z-index: 1000;
+    transition: $st-transition;
+    
+    &.active {
+        display: flex;
+        margin-bottom: 20px;
+        position: absolute;
+    }
+
+    @media screen and (min-width: 768px) {
+        border-right: 1px solid $outline-color;
+        width: 400px;
+        display: flex;
+        align-self: start;
+        background: none;
+        position: static;
+        height: auto;
+        padding: 0;
+        top: 0;
+        z-index: 0;
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 0;
+        margin-bottom: 0;
+        &.active {
+            display: flex;
+            position: static;
+            margin-bottom: 0;
+            border: none;
+            
+            border-right: 1px solid $outline-color;
+        }
+
+        & .catalog-filtration__size-button{
+            width: 46px;
+            height: 46px;
+        }
+
+        & .catalog-filtration__size-form{
+            gap: 10px;
+            width: 270px;
+        }
+
+        & .catalog-filtration__form-color-btn{
+            width: 17px;
+            height: 17px;
+        }
+
+        & .catalog-filtration__form-color{
+            width: 270px;
+        }
+
+        & .range_container{
+    margin: 50px 0 0 25px;
+
+        }
+    }
 }
 
 .catalog-way {
-    position: absolute;
-    top: -65px;
     @include typography(Roboto, 400, 14px, 4.85, 0, left);
     color: $secondary-text-color;
+    padding: 15px;
 }
 
 // .catalog-filtration__wrap {}
@@ -56,8 +158,8 @@
 .catalog-filtration__size-form {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
-    width: 270px;
+    gap: 9px;
+    width: 90%;
 }
 
 .catalog-filtration__size-button {
@@ -66,8 +168,8 @@
     background: none;
     border: 2px solid $outline-color;
     color: $outline-color;
-    width: 46px;
-    height: 46px;
+    width: 39px;
+    height: 39px;
     transition: $st-transition;
 
     &:hover {
@@ -92,12 +194,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    width: 270px;
+    width: 90%;
 }
 
 .catalog-filtration__form-color-btn {
-    width: 17px;
-    height: 17px;
+    width: 15px;
+    height: 15px;
     transition: $st-transition;
 
     &:hover {
@@ -170,41 +272,7 @@
 }
 
 
-#amount,
-#amountLast {
-    text-transform: uppercase;
-    @include typography(Roboto, 400, 14px, 40px, 0, left);
-    color: $main-text-color !important;
-    border: none;
-    background: transparent;
-}
 
-#amountLast {
-    text-align: right;
-}
-
-.ui-slider-range {
-    background: $main-text-color !important;
-    height: 2px !important;
-}
-
-#slider-range {
-    background: $outline-color !important;
-    height: 2px !important;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
-    border-radius: 1px;
-}
-
-
-.ui-state-default {
-    width: 6px !important;
-    height: 16px !important;
-    background: $main-text-color !important;
-    top: -7px !important;
-    border: none !important;
-}
 
 .catalog-filtration__apply {
     text-transform: uppercase;
@@ -217,7 +285,87 @@
     width: 114px;
     height: 40px;
     transition: $st-transition;
-    &:hover{
+
+    &:hover {
         border: 1px solid $secondary-text-color;
     }
+}
+
+.range_container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 50px 0 0 15px;
+
+}
+
+.form_control_container__time__input {
+    border: none;
+    text-transform: uppercase;
+    text-align: right;
+    @include typography(Roboto, 400, 14px, 3, 0, right);
+    width: 100%;
+}
+
+.control-left-input {
+    text-align: left;
+
+}
+
+.sliders_control {
+    position: relative;
+    min-height: 50px;
+}
+
+.form-control_container {
+    display: flex;
+    flex-direction: column;
+    width: 50% !important;
+}
+
+.form_control {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    color: #635a5a;
+    width: 100%;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    pointer-events: all;
+    width: 6px;
+    height: 20px;
+    background-color: $main-text-color;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    pointer-events: all;
+    width: 6px;
+    height: 20px;
+    background-color: $main-text-color;
+    cursor: pointer;
+}
+
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    background-color: $main-text-color;
+    pointer-events: none;
+}
+
+#fromSlider {
+    height: 0;
+    z-index: 1;
 }
