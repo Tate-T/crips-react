@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/crips-react/static/css/main.f975b305.css",
-    "main.js": "/crips-react/static/js/main.428b74c3.js",
+    "main.css": "/crips-react/static/css/main.fc4c3973.css",
+    "main.js": "/crips-react/static/js/main.4d5821be.js",
     "static/media/banners-standingWomen.jpg": "/crips-react/static/media/banners-standingWomen.57b1b83502ce336d78f6.jpg",
     "static/media/mini-catalog-02.jpg": "/crips-react/static/media/mini-catalog-02.157e608136d056698247.jpg",
     "static/media/mini-catalog-10.jpg": "/crips-react/static/media/mini-catalog-10.643485b11115440c1cd1.jpg",
@@ -16,6 +16,7 @@
     "static/media/mini-catalog-07.jpg": "/crips-react/static/media/mini-catalog-07.28734b6e8486b9694892.jpg",
     "static/media/banners-sittingWomen.jpg": "/crips-react/static/media/banners-sittingWomen.5c10d7b057731932287c.jpg",
     "static/media/banner.jpg": "/crips-react/static/media/banner.d9c7e34ddaacc6d4cf82.jpg",
+    "static/media/banners-standingWomenMobile.jpg": "/crips-react/static/media/banners-standingWomenMobile.f7db1461a4a5e851bee3.jpg",
     "static/media/catalog-image-3.jpg": "/crips-react/static/media/catalog-image-3.bcc9f7d7a875168a8fae.jpg",
     "static/media/catalog-image-2.jpg": "/crips-react/static/media/catalog-image-2.91a1f4bfb03c8ea03556.jpg",
     "static/media/catalog-image-7.jpg": "/crips-react/static/media/catalog-image-7.91a1f4bfb03c8ea03556.jpg",
@@ -27,10 +28,12 @@
     "static/media/card-list-1.webp": "/crips-react/static/media/card-list-1.808ddc45893450595541.webp",
     "static/media/card-list-10.webp": "/crips-react/static/media/card-list-10.808ddc45893450595541.webp",
     "static/media/catalog-image-6.jpg": "/crips-react/static/media/catalog-image-6.9545b1633b0e00da2b40.jpg",
+    "static/media/banners-hatWomenMobile.jpg": "/crips-react/static/media/banners-hatWomenMobile.4b721dacdcad08e940ee.jpg",
     "static/media/catalog-image-12.jpg": "/crips-react/static/media/catalog-image-12.fddf75de98b0ff6da92a.jpg",
     "static/media/catalog-image-8.jpg": "/crips-react/static/media/catalog-image-8.fddf75de98b0ff6da92a.jpg",
     "static/media/catalog-image-4.jpg": "/crips-react/static/media/catalog-image-4.e4bdd34ebf079b27b8a1.jpg",
     "static/media/catalog-image-9.jpg": "/crips-react/static/media/catalog-image-9.e4bdd34ebf079b27b8a1.jpg",
+    "static/media/banners-sittingWomenMobile.jpg": "/crips-react/static/media/banners-sittingWomenMobile.d060293c56a786b7bee4.jpg",
     "static/media/catalog-image-11.jpg": "/crips-react/static/media/catalog-image-11.f1175931dc9eced2e60e.jpg",
     "static/media/catalog-image-5.jpg": "/crips-react/static/media/catalog-image-5.f1175931dc9eced2e60e.jpg",
     "static/media/card-list-6.webp": "/crips-react/static/media/card-list-6.bd92f1270173bd01dc55.webp",
@@ -45,23 +48,27 @@
     "static/media/twitter.svg": "/crips-react/static/media/twitter.f4e2a00d4a0f5b7204a9f74ffdaec875.svg",
     "index.html": "/crips-react/index.html",
     "static/media/change.svg": "/crips-react/static/media/change.e97a2de1e5ea7747b7c6af70623a223e.svg",
+    "static/media/remark-wishlist.svg": "/crips-react/static/media/remark-wishlist.e97a2de1e5ea7747b7c6af70623a223e.svg",
+    "static/media/closeIcon-wishlist.svg": "/crips-react/static/media/closeIcon-wishlist.d39db5653544213449a7dd49b0cdd86c.svg",
     "static/media/heart.svg": "/crips-react/static/media/heart.4452a75eedea1ad312c90ef34e8b4879.svg",
     "static/media/bag.svg": "/crips-react/static/media/bag.56b81126d9d4963307871d7655e279ae.svg",
     "static/media/facebook.svg": "/crips-react/static/media/facebook.904539b5098c153410997a85858172cc.svg",
     "static/media/ckeckmark.svg": "/crips-react/static/media/ckeckmark.86106712ef9f1d3871b37399f30d1b7e.svg",
     "static/media/search.svg": "/crips-react/static/media/search.b9a437b12d19eed3b78c89111c195c96.svg",
     "static/media/menu.svg": "/crips-react/static/media/menu.c35567f13074082824357a72bd154109.svg",
+    "static/media/plus.svg": "/crips-react/static/media/plus.f879586d487a794b21884f6d8a89a2c6.svg",
     "static/media/arrow-left.svg": "/crips-react/static/media/arrow-left.fc185e3f0373244c4611104653584991.svg",
     "static/media/arrow-right.svg": "/crips-react/static/media/arrow-right.5bd9a32ba305398cc9586e8b4ad69a1a.svg",
+    "static/media/minus.svg": "/crips-react/static/media/minus.595ad1e5630c5c0f5abe9484250877fe.svg",
     "static/media/close.svg": "/crips-react/static/media/close.75edacc0f983f0c1deb67e4a8926078b.svg",
     "static/media/check.svg": "/crips-react/static/media/check.1eb79cf78b9c7d0b1603b98f526a618f.svg",
     "static/media/arrow-bottom.svg": "/crips-react/static/media/arrow-bottom.6dba0a90d93003b92e48de1407a39a84.svg",
     "static/media/arrow-down.svg": "/crips-react/static/media/arrow-down.1bafc7b1e1ad1de6c599533a8d01a532.svg",
-    "main.f975b305.css.map": "/crips-react/static/css/main.f975b305.css.map",
-    "main.428b74c3.js.map": "/crips-react/static/js/main.428b74c3.js.map"
+    "main.fc4c3973.css.map": "/crips-react/static/css/main.fc4c3973.css.map",
+    "main.4d5821be.js.map": "/crips-react/static/js/main.4d5821be.js.map"
   },
   "entrypoints": [
-    "static/css/main.f975b305.css",
-    "static/js/main.428b74c3.js"
+    "static/css/main.fc4c3973.css",
+    "static/js/main.4d5821be.js"
   ]
 }
