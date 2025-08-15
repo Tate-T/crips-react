@@ -3,7 +3,7 @@ import { Footer } from "../../../src/components/Footer/Footer.jsx";
 import { APBaner } from "../../../src/pages/ArticlePage/APBaner/APBaner.jsx";
 import { APArticlesList } from "../../../src/pages/ArticlePage/APArticles-list/APArticles-list.jsx";
 import { APAdvertisement } from "../../../src/pages/ArticlePage/APAdvertisement/APAdvertisement.jsx";
-import styles from "../../../src/pages/ArticlePage/ArticlePage.module.scss";
+import { Navigation, NavigationList, NavigationItem, NavigationLink } from "../../../src/pages/ArticlePage/ArticlePage.js";
 import { Container } from "../../components/Container/Container.jsx";
 
 export const ArticlePage = () => {
@@ -12,19 +12,19 @@ export const ArticlePage = () => {
       <Header />
       <main>
         <Container>
-        <nav className={styles.navigation} aria-label="breadcrumb">
-          <ol className={styles.navigation__list}>
-            <li className={styles.navigation__item}>
-              <a className={styles.navigation__link} href="#">Home</a>
-            </li>
-            <li className={styles.navigation__item}>
-              <a className={styles.navigation__link} href="#">Womens Dress</a>
-            </li>
-            <li className={styles.navigation__item}>
-              <a className={styles.navigation__link} href="#">Angels malu</a>
-            </li>
-          </ol>
-        </nav>
+        <Navigation aria-label="breadcrumb">
+          <NavigationList>
+            <NavigationItem>
+              <NavigationLink href="#">Home</NavigationLink>
+            </NavigationItem>
+            <NavigationItem>
+              <NavigationLink href="#">Womens Dress</NavigationLink>
+            </NavigationItem>
+            <NavigationItem>
+              <NavigationLink href="#">Angels malu</NavigationLink>
+            </NavigationItem>
+          </NavigationList>
+        </Navigation>
         <APBaner />
         <APArticlesList />
         <APAdvertisement />
