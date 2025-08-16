@@ -1,23 +1,199 @@
 import { Container } from "../../components/Container/Container";
-// import { Header } from "../../../src/components/Header/Header.jsx";
+import { Header } from "../../../src/components/Header/Header.jsx";
 // import { Footer } from "../../../src/components/Footer/Footer.jsx";
-import styles from "./ShoppingCartPage.module.scss";
+import styles from "./CartPage.module.scss";
 import likeIcon from "../../images/cart/Like.svg";
 import deleteIcon from "../../images/cart/Delete.svg";
 import editIcon from "../../images/cart/Edit.svg";
 
-export const ShoppingPage = () => {
+export const CartPage = () => {
   return (
     <>
       {/* <Header /> */}
       <main>
         <section className={styles.cart}>
-          <Container
-            children={
-              <div>
+              <div className={styles.container}>
                 <p className={styles.cart__subtitle}>Home / Shopping Cart</p>
                 <h2 className={styles.cart__title}>Shopping Cart</h2>
                 <div className={styles.cart__everything}>
+                  <div className={styles.cart__phone__products}>
+                    <ul className={styles.cart__phone__list}>
+                      <li className={styles.cart__phone__item}>
+                        <div className={styles.cart__phone__content}>
+                          <img
+                            src=""
+                            alt="Dress"
+                            className={styles.cart__phone__image}
+                          />
+                          <div className={styles.cart__phone__info}>
+                            <h4 className={styles.cart__phone__title}>
+                              Angels malu zip jeans slim black used
+                            </h4>
+                            <p className={styles.cart__phone__number}>
+                              <span className={styles.cart__phone__desc}>
+                                Size:{" "}
+                              </span>
+                              W31/L34
+                            </p>
+                            <p className={styles.cart__phone__number}>
+                              <span className={styles.cart__phone__desc}>
+                                Art.No.:{" "}
+                              </span>
+                              434536465
+                            </p>
+                            <p className={styles.cart__phone__color}>
+                              Color:
+                              <div className={styles.cart__phone__square}>
+                                <div
+                                  className={styles.cart__phone__color}
+                                ></div>
+                              </div>
+                            </p>
+                          </div>
+                          <div className={styles.cart__phone__actions}>
+                            <button
+                              type="button"
+                              className={styles.cart__phone__button}
+                            >
+                              <img
+                              className={styles.cart__phone__icon}
+                              src={deleteIcon}
+                              alt="Delete"
+                            />
+                            </button>
+                            <button
+                              type="button"
+                              className={styles.cart__phone__button}
+                            >
+                              <img
+                              className={styles.cart__phone__icon}
+                              src={editIcon}
+                              alt="Edit"
+                            />
+                            </button>
+                          </div>
+                        </div>
+                        <div className={styles.cart__phone__amount}>
+                          <div className={styles.cart__phone__quantity}>
+                            <p className={styles.cart__phone__subtitle}>
+                              Quantity
+                            </p>
+                            <div className={styles.cart__phone__rectangle}>
+                              <button
+                                className={styles.cart__phone__subtract}
+                                type="button"
+                              >
+                                <div
+                                  className={styles.cart__phone__minus}
+                                ></div>
+                              </button>
+                              <p>1</p>
+                              <button
+                                type="button"
+                                className={styles.cart__phone__add}
+                              >
+                                <div className={styles.cart__phone__plus}></div>
+                                <div className={styles.cart__phone__plus}></div>
+                              </button>
+                            </div>
+                          </div>
+                          <p className={styles.cart__phone__price}>
+                            <span className={styles.cart__phone__price__light}>
+                              Price:
+                            </span>
+                            90,00 EUR
+                          </p>
+                        </div>
+                      </li>
+                       <li className={styles.cart__phone__item}>
+                        <div className={styles.cart__phone__content}>
+                          <img
+                            src=""
+                            alt="Dress"
+                            className={styles.cart__phone__image}
+                          />
+                          <div className={styles.cart__phone__info}>
+                            <h4 className={styles.cart__phone__title}>
+                              Angels malu zip jeans slim black used
+                            </h4>
+                            <p className={styles.cart__phone__number}>
+                              <span className={styles.cart__phone__desc}>
+                                Size:{" "}
+                              </span>
+                              W31/L34
+                            </p>
+                            <p className={styles.cart__phone__number}>
+                              <span className={styles.cart__phone__desc}>
+                                Art.No.:{" "}
+                              </span>
+                              434536465
+                            </p>
+                            <p className={styles.cart__phone__color}>
+                              Color:
+                              <div className={styles.cart__phone__square}>
+                                <div
+                                  className={styles.cart__phone__color}
+                                ></div>
+                              </div>
+                            </p>
+                          </div>
+                          <div className={styles.cart__phone__actions}>
+                            <button
+                              type="button"
+                              className={styles.cart__phone__button}
+                            >
+                              <img
+                              className={styles.cart__phone__icon}
+                              src={deleteIcon}
+                              alt="Delete"
+                            />
+                            </button>
+                            <button
+                              type="button"
+                              className={styles.cart__phone__button}
+                            >
+                              <img
+                              className={styles.cart__phone__icon}
+                              src={editIcon}
+                              alt="Edit"
+                            />
+                            </button>
+                          </div>
+                        </div>
+                        <div className={styles.cart__phone__amount}>
+                          <div className={styles.cart__phone__quantity}>
+                            <p className={styles.cart__phone__subtitle}>
+                              Quantity
+                            </p>
+                            <div className={styles.cart__phone__rectangle}>
+                              <button
+                                className={styles.cart__phone__subtract}
+                                type="button"
+                              >
+                                <div
+                                  className={styles.cart__phone__minus}
+                                ></div>
+                              </button>
+                              <p>1</p>
+                              <button
+                                type="button"
+                                className={styles.cart__phone__add}
+                              >
+                                <div className={styles.cart__phone__plus}></div>
+                                <div className={styles.cart__phone__plus}></div>
+                              </button>
+                            </div>
+                          </div>
+                          <p className={styles.cart__phone__price}>
+                            <span className={styles.cart__phone__price__light}>
+                              Price:
+                            </span>
+                            90,00 EUR
+                          </p>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
                   <div className={styles.cart__products}>
                     <ul className={styles.cart__categories}>
                       <li className={styles.cart__categorie}>Product</li>
@@ -27,11 +203,10 @@ export const ShoppingPage = () => {
                       <li className={styles.cart__categorie}>Total</li>
                     </ul>
                     <ul className={styles.cart__list}>
-                      {/* Make from localhost */}
                       <li className={styles.cart__item}>
                         <img
                           src="url"
-                          alt="smth"
+                          alt="Dress"
                           className={styles.cart__item__image}
                         />
                         <div className={styles.cart__item__wrapper}>
@@ -112,12 +287,12 @@ export const ShoppingPage = () => {
                           type="button"
                           className={styles.cart__details__btn}
                         >
-                          Apply Discount
+                          Apply
                         </button>
                       </div>
                       <div>
                         <h6>Estimate Shipping and Tax</h6>
-                        <div>{/*  Minus/plus logic  */}</div>
+                        <div></div>
                       </div>
                       <p className={styles.cart__details__subtitle}>
                         Enter your destination to get a shipping estimate.
@@ -207,8 +382,6 @@ export const ShoppingPage = () => {
                   </form>
                 </div>
               </div>
-            }
-          />
         </section>
       </main>
       {/* <Footer /> */}
