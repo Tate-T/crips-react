@@ -1,36 +1,279 @@
 @import "../../sass/utils/variables.scss";
 @import "../../sass/utils/mixins.scss";
 
+.container {
+  width: 320px;
+  padding: 0 14px;
+  margin: 0 auto;
+  outline: 1px solid red;
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+  @media screen and (min-width: 1920px) {
+    width: 1920px;
+  }
+}
+
 .cart {
   padding-top: 13px;
   font-family: Oswald;
   color: $main-text-color;
+  padding-bottom: 27px;
+
+   @media screen and (min-width: 768px) {
+  padding-bottom: 116px;
+  }
 
   &__subtitle {
     color: $secondary-text-color;
-    text-align: center;
-    font-size: 14px;
+    text-align: left;
     font-family: Roboto;
     font-weight: 400;
-    line-height: 485.714%;
+    font-size: 10px;
+    line-height: 160%;
+
+    @media screen and (min-width: 768px) {
+      line-height: 485.714%;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 1920px) {
+    }
   }
 
   &__title {
-    margin-top: 13px;
-    margin-bottom: 55px;
-    text-align: center;
-    font-family: Oswald;
-    font-size: 48px;
+    margin-bottom: 15px;
+    text-align: left;
     font-weight: 400;
-    line-height: 141.667%;
+    font-size: 18px;
+    border-bottom: 1px $divider-color solid;
+    line-height: 277.778%;
+
+    @media screen and (min-width: 768px) {
+      font-size: 48px;
+      line-height: 141.667%;
+      text-align: center;
+      margin-top: 13px;
+      margin-bottom: 55px;
+    }
+
+    @media screen and (min-width: 1920px) {
+    }
   }
 
   &__everything {
-    @include flex($align-items: none, $gap: 71px);
+    @include flex($flex-direction: column, $align-items: none, $gap: 0);
+
+    @media screen and (min-width: 768px) {
+      @include flex($align-items: none, $gap: 71px);
+    }
+  }
+
+  &__phone {
+    &__products {
+      display: block;
+
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+
+    &__item {
+      padding-bottom: 14px;
+      border-bottom: 1px $form-bg-color solid;
+    }
+
+    &__list {
+      @include flex($gap: 14px);
+    }
+
+    &__content {
+      @include flex($align-items: flex-start, $gap: 17px);
+    }
+
+    &__image {
+      background-color: cadetblue;
+      width: 81px;
+      height: 103px;
+    }
+
+    &__info {
+      @include flex(
+        $align-items: flex-start,
+        $flex-direction: column,
+        $gap: 7px
+      );
+    }
+
+    &__title {
+      color: $main-text-color;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 112.5%;
+      letter-spacing: 0.2px;
+      max-width: 157px;
+      margin: 0;
+    }
+
+    &__number {
+      color: #3f3f3f;
+      font-size: 12px;
+      font-weight: 400;
+    }
+
+    &__desc {
+      color: $subtitle-text-color;
+    }
+
+    &__color {
+      color: $subtitle-text-color;
+      font-size: 12px;
+      font-weight: 400;
+      @include flex($justify-content: flex-start, $gap: 6px);
+    }
+
+    &__square {
+      width: 18px;
+      height: 18px;
+      border: 1px $divider-color solid;
+      @include flex;
+    }
+
+    &__square &__color {
+      width: 12px;
+      height: 12px;
+      background-color: #5884aa;
+    }
+
+    &__actions {
+      @include flex($flex-direction: column, $gap: 5px);
+    }
+
+    &__button {
+      height: 20px;
+      width: 20px;
+      background-color: $functional-bg-color;
+      @include flex;
+    }
+
+    &__icon {
+      width: 9px;
+      height: 9px;
+    }
+
+    &__subtitle {
+      color: #3f3f3f;
+      font-size: 12px;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    &__amount {
+      @include flex($justify-content: space-between, $align-items: flex-start);
+    }
+
+    &__quantity {
+      padding-top: 8px;
+      @include flex(
+        $align-items: flex-start,
+        $flex-direction: column,
+        $gap: 11px
+      );
+    }
+
+    &__rectangle {
+      width: 119px;
+      height: 43px;
+      border: 1px solid $divider-color;
+      @include flex($justify-content: space-between);
+    }
+
+    &__subtract {
+      width: 41px;
+      height: 41px;
+      padding: 0;
+      background-color: $bg-color;
+      transition: background-color $st-transition;
+      @include flex;
+
+      &:hover {
+        background-color: $main-hover-color;
+
+        & div {
+          background-color: $secondary-text-color;
+        }
+      }
+    }
+
+    &__minus {
+      width: 12px;
+      height: 2px;
+      background-color: $divider-color;
+      transition: background-color $st-transition;
+    }
+
+    &__add {
+      position: relative;
+      width: 41px;
+      background-color: $bg-color;
+      height: 41px;
+      transition: background-color $st-transition;
+
+      &:hover {
+        background-color: $main-hover-color;
+
+        & div {
+          background-color: $secondary-text-color;
+        }
+      }
+    }
+
+    &__plus {
+      position: absolute;
+      top: 20px;
+      left: 14px;
+      width: 12px;
+      height: 2px;
+      background-color: $divider-color;
+      transition: background-color $st-transition;
+    }
+
+    &__plus:last-child {
+      top: 15px;
+      left: 19px;
+      height: 12px;
+      width: 2px;
+    }
+
+    &__price {
+      color: $main-text-color;
+      text-align: right;
+      font-size: 18px;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-top: 44px;
+
+      &__light {
+        color: $subtitle-text-color;
+        font-size: 12px;
+        font-weight: 400;
+        margin-right: 8px;
+      }
+    }
   }
 
   &__products {
     width: 883px;
+    display: none;
+
+    @media screen and (min-width: 768px) {
+      display: block;
+    }
   }
 
   &__categories {
@@ -271,22 +514,41 @@
   }
 
   &__form {
-    @include flex($align-items: none, $flex-direction: column, $gap: 24px);
+    @include flex($align-items: none, $flex-direction: column, $gap: 20px);
+
+    @media screen and (min-width: 768px) {
+      gap: 24px;
+    }
   }
 
   &__details {
-    width: 500px;
+    width: 292px;
+    border: none;
+    background: $bg-color;
+padding: 0;
+
+    @media screen and (min-width: 768px) {
+      background: $form-bg-color;
+      border: 2px solid $divider-color;
     height: 614px;
-    border: 2px solid $divider-color;
-    background: $form-bg-color;
-    padding-top: 36px;
     padding-left: 32px;
-    padding-right: 24px;
+padding-right: 24px;
+    padding-top: 36px;
+      width: 500px;
+    }
 
     & h6 {
-      font-size: 24px;
       font-weight: 400;
       margin: 0;
+      color: $secondary-text-color;
+      font-size: 14px;
+      text-transform: uppercase;
+
+      @media screen and (min-width: 768px) {
+        color: $main-text-color;
+        font-size: 24px;
+        text-transform: initial;
+      }
     }
 
     &__wrapper {
@@ -296,8 +558,8 @@
 
     &__input {
       margin-bottom: 26px;
-      width: 444px;
-      height: 44px;
+      width: 292px;
+      height: 40px;
       border: 1px solid $divider-color;
       background: $bg-color;
       padding-left: 16px;
@@ -306,6 +568,11 @@
       font-weight: 400;
       line-height: 125%;
 
+      @media screen and (min-width: 768px) {
+        width: 444px;
+        height: 44px;
+      }
+
       &::placeholder {
         color: $divider-color;
       }
@@ -313,10 +580,11 @@
 
     &__btn {
       position: absolute;
-      top: 1px;
-      right: -3px;
-      width: 125px;
-      height: 42px;
+      top: 4px;
+      right: 3px;
+      width: 86px;
+      height: 32px;
+      background-color: $form-bg-color;
       color: $inactive-color;
       font-family: Oswald;
       font-size: 14px;
@@ -324,8 +592,17 @@
       line-height: normal;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      background-color: transparent;
       transition: background-color $st-transition;
+      border: 2px solid $divider-color;
+
+      @media screen and (min-width: 768px) {
+        width: 125px;
+        background-color: transparent;
+        border:  none;
+        top: 1px;
+        right: -3px;
+        height: 42px;
+      }
 
       &:hover {
         background-color: $form-bg-color;
@@ -333,25 +610,38 @@
     }
 
     &__subtitle {
-      margin-top: 10px;
+      margin-top: 15px;
       margin-bottom: 25px;
       color: $secondary-text-color;
       font-family: Roboto;
-      font-size: 16px;
       font-weight: 400;
       line-height: 125%;
+      font-size: 10px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 16px;
+        margin-top: 10px;
+      }
     }
 
     &__shipping {
-      @include flex($align-items: none, $gap: 25px, $flex-direction: column);
+      @include flex($align-items: none, $gap: 17px, $flex-direction: column);
+
+      @media screen and (min-width: 768px) {
+        gap: 25px;
+      }
     }
 
     &__info {
       color: $inactive-color;
       font-family: Roboto;
-      font-size: 16px;
       font-weight: 400;
       line-height: 125%;
+      font-size: 12px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 16px;
+      }
 
       &__red {
         color: $accent-color;
@@ -371,9 +661,13 @@
       background-image: none;
       color: $inactive-color;
       font-family: Roboto;
-      font-size: 16px;
       font-weight: 450;
       line-height: 125%;
+      font-size: 12px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 16px;
+      }
     }
 
     &__information {
@@ -393,101 +687,163 @@
     }
 
     &__tax {
-      margin-top: 20px;
-      margin-bottom: 20px;
-      font-size: 18px;
-      font-weight: 500;
+      margin-top: 17px;
+      margin-bottom: 13px;
       line-height: 133.333%;
+      font-size: 12px;
+      font-weight: 400;
+
+      @media screen and (min-width: 768px) {
+        font-weight: 500;
+        font-size: 18px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+      }
     }
 
     &__taxchoice {
       margin-left: 13px;
-      color: $secondary-text-color;
+      color: #3f3f3f;
       font-family: Roboto;
-      font-size: 14px;
       font-style: normal;
       font-weight: 400;
+      font-size: 10px;
+      text-transform: uppercase;
+
+      @media screen and (min-width: 768px) {
+        font-size: 14px;
+        text-transform: initial;
+      }
     }
   }
 
   &__total {
-    padding-top: 34px;
-    width: 500px;
-    height: 275px;
+    padding-top: 15px;
+    width: 292px;
+    height: 182px;
     border: 2px solid $divider-color;
     background: $form-bg-color;
     position: relative;
 
+    @media screen and (min-width: 768px) {
+      width: 500px;
+      height: 295px;
+      padding-top: 34px;
+    }
+
     &__subtitle {
-      font-size: 18px;
       font-weight: 500;
       line-height: 133.333%;
       @include flex($justify-content: space-between);
-      width: 444px;
+      width: 268px;
       margin-right: auto;
       margin-left: auto;
+      color: $secondary-text-color;
+      font-size: 10px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 18px;
+        width: 444px;
+        color: $main-text-color;
+      }
+
+      & p:last-child {
+        color: $main-text-color;
+      }
     }
 
     &__tax {
       margin-top: 13px;
       color: $secondary-text-color;
-      font-size: 18px;
       font-weight: 500;
       line-height: 133.333%;
       @include flex($justify-content: space-between);
-      width: 444px;
+      width: 268px;
       margin-right: auto;
       margin-left: auto;
+      font-size: 10px;
+      @media screen and (min-width: 768px) {
+        width: 444px;
+        font-size: 18px;
+      }
     }
 
     &__title {
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 283.333%;
+      margin-top: 20px;
       @include flex($justify-content: space-between);
-      width: 444px;
+      width: 268px;
       margin-right: auto;
       margin-left: auto;
+      font-size: 12px;
+      font-weight: 500;
+
+      @media screen and (min-width: 768px) {
+        width: 444px;
+      margin-top: 26px;
+        font-weight: 400;
+        font-size: 24px;
+      }
     }
 
     &__line {
       width: 444px;
+      width: 268px;
       height: 1px;
       background-color: $divider-color;
       margin-right: auto;
       margin-left: auto;
+      margin-top: 12px;
+
+      @media screen and (min-width: 768px) {
+        width: 444px;
+        margin-top: 30px;
+      }
     }
 
     &__checkout__multiple {
-      width: 500px;
-      height: 55px;
+      width: 292px;
+      height: 38px;
       background-color: transparent;
       color: $secondary-text-color;
       font-family: Oswald;
       text-align: center;
-      font-size: 14px;
       font-weight: 500;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+      font-size: 12px;
       position: absolute;
-      bottom:55px;
       left: -2px;
+      bottom: 39px;
+
+      @media screen and (min-width: 768px) {
+        font-size: 14px;
+        width: 500px;
+        height: 55px;
+        bottom: 55px;
+      }
     }
 
     &__checkout {
-      width: 500px;
-      height: 55px;
+      width: 292px;
+      height: 39px;
       background-color: $main-text-color;
       color: $contrast-text-color;
       font-family: Oswald;
       text-align: center;
-      font-size: 14px;
       font-weight: 500;
       letter-spacing: 0.5px;
       text-transform: uppercase;
       position: absolute;
       bottom: 0;
       left: -2px;
+      font-size: 12px;
+
+      @media screen and (min-width: 768px) {
+        width: 500px;
+        height: 55px;
+        font-size: 14px;
+        bottom: -2px;
+      }
     }
   }
 }
