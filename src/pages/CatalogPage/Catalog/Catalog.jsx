@@ -1,29 +1,28 @@
 import PropTypes from "prop-types";
-import styles from "./Catalog.module.scss"
-export const Catalog = ({ img, top, name, price, colors }) => {
+
+const userMedia = window.matchMedia("(min-width: 768px)");
+
+export const Catalog = ({ img, top, name, price, colors, style }) => {
   return (
-    <li className={styles.catalog__item}>
-      <img
-        className={styles.catalog__img}
-        src={img}
-        alt=""
-        // width="345px"
-        // height="450px"
-      />
-      <p className={styles.catalog__top}>{top}</p>
-      <h3 className={styles.catalog__name}>{name}</h3>
-      <h4 className={styles.catalog__price}>{price}</h4>
-      <ul className={styles.catalog__colors}>
-        {colors.map((item, index) => (
-          <li className={styles.colors__item} key={index}>
-            <button type="button" className={styles.catalog__color}>
-              <div
-                className={styles.color}
-                style={{ backgroundColor: item }}
-              ></div>
-            </button>
-          </li>
-        ))}
+    <li className={style.catalog__item}>
+      <img className={style.catalog__img} src={img} alt="#" />
+      <p className={style.catalog__top}>{top}</p>
+      <h3 className={style.catalog__title}>{name}</h3>
+      <p className={style.catalog__price}>{price}</p>
+
+      <ul className={style.catalog__colors}>
+        {userMedia.matches
+          ? colors.map((item, index) => (
+              <li className={style.colors__item} key={index}>
+                <button type="button" className={style.catalog__color}>
+                  <div
+                    className={style.color}
+                    style={{ backgroundColor: item }}
+                  ></div>
+                </button>
+              </li>
+            ))
+          : undefined}
       </ul>
     </li>
   );
@@ -34,6 +33,6 @@ Catalog.propTypes = {
   name: PropTypes.string.isRequired,
   top: PropTypes.string.isRequired,
   colors: PropTypes.array.isRequired,
-  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  styles: PropTypes.object.isRequired,
+  price: PropTypes.string.isRequired,
+  style: PropTypes.object.isRequired,
 };
