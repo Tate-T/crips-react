@@ -1,27 +1,40 @@
 import { Catalog } from "./Catalog.jsx";
 import { Sorting } from "../Sorting/Sorting.jsx";
 import Banner from "../Banner/Banner.jsx";
-import style from "./Catalog.module.scss";
+import styles from "./Catalog.module.scss";
 import catalogBase from "../../../data/catalog-data.js";
+import React from "react";
 
-export function FullCatalog() {
-  catalogBase.map((item, index) => (
-    <Catalog {...item} color={item.colors} style={style} key={index} />
-  ));
-  return (
-    <>
-      <Sorting />
-      <ul className={style.catalog__list}>
-        {catalogBase.map((item, index) => (
-          <Catalog {...item} color={item.colors} style={style} key={index} />
-        ))}
-      </ul>
-      <Banner />
-      <ul className={style.catalog__list}>
-        {catalogBase.map((item, index) => (
-          <Catalog {...item} style={style} key={index} />
-        ))}
-      </ul>
-    </>
-  );
+export class FullCatalog extends React.Component {
+  render() {
+    const userMedia = window.matchMedia("(min-width: 768px)");
+    return (
+      <>
+        <Sorting />
+        <ul className={styles.catalog__list}>
+          {catalogBase.map((item, index) => (
+            <Catalog
+              {...item}
+              color={item.colors}
+              style={styles}
+              key={index}
+              media={userMedia}
+            />
+          ))}
+        </ul>
+        <Banner />
+        <ul className={styles.catalog__list}>
+          {catalogBase.map((item, index) => (
+            <Catalog
+              {...item}
+              color={item.colors}
+              style={styles}
+              key={index}
+              media={userMedia}
+            />
+          ))}
+        </ul>
+      </>
+    );
+  }
 }

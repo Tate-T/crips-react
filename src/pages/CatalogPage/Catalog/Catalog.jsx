@@ -1,32 +1,42 @@
 import PropTypes from "prop-types";
+import React from "react";
 
-const userMedia = window.matchMedia("(min-width: 768px)");
 
-export const Catalog = ({ img, top, name, price, colors, style }) => {
-  return (
-    <li className={style.catalog__item}>
-      <img className={style.catalog__img} src={img} alt="#" />
-      <p className={style.catalog__top}>{top}</p>
-      <h3 className={style.catalog__title}>{name}</h3>
-      <p className={style.catalog__price}>{price}</p>
 
-      <ul className={style.catalog__colors}>
-        {userMedia.matches
-          ? colors.map((item, index) => (
-              <li className={style.colors__item} key={index}>
-                <button type="button" className={style.catalog__color}>
-                  <div
-                    className={style.color}
-                    style={{ backgroundColor: item }}
-                  ></div>
-                </button>
-              </li>
-            ))
-          : undefined}
-      </ul>
-    </li>
-  );
-};
+export class Catalog extends React.Component {
+  render() {
+    return (
+      <li className={this.props.style.catalog__item}>
+        <img
+          className={this.props.style.catalog__img}
+          src={this.props.img}
+          alt="#"
+        />
+        <p className={this.props.style.catalog__top}>{this.props.top}</p>
+        <h3 className={this.props.style.catalog__title}>{this.props.name}</h3>
+        <p className={this.props.style.catalog__price}>{this.props.price}</p>
+
+        <ul className={this.props.style.catalog__colors}>
+          {this.props.media.matches
+            ? this.props.colors.map((item, index) => (
+                <li className={this.props.style.colors__item} key={index}>
+                  <button
+                    type="button"
+                    className={this.props.style.catalog__color}
+                  >
+                    <div
+                      className={this.props.style.color}
+                      style={{ backgroundColor: item }}
+                    ></div>
+                  </button>
+                </li>
+              ))
+            : undefined}
+        </ul>
+      </li>
+    );
+  }
+}
 
 Catalog.propTypes = {
   img: PropTypes.string.isRequired,
