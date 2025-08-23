@@ -1,19 +1,40 @@
 import { Catalog } from "./Catalog.jsx";
 import { Sorting } from "../Sorting/Sorting.jsx";
-import { catalogData } from "../../../data/catalog-data.js";
-import stule from "./Catalog.module.scss";
+import Banner from "../Banner/Banner.jsx";
+import styles from "./Catalog.module.scss";
+import catalogBase from "../../../data/catalog-data.js";
+import React from "react";
 
-export const FullCatalog = () => {
-	return (
-		<>
-			<Sorting />
-			<div className={stule.catalog__container}>
-				<ul className={stule.catalog__list}>
-					{catalogData.map((item, index) => (
-						<Catalog {...item} styles={stule} key={index} />
-					))}
-				</ul>
-			</div>
-		</>
-	);
-};
+export class FullCatalog extends React.Component {
+  render() {
+    const userMedia = window.matchMedia("(min-width: 768px)");
+    return (
+      <>
+        <Sorting />
+        <ul className={styles.catalog__list}>
+          {catalogBase.map((item, index) => (
+            <Catalog
+              {...item}
+              color={item.colors}
+              style={styles}
+              key={index}
+              media={userMedia}
+            />
+          ))}
+        </ul>
+        <Banner />
+        <ul className={styles.catalog__list}>
+          {catalogBase.map((item, index) => (
+            <Catalog
+              {...item}
+              color={item.colors}
+              style={styles}
+              key={index}
+              media={userMedia}
+            />
+          ))}
+        </ul>
+      </>
+    );
+  }
+}

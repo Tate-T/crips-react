@@ -1,9 +1,15 @@
 import s from "./FaqsList.module.scss";
 
+
 export const FaqsList = () => {
   return (
     <>
-      <div className={s.mainWrapper}>
+        <div className={s.detailTextBox}>
+                <p className={s.detailText}>Details</p>
+            </div>
+        <div className={s.mainWrapper}>
+        
+
         <div className={s.aboutWrapper}>
           <div className={s.aboutBox}>
             <h3 className={s.aboutTitle}>ABOUT PRODUCT</h3>
@@ -42,10 +48,17 @@ export const FaqsList = () => {
         </div>
       </div>
 
-      <select name="Other information">
-        <p>kdkkd</p>
-      </select>
-      <select name="Another tab"></select>
+      <div className={s.detailTextBox}>
+            <p className={s.detailText}>Other information</p>
+        </div>
+        <div className={s.detailTextBox}>
+            <p className={s.detailText}>Another tab</p>
+        </div>
+
+      
     </>
   );
 };
+
+
+

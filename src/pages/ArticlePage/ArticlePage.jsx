@@ -1,30 +1,34 @@
 // import { Header } from "../../../src/components/Header/Header.jsx";
 // import { Footer } from "../../../src/components/Footer/Footer.jsx";
-import { Baner } from "../../src/pages/ArticlePage/baner/Baner.jsx";
-import { ArticlesList } from "../../src/pages/ArticlePage/articlesList/ArticlesList.jsx";
-import { Advertisement } from "../../src/pages/ArticlePage/advertisement/Advertisement.jsx";
+import { APBaner } from "../../../src/pages/ArticlePage/APBaner/APBaner.jsx";
+import { APArticlesList } from "../../../src/pages/ArticlePage/APArticles-list/APArticles-list.jsx";
+import { APAdvertisement } from "../../../src/pages/ArticlePage/APAdvertisement/APAdvertisement.jsx";
+import styles from "../../../src/pages/ArticlePage/ArticlePage.module.scss";
+
 
 export const ArticlePage = () => {
   return (
     <>
       {/* <Header /> */}
       <main>
-        <nav aria-label="breadcrumb">
-          <ol>
-            <li>
-              <a href="#">Home</a>
+        {/* <Container> */}
+        <nav className={styles.navigation} aria-label="breadcrumb">
+          <ol className={styles.navigation__list}>
+            <li className={styles.navigation__item}>
+              <a className={styles.navigation__link} href="#">Home</a>
             </li>
-            <li>
-              <a href="#">Womens Dress</a>
+            <li className={styles.navigation__item}>
+              <a className={styles.navigation__link} href="#">Womens Dress</a>
             </li>
-            <li>
-              <a href="#">Angels malu</a>
+            <li className={styles.navigation__item}>
+              <a className={styles.navigation__link} href="#">Angels malu</a>
             </li>
           </ol>
         </nav>
-        <Baner />
-        <ArticlesList />
-        <Advertisement />
+        <APBaner />
+        <APArticlesList />
+        <APAdvertisement />
+        {/* </Container> */}
       </main>
       {/* <Footer /> */}
     </>
