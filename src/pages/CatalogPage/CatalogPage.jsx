@@ -7,8 +7,8 @@ export const CatalogSection = () => {
     <>
       <Header />
       <main className="container">
-        <FullCatalog />
         <Filtration />
+        {/* <FullCatalog /> */}
       </main>
       {/* <Footer /> */}
     </>
