@@ -6,39 +6,39 @@ import { Component } from "react";
 export class AddNewAddress extends Component {
   state = {
     contact: {
-      firstName: "",
-      lastName: "",
-      company: "",
-      phone: "",
-      fax: "",
+      firstName: this.props.firstName,
+      lastName: this.props.lastName,
+      company: this.props.company,
+      phone: this.props.phone,
+      fax: this.props.fax,
     },
     address: {
-      streetaddress: "",
-      streetaddress2: "",
-      country: "",
-      state: "",
-      code: "",
+      streetaddress: this.props.streetaddress,
+      streetaddress2: this.props.streetaddress2,
+      country: this.props.country,
+      state: this.props.state,
+      code: this.props.code,
     },
   };
 
-  submitForm = (e) => {
-    e.preventDefault();
-    this.setState({
+  handleContactChange = (e) => {
+    const { name, value } = e.target;
+    this.setState((prevState) => ({
       contact: {
-        firstName: e.target.userfirstname.value,
-        lastName: e.target.userlastname.value,
-        company: e.target.usercompany.value,
-        phone: e.target.userphone.value,
-        fax: e.target.userfax.value,
+        ...prevState.contact,
+        [name]: value,
       },
+    }));
+  };
+
+  handleAddressChange = (e) => {
+    const { name, value } = e.target;
+    this.setState((prevState) => ({
       address: {
-        streetaddress: e.target.userstreetaddress.value,
-        streetaddress2: e.target.userstreetaddress2.value,
-        country: e.target.usercountry.value,
-        state: e.target.userstate.value,
-        code: e.target.usercode.value,
+        ...prevState.address,
+        [name]: value,
       },
-    });
+    }));
   };
 
   render() {
@@ -51,7 +51,10 @@ export class AddNewAddress extends Component {
           <h1 className={styles.address__title}>Add New Address</h1>
           <div className={styles.address__wrap}>
             <DashboardSidebar page={3} />
-            <form onSubmit={this.submitForm} className={styles.address__form}>
+            <form
+              onSubmit={this.props.submitForm}
+              className={styles.address__form}
+            >
               <div>
                 <h3 className={styles.address__header}>Contact Information</h3>
                 <div className={styles.address__labels}>
@@ -62,9 +65,10 @@ export class AddNewAddress extends Component {
                     <input
                       className={styles.address__input}
                       type="text"
-                      name="userfirstname"
+                      name="firstName"
                       id="user-firstname"
-                      defaultValue={this.state.contact.firstName}
+                      value={this.state.contact.firstName}
+                      onChange={this.handleContactChange}
                       required
                       placeholder="Alex"
                     />
@@ -76,9 +80,10 @@ export class AddNewAddress extends Component {
                     <input
                       className={styles.address__input}
                       type="text"
-                      name="userlastname"
+                      name="lastName"
                       id="user-lastname"
-                      defaultValue={this.state.contact.lastName}
+                      value={this.state.contact.lastName}
+                      onChange={this.handleContactChange}
                       required
                       placeholder="Driver"
                     />
@@ -88,9 +93,10 @@ export class AddNewAddress extends Component {
                     <input
                       className={styles.address__input}
                       type="text"
-                      name="usercompany"
+                      name="company"
                       id="user-company"
-                      defaultValue={this.state.contact.company}
+                      value={this.state.contact.company}
+                      onChange={this.handleContactChange}
                       placeholder=""
                     />
                   </label>
@@ -102,11 +108,12 @@ export class AddNewAddress extends Component {
                     <input
                       className={styles.address__input}
                       type="tel"
-                      name="userphone"
+                      name="phone"
                       id="user-phone"
                       required
                       placeholder=""
-                      defaultValue={this.state.contact.phone}
+                      value={this.state.contact.phone}
+                      onChange={this.handleContactChange}
                     />
                   </label>
                   <label className={styles.address__label}>
@@ -114,10 +121,11 @@ export class AddNewAddress extends Component {
                     <input
                       className={styles.address__input}
                       type="text"
-                      name="userfax"
+                      name="fax"
                       id="user-fax"
                       placeholder=""
-                      defaultValue={this.state.contact.fax}
+                      value={this.state.contact.fax}
+                      onChange={this.handleContactChange}
                     />
                   </label>
                 </div>
@@ -134,19 +142,21 @@ export class AddNewAddress extends Component {
                       <input
                         className={styles.address__input}
                         type="text"
-                        name="userstreetaddress"
+                        name="streetaddress"
                         id="user-streetaddress"
                         required
                         placeholder=""
-                        defaultValue={this.state.address.streetaddress}
+                        value={this.state.address.streetaddress}
+                        onChange={this.handleAddressChange}
                       />
                       <input
                         className={styles.address__input}
                         type="text"
-                        name="userstreetaddress2"
+                        name="streetaddress2"
                         id="user-streetaddress2"
                         required
-                        defaultValue={this.state.address.streetaddress2}
+                        value={this.state.address.streetaddress2}
+                        onChange={this.handleAddressChange}
                         placeholder=""
                       />
                     </div>
@@ -158,7 +168,9 @@ export class AddNewAddress extends Component {
                     <select
                       className={styles.address__select}
                       required
-                      name="usercountry"
+                      value={this.state.address.country}
+                      onChange={this.handleAddressChange}
+                      name="country"
                       id="user-country"
                     >
                       <option value="fr">France</option>
@@ -175,7 +187,9 @@ export class AddNewAddress extends Component {
                     <select
                       className={styles.address__select}
                       required
-                      name="userstate"
+                      value={this.state.address.state}
+                      onChange={this.handleAddressChange}
+                      name="state"
                       id="user-state"
                     >
                       <option value="Kyiv">Kyiv</option>
@@ -192,11 +206,12 @@ export class AddNewAddress extends Component {
                     <input
                       className={styles.address__input}
                       type="num"
-                      name="usercode"
+                      name="code"
                       id="user-code"
                       required
                       placeholder=""
-                      defaultValue={this.state.address.code}
+                      value={this.state.address.code}
+                      onChange={this.handleAddressChange}
                     />
                   </label>
                 </div>
