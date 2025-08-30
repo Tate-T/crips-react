@@ -7,8 +7,6 @@ function App() {
   return (
     <>
       <CartPage />
-      {/* <ProductPage/> */}
-      {/* <CreateNewAcount></CreateNewAcount> */}
     </>
   );
 }
