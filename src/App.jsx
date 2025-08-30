@@ -6,6 +6,7 @@ import { CartPage } from "./pages/CartPage/CartPage.jsx";
 function App() {
   return (
     <>
+      <HomePage />
       <CartPage />
       {/* <ProductPage/> */}
       {/* <CreateNewAcount></CreateNewAcount> */}

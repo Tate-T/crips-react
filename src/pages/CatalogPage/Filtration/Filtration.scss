@@ -369,3 +369,67 @@ input[type="range"] {
     height: 0;
     z-index: 1;
 }
+
+.filtration-close{
+    width:10px;
+    height:10px;
+    cursor: pointer;
+}
+
+.filtration-wrap{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 5px;
+    border-radius: 5px;
+    & p{
+        @include typography(Roboto, 400, 14px, 2.5, 0, left);
+    }
+}
+
+.filtration-list__brand,
+.filtration-list__size,
+.filtration-list__dressLength {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.filtration-list__title{
+    @include typography(Oswald, 400, 24px, 2, 0, left);
+}
+
+
+
+.dark{
+    background-color: rgba(41, 42, 45, 1);
+} 
+
+.light{
+    background-color: rgba(243, 236, 226, 1);
+} .blue{
+    background-color: rgba(36, 66, 106, 1);
+} .black{
+    background-color: rgba(41, 42, 45, 1);
+} .gray{
+    background-color: rgba(102, 102, 137, 1);
+} .light-gray{
+    background-color: rgba(194, 190, 182, 1);
+}.silver{
+    background-color: rgba(170, 171, 167, 1);
+} .red{
+    background-color: rgba(151, 30, 52, 1);
+} .gold{
+    background-color: rgba(203, 161, 62, 1);
+} .brown{
+    background-color: rgba(115, 81, 60, 1);
+} .dark-pink{
+    background-color: rgba(218, 177, 177, 1);
+} .green{
+    background-color: rgba(43, 159, 167, 1);
+}
+
+.is-hidden{
+    display: none;
+}
