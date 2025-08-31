@@ -27,18 +27,18 @@ export class DashboardPage extends Component {
     e.preventDefault();
     this.setState({
       contact: {
-        firstName: e.target.userfirstname.value,
-        lastName: e.target.userlastname.value,
-        company: e.target.usercompany.value,
-        phone: e.target.userphone.value,
-        fax: e.target.userfax.value,
+        firstName: e.target.firstName.value,
+        lastName: e.target.lastName.value,
+        company: e.target.company.value,
+        phone: e.target.phone.value,
+        fax: e.target.fax.value,
       },
       address: {
-        streetaddress: e.target.userstreetaddress.value,
-        streetaddress2: e.target.userstreetaddress2.value,
-        country: e.target.usercountry.value,
-        state: e.target.userstate.value,
-        code: e.target.usercode.value,
+        streetaddress: e.target.streetaddress.value,
+        streetaddress2: e.target.streetaddress2.value,
+        country: e.target.country.value,
+        state: e.target.state.value,
+        code: e.target.code.value,
       },
     });
   };
