@@ -19,8 +19,6 @@ export class Filtration extends Component {
     size: '',
     dressLength: [],
     color: '',
-    minPrice: 0,
-    maxPrice: 500,
     filtration: {
       brands: [],
       size: '',
@@ -170,6 +168,8 @@ export class Filtration extends Component {
     e.preventDefault();
     this.setState({ size: e.target.textContent });
     console.log(this.state.size);
+    document.querySelectorAll(".catalog-filtration__size-button").forEach(btn => btn.classList.remove("active"));
+    e.target.classList.add("active");
   }
   changeDressLength = (e) => {
     const { dressLength } = this.state;
@@ -185,24 +185,35 @@ export class Filtration extends Component {
     e.preventDefault();
     this.setState({ color: e.target.value });
     console.log(this.state.color);
+    document.querySelectorAll(".catalog-filtration__form-color-btn").forEach(btn => btn.classList.remove("active"));
+    e.target.classList.add("active");
   }
-  changePrice = (e) => {
+
+  changeFromValue = (e) => {
     e.preventDefault();
-    const fromValue = Number(this.fromInputRef.current.value);
-    const toValue = Number(this.toInputRef.current.value);
-    this.setState({ minPrice: fromValue, maxPrice: toValue });
-    console.log(this.state.minPrice, this.state.maxPrice);
+    const fromValue = Number(e.target.value);
+    this.setState({ fromValue: fromValue });
+    console.log(this.state.fromValue);
+  }
+
+  changeToValue = (e) => {
+    e.preventDefault();
+    const toValue = Number(e.target.value);
+    this.setState({ toValue: toValue });
+    console.log(this.state.toValue);
   }
 
   applyFilters = () => {
-    const {  brands, size, dressLength, color, minPrice, maxPrice } = this.state;
-    this.setState({ filtration: { 'price': { minPrice, maxPrice }, 'brands': brands, 'size': size, 'dressLength': dressLength, 'color': color, } });
-    if (minPrice !== 0 || maxPrice !== 500 || brands != [] || size != '' || dressLength != [] || color != '') {
+    const { brands, size, dressLength, color, fromValue, toValue } = this.state;
+    this.setState({ filtration: { 'price': { fromValue, toValue }, 'brands': brands, 'size': size, 'dressLength': dressLength, 'color': color, } });
+    console.log(this.state.filtration);
+    if (fromValue !== 0 && toValue !== 500 || brands != [] || size != '' || dressLength != [] || color != '') {
 
       document.querySelector(".catalog-filtration__wrap").classList.remove("is-hidden");
     }
 
   }
+  
 
   render() {
     return (
@@ -213,9 +224,11 @@ export class Filtration extends Component {
         </button>
         <section className="filtration">
           <div className="catalog-filtration__wrap is-hidden">
-            <h2 className="catalog-filtration__title">Filter</h2>
+         <div className="filtration-text__wrap">  <h2 className="catalog-filtration__title">Filter</h2> 
+         <p className="filtration-text__reset"><img src={close} alt="" className="filtration-close"/> RESET ALL</p>
+         </div> 
             <ul>
-              <li>
+              <li className={this.state.filtration.brands.length == 0 ? "is-hidden" : ""}>
                 <h3 className="filtration-list__title">Brand:</h3>
                 <ul className="filtration-list__brand">{this.state.filtration.brands.map((brand) => {
                   return (
@@ -224,14 +237,14 @@ export class Filtration extends Component {
                     </>)
                 })}</ul>
               </li>
-              <li>
+              <li className={this.state.filtration.size === "" ? "is-hidden" : ""}>
                 <h3 className="filtration-list__title">Size(inches):</h3>
                 <li className="filtration-list__size">
                   <img src={close} alt="" className="filtration-close" />
                   <p key={this.state.filtration.size} className="selected-filters">{this.state.filtration.size}</p>
                 </li>
               </li>
-              <li>
+              <li className={this.state.filtration.dressLength.length == 0 ? "is-hidden" : ""}>
                 <h3 className="filtration-list__title">Dress Length:</h3>
                 <ul className="filtration-list__dressLength">{this.state.filtration.dressLength.map((dressLen) => {
                   return (
@@ -240,18 +253,22 @@ export class Filtration extends Component {
                     </>)
                 })}</ul>
               </li>
-              <li>
+              <li className={this.state.filtration.color === "" ? "is-hidden" : ""}>
                 <h3 className="filtration-list__title">Color:</h3>
                 <li className="filtration-list__size">
                   <img src={close} alt="" className="filtration-close" />
                   <div className={`catalog-filtration__form-color-btn active ${this.state.filtration.color}`}></div>
                 </li>
               </li>
-              <li>
+              <li className={this.state.filtration.price.fromValue === 0 && this.state.filtration.price.toValue === 500 ? "is-hidden" : ""}>
                 <h3 className="filtration-list__title">Price:</h3>
                 <li className="filtration-list__size">
                   <img src={close} alt="" className="filtration-close" />
-                  <p className="selected-filters">{this.state.filtration.price.fromValue},00 EUR - {this.state.filtration.price.toValue},00 EUR</p>
+                  <p className="selected-filters">
+                    {this.state.filtration.price.fromValue},00 EUR - {this.state.filtration.price.toValue},00 EUR
+                  </p>
+
+
                 </li>
               </li>
             </ul>
@@ -484,7 +501,6 @@ export class Filtration extends Component {
                   min="0"
                   max="500"
                   readOnly
-                  onChange={this.changePrice}
                 />
               </div>
               <div className="form_control_container">
@@ -497,14 +513,13 @@ export class Filtration extends Component {
                   min="0"
                   max="500"
                   readOnly
-                  onChange={this.changePrice}
                 />
               </div>
             </div>
             <div className="range_container">
               <div className="sliders_control">
-                <input id="fromSlider" ref={this.fromSliderRef} type="range" defaultValue={0} min="0" max="500" />
-                <input id="toSlider" ref={this.toSliderRef} type="range" defaultValue={500} min="0" max="500" />
+                <input id="fromSlider" ref={this.fromSliderRef} type="range" min="0" max="500" defaultValue={0}  onChange={this.changeFromValue}/>
+                <input id="toSlider" ref={this.toSliderRef} type="range" min="0" max="500" defaultValue={500}  onChange={this.changeToValue}/>
               </div>
             </div>
             <button className="catalog-filtration__apply" onClick={this.applyFilters}>Apply</button>

@@ -1,7 +1,7 @@
 @import '../../../sass/utils/mixins.scss';
 @import '../../../sass/utils/variables.scss';
 
-main{
+main {
     display: flex;
     flex-direction: column;
 }
@@ -20,6 +20,7 @@ main{
     align-self: center;
     margin-bottom: 20px;
     transition: $st-transition;
+
     @media screen and (min-width: 768px) {
         display: none;
 
@@ -30,11 +31,12 @@ main{
         height: 15px;
     }
 
-    &.active{
+    &.active {
         background-color: $main-text-color;
         color: $bg-color;
     }
-    &.active img{
+
+    &.active img {
         filter: invert(1);
         transform: rotate(180deg);
     }
@@ -56,7 +58,7 @@ main{
     top: 384px;
     z-index: 1000;
     transition: $st-transition;
-    
+
     &.active {
         display: flex;
         margin-bottom: 20px;
@@ -78,36 +80,37 @@ main{
         padding-left: 0;
         padding-bottom: 0;
         margin-bottom: 0;
+
         &.active {
             display: flex;
             position: static;
             margin-bottom: 0;
             border: none;
-            
+
             border-right: 1px solid $outline-color;
         }
 
-        & .catalog-filtration__size-button{
+        & .catalog-filtration__size-button {
             width: 46px;
             height: 46px;
         }
 
-        & .catalog-filtration__size-form{
+        & .catalog-filtration__size-form {
             gap: 10px;
             width: 270px;
         }
 
-        & .catalog-filtration__form-color-btn{
+        & .catalog-filtration__form-color-btn {
             width: 17px;
             height: 17px;
         }
 
-        & .catalog-filtration__form-color{
+        & .catalog-filtration__form-color {
             width: 270px;
         }
 
-        & .range_container{
-    margin: 50px 0 0 25px;
+        & .range_container {
+            margin: 50px 0 0 25px;
 
         }
     }
@@ -370,19 +373,20 @@ input[type="range"] {
     z-index: 1;
 }
 
-.filtration-close{
-    width:10px;
-    height:10px;
+.filtration-close {
+    width: 10px;
+    height: 10px;
     cursor: pointer;
 }
 
-.filtration-wrap{
+.filtration-wrap {
     display: flex;
     align-items: center;
     gap: 5px;
     padding: 2px 5px;
     border-radius: 5px;
-    & p{
+
+    & p {
         @include typography(Roboto, 400, 14px, 2.5, 0, left);
     }
 }
@@ -392,44 +396,92 @@ input[type="range"] {
 .filtration-list__dressLength {
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 5px;
     margin-top: 10px;
+    align-items: center;
+
 }
 
-.filtration-list__title{
+.filtration-list__title {
     @include typography(Oswald, 400, 24px, 2, 0, left);
 }
 
 
 
-.dark{
+.dark {
     background-color: rgba(41, 42, 45, 1);
-} 
+}
 
-.light{
+.light {
     background-color: rgba(243, 236, 226, 1);
-} .blue{
+}
+
+.blue {
     background-color: rgba(36, 66, 106, 1);
-} .black{
+}
+
+.black {
     background-color: rgba(41, 42, 45, 1);
-} .gray{
+}
+
+.gray {
     background-color: rgba(102, 102, 137, 1);
-} .light-gray{
+}
+
+.light-gray {
     background-color: rgba(194, 190, 182, 1);
-}.silver{
+}
+
+.silver {
     background-color: rgba(170, 171, 167, 1);
-} .red{
+}
+
+.red {
     background-color: rgba(151, 30, 52, 1);
-} .gold{
+}
+
+.gold {
     background-color: rgba(203, 161, 62, 1);
-} .brown{
+}
+
+.brown {
     background-color: rgba(115, 81, 60, 1);
-} .dark-pink{
+}
+
+.dark-pink {
     background-color: rgba(218, 177, 177, 1);
-} .green{
+}
+
+.green {
     background-color: rgba(43, 159, 167, 1);
 }
 
-.is-hidden{
+.is-hidden {
     display: none;
+}
+
+.catalog-filtration__wrap {
+    border: $main-text-color 1px solid;
+    margin: 15px;
+    padding: 15px;
+}
+
+.filtration-text__reset {
+    display: flex;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include typography(Oswald, 400, 14px, 2, 0, center);
+}
+
+.filtration-text__wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.selected-filters{
+    cursor: pointer;
 }
