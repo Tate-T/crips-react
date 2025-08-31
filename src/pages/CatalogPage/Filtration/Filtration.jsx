@@ -189,19 +189,23 @@ export class Filtration extends Component {
     e.target.classList.add("active");
   }
 
-  changeFromValue = (e) => {
-    e.preventDefault();
-    const fromValue = Number(e.target.value);
-    this.setState({ fromValue: fromValue });
-    console.log(this.state.fromValue);
-  }
+ changeFromValue = (e) => {
+  e.preventDefault();
+  const fromValue = Number(e.target.value);
+  this.setState({ fromValue: fromValue }, () => {
+    console.log("fromValue:", this.state.fromValue);
+  });
+}
+
 
   changeToValue = (e) => {
-    e.preventDefault();
-    const toValue = Number(e.target.value);
-    this.setState({ toValue: toValue });
-    console.log(this.state.toValue);
-  }
+  e.preventDefault();
+  const toValue = Number(e.target.value);
+  this.setState({ toValue: toValue }, () => {
+    console.log("toValue:", this.state.toValue);
+  });
+}
+
 
   applyFilters = () => {
     const { brands, size, dressLength, color, fromValue, toValue } = this.state;
@@ -265,7 +269,8 @@ export class Filtration extends Component {
                 <li className="filtration-list__size">
                   <img src={close} alt="" className="filtration-close" />
                   <p className="selected-filters">
-                    {this.state.filtration.price.fromValue},00 EUR - {this.state.filtration.price.toValue},00 EUR
+                    {this.state.filtration.price.fromValue === this.state.filtration.price.toValue ? `${this.state.filtration.price.fromValue},00 EUR`:
+                    `${this.state.filtration.price.fromValue},00 EUR - ${this.state.filtration.price.toValue},00 EUR`}
                   </p>
 
 
@@ -519,7 +524,7 @@ export class Filtration extends Component {
             <div className="range_container">
               <div className="sliders_control">
                 <input id="fromSlider" ref={this.fromSliderRef} type="range" min="0" max="500" defaultValue={0}  onChange={this.changeFromValue}/>
-                <input id="toSlider" ref={this.toSliderRef} type="range" min="0" max="500" defaultValue={500}  onChange={this.changeToValue}/>
+                <input id="toSlider" ref={this.toSliderRef} type="range" min="0" max="500" defaultValue={500}  onInput={this.changeToValue}/>
               </div>
             </div>
             <button className="catalog-filtration__apply" onClick={this.applyFilters}>Apply</button>
