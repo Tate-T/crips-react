@@ -41,6 +41,26 @@ export class AddNewAddress extends Component {
     }));
   };
 
+  handleSubmit = (e) => {
+    this.props.submitForm(e);
+    this.setState({
+      contact: {
+        firstName: "",
+        lastName: "",
+        company: "",
+        phone: "",
+        fax: "",
+      },
+      address: {
+        streetaddress: "",
+        streetaddress2: "",
+        country: "",
+        state: "",
+        code: "",
+      },
+    });
+  };
+
   render() {
     return (
       <section className={styles.address}>
@@ -51,10 +71,7 @@ export class AddNewAddress extends Component {
           <h1 className={styles.address__title}>Add New Address</h1>
           <div className={styles.address__wrap}>
             <DashboardSidebar changePage={this.props.changePage} />
-            <form
-              onSubmit={this.props.submitForm}
-              className={styles.address__form}
-            >
+            <form onSubmit={this.handleSubmit} className={styles.address__form}>
               <div>
                 <h3 className={styles.address__header}>Contact Information</h3>
                 <div className={styles.address__labels}>
@@ -67,7 +84,7 @@ export class AddNewAddress extends Component {
                       type="text"
                       name="firstName"
                       id="user-firstname"
-                      value={this.state.contact.firstName}
+                      value={this.state.contact.firstName || ""}
                       onChange={this.handleContactChange}
                       required
                       placeholder="Alex"
@@ -82,7 +99,7 @@ export class AddNewAddress extends Component {
                       type="text"
                       name="lastName"
                       id="user-lastname"
-                      value={this.state.contact.lastName}
+                      value={this.state.contact.lastName || ""}
                       onChange={this.handleContactChange}
                       required
                       placeholder="Driver"
@@ -95,7 +112,7 @@ export class AddNewAddress extends Component {
                       type="text"
                       name="company"
                       id="user-company"
-                      value={this.state.contact.company}
+                      value={this.state.contact.company || ""}
                       onChange={this.handleContactChange}
                       placeholder=""
                     />
@@ -112,7 +129,7 @@ export class AddNewAddress extends Component {
                       id="user-phone"
                       required
                       placeholder=""
-                      value={this.state.contact.phone}
+                      value={this.state.contact.phone || ""}
                       onChange={this.handleContactChange}
                     />
                   </label>
@@ -124,7 +141,7 @@ export class AddNewAddress extends Component {
                       name="fax"
                       id="user-fax"
                       placeholder=""
-                      value={this.state.contact.fax}
+                      value={this.state.contact.fax || ""}
                       onChange={this.handleContactChange}
                     />
                   </label>
@@ -146,7 +163,7 @@ export class AddNewAddress extends Component {
                         id="user-streetaddress"
                         required
                         placeholder=""
-                        value={this.state.address.streetaddress}
+                        value={this.state.address.streetaddress || ""}
                         onChange={this.handleAddressChange}
                       />
                       <input
@@ -155,7 +172,7 @@ export class AddNewAddress extends Component {
                         name="streetaddress2"
                         id="user-streetaddress2"
                         required
-                        value={this.state.address.streetaddress2}
+                        value={this.state.address.streetaddress2 || ""}
                         onChange={this.handleAddressChange}
                         placeholder=""
                       />
@@ -168,7 +185,7 @@ export class AddNewAddress extends Component {
                     <select
                       className={styles.address__select}
                       required
-                      value={this.state.address.country}
+                      value={this.state.address.country || ""}
                       onChange={this.handleAddressChange}
                       name="country"
                       id="user-country"
@@ -187,7 +204,7 @@ export class AddNewAddress extends Component {
                     <select
                       className={styles.address__select}
                       required
-                      value={this.state.address.state}
+                      value={this.state.address.state || ""}
                       onChange={this.handleAddressChange}
                       name="state"
                       id="user-state"
@@ -210,7 +227,7 @@ export class AddNewAddress extends Component {
                       id="user-code"
                       required
                       placeholder=""
-                      value={this.state.address.code}
+                      value={this.state.address.code || ""}
                       onChange={this.handleAddressChange}
                     />
                   </label>
