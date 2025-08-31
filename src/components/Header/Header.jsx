@@ -18,6 +18,8 @@ export class Header extends React.Component {
 
   handleMenuChange = (ev) => {
     if (ev.target === ev.currentTarget || ev.currentTarget.className === `${style.header__menu}`) {
+      document.querySelector("body").classList.toggle("mob-open");
+
       this.setState({
         isMenuOpen: !this.state.isMenuOpen,
       });

@@ -1,0 +1,244 @@
+.cardlist {
+    width: 1483px;
+
+    padding-bottom: 44px;
+    padding-top: 20px;
+
+
+    &__list {
+        display: flex;
+        gap: 40px 20px;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        width: 344px;
+        height: 548px;
+         height: 552px;
+        outline: 1px solid red;
+    }
+
+    &__img {
+        width: 344px;
+        height: 450px;
+        flex-shrink: 0;
+        margin-bottom: 12px;
+    }
+
+    &__title {
+        color: #BDBDBD;
+        font-family: Oswald;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        color: #000;
+        font-family: Oswald;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        margin-bottom: 18px;
+    }
+
+    &__price {
+        color: #000;
+        font-family: Oswald;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+        margin-bottom: 16px;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    .cardlist {
+        width: 100%;
+
+
+        &__list {
+            justify-content: center;
+        }
+
+    }
+}
+
+
+@media screen and (max-width: 720px) {
+    .cardlist {
+        width: 100%;
+
+
+        &__list {
+            justify-content: center;
+        }
+
+        &__item {
+            width: 215px;
+            height: 335px;
+        }
+
+        &__img {
+            width: 215px;
+            height: 260px;
+            margin-bottom: 5;
+
+        }
+
+        &__title {
+            color: var(--Gray-4, #BDBDBD);
+            font-family: Oswald;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+            margin-bottom: 5;
+        }
+
+        &__subtitle {
+            color: #000;
+            font-family: Oswald;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 18px;
+            margin: 0;
+        }
+
+        &__price {
+            color: var(--Black, #000);
+            font-family: Oswald;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+            margin-top: 4px;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .cardlist {
+        width: 100%;
+        padding-bottom: 30px;
+
+
+        &__list {
+            justify-content: center;
+        }
+
+        &__item {
+            width: 215px;
+            height: 335px;
+        }
+
+        &__img {
+            width: 215px;
+            height: 260px;
+            margin-bottom: 5;
+
+        }
+
+        &__title {
+            color: var(--Gray-4, #BDBDBD);
+            font-family: Oswald;
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+            margin-bottom: 5;
+        }
+
+        &__subtitle {
+            color: #000;
+            font-family: Oswald;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 18px;
+            margin: 0;
+        }
+
+        &__price {
+            color: var(--Black, #000);
+            font-family: Oswald;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+            margin-top: 4px;
+            margin-bottom: 0;
+        }
+    }
+
+
+}
+
+
+@media screen and (max-width: 320px) {
+    .cardlist {
+        width: 100%;
+        padding-bottom: 18px;
+        padding-top: 12px;
+
+
+        &__list {
+            justify-content: center;
+        }
+
+        &__item {
+            width: 133px;
+            height: 260px;
+        }
+
+        &__img {
+            width: 139px;
+            height: 182px;
+            flex-shrink: 0;
+            margin: 0px;
+        }
+
+        &__title {
+            color: var(--Gray-4, #BDBDBD);
+            font-family: Oswald;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        &__subtitle {
+            color: #000;
+            font-family: Oswald;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 300;
+            line-height: 18px;
+
+        }
+
+        &__price {
+            color: var(--Black, #000);
+            font-family: Oswald;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+        }
+    }
+}
