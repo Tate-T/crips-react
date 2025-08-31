@@ -6,8 +6,8 @@ function App() {
   return (
     <>
       <HomePage />
-      <CreateOrder></CreateOrder>
-      <ProductPage />
+      {/* <CreateOrder></CreateOrder> */}
+      {/* <ProductPage /> */}
     </>
   );
 }
