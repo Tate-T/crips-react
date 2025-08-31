@@ -4,13 +4,14 @@ import { ProductPage } from "./pages/ProductPage/ProductPage.jsx";
 import { CartPage } from "./pages/CartPage/CartPage.jsx";
 
 function App() {
-  return (
-    <>
-      <CartPage />
-      {/* <ProductPage/> */}
-      {/* <CreateNewAcount></CreateNewAcount> */}
-    </>
-  );
+	return (
+		<>
+			<HomePage />
+			{/* <CartPage /> */}
+			{/* <ProductPage/> */}
+			{/* <CreateNewAcount></CreateNewAcount> */}
+		</>
+	);
 }
 
 export default App;
