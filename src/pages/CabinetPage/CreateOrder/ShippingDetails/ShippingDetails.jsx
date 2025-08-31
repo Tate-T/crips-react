@@ -85,7 +85,6 @@ export class ShippingDetails extends Component {
       shippingMethod,
       statesList,
     } = this.state;
-    console.log(statesList)
     return (
       <>
         <div className={s.ship__wrap}>
