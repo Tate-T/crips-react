@@ -1,18 +1,20 @@
 .cardlist {
     width: 1483px;
+
     padding-bottom: 44px;
     padding-top: 20px;
+
 
     &__list {
         display: flex;
         gap: 40px 20px;
         flex-wrap: wrap;
-
     }
 
     &__item {
         width: 344px;
-        height: 552px;
+        height: 548px;
+         height: 552px;
         outline: 1px solid red;
     }
 
@@ -51,8 +53,10 @@
         font-weight: 500;
         line-height: normal;
         text-transform: uppercase;
+        margin-bottom: 16px;
     }
 }
+
 
 @media screen and (max-width: 1200px) {
     .cardlist {
