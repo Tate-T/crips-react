@@ -24,7 +24,7 @@ export const HomePage = () => {
         {/* <CreateOrder /> */}
         <Whishlist />
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

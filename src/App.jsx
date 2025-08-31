@@ -7,7 +7,9 @@ import { CreateOrder } from "./pages/CabinetPage/CreateOrder/CreateOrder.jsx";
 function App() {
   return (
     <>
-    <CreateOrder></CreateOrder>
+      <HomePage />
+      <ProductPage />
+      <CreateOrder></CreateOrder>
       <CartPage />
     </>
   );
