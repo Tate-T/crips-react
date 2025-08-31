@@ -50,7 +50,7 @@ export class AddNewAddress extends Component {
           </h2>
           <h1 className={styles.address__title}>Add New Address</h1>
           <div className={styles.address__wrap}>
-            <DashboardSidebar page={3} />
+            <DashboardSidebar changePage={this.props.changePage} />
             <form
               onSubmit={this.props.submitForm}
               className={styles.address__form}
