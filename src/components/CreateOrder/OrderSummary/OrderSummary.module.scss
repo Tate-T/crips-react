@@ -85,6 +85,14 @@ button {
       font-family: "Oswald", sans-serif;
     }
     &__ans {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: all $st-transition;
+      &.open {
+        max-height: fit-content;
+        opacity: 1;
+      }
       .order__list {
         margin-bottom: 25px;
       }
@@ -117,6 +125,13 @@ button {
       align-items: center;
       justify-content: space-between;
       margin-bottom: 13px;
+      .order__icon {
+        transition: transform 0.3s ease;
+      }
+
+      &.active .order__icon {
+        transform: rotate(180deg);
+      }
     }
     &__info {
       font-weight: 400;

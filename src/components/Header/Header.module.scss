@@ -1,6 +1,16 @@
 @import "../../sass/utils/variables.scss";
 @import "../../sass/utils/mixins.scss";
 
+@keyframes activePage {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: calc(100% + 20px);
+  }
+}
+
 .header {
   background-color: black;
   padding: 15px 0;
@@ -11,7 +21,6 @@
 
   &__menu {
     background-color: transparent;
-
 
     @media screen and (min-width: 768px) {
       display: none;
@@ -170,6 +179,26 @@
 
     @media screen and (min-width: 1200px) { 
       @include flex(start, center, 29px, nowrap, row);
+    }
+  }
+
+  &__item.active {
+    position: relative;
+
+    &::after {
+      display: none;
+
+      @media screen and (min-width: 768px) {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 22px;
+        left: -10px;
+        height: 2px;
+        background-color: $accent-color;
+        animation: activePage 0.5s;
+        width: calc(100% + 20px);
+      }
     }
   }
 
