@@ -20,7 +20,7 @@ export const HomePage = () => {
         <CatalogSection />
         <CreateOrder />
         <SpecialList title="Most Popular" />
-        {/* <CatalogSection /> */}
+        <CatalogSection />
         {/* <CreateOrder /> */}
         <Whishlist />
       </main>
