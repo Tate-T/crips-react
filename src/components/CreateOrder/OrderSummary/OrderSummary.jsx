@@ -12,26 +12,30 @@ export class OrderSummary extends Component {
         <div className={s.order__wrap}>
           <h2 className={s.order__title}>Order Summary</h2>
           <div className={s.order__wrapper}>
-            <div className={s.order__ans}>
-              <ul className={s.order__list}>
-                <li className={s.order__item}>
-                  <p>Cart Subtotal</p>
-                  <p>$56.25</p>
-                </li>
-                <li className={s.order__item}>
-                  <p>Shipping</p>
-                  <p>$5.00</p>
-                </li>
-                <li className={s.order__item}>
-                  <p>Flat Rate - Fixed</p>
-                </li>
-              </ul>
-              <div className={s["order__total-wrap"]}>
-                <p>Order Total</p>
-                <span>120.00 EUR</span>
+              <div className={`${s.order__ans} ${this.props.stateOfDetails ? s.open : ""}`}>
+                <ul className={s.order__list}>
+                  <li className={s.order__item}>
+                    <p>Cart Subtotal</p>
+                    <p>$56.25</p>
+                  </li>
+                  <li className={s.order__item}>
+                    <p>Shipping</p>
+                    <p>$5.00</p>
+                  </li>
+                  <li className={s.order__item}>
+                    <p>Flat Rate - Fixed</p>
+                  </li>
+                </ul>
+                <div className={s["order__total-wrap"]}>
+                  <p>Order Total</p>
+                  <span>120.00 EUR</span>
+                </div>
               </div>
-            </div>
-            <div className={s.order__que}>
+
+            <div
+              className={`${s.order__que} ${this.props.stateOfDetails ? s.active : ""}`}
+              onClick={this.props.toggleOrderSummary}
+            >
               <p className={s.order__info}>1 Item in Cart</p>
               <img className={s.order__icon} src={arrow} alt="arrow icon" />
             </div>

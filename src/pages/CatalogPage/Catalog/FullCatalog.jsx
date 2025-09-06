@@ -1,8 +1,8 @@
 import { Catalog } from "./Catalog.jsx";
 import { Sorting } from "../Sorting/Sorting.jsx";
-import Banner from "../Banner/Banner.jsx";
+import {Banner} from "../Banner/Banner.jsx";
 import styles from "./Catalog.module.scss";
-import catalogBase from "../../../data/catalog-data.js";
+import { catalogData } from "../../../data/catalog-data.js";
 import React from "react";
 
 export class FullCatalog extends React.Component {
@@ -12,7 +12,7 @@ export class FullCatalog extends React.Component {
       <>
         <Sorting />
         <ul className={styles.catalog__list}>
-          {catalogBase.map((item, index) => (
+          {catalogData.map((item, index) => (
             <Catalog
               {...item}
               color={item.colors}
@@ -24,7 +24,7 @@ export class FullCatalog extends React.Component {
         </ul>
         <Banner />
         <ul className={styles.catalog__list}>
-          {catalogBase.map((item, index) => (
+          {catalogData.map((item, index) => (
             <Catalog
               {...item}
               color={item.colors}
