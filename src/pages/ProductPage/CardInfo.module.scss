@@ -32,22 +32,22 @@
     width: 76px;
     margin-left: 243px;
     margin-right: 20px;
+         display: none;
+
     @media screen and (min-width: 768px) {
 	
     }
     @media screen and (min-width: 1200px) {
-         display: none;
+        //  display: none;
     }
     @media screen and (min-width: 1920px) {
-       
+       display: block;
     }
 }
 
 .cardImgList{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    display: none;
+    
+    // display: none;
 
 
     @media screen and (min-width: 768px) {
@@ -56,7 +56,9 @@
     @media screen and (min-width: 1200px) {
     }
     @media screen and (min-width: 1920px) {
-       
+       display: flex;
+        flex-direction: column;
+        gap: 20px;
     }
 }
 
@@ -349,7 +351,7 @@
 
 .sizeList{
     
-    display: none;
+    // display: none;
     width: 550px;
     gap: 9px;
 
