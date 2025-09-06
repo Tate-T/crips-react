@@ -1,7 +1,7 @@
 import "./Banner.scss";
 import { Container } from '../../../components/Container/Container'
 
-const Banner = () => {
+export const Banner = () => {
   return (
     <div className="banner">
       <Container>
@@ -20,5 +20,3 @@ const Banner = () => {
     </div>
   );
 };
-
-export default Banner;
