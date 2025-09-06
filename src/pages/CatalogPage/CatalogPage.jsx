@@ -1,14 +1,16 @@
 import { Filtration } from "./Filtration/Filtration.jsx";
-import {Header} from '../../components/Header/Header'
-import {FullCatalog} from "./Catalog/FullCatalog.jsx";
+import { Header } from "../../components/Header/Header";
+import { FullCatalog } from "./Catalog/FullCatalog.jsx";
+import { Banner } from "./Banner/Banner.jsx";
 
-export const CatalogSection = () => {
+export const CatalogPage = () => {
   return (
     <>
       <Header />
       <main className="container">
-        <FullCatalog />
         <Filtration />
+        <Banner />
+        {/* <FullCatalog /> */}
       </main>
       {/* <Footer /> */}
     </>

@@ -1,138 +1,169 @@
+import React, { Component } from "react";
 import styles from "./Whishlist.module.scss";
-import firstImgWishlist from "../../images/mini-catalog-02.jpg";
-import secondImgWishlist from "../../images/mini-catalog-05.jpg";
-import thirdImgWishlist from "../../images/mini-catalog-07.jpg";
+// import firstImgWishlist from "../../images/mini-catalog-02.jpg";
+// import secondImgWishlist from "../../images/mini-catalog-05.jpg";
+// import thirdImgWishlist from "../../images/mini-catalog-07.jpg";
 import editIcon from "../../images/remark-wishlist.svg";
 import removeIcon from "../../images/closeIcon-wishlist.svg";
 
-const wishlistItems = [
+const initialWishlist = [
   {
     id: 1,
-    title: "Angels malu zip jeans slim black used",
+    title: "Jeans Black Used",
     price: "120,00 EUR",
-    image: `${firstImgWishlist}`,
+    // image: firstImgWishlist,
   },
   {
     id: 2,
-    title: "Angels malu zip jeans slim black used",
-    price: "120,00 EUR",
-    image: `${secondImgWishlist}`,
+    title: "Jeans Blue Slim",
+    price: "140,00 EUR",
+    // image: secondImgWishlist,
   },
   {
     id: 3,
-    title: "Angels malu zip jeans slim black used",
-    price: "120,00 EUR",
-    image: `${thirdImgWishlist}`,
+    title: "Jeans White Fit",
+    price: "110,00 EUR",
+    // image: thirdImgWishlist,
   },
   {
     id: 4,
-    title: "Angels malu zip jeans slim black used",
-    price: "120,00 EUR",
-    image: `${secondImgWishlist}`,
+    title: "Jeans Blue Slim",
+    price: "140,00 EUR",
+    // image: secondImgWishlist,
   },
   {
     id: 5,
-    title: "Angels malu zip jeans slim black used",
-    price: "120,00 EUR",
-    image: `${thirdImgWishlist}`,
+    title: "Jeans White Fit",
+    price: "110,00 EUR",
+    // image: thirdImgWishlist,
   },
   {
     id: 6,
-    title: "Angels malu zip jeans slim black used",
+    title: "Jeans Black Used",
     price: "120,00 EUR",
-    image: `${firstImgWishlist}`,
+    // image: firstImgWishlist,
   },
 ];
 
-export const Whishlist = () => {
-  return (
-    <section className={styles.whishlist}>
-      <a className={styles.navigation}>Home / My Dashboard</a>
-      <h1 className={styles.whishlistH1}>My Wishlist</h1>
-      <div className={styles.mainDiv}>
-        <div className={styles.navContainer}>
-          <ul className={styles.navList}>
-            <li className={styles.navItem}>
-              <a href="#" className={styles.navLink}>
-                Account Dashboard
-              </a>
-            </li>
-            <li className={styles.navItem}>
-              <a href="#" className={styles.navLink}>
-                Account Information
-              </a>
-            </li>
-            <li className={styles.navItem}>
-              <a href="#" className={styles.navLink}>
-                Address Book
-              </a>
-            </li>
-            <li className={styles.navItem}>
-              <a href="#" className={styles.navLink}>
-                My Orders
-              </a>
-            </li>
-            <li cclassName={styles.navItem}>
-              <a href="#" className={`${styles.navLink} ${styles.active}`}>
-                My Wishlist
-              </a>
-            </li>
-            <li className={styles.navItem}>
-              <a href="#" className={styles.navLink}>
-                Newsletter Subscriptions
-              </a>
-            </li>
-          </ul>
-        </div>
+export class Whishlist extends Component {
+  state = {
+    items: initialWishlist,
+    currentPage: 1,
+    perPage: 6,
+    activeSection: "My Wishlist",
+  };
 
-        <div className={styles.wishlistItems}>
-          <div className={styles.grid}>
-            {wishlistItems.map((item) => (
-              <div className={styles.card} key={item.id}>
-                <div className={styles.cardImageWrapper}>
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className={styles.cardImage}
-                  />
-                  <div className={styles.btnPositions}>
-                    <button className={styles.removeButton}>
+  handleRemove = (id) => {
+    this.setState((prev) => ({
+      items: prev.items.filter((it) => it.id !== id),
+    }));
+  };
+
+  handleDuplicate = (item) => {
+    this.setState((prev) => {
+      const newItem = { ...item, id: Date.now() };
+      return { items: [...prev.items, newItem] };
+    });
+  };
+
+  goToPage = (page) => {
+    this.setState({ currentPage: page });
+  };
+
+  goToSection = (section) => {
+    this.setState({ activeSection: section });
+  };
+
+  render() {
+    const { items, currentPage, perPage, activeSection } = this.state;
+    const start = (currentPage - 1) * perPage;
+    const pageItems = items.slice(start, start + perPage);
+
+    const totalPages = Math.ceil(items.length / perPage);
+
+    return (
+      <section className={styles.whishlist}>
+        <a className={styles.navigation}>Home / My Dashboard</a>
+        <h1 className={styles.whishlistH1}>{activeSection}</h1>
+
+        <div className={styles.mainDiv}>
+          <div className={styles.navContainer}>
+            <ul className={styles.navList}>
+              {[
+                "Account Dashboard",
+                "Account Information",
+                "Address Book",
+                "My Orders",
+                "My Wishlist",
+                "Newsletter Subscriptions",
+              ].map((section) => (
+                <li
+                  key={section}
+                  className={`${styles.navItem} ${
+                    activeSection === section ? styles.activeItem : ""
+                  }`}
+                  onClick={() => this.goToSection(section)}
+                >
+                  <a href="#" className={styles.navLink}>
+                    {section}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {activeSection === "My Wishlist" && (
+            <div className={styles.wishlistItems}>
+              <div className={styles.grid}>
+                {pageItems.map((item) => (
+                  <div className={styles.card} key={item.id}>
+                    <div className={styles.cardImageWrapper}>
                       <img
-                        src={removeIcon}
-                        alt="Remove"
-                        className={styles.removeIcon}
+                        src={item.image}
+                        alt={item.title}
+                        className={styles.cardImage}
                       />
-                    </button>
-                    <button className={styles.editButton}>
-                      <img
-                        src={editIcon}
-                        alt="Edit"
-                        className={styles.editIcon}
+                      <div className={styles.btnPositions}>
+                        <button
+                          className={styles.removeButton}
+                          onClick={() => this.handleRemove(item.id)}
+                        >
+                          <img
+                            src={removeIcon}
+                            alt="Remove"
+                            className={styles.removeIcon}
+                          />
+                        </button>
+
+                        <button
+                          className={styles.editButton}
+                          onClick={() => this.handleDuplicate(item)}
+                        >
+                          <img
+                            src={editIcon}
+                            alt="Duplicate"
+                            className={styles.editIcon}
+                          />
+                        </button>
+                      </div>
+                    </div>
+                    <p className={styles.cardTitle}>{item.title}</p>
+                    <p className={styles.cardPrice}>{item.price}</p>
+                    <div className={styles.cardControls}>
+                      <input
+                        min="1"
+                        defaultValue="1"
+                        className={styles.quantityInput}
                       />
-                    </button>
+                      <button className={styles.addToCart}>ADD TO CART</button>
+                    </div>
                   </div>
-                </div>
-                <p className={styles.cardTitle}>{item.title}</p>
-                <p className={styles.cardPrice}>{item.price}</p>
-                <div className={styles.cardControls}>
-                  <input
-                    min="1"
-                    defaultValue="1"
-                    className={styles.quantityInput}
-                  />
-                  <button className={styles.addToCart}>ADD TO CART</button>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-
-          <div className={styles.bottomButtons}>
-            <button className={styles.secondaryButton}>SHARE WISH LIST</button>
-            <button className={styles.secondaryButton}>UPDATE WISH LIST</button>
-            <button className={styles.secondaryButton}>ADD ALL TO CART</button>
-          </div>
+            </div>
+          )}
         </div>
-      </div>
-    </section>
-  );
-};
+      </section>
+    );
+  }
+}

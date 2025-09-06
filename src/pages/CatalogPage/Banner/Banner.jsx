@@ -2,7 +2,7 @@ import "./Banner.scss";
 import { Container } from "../../../components/Container/Container";
 import { Component } from "react";
 
-export default class Banner extends Component {
+export class Banner extends Component {
   curDate = () => {
     const currentDate = new Date();
     const day = currentDate.getDate();
