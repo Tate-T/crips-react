@@ -1,6 +1,6 @@
 import { Catalog } from "./Catalog.jsx";
 import { Sorting } from "../Sorting/Sorting.jsx";
-import Banner from "../Banner/Banner.jsx";
+import {Banner} from "../Banner/Banner.jsx";
 import styles from "./Catalog.module.scss";
 import { catalogData } from "../../../data/catalog-data.js";
 import React from "react";
