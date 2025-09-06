@@ -240,7 +240,3 @@ export default [
     colors: ["#24426A", "#F3ECE2", "#666689"],
   },
 ];
-
-
-
-export default catalogBase;
