@@ -1,5 +1,6 @@
 import s from "./ShippingDetails.module.scss";
 import { Component } from "react";
+import ccsj from "countrycitystatejson";
 
 export class ShippingDetails extends Component {
   state = {
@@ -15,12 +16,24 @@ export class ShippingDetails extends Component {
     country: this.props.shippingInfo?.country || "",
     stateProvince: this.props.shippingInfo?.stateProvince || "",
     shippingMethod: this.props.shippingInfo?.shippingMethod || "fixed",
+
+    statesList: [],
   };
 
   handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     const val = type === "radio" ? (checked ? value : this.state[name]) : value;
-    this.setState({ [name]: val });
+    this.setState({ [name]: val }, () => {
+      if (name === "country") {
+        const foundCountry = ccsj
+          .getCountries()
+          .find((country) => country.name.toLowerCase() === val.toLowerCase());
+        if (foundCountry) {
+          const states = ccsj.getStatesByShort(foundCountry.shortName);
+          this.setState({ statesList: states });
+        }
+      }
+    });
   };
 
   handleFormSubmit = (e) => {
@@ -70,8 +83,8 @@ export class ShippingDetails extends Component {
       country,
       stateProvince,
       shippingMethod,
+      statesList,
     } = this.state;
-
     return (
       <>
         <div className={s.ship__wrap}>
@@ -181,6 +194,7 @@ export class ShippingDetails extends Component {
                     name="street1"
                     value={street1}
                     onChange={this.handleChange}
+                    placeholder="First address"
                     required
                   />
                   <input
@@ -189,7 +203,7 @@ export class ShippingDetails extends Component {
                     name="street2"
                     value={street2}
                     onChange={this.handleChange}
-                    required
+                    placeholder="Second Address"
                   />
                   <input
                     className={s.ship__input}
@@ -197,7 +211,7 @@ export class ShippingDetails extends Component {
                     name="street3"
                     value={street3}
                     onChange={this.handleChange}
-                    required
+                    placeholder="Third address"
                   />
                 </div>
               </div>
@@ -224,12 +238,19 @@ export class ShippingDetails extends Component {
                   value={stateProvince}
                   onChange={this.handleChange}
                   required
+                  disabled={statesList.length === 0}
                 >
                   <option value="" disabled hidden>
-                    Please select a region, state or province
+                    {statesList.length > 0
+                      ? "Please select a region, state or province"
+                      : "Enter a valid country first"}
                   </option>
-                  <option value="first">First</option>
-                  <option value="second">Second</option>
+                  {statesList.map((state) => (
+                    <option key={state} value={state}>
+                      {state}
+                    </option>
+                    
+                  )) }
                 </select>
               </div>
 
