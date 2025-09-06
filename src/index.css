@@ -46,7 +46,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
 
+body.mob-open, body.mob-open #root {
+  overflow-y: hidden;
+  height: 100vh;
 }
 
 code {

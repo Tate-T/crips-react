@@ -12,9 +12,11 @@ import photo9 from "../../images/cardlist/card-list-9.webp"
 import photo10 from "../../images/cardlist/card-list-10.webp"
 import photo11 from "../../images/cardlist/card-list-11.webp"
 import photo12 from "../../images/cardlist/card-list-12.webp"
+import { Component } from "react"
 
-export const CardList = ({ }) => {
-    return (
+export class CardList extends Component  {
+    render( ) {
+        return (
         <section className={style.cardlist}>
             <Container>
                 <ul className={style.cardlist__list}>
@@ -23,9 +25,9 @@ export const CardList = ({ }) => {
                         <h3 className={style.cardlist__title}>TOP WOMEN</h3>
                         <p className={style.cardlist__subtitle}>Angels malu zip jeans slim black used</p>
                         <p className={style.cardlist__price}>139,00 EUR</p>
-                        {/* <div className={style.cardlist__color_1}></div>
-                    <div className={style.cardlist__color_2}></div>
-                    <div className={style.cardlist__color_3}></div> */}
+                        <div className={style.cardlist__color_1}>123</div>
+                    <div className={style.cardlist__color_2}>123</div>
+                    <div className={style.cardlist__color_3}>123</div>
                     </li>
                     <li className={style.cardlist__item}>
                         <img className={style.cardlist__img} src={photo2}  alt="#" />
@@ -130,4 +132,6 @@ export const CardList = ({ }) => {
             </Container>
         </section>
     )
+    }
 }
+    
