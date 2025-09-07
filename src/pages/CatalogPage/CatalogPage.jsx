@@ -1,7 +1,7 @@
 import { Filtration } from "./Filtration/Filtration.jsx";
 import { Header } from "../../components/Header/Header";
 import { FullCatalog } from "./Catalog/FullCatalog.jsx";
-import { Banner } from "./Banner/Banner.jsx";
+import { Footer } from "../../components/Footer/Footer.jsx";
 
 export const CatalogPage = () => {
   return (
@@ -9,10 +9,9 @@ export const CatalogPage = () => {
       <Header />
       <main className="container">
         <Filtration />
-        <Banner />
-        {/* <FullCatalog /> */}
+        <FullCatalog />
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };
