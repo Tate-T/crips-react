@@ -42,16 +42,18 @@ export class Filtration extends Component {
     const updateToInput = () =>
       this.controlToInput(toSlider, fromInput, toInput, toSlider);
 
-    fromSlider.addEventListener("input", updateFromSlider);
-    toSlider.addEventListener("input", updateToSlider);
-    fromInput.addEventListener("input", updateFromInput);
-    toInput.addEventListener("input", updateToInput);
+    if (fromSlider) fromSlider.addEventListener("input", updateFromSlider);
+    if (toSlider) toSlider.addEventListener("input", updateToSlider);
+    if (fromInput) fromInput.addEventListener("input", updateFromInput);
+    if (toInput) toInput.addEventListener("input", updateToInput);
 
-    this.fillSlider(fromSlider, toSlider, "#C6C6C6", "#000", toSlider);
-    this.setToggleAccessible(toSlider);
+    if (fromSlider && toSlider) {
+      this.fillSlider(fromSlider, toSlider, "#C6C6C6", "#000", toSlider);
+      this.setToggleAccessible(toSlider);
+    }
 
-    fromInput.value = this.formatCurrency(fromSlider.value);
-    toInput.value = this.formatCurrency(toSlider.value);
+    if (fromInput && fromSlider) fromInput.value = this.formatCurrency(fromSlider.value);
+    if (toInput && toSlider) toInput.value = this.formatCurrency(toSlider.value);
   }
 
   componentWillUnmount() {
@@ -60,10 +62,10 @@ export class Filtration extends Component {
     const fromInput = this.fromInputRef.current;
     const toInput = this.toInputRef.current;
 
-    fromSlider.removeEventListener("input", this.updateFromSlider);
-    toSlider.removeEventListener("input", this.updateToSlider);
-    fromInput.removeEventListener("input", this.updateFromInput);
-    toInput.removeEventListener("input", this.updateToInput);
+    if (fromSlider) fromSlider.removeEventListener("input", this.updateFromSlider);
+    if (toSlider) toSlider.removeEventListener("input", this.updateToSlider);
+    if (fromInput) fromInput.removeEventListener("input", this.updateFromInput);
+    if (toInput) toInput.removeEventListener("input", this.updateToInput);
   }
   phoneButtonClick = () => {
     const filtration = document.querySelector(".filtration");
@@ -156,18 +158,21 @@ export class Filtration extends Component {
     const { brands } = this.state;
     const brand = e.target.value;
     if (e.target.checked) {
-      this.setState({ brands: [...brands, brand] });
-      console.log(this.state.brands);
+      this.setState({ brands: [...brands, brand] }, () => {
+        console.log(this.state.brands);
+      });
     } else {
-      this.setState({ brands: brands.filter((b) => b !== brand) });
-      console.log(this.state.brands);
+      this.setState({ brands: brands.filter((b) => b !== brand) }, () => {
+        console.log(this.state.brands);
+      });
     }
   }
 
   changeSize = (e) => {
     e.preventDefault();
-    this.setState({ size: e.target.textContent });
-    console.log(this.state.size);
+    this.setState({ size: e.target.textContent }, () => {
+      console.log(this.state.size);
+    });
     document.querySelectorAll(".catalog-filtration__size-button").forEach(btn => btn.classList.remove("active"));
     e.target.classList.add("active");
   }
@@ -175,49 +180,132 @@ export class Filtration extends Component {
     const { dressLength } = this.state;
     const length = e.target.value;
     if (e.target.checked) {
-      this.setState({ dressLength: [...dressLength, length] });
+      this.setState({ dressLength: [...dressLength, length] }, () => {
+        console.log(this.state.dressLength);
+      });
     } else {
-      this.setState({ dressLength: dressLength.filter((l) => l !== length) });
+      this.setState({ dressLength: dressLength.filter((l) => l !== length) }, () => {
+        console.log(this.state.dressLength);
+      });
     }
-    console.log(this.state.dressLength);
   }
   changeColor = (e) => {
     e.preventDefault();
-    this.setState({ color: e.target.value });
-    console.log(this.state.color);
+    this.setState({ color: e.target.value }, () => {
+      console.log(this.state.color);
+    });
     document.querySelectorAll(".catalog-filtration__form-color-btn").forEach(btn => btn.classList.remove("active"));
     e.target.classList.add("active");
   }
 
- changeFromValue = (e) => {
-  e.preventDefault();
-  const fromValue = Number(e.target.value);
-  this.setState({ fromValue: fromValue }, () => {
-    console.log("fromValue:", this.state.fromValue);
-  });
-}
+  changeFromValue = (e) => {
+    e.preventDefault();
+    const fromValue = Number(e.target.value);
+    this.setState({ fromValue: fromValue }, () => {
+      console.log("fromValue:", this.state.fromValue);
+    });
+  }
 
 
   changeToValue = (e) => {
-  e.preventDefault();
-  const toValue = Number(e.target.value);
-  this.setState({ toValue: toValue }, () => {
-    console.log("toValue:", this.state.toValue);
+    e.preventDefault();
+    const toValue = Number(e.target.value);
+    this.setState({ toValue: toValue }, () => {
+      console.log("toValue:", this.state.toValue);
+    });
+  }
+
+
+
+applyFilters = () => {
+  const { brands, size, dressLength, color, fromValue, toValue } = this.state;
+  this.setState({
+    filtration: {
+      price: { fromValue, toValue },
+      brands: brands,
+      size: size,
+      dressLength: dressLength,
+      color: color,
+    }
+  }, () => {
+    console.log(this.state.filtration);
+    const { filtration } = this.state;
+    if (
+      filtration.price.fromValue !== 0 ||
+      filtration.price.toValue !== 500 ||
+      filtration.brands.length > 0 ||
+      filtration.size !== "" ||
+      filtration.dressLength.length > 0 ||
+      filtration.color !== ""
+    ) {
+      document.querySelector(".catalog-filtration__wrap").classList.remove("is-hidden");
+    } else {
+      document.querySelector(".catalog-filtration__wrap").classList.add("is-hidden");
+    }
   });
 }
 
 
-  applyFilters = () => {
-    const { brands, size, dressLength, color, fromValue, toValue } = this.state;
-    this.setState({ filtration: { 'price': { fromValue, toValue }, 'brands': brands, 'size': size, 'dressLength': dressLength, 'color': color, } });
-    console.log(this.state.filtration);
-    if (fromValue !== 0 && toValue !== 500 || brands != [] || size != '' || dressLength != [] || color != '') {
-
-      document.querySelector(".catalog-filtration__wrap").classList.remove("is-hidden");
-    }
-
+  deleteBrand = (brandToDelete) => {
+    this.setState((prevState) => ({
+      brands: prevState.brands.filter((brand) => brand !== brandToDelete)
+    }), () => {
+      console.log("Updated brands after deletion:", this.state.brands);
+      this.applyFilters();
+    });
   }
-  
+
+  deleteSize = () => {
+  this.setState({ size: '' }, () => {
+    console.log("Size cleared:", this.state.size);
+    this.applyFilters();
+  });
+}
+  deleteDressSize = (dressSizeToDelete) => {
+    this.setState((prevState) => ({
+      dressLength: prevState.dressLength.filter((len) => len !== dressSizeToDelete)
+    }), () => {
+      console.log("Updated dress length after deletion:", this.state.dressLength);
+      this.applyFilters();
+    });
+  }
+  deleteColor = () => {
+  this.setState({ color: '' }, () => {
+    console.log("Color cleared:", this.state.color);
+    this.applyFilters();
+  });
+}
+  deletePrice = () => {
+  this.setState({ fromValue: 0, toValue: 500 }, () => {
+    console.log("Price range reset:", this.state.fromValue, this.state.toValue);
+    this.applyFilters();
+  });
+  if (this.fromSliderRef.current) this.fromSliderRef.current.value = 0;
+  if (this.toSliderRef.current) this.toSliderRef.current.value = 500;
+  if (this.fromInputRef.current) this.fromInputRef.current.value = "0,00 EUR";
+  if (this.toInputRef.current) this.toInputRef.current.value = "500,00 EUR";
+  if (this.fromSliderRef.current && this.toSliderRef.current) this.fillSlider(this.fromSliderRef.current, this.toSliderRef.current, "#C6C6C6", "#000", this.toSliderRef.current);
+}
+resetAll = () => {
+  this.setState({
+    fromValue: 0,
+    toValue: 500,
+    brands: [],
+    size: '',
+    dressLength: [],
+    color: '',
+    filtration: {
+      brands: [],
+      size: '',
+      dressLength: [],
+      color: '',
+      price: { fromValue: 0, toValue: 500 },
+    },
+  }, () => {
+    console.log("All filters reset:", this.state);
+    this.applyFilters();
+  });
+}
 
   render() {
     return (
@@ -228,23 +316,25 @@ export class Filtration extends Component {
         </button>
         <section className="filtration">
           <div className="catalog-filtration__wrap is-hidden">
-         <div className="filtration-text__wrap">  <h2 className="catalog-filtration__title">Filter</h2> 
-         <p className="filtration-text__reset"><img src={close} alt="" className="filtration-close"/> RESET ALL</p>
-         </div> 
+            <div className="filtration-text__wrap">  <h2 className="catalog-filtration__title">Filter</h2>
+              <p className="filtration-text__reset" onClick={this.resetAll}><img src={close} alt="" className="filtration-close" /> RESET ALL</p>
+            </div>
             <ul>
               <li className={this.state.filtration.brands.length == 0 ? "is-hidden" : ""}>
                 <h3 className="filtration-list__title">Brand:</h3>
                 <ul className="filtration-list__brand">{this.state.filtration.brands.map((brand) => {
                   return (
-                    <> <li className="filtration-wrap"><img src={close} alt="" className="filtration-close" />
-                      <p key={brand} className="selected-filters">{brand}</p></li>
-                    </>)
+                    <li key={brand} className="filtration-wrap">
+                      <img src={close} alt="" className="filtration-close" onClick={() => this.deleteBrand(brand)} />
+                      <p className="selected-filters">{brand}</p>
+                    </li>
+                  )
                 })}</ul>
               </li>
               <li className={this.state.filtration.size === "" ? "is-hidden" : ""}>
                 <h3 className="filtration-list__title">Size(inches):</h3>
                 <li className="filtration-list__size">
-                  <img src={close} alt="" className="filtration-close" />
+                  <img src={close} alt="" className="filtration-close" onClick={this.deleteSize} />
                   <p key={this.state.filtration.size} className="selected-filters">{this.state.filtration.size}</p>
                 </li>
               </li>
@@ -252,25 +342,27 @@ export class Filtration extends Component {
                 <h3 className="filtration-list__title">Dress Length:</h3>
                 <ul className="filtration-list__dressLength">{this.state.filtration.dressLength.map((dressLen) => {
                   return (
-                    <> <li className="filtration-wrap"><img src={close} alt="" className="filtration-close" />
-                      <p key={dressLen} className="selected-filters">{dressLen}</p></li>
-                    </>)
+                    <li key={dressLen} className="filtration-wrap">
+                      <img src={close} alt="" className="filtration-close" onClick={() => this.deleteDressSize(dressLen)} />
+                      <p className="selected-filters">{dressLen}</p>
+                    </li>
+                  )
                 })}</ul>
               </li>
               <li className={this.state.filtration.color === "" ? "is-hidden" : ""}>
                 <h3 className="filtration-list__title">Color:</h3>
                 <li className="filtration-list__size">
-                  <img src={close} alt="" className="filtration-close" />
+                  <img src={close} alt="" className="filtration-close" onClick={this.deleteColor} />
                   <div className={`catalog-filtration__form-color-btn active ${this.state.filtration.color}`}></div>
                 </li>
               </li>
               <li className={this.state.filtration.price.fromValue === 0 && this.state.filtration.price.toValue === 500 ? "is-hidden" : ""}>
                 <h3 className="filtration-list__title">Price:</h3>
                 <li className="filtration-list__size">
-                  <img src={close} alt="" className="filtration-close" />
+                  <img src={close} alt="" className="filtration-close" onClick={this.deletePrice} />
                   <p className="selected-filters">
-                    {this.state.filtration.price.fromValue === this.state.filtration.price.toValue ? `${this.state.filtration.price.fromValue},00 EUR`:
-                    `${this.state.filtration.price.fromValue},00 EUR - ${this.state.filtration.price.toValue},00 EUR`}
+                    {this.state.filtration.price.fromValue === this.state.filtration.price.toValue ? `${this.state.filtration.price.fromValue},00 EUR` :
+                      `${this.state.filtration.price.fromValue},00 EUR - ${this.state.filtration.price.toValue},00 EUR`}
                   </p>
 
 
@@ -523,8 +615,8 @@ export class Filtration extends Component {
             </div>
             <div className="range_container">
               <div className="sliders_control">
-                <input id="fromSlider" ref={this.fromSliderRef} type="range" min="0" max="500" defaultValue={0}  onChange={this.changeFromValue}/>
-                <input id="toSlider" ref={this.toSliderRef} type="range" min="0" max="500" defaultValue={500}  onInput={this.changeToValue}/>
+                <input id="fromSlider" ref={this.fromSliderRef} type="range" min="0" max="500" defaultValue={0} onChange={this.changeFromValue} />
+                <input id="toSlider" ref={this.toSliderRef} type="range" min="0" max="500" defaultValue={500} onInput={this.changeToValue} />
               </div>
             </div>
             <button className="catalog-filtration__apply" onClick={this.applyFilters}>Apply</button>
