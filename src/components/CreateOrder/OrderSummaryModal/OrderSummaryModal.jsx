@@ -1,8 +1,8 @@
 import s from "./OrderSummaryModal.module.scss";
 import { Component } from "react";
 import arrow from "../../../images/CreateOrder/arrow-bottom.svg";
-import dress1 from "../../../images/mini-catalog-04.jpg";
-import dress2 from "../../../images/mini-catalog-02.jpg";
+import dress1 from "../../../images/MiniCatalog/mini-catalog-04.jpg";
+import dress2 from "../../../images/MiniCatalog/mini-catalog-02.jpg";
 import close from "../../../images/CreateOrder/close.svg";
 
 export class OrderSummaryModal extends Component {
