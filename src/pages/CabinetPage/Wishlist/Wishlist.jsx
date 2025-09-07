@@ -3,8 +3,8 @@ import styles from "./Whishlist.module.scss";
 // import firstImgWishlist from "../../images/mini-catalog-02.jpg";
 // import secondImgWishlist from "../../images/mini-catalog-05.jpg";
 // import thirdImgWishlist from "../../images/mini-catalog-07.jpg";
-import editIcon from "../../images/remark-wishlist.svg";
-import removeIcon from "../../images/closeIcon-wishlist.svg";
+import editIcon from "../../../images/remark-wishlist.svg";
+import removeIcon from "../../../images/closeIcon-wishlist.svg";
 
 const initialWishlist = [
   {
