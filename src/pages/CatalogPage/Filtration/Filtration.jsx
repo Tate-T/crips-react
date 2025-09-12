@@ -371,7 +371,7 @@ resetAll = () => {
             </ul>
           </div>
           <div className="catalog-filtration__brand">
-            <FiltrName className="brand" filtrName="Brand" />
+            <FiltrName className="brand" filtrName="Brand" closeClass=".catalog-filtration__brand-form"/>
             <form action="" className="catalog-filtration__brand-form">
               <div className="catalog-filtration__brand-input-wrap">
                 <input
@@ -432,7 +432,7 @@ resetAll = () => {
             </form>
           </div>
           <div className="catalog-filtration__size">
-            <FiltrName className="size" filtrName="Size (Inches)" />
+            <FiltrName className="size" filtrName="Size (Inches)" closeClass=".catalog-filtration__size-form"/>
             <form action="" className="catalog-filtration__size-form">
               <button className="catalog-filtration__size-button" onClick={this.changeSize}>osfa</button>
               <button className="catalog-filtration__size-button" onClick={this.changeSize}>w26</button>
@@ -457,7 +457,7 @@ resetAll = () => {
             </form>
           </div>
           <div className="catalog-filtration__dress-length">
-            <FiltrName className="dress-length" filtrName="Dress length" />
+            <FiltrName className="dress-length" filtrName="Dress length" closeClass=".catalog-filtration__dress-length-form"/>
             <form action="" className="catalog-filtration__dress-length-form">
               <div className="catalog-filtration__dress-length-input-wrap">
                 <input
@@ -509,7 +509,7 @@ resetAll = () => {
             </form>
           </div>
           <div className="catalog-filtration__color">
-            <FiltrName className="color" filtrName="Color" />
+            <FiltrName className="color" filtrName="Color" closeClass=".catalog-filtration__form-color"/>
             <form action="" className="catalog-filtration__form-color">
               <button
                 style={{ backgroundColor: "rgba(41, 42, 45, 1)" }}
@@ -586,7 +586,7 @@ resetAll = () => {
             </form>
           </div>
           <div className="catalog-filtration__price">
-            <FiltrName className="price" filtrName="Price Range" />
+            <FiltrName className="price" filtrName="Price Range" closeClass=".form_control"/>
             <div className="form_control">
               <div className="form_control_container">
                 <input

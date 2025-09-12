@@ -255,9 +255,22 @@ main {
 }
 
 
-.catalog-filtration__filtr-name-close {
+.catalog-filtration__filtr-name-close{
     cursor: pointer;
     font-size: 50px;
+    font-weight: 400;
+    line-height: 68px;
+    letter-spacing: 0%;
+    color: $secondary-text-color;
+    transition: $st-transition;
+
+    &:hover {
+        color: $main-text-color;
+    }
+}
+.catalog-filtration__filtr-name-open {
+    cursor: pointer;
+    font-size: 40px;
     font-weight: 400;
     line-height: 68px;
     letter-spacing: 0%;
