@@ -1,9 +1,12 @@
 @import '../../../sass/utils/mixins.scss';
 @import '../../../sass/utils/variables.scss';
 
-main {
+
+main.container {
     display: flex;
+    // flex-direction: row;
     flex-direction: column;
+    margin-bottom: 40px;
 }
 
 .catalog-filtration__phone-button {
@@ -45,8 +48,6 @@ main {
 .filtration {
     border: 1px solid $outline-color;
     position: relative;
-    padding-right: 18px;
-    padding-left: 21px;
     flex-direction: column;
     display: none;
     width: 60%;
@@ -55,7 +56,7 @@ main {
     overflow-y: auto;
     padding-bottom: 20px;
     background-color: $bg-color;
-    top: 384px;
+    top: -21px;
     z-index: 1000;
     transition: $st-transition;
 
@@ -65,15 +66,19 @@ main {
         position: absolute;
     }
 
+    padding-right: 18px;
+    padding-left: 21px;
+    padding-bottom: 20px;
+
     @media screen and (min-width: 768px) {
+        height: 100%;
+        border: none;
         border-right: 1px solid $outline-color;
         width: 400px;
         display: flex;
         align-self: start;
         background: none;
         position: static;
-        height: auto;
-        padding: 0;
         top: 0;
         z-index: 0;
         padding-right: 0;
@@ -123,6 +128,19 @@ main {
 }
 
 // .catalog-filtration__wrap {}
+
+.catalog-filtration{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    @media screen and (min-width: 768px) {
+        align-items: start;
+        justify-content: start;
+        
+    }
+}
 
 .catalog-filtration__title {
     @include typography(Oswald, 400, 32px, 68px, 0, left);
@@ -497,4 +515,42 @@ input[type="range"] {
 
 .selected-filters{
     cursor: pointer;
+.catalog-filtration__filtr-close-text {
+    text-transform: uppercase;
+    @include typography(Oswald, 400, 14px, 48px, 0, left);
+}
+
+.catalog-filtration__filtr-close {
+    transform: rotate(45deg);
+    width: 12px;
+    height: 12px;
+    color: $main-text-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.catalog-filtration__filtr-close-wrap {
+    height:100%;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    cursor: pointer;
+}
+
+.catalog-filtration__title-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.catalog-filtration__wrap{
+    border: 1px solid $main-text-color;
+    padding: 15px;
+}
+.catalog-filtration__title-wrap{
+display: flex;
+justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
 }
