@@ -9,7 +9,7 @@ export class FullCatalog extends React.Component {
   render() {
     const userMedia = window.matchMedia("(min-width: 768px)");
     return (
-      <>
+      <div className={styles.catalog}>
         <Sorting />
         <ul className={styles.catalog__list}>
           {catalogData.map((item, index) => (
@@ -34,7 +34,7 @@ export class FullCatalog extends React.Component {
             />
           ))}
         </ul>
-      </>
+      </div>
     );
   }
 }

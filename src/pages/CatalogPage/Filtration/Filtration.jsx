@@ -310,11 +310,11 @@ resetAll = () => {
   render() {
     return (
       <>
-        <p className="catalog-way">Home / Womens Dress / Best Chose</p>
         <button className="catalog-filtration__phone-button" onClick={this.phoneButtonClick}>Filtration
           <img src={arrowDown} alt="" />
         </button>
         <section className="filtration">
+        
           <div className="catalog-filtration__wrap is-hidden">
             <div className="filtration-text__wrap">  <h2 className="catalog-filtration__title">Filter</h2>
               <p className="filtration-text__reset" onClick={this.resetAll}><img src={close} alt="" className="filtration-close" /> RESET ALL</p>
