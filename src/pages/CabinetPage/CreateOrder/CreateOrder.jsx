@@ -35,7 +35,7 @@ export class CreateOrder extends Component {
   openModal = () => this.setState({ modalIsOpened: true });
   closeModal = () => this.setState({ modalIsOpened: false });
 
-  toggleOrderSummary = () => this.setState((prev) =>( {orderSummaryIsOpened: !prev.orderSummaryIsOpened}));
+  toggleOrderSummary = () => this.setState((prev) => ({ orderSummaryIsOpened: !prev.orderSummaryIsOpened }));
 
   handleShippingFormSubmit = (data) => {
     this.setState({ shippingFormDetails: data });
@@ -51,6 +51,8 @@ export class CreateOrder extends Component {
     const { step, modalIsOpened, shippingFormDetails, shippingInfo, orderSummaryIsOpened } =
       this.state;
     console.log(this.state.orderSummaryIsOpened)
+    console.log(this.state.shippingFormDetails)
+    console.log(this.state.shippingInfo)
     return (
       <>
         {this.props.children}
@@ -113,7 +115,7 @@ export class CreateOrder extends Component {
                   <p className={s.order__stage}>Review & Payments</p>
                 </div>
               </div>
-              
+
               <div className={s.order__addition}>
                 <OrderSummary
                   className={s.order__mobile}
@@ -127,7 +129,7 @@ export class CreateOrder extends Component {
                     onSubmitForm={this.handleShippingFormSubmit}
                     onSubmitInfo={this.handleShippingInfoSubmit}
                   >
-                    <OrderSummary className={s.order__tablet} stateOfDetails={orderSummaryIsOpened} toggleOrderSummary={this.toggleOrderSummary}/>
+                    <OrderSummary className={s.order__tablet} stateOfDetails={orderSummaryIsOpened} toggleOrderSummary={this.toggleOrderSummary} />
                     <OrderSummaryModal
                       modalIsOpened={modalIsOpened}
                       closeModal={this.closeModal}
@@ -137,7 +139,7 @@ export class CreateOrder extends Component {
                   </ShippingDetails>
                 ) : (
                   <PaymentDetails onBack={this.goToPrevStep}>
-                    <OrderSummary className={s.order__tablet} stateOfDetails={orderSummaryIsOpened} toggleOrderSummary={this.toggleOrderSummary}/>
+                    <OrderSummary className={s.order__tablet} stateOfDetails={orderSummaryIsOpened} toggleOrderSummary={this.toggleOrderSummary} />
                     <PaymentInfo className={s.order__tablet} />
                     <OrderSummaryModal modalIsOpened={modalIsOpened}>
                       <PaymentInfo />

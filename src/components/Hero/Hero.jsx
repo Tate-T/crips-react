@@ -60,7 +60,7 @@ export const Hero = () => {
       setCurrentIndex((prevIndex) =>
         prevIndex === slides.length - 1 ? 0 : prevIndex + 1
       );
-    }, 5500);
+    }, 13000);
 
     return () => clearInterval(interval);
   }, []);

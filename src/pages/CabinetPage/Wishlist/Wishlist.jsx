@@ -1,53 +1,51 @@
 import React, { Component } from "react";
 import styles from "./Whishlist.module.scss";
-// import firstImgWishlist from "../../images/mini-catalog-02.jpg";
-// import secondImgWishlist from "../../images/mini-catalog-05.jpg";
-// import thirdImgWishlist from "../../images/mini-catalog-07.jpg";
-import editIcon from "../../images/remark-wishlist.svg";
-import removeIcon from "../../images/closeIcon-wishlist.svg";
+import { catalogData } from "../../../data/catalog-data";
+import editIcon from "../../../images/remark-wishlist.svg";
+import removeIcon from "../../../images/closeIcon-wishlist.svg";
 
-const initialWishlist = [
-  {
-    id: 1,
-    title: "Jeans Black Used",
-    price: "120,00 EUR",
-    // image: firstImgWishlist,
-  },
-  {
-    id: 2,
-    title: "Jeans Blue Slim",
-    price: "140,00 EUR",
-    // image: secondImgWishlist,
-  },
-  {
-    id: 3,
-    title: "Jeans White Fit",
-    price: "110,00 EUR",
-    // image: thirdImgWishlist,
-  },
-  {
-    id: 4,
-    title: "Jeans Blue Slim",
-    price: "140,00 EUR",
-    // image: secondImgWishlist,
-  },
-  {
-    id: 5,
-    title: "Jeans White Fit",
-    price: "110,00 EUR",
-    // image: thirdImgWishlist,
-  },
-  {
-    id: 6,
-    title: "Jeans Black Used",
-    price: "120,00 EUR",
-    // image: firstImgWishlist,
-  },
-];
+// const initialWishlist = [
+//   {
+//     id: 1,
+//     title: "Jeans Black Used",
+//     price: "120,00 EUR",
+//     // image: firstImgWishlist,
+//   },
+//   {
+//     id: 2,
+//     title: "Jeans Blue Slim",
+//     price: "140,00 EUR",
+//     // image: secondImgWishlist,
+//   },
+//   {
+//     id: 3,
+//     title: "Jeans White Fit",
+//     price: "110,00 EUR",
+//     // image: thirdImgWishlist,
+//   },
+//   {
+//     id: 4,
+//     title: "Jeans Blue Slim",
+//     price: "140,00 EUR",
+//     // image: secondImgWishlist,
+//   },
+//   {
+//     id: 5,
+//     title: "Jeans White Fit",
+//     price: "110,00 EUR",
+//     // image: thirdImgWishlist,
+//   },
+//   {
+//     id: 6,
+//     title: "Jeans Black Used",
+//     price: "120,00 EUR",
+//     // image: firstImgWishlist,
+//   },
+// ];
 
 export class Whishlist extends Component {
   state = {
-    items: initialWishlist,
+    items: catalogData,
     currentPage: 1,
     perPage: 6,
     activeSection: "My Wishlist",
@@ -119,8 +117,8 @@ export class Whishlist extends Component {
                   <div className={styles.card} key={item.id}>
                     <div className={styles.cardImageWrapper}>
                       <img
-                        src={item.image}
-                        alt={item.title}
+                        src={item.img}
+                        alt={item.name}
                         className={styles.cardImage}
                       />
                       <div className={styles.btnPositions}>

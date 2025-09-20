@@ -240,4 +240,3 @@ export const catalogData = [
     colors: ["#24426A", "#F3ECE2", "#666689"],
   },
 ];
-

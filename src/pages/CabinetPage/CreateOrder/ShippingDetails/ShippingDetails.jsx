@@ -249,8 +249,8 @@ export class ShippingDetails extends Component {
                     <option key={state} value={state}>
                       {state}
                     </option>
-                    
-                  )) }
+
+                  ))}
                 </select>
               </div>
 
