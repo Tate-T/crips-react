@@ -1,5 +1,5 @@
 import {useState, useEffect} from 'react';
-import catalogData from '../../data/catalog-data';
+import {catalogData} from '../../data/catalog-data';
 import s from './SpecialList.module.scss';
 import {Container} from '../Container/Container';
 
