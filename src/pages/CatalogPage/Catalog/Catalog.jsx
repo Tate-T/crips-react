@@ -1,15 +1,15 @@
 import PropTypes from "prop-types";
 
-export function Catalog(style, img, name, top, colors, price, media) {
+export function Catalog(style, img, name, category, colors, price, media) {
   return (
     <li className={style.catalog__item}>
       <img className={style.catalog__img} src={img} alt="#" />
-      <p className={style.catalog__top}>{top}</p>
+      <p className={style.catalog__top}>{category}</p>
       <h3 className={style.catalog__title}>{name}</h3>
       <p className={style.catalog__price}>{price}</p>
 
       <ul className={style.catalog__colors}>
-        {media.matches
+        {media
           ? colors.map((item, index) => (
               <li className={style.colors__item} key={index}>
                 <button type="button" className={style.catalog__color}>
@@ -29,7 +29,7 @@ export function Catalog(style, img, name, top, colors, price, media) {
 Catalog.propTypes = {
   img: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  top: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   colors: PropTypes.array.isRequired,
   price: PropTypes.string.isRequired,
   style: PropTypes.object.isRequired,
