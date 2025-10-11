@@ -20,6 +20,10 @@
   font-size: 48px;
   font-weight: 400;
   line-height: 68px;
+  @media screen and (max-width: 1200px) {
+    font-size: 41px;
+    margin-bottom: 20px;
+  }
 }
 
 .mainDiv {
@@ -29,17 +33,43 @@
   box-sizing: border-box;
   border: 1px solid rgb(196, 196, 196);
   background: rgb(255, 255, 255);
+  @media screen and (max-width: 1200px) {
+    max-width: 100%;
+    margin-bottom: 43px;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    padding: 55px;
+    flex-direction: column;
+  }
 }
 
 .navContainer {
   margin-right: 108px;
+  @media screen and (max-width: 1200px) {
+    margin: 0;
+  }
+}
+
+.navList {
+  @media screen and (max-width: 1200px) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+  @media screen and (max-width: 768px) {
+    gap: 22px;
+  }
 }
 
 .navLink {
   display: flex;
   align-items: center;
   padding: 0 0 0 13px;
-  width: 239px;
+  max-width: 239px;
   height: 44px;
   color: rgb(130, 130, 130);
   font-family: "Oswald";
@@ -53,6 +83,9 @@
     line-height: 24px;
     background-color: rgb(240, 242, 242);
     color: rgb(0, 0, 0);
+  }
+  @media screen and (max-width: 1200px) {
+    padding: 0;
   }
 }
 
@@ -69,10 +102,21 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  @media screen and (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 60px;
+  }
+  @media screen and (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 45px;
+  }
 }
 
 .card {
   max-width: 200px;
+  @media screen and (max-width: 1200px) {
+    max-width: 190px;
+  }
 }
 
 .cardImageWrapper {

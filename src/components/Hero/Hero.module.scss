@@ -1,0 +1,151 @@
+.slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 800px;
+  @media screen and (max-width: 1200px) {
+    height: 700px;
+  }
+
+  .slideTrack {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+    height: 100%;
+  }
+
+  .slide {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    padding: 204px 0px 0px 234px;
+    @media screen and (max-width: 1200px) {
+      display: flex;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .content {
+    position: relative;
+    max-width: 500px;
+    @media screen and (max-width: 1200px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .heroLine {
+    position: absolute;
+    top: -21px;
+    right: -41px;
+    width: 497px;
+    height: 100px;
+    fill: #000;
+    @media screen and (max-width: 768px) {
+      top: -11px;
+      right: -31px;
+    }
+  }
+
+  .heroText {
+    width: 504px;
+    margin-bottom: 48px;
+    color: rgb(0, 0, 0);
+    font-family: "Oswald";
+    font-size: 86px;
+    font-weight: 600;
+    line-height: 96px;
+    text-transform: uppercase;
+    @media screen and (max-width: 768px) {
+      font-size: 66px;
+    }
+  }
+
+  .highlight {
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 2px #000;
+    font-size: 86px;
+    font-weight: 600;
+    line-height: 96px;
+    font-family: "Oswald";
+    text-transform: uppercase;
+    @media screen and (max-width: 768px) {
+      font-size: 66px;
+    }
+  }
+
+  .shopNowBtn {
+    height: 56px;
+    width: 175px;
+    color: rgb(0, 0, 0);
+    font-family: "Oswald";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    text-transform: uppercase;
+    background: transparent;
+    cursor: pointer;
+    box-sizing: border-box;
+    border: 2px solid rgb(0, 0, 0);
+  }
+
+  .controls {
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    gap: 3px;
+
+    .sliderBtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000;
+      border: none;
+      width: 50px;
+      height: 50px;
+      cursor: pointer;
+    }
+
+    .btnArrows {
+      width: 15px;
+      height: 15px;
+      fill: rgb(255, 255, 255);
+    }
+  }
+
+  .dots {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 28px;
+    left: 22px;
+    gap: 8px;
+  }
+
+  .dot {
+    width: 18px;
+    height: 18px;
+    border: 1px solid rgb(130, 130, 130);
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+  }
+
+  .activeDot {
+    width: 22px;
+    height: 22px;
+    background-color: #000;
+  }
+}
