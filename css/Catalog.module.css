@@ -1,10 +1,7 @@
-@import "../../../sass/utils/variables.scss";
-
-.catalog{
-  @media screen  and (min-width : 1454px){
+@media screen and (min-width: 1454px) {
+  .catalog {
     width: 1454px;
     margin: 0 auto;
-
   }
 }
 
@@ -12,32 +9,44 @@
   display: flex;
   flex-wrap: wrap;
   row-gap: 18px;
-  column-gap: 14px;
+  -moz-column-gap: 14px;
+       column-gap: 14px;
   padding: 0 14px;
   width: 320px;
   justify-content: center;
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .catalog__list {
     width: 100%;
   }
-  @media screen and (min-width: 1454px) {
+}
+@media screen and (min-width: 1454px) {
+  .catalog__list {
     width: 1454px;
   }
 }
+
 .catalog__item {
   width: 139px;
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .catalog__item {
     height: 590px;
     width: 344px;
   }
 }
+
 .catalog__img {
-  width: 139px ;
-  height: 182px ;
-  @media screen and (min-width: 768px) {
-    width: 344px ;
-    height: 450px ;
+  width: 139px;
+  height: 182px;
+}
+@media screen and (min-width: 768px) {
+  .catalog__img {
+    width: 344px;
+    height: 450px;
   }
 }
+
 .catalog__top {
   font-family: "Oswald", sans-serif;
   font-weight: 600;
@@ -45,41 +54,50 @@
   text-transform: uppercase;
   color: #bdbdbd;
   margin-top: 14px;
-  @media screen and (min-width: 768px) {
+}
+@media screen and (min-width: 768px) {
+  .catalog__top {
     font-size: 12px;
   }
 }
+
 .catalog__title {
   font-family: "Oswald", sans-serif;
   font-weight: 300;
   font-size: 12px;
   line-height: 150%;
   margin-bottom: 18px;
-  color: $main-text-color;
-  @media screen and (min-width: 768px) {
+  color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .catalog__title {
     font-size: 18px;
   }
 }
+
 .catalog__price {
   font-family: "Oswald", sans-serif;
   font-weight: 500;
   font-size: 14px;
   text-transform: uppercase;
-  color: $main-text-color;
-  @media screen and (min-width: 768px) {
+  color: #000000;
+}
+@media screen and (min-width: 768px) {
+  .catalog__price {
     font-size: 22px;
   }
 }
 
 .catalog__colors {
   display: flex;
-  column-gap: 10px;
+  -moz-column-gap: 10px;
+       column-gap: 10px;
 }
 
 .catalog__color {
   width: 27px;
   height: 27px;
-  border: 3px solid $bg-color;
+  border: 3px solid #ffffff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,18 +105,18 @@
 }
 
 .catalog__color:hover {
-  border-color: $main-text-color;
+  border-color: #000000;
 }
 
 .catalog__color:focus {
-  border-color: $main-text-color;
+  border-color: #000000;
 }
 
 .color:hover .catalog__item {
-  border-color: $main-text-color;
+  border-color: #000000;
 }
 
 .color {
   width: 17px;
   height: 17px;
-}
+}/*# sourceMappingURL=Catalog.module.css.map */

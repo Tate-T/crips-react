@@ -1,9 +1,10 @@
 @import '../../../sass/utils/mixins.scss';
 @import '../../../sass/utils/variables.scss';
 .sorting__form {
-    margin-bottom: 50px;
+    margin-bottom: 20px;
     display: flex;
     gap: 20px;
+    justify-content: flex-end;
 }
 
 .sorting__select-sortBy,
