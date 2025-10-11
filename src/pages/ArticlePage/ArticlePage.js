@@ -11,7 +11,7 @@ export const NavigationList = styled.ol`
   height: 50px;
   justify-content: center;
   align-items: center;
-  gap: 13px;
+  gap: 5px;
 `;
 
 export const NavigationItem = styled.li`
