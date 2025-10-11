@@ -1,16 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Container } from "../Container/Container.jsx";
 import { MiniCatalogItem } from "./MiniCatalogItem.jsx";
 
-import { miniCatalogData } from "../../data/mini-catalog-data.js";
+import { catalogData } from "../../data/catalog-data.js";
 
 import styles from "./MiniCatalog.module.scss";
 
 export const MiniCatalog = function () {
-	const [data, setData] = useState(miniCatalogData);
+	const [data, setData] = useState(catalogData);
 	const [currentPage, setCurrentPage] = useState(1);
 	const step = 8;
+
+	useEffect(() => {})
 
 	return (
 		<>
