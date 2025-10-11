@@ -1,0 +1,138 @@
+.mainWrapper {
+  background-color: #F8F9FB;
+  display: none;
+  padding-bottom: 19px;
+  margin-bottom: 10px;
+  width: 320px;
+}
+@media screen and (min-width: 1200px) {
+  .mainWrapper {
+    display: flex;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .mainWrapper {
+    margin-left: 339px;
+    width: 1242px;
+    margin-right: 0;
+  }
+}
+
+.detailTextBox {
+  background-color: #F8F9FB;
+  display: flex;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #C4C4C4;
+}
+@media screen and (min-width: 768px) {
+  .detailTextBox {
+    width: 768px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .detailTextBox {
+    width: 1200px;
+  }
+}
+@media screen and (min-width: 1920px) {
+  .detailTextBox {
+    margin-left: 339px;
+    width: 1242px;
+  }
+}
+
+.detailText {
+  padding-left: 27px;
+  color: #000;
+  font-family: Oswald;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 68px; /* 283.333% */
+}
+@media screen and (min-width: 1200px) {
+  .detailText {
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+.aboutWrapper {
+  margin-left: 27px;
+}
+
+.aboutBox {
+  margin-top: 32px;
+  margin-bottom: 15px;
+}
+
+.aboutTitle {
+  color: var(--Black-2, #3F3F3F);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.aboutText {
+  color: var(--Black-2, #3F3F3F);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  width: 567px;
+}
+
+.advantBox {
+  margin-bottom: 15px;
+}
+
+.advantTitle {
+  color: var(--Black-2, #3F3F3F);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.advantText {
+  color: var(--Black-2, #3F3F3F);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  width: 189px;
+}
+
+.shippingBox {
+  margin-top: 32px;
+  padding-left: 52px;
+  padding-bottom: 19px;
+}
+
+.shippingTitle {
+  color: var(--Black-2, #3F3F3F);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 30px;
+}
+
+.shippingText {
+  color: var(--Black-2, #3F3F3F);
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  width: 567px;
+}/*# sourceMappingURL=FaqsList.module.css.map */

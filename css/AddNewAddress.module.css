@@ -1,0 +1,225 @@
+.address {
+  background-color: #ffffff;
+  padding-bottom: 35px;
+}
+@media screen and (min-width: 1200px) {
+  .address {
+    padding: 13px 0 67px;
+  }
+}
+.address__subtitle {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 6.8;
+  color: #828282;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 1200px) {
+  .address__subtitle {
+    font-size: 14px;
+    line-height: 4.85714;
+    text-align: center;
+    margin-bottom: 13px;
+  }
+}
+.address__title {
+  display: none;
+}
+@media screen and (min-width: 1200px) {
+  .address__title {
+    display: block;
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.41667;
+    text-align: center;
+    color: #000000;
+    margin-bottom: 17px;
+  }
+}
+.address__wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  align-items: center;
+}
+@media screen and (min-width: 1200px) {
+  .address__wrap {
+    border: 1px solid #c4c4c4;
+    flex-direction: row;
+    gap: 108px;
+    max-width: 1454px;
+    padding: 73px 0 171px;
+    margin: 0 auto;
+    align-items: start;
+    justify-content: center;
+  }
+}
+.address__form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 100%;
+  max-width: 400px;
+}
+@media screen and (min-width: 1200px) {
+  .address__form {
+    gap: 49px;
+    width: -moz-min-content;
+    width: min-content;
+    max-width: -moz-min-content;
+    max-width: min-content;
+  }
+}
+.address__header {
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #828282;
+  margin-bottom: 6px;
+}
+@media screen and (min-width: 1200px) {
+  .address__header {
+    font-family: "Oswald", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 2.83333;
+    color: #000000;
+    margin-bottom: 12px;
+    margin-bottom: 28px;
+  }
+}
+.address__labels {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+@media screen and (min-width: 1200px) {
+  .address__labels {
+    gap: 15px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .address__label {
+    display: flex;
+    justify-content: space-between;
+    width: 541px;
+  }
+}
+.address__desc {
+  color: #3f3f3f;
+  font-weight: 400;
+  font-size: 12px;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.66667;
+}
+@media screen and (min-width: 1200px) {
+  .address__desc {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+.address__red {
+  color: #eb5757;
+}
+.address__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+@media screen and (min-width: 1200px) {
+  .address__inputs {
+    gap: 10px;
+  }
+}
+.address__input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #c4c4c4;
+  background-color: #ffffff;
+  color: #000000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.66667;
+}
+@media screen and (min-width: 1200px) {
+  .address__input {
+    width: 392px;
+    height: 44px;
+    padding: 0 14px;
+    font-size: 16px;
+    line-height: 1.25;
+  }
+}
+.address__input::-moz-placeholder {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.66667;
+  color: #3f3f3f;
+}
+.address__input::placeholder {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.66667;
+  color: #3f3f3f;
+}
+@media screen and (min-width: 1200px) {
+  .address__input::-moz-placeholder {
+    font-size: 16px;
+  }
+  .address__input::placeholder {
+    font-size: 16px;
+  }
+}
+.address__select {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #c4c4c4;
+  background-color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.66667;
+  color: #828282;
+}
+@media screen and (min-width: 1200px) {
+  .address__select {
+    width: 392px;
+    height: 44px;
+    padding: 0 14px;
+    font-size: 16px;
+  }
+}
+.address__btn {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 100%;
+  height: 38px;
+  background-color: #000000;
+}
+@media screen and (min-width: 1200px) {
+  .address__btn {
+    font-family: "Oswald", sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+    width: 140px;
+    height: 50px;
+    background-color: #000000;
+  }
+}/*# sourceMappingURL=AddNewAddress.module.css.map */
