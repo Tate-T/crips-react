@@ -3,10 +3,8 @@ import { Sorting } from "../Sorting/Sorting.jsx";
 import Banner from "../Banner/Banner.jsx";
 import styles from "./Catalog.module.scss";
 import catalogBase from "../../../data/catalog-data.js";
-import React from "react";
 
-export class FullCatalog extends React.Component {
-  render() {
+export function FullCatalog () {
     const userMedia = window.matchMedia("(min-width: 768px)");
     return (
       <>
@@ -36,5 +34,4 @@ export class FullCatalog extends React.Component {
         </ul>
       </>
     );
-  }
 }
