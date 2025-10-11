@@ -1,37 +1,51 @@
 import s from "./CreateNewAcount.module.scss";
 import { Container } from "../../../../components/Container/Container";
-import { Component } from "react";
+// import { Component } from "react";
+import { useState } from "react";
 
-export class CreateNewAcount extends Component {
-  state = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  };
+export function CreateNewAcount(){
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setlastName] = useState("")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [confirmPassword, setconfirmPassword] = useState("")
 
-  handleChange = (e) => {
+
+
+  // state = {
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   password: "",
+  //   confirmPassword: "",
+  // };
+
+  function handleChange(e){
     const { name, value } = e.target;
-    this.setState({ [name]: value });
+    setState({ [name]: value });
   };
 
-  handleSubmit = (e) => {
+  function handleSubmit(e){
     e.preventDefault();
 
-    this.setState({ firstName: "" });
-    this.setState({ lastName: "" });
-    this.setState({ email: "" });
-    this.setState({ password: "" });
-    this.setState({ confirmPassword: "" });
+    setFirstName("")
+    setlastName("")
+    setEmail("")
+    setPassword("")
+    setconfirmPassword("")
+    // this.setState({ firstName: "" });
+    // this.setState({ lastName: "" });
+    // this.setState({ email: "" });
+    // this.setState({ password: "" });
+    // this.setState({ confirmPassword: "" });
   };
 
-  render() {
-    console.log(this.state.firstName)
-    console.log(this.state.lastName)
-    console.log(this.state.email)
-    console.log(this.state.password)
-    console.log(this.state.confirmPassword)
+  // render() {
+  //   console.log(this.firstName)
+  //   console.log(this.state.lastName)
+  //   console.log(this.state.email)
+  //   console.log(this.state.password)
+  //   console.log(this.state.confirmPassword)
 
     return (
       <>
@@ -42,7 +56,7 @@ export class CreateNewAcount extends Component {
             </p>
             <h2 className={s.createMainTitle}>Create New Customer Account</h2>
             <div className={s.createMainBox}>
-              <form action="" className={s.form} onSubmit={this.handleSubmit}>
+              <form action="" className={s.form} onSubmit={handleSubmit}>
                 <h2 className={s.createPersonalText}>Personal Information</h2>
                 <div className={s.createWrap}>
                   <label className={s.create__label}>
@@ -53,8 +67,8 @@ export class CreateNewAcount extends Component {
                     required
                     type="text"
                     name="firstName"
-                    value={this.state.firstName}
-                    onChange={this.handleChange}
+                    value={firstName}
+                    onChange={handleChange}
                     placeholder="firstName"
                   />
                 </div>
@@ -68,8 +82,8 @@ export class CreateNewAcount extends Component {
                     type="text"
                     placeholder="lastName"
                     required
-                    onChange={this.handleChange}
-                    value={this.state.lastName}
+                    onChange={handleChange}
+                    value={lastName}
                   />
                 </div>
                 <label className={s.create__labelSign}>
@@ -90,8 +104,8 @@ export class CreateNewAcount extends Component {
                     name="email"
                     placeholder="daisy.watson@example.com"
                     required
-                    onChange={this.handleChange}
-                    value={this.state.email}
+                    onChange={handleChange}
+                    value={email}
                   />
                 </div>
                 <div className={s.createWrap}>
@@ -104,8 +118,8 @@ export class CreateNewAcount extends Component {
                     name="password"
                     placeholder="Password"
                     required
-                    onChange={this.handleChange}
-                    value={this.state.password}
+                    onChange={handleChange}
+                    value={password}
                   />
                 </div>
                 <div className={s.createWrap}>
@@ -119,8 +133,8 @@ export class CreateNewAcount extends Component {
                     name="confirmPassword"
                     placeholder=""
                     required
-                    onChange={this.handleChange}
-                    value={this.state.confirmPassword}
+                    onChange={handleChange}
+                    value={confirmPassword}
                   />
                 </div>
                 <div className={s.btnWrap}>
@@ -136,4 +150,4 @@ export class CreateNewAcount extends Component {
       </>
     );
   }
-}
+// }

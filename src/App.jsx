@@ -10,6 +10,7 @@ function App() {
   return (
     <>
       <HomePage />
+      <ArticlePage />
       <CatalogPage />
       <ProductPage />
       <ArticlePage />

@@ -12,7 +12,10 @@ export class Dashboard extends Component {
           <h2 className={styles.dashboard__title}>My Dashboard</h2>
           <div className={styles.dashboard__cont}>
             <div className={styles.dashboard__main}>
-              <DashboardSidebar changePage={this.props.changePage} />
+              <DashboardSidebar
+                page={this.props.page}
+                changePage={this.props.changePage}
+              />
               <div className={styles.dashboard__parts}>
                 <div className={styles.dashboard__part}>
                   <h3 className={styles.dashboard__subtitle}>
