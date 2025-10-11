@@ -1,9 +1,0 @@
-.catalogSection > div {
-  display: flex;
-  flex-direction: row;
-}
-@media screen and (max-width: 768px) {
-  .catalogSection > div {
-    flex-direction: column;
-  }
-}/*# sourceMappingURL=Catalog.css.map */
