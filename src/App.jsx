@@ -11,7 +11,7 @@ function App() {
       <HomePage />
       {/* <ProductPage/> */}
       {/* <CreateNewAcount></CreateNewAcount> */}
-      {/* <ArticlePage /> */}
+      <ArticlePage />
       <ProductPage />
       <CreateOrder></CreateOrder>
       <CartPage />
