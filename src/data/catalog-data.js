@@ -142,7 +142,7 @@
 export const catalogData = [
   {
     img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-    category: "Top Woman",
+    top: "Top Women",
     name: "Angels malu zip jeans slim black used",
     price: "139,00 EUR",
     colors: ["#24426A", "#18574A", "#666689"],
@@ -150,7 +150,7 @@ export const catalogData = [
   {
     img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
     //     img: !userMedia.matches ? catalog2Mobile : catalog2,
-    category: "Top Woman",
+    top: "Top Women",
     name: "Angels malu zip jeans slim black used",
     price: "235,00 EUR",
     colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
@@ -158,7 +158,7 @@ export const catalogData = [
   {
     img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
     //     img: !userMedia.matches ? catalog3Mobile : catalog3,
-    category: "Top Woman",
+    top: "Top Women",
     name: "Angels malu zip jeans slim black used",
     price: "90,00 EUR",
     colors: ["#C2BEB6", "#24426A", "#CBA13E"],
@@ -166,7 +166,7 @@ export const catalogData = [
   {
     img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
     //     img: !userMedia.matches ? catalog4Mobile : catalog4,
-    category: "Top Woman",
+    top: "Top Women",
     name: "Angels malu zip jeans slim black used",
     price: "139,00 EUR",
     colors: ["#24426A", "#F3ECE2", "#666689"],
@@ -174,7 +174,7 @@ export const catalogData = [
   {
     img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
     //     img: !userMedia.matches ? catalog5Mobile : catalog5,
-    category: "Top Woman",
+    top: "Top Women",
     name: "Angels malu zip jeans slim black used",
     price: "139,00 EUR",
     colors: ["#2B9FA7", "#971E34", "#666689"],
@@ -182,7 +182,7 @@ export const catalogData = [
   {
     img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
     //     img: !userMedia.matches ? catalog6Mobile : catalog6,
-    category: "Top Woman",
+    top: "Top Women",
     name: "Angels malu zip jeans slim black used",
     price: "139,00 EUR",
     colors: ["#666689", "#292A2D", "#F3ECE2"],
@@ -191,7 +191,7 @@ export const catalogData = [
   {
     img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
     //     img: !userMedia.matches ? catalog7Mobile : catalog7,
-    category: "Top Woman",
+    top: "Top Women",
     name: "Angels malu zip jeans slim black used",
     price: "139,00 EUR",
     colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
@@ -199,7 +199,7 @@ export const catalogData = [
   {
     img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
     //     img: !userMedia.matches ? catalog8Mobile : catalog8,
-    category: "Top Woman",
+    top: "Top Women",
     name: "Angels malu zip jeans slim black used",
     price: "139,00 EUR",
     colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
@@ -207,7 +207,7 @@ export const catalogData = [
   {
     img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
     //     img: !userMedia.matches ? catalog9Mobile : catalog9,
-    category: "Top Woman",
+    top: "Top Women",
     name: "Angels malu zip jeans slim black used",
     price: "139,00 EUR",
     colors: ["#24426A", "#18574A", "#666689"],
@@ -215,7 +215,7 @@ export const catalogData = [
   {
     img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
     //     img: !userMedia.matches ? catalog10Mobile : catalog10,
-    category: "Top Woman",
+    top: "Top Women",
     name: "Angels malu zip jeans slim black used",
     price: "139,00 EUR",
     colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
@@ -224,7 +224,7 @@ export const catalogData = [
   {
     img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
     //     img: !userMedia.matches ? catalog11Mobile : catalog11,
-    category: "Top Woman",
+    top: "Top Women",
     name: "Angels malu zip jeans slim black used",
     price: "139,00 EUR",
     colors: ["#C2BEB6", "#24426A", "#CBA13E"],
@@ -232,7 +232,7 @@ export const catalogData = [
   {
     img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
     //     img: !userMedia.matches ? catalog12Mobile : catalog12,
-    category: "Top Woman",
+    top: "Top Women",
     name: "Angels malu zip jeans slim black used",
     price: "139,00 EUR",
     colors: ["#24426A", "#F3ECE2", "#666689"],
