@@ -18,12 +18,12 @@ export const Filtration = () => {
   const fromSliderRef = useRef(null);
   const toSliderRef = useRef(null);
 
-    const phoneButtonClick = () => {
-        const filtrationElement = document.querySelector(".filtration");
-        const phoneButton = document.querySelector(".catalog-filtration__phone-button");
-        if (filtrationElement) filtrationElement.classList.toggle("active");
-        if (phoneButton) phoneButton.classList.toggle("active");
-    };
+  const phoneButtonClick = () => {
+    const filtrationElement = document.querySelector(".filtration");
+    const phoneButton = document.querySelector(".catalog-filtration__phone-button");
+    if (filtrationElement) filtrationElement.classList.toggle("active");
+    if (phoneButton) phoneButton.classList.toggle("active");
+  };
 
   useEffect(() => {
     const fromSlider = fromSliderRef.current;
@@ -177,28 +177,43 @@ export const Filtration = () => {
     const updated = brands.filter((b) => b !== brandToDelete);
     setBrands(updated);
     if (updated.length === 0 && !size && !dressLength.length && !color && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
+    document.querySelectorAll(".catalog-filtration__brand-input").forEach(input => {
+      if (input.value === brandToDelete) input.checked = false;
+    });
   };
 
   const deleteSize = () => {
     setSize('');
     if (!brands.length && !dressLength.length && !color && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
+    document.querySelectorAll(".catalog-filtration__size-button").forEach(btn => btn.classList.remove("active"));
   };
 
   const deleteDressSize = (dressSizeToDelete) => {
     const updated = dressLength.filter((len) => len !== dressSizeToDelete);
     setDressLength(updated);
     if (!brands.length && !size && updated.length === 0 && !color && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
+    document.querySelectorAll(".catalog-filtration__dress-length-input").forEach(input => {
+      if (input.value === dressSizeToDelete) input.checked = false;
+    });
   };
 
   const deleteColor = () => {
     setColor('');
     if (!brands.length && !size && !dressLength.length && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
+    document.querySelectorAll(".catalog-filtration__form-color-btn").forEach(btn => btn.classList.remove("active"));
   };
 
   const deletePrice = () => {
     setFromValue(0);
     setToValue(500);
     if (!brands.length && !size && !dressLength.length && !color) setIsFilterApplied(false);
+    document.getElementById("fromSlider").value = 0;
+    document.getElementById("toSlider").value = 500;
+    document.getElementById("fromInput").value = "0";
+    document.getElementById("toInput").value = "500";
+    const fromSlider = fromSliderRef.current;
+    const toSlider = toSliderRef.current;
+    const toInput = toInputRef.current;
   };
 
   const resetAll = () => {
@@ -209,6 +224,14 @@ export const Filtration = () => {
     setDressLength([]);
     setColor('');
     setIsFilterApplied(false);
+    document.getElementById("fromSlider").value = 0;
+    document.getElementById("toSlider").value = 500;
+    document.getElementById("fromInput").value = "0";
+    document.getElementById("toInput").value = "500";
+    document.querySelectorAll(".catalog-filtration__brand-input").forEach(input => input.checked = false);
+    document.querySelectorAll(".catalog-filtration__size-button").forEach(btn => btn.classList.remove("active"));
+    document.querySelectorAll(".catalog-filtration__dress-length-input").forEach(input => input.checked = false);
+    document.querySelectorAll(".catalog-filtration__form-color-btn").forEach(btn => btn.classList.remove("active"));
   };
   return (
     <>
