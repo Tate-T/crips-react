@@ -6,7 +6,7 @@ import { CabinetPage } from "./pages/CabinetPage/CabinetPage.jsx";
 import { DashboardPage } from "./pages/Cabinet/DashboardPage/DashboardPage.jsx";
 import { CatalogPage } from "./pages/CatalogPage/CatalogPage.jsx";
 
-import { LoginPage } from "./pages/CabinetPage/LoginPage/LoginPage.jsx";
+import { LoginPage } from "./pages/LoginPage/LoginPage.jsx";
 
 function App() {
 	return (

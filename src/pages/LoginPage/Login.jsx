@@ -1,14 +1,11 @@
 import s from "./Login.module.scss";
-import { Container } from "../../../components/Container/Container";
+import { Container } from "../../components/Container/Container";
 // import { Component } from "react";
 import { useState } from "react";
 
 export function Login() {
-	const [firstName, setFirstName] = useState("");
-	const [lastName, setlastName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
-	const [confirmPassword, setconfirmPassword] = useState("");
 
 	// state = {
 	//   firstName: "",
@@ -39,7 +36,7 @@ export function Login() {
 		// this.setState({ password: "" });
 		// this.setState({ confirmPassword: "" });
 
-		console.log(firstName, lastName, email, password, confirmPassword);
+		console.log(email, password);
 
 		form.reset();
 	};
