@@ -20,10 +20,10 @@ export function CreateNewAcount(){
   //   confirmPassword: "",
   // };
 
-  function handleChange(e){
-    const { name, value } = e.target;
-    setState({ [name]: value });
-  };
+  // function handleChange(e){
+  //   const { name, value } = e.target;
+  //   setState({ [name]: value });
+  // };
 
   function handleSubmit(e){
     e.preventDefault();
@@ -68,7 +68,7 @@ export function CreateNewAcount(){
                     type="text"
                     name="firstName"
                     value={firstName}
-                    onChange={handleChange}
+                    onChange={(e)=>setFirstName(e.target.value)}
                     placeholder="firstName"
                   />
                 </div>
@@ -82,7 +82,7 @@ export function CreateNewAcount(){
                     type="text"
                     placeholder="lastName"
                     required
-                    onChange={handleChange}
+                    onChange={(e)=>setlastName(e.target.value)}
                     value={lastName}
                   />
                 </div>
@@ -104,7 +104,7 @@ export function CreateNewAcount(){
                     name="email"
                     placeholder="daisy.watson@example.com"
                     required
-                    onChange={handleChange}
+                    onChange={(e)=>setEmail(e.target.value)}
                     value={email}
                   />
                 </div>
@@ -118,7 +118,7 @@ export function CreateNewAcount(){
                     name="password"
                     placeholder="Password"
                     required
-                    onChange={handleChange}
+                    onChange={(e)=>setPassword(e.target.value)}
                     value={password}
                   />
                 </div>
@@ -133,7 +133,7 @@ export function CreateNewAcount(){
                     name="confirmPassword"
                     placeholder=""
                     required
-                    onChange={handleChange}
+                    onChange={(e)=>setconfirmPassword(e.target.value)}
                     value={confirmPassword}
                   />
                 </div>
