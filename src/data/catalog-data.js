@@ -1,4 +1,3 @@
-
 // import catalog1 from "../images/catalog/catalogImage1.jpg";
 // import catalog2 from "../images/catalog/catalog-image-2.jpg";
 // import catalog3 from "../images/catalog/catalog-image-3.jpg";
@@ -109,7 +108,6 @@
 //     colors: ["#24426A", "#F3ECE2", "#666689"],
 //   },
 // ];
-
 
 // import catalog1 from "../images/catalog/desktop/catalog-image-1.jpg";
 // import catalog2 from "../images/catalog/desktop/catalog-image-2.jpg";
@@ -240,3 +238,19 @@ export const catalogData = [
     colors: ["#24426A", "#F3ECE2", "#666689"],
   },
 ];
+
+const BASE_URL = "";
+
+export async function catalogData() {
+  try {
+    const response = await fetch(BASE_URL);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error("Error fetching catalog data:", error);
+    return [];
+  }
+}

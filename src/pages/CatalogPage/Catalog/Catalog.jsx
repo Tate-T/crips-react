@@ -1,11 +1,33 @@
 import PropTypes from "prop-types";
 
-export function Catalog(style, img, name, category, colors, price, media) {
+export function Catalog(
+  style,
+  img,
+  name,
+  category,
+  colors,
+  price,
+  media,
+  discount
+) {
   return (
     <li className={style.catalog__item}>
       <img className={style.catalog__img} src={img} alt="#" />
+      {discount ? (
+        <p className={`${style.catalog__discount}--discount`}>{discount}</p>
+      ) : undefined}
+
       <p className={style.catalog__top}>{category}</p>
       <h3 className={style.catalog__title}>{name}</h3>
+      {discount ? (
+        <p className={`${style.catalog__price}--discount`}>
+          {price}
+          <span className={style.catalog__discount}>{discount}</span>
+        </p>
+      ) : (
+        <p className={style.catalog__price}>{price}</p>
+      )}
+
       <p className={style.catalog__price}>{price}</p>
 
       <ul className={style.catalog__colors}>
