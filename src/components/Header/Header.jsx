@@ -1,6 +1,8 @@
+import { AuthContext } from "../../contexts/AuthContext";
+
 import { Container } from "../Container/Container";
 import { Mobmenu } from "./Mobmenu/Mobmenu";
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import Logo from "../../images/logo.svg";
 import Search from "../../images/search.svg";
@@ -13,6 +15,7 @@ import style from "./Header.module.scss";
 // activePage може бути "home", "shop", "blog", "sale", "contact us"
 export function Header({ activePage }) {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const auth = useContext(AuthContext);
 
   const handleMenuChange = (ev) => {
     if (ev.target === ev.currentTarget || ev.currentTarget.className === `${style.header__menu}`) {
@@ -58,10 +61,16 @@ export function Header({ activePage }) {
             </div>
           </div>
           <div className={style.header__right}>
-            <div className={style.header__authentication}>
-              <a className={style.auth__link} href=".">SIGN IN</a>
-              <a className={style.auth__link} href=".">CREATE AN ACCOUNT</a>
-            </div>
+			{ auth.isLogin ? (
+			  <div className={style.header__authentication}>
+				<a className={style.auth__link} href=".">{auth.email}</a>
+			  </div>
+			) : (
+			  <div className={style.header__authentication}>
+				<a className={style.auth__link} href=".">SIGN IN</a>
+				<a className={style.auth__link} href=".">CREATE AN ACCOUNT</a>
+			  </div>
+			)}
             <div className={style.header__actions}>
               <button className={style.header__like}>
                 <img src={Heart} alt="Heart SVG" className={style.header__like_svg} />

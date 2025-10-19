@@ -11,7 +11,7 @@ import { LoginPage } from "./pages/LoginPage/LoginPage.jsx";
 function App() {
 	return (
 		<>
-			{/* <HomePage /> */}
+			<HomePage />
 			{/* <ArticlePage /> */}
 			{/* <CatalogPage /> */}
 			{/* <ProductPage /> */}

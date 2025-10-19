@@ -1,9 +1,12 @@
 import s from "./Login.module.scss";
 import { Container } from "../../components/Container/Container";
 // import { Component } from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 
 export function Login() {
+	const auth = useContext(AuthContext);
+
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 
@@ -36,7 +39,12 @@ export function Login() {
 		// this.setState({ password: "" });
 		// this.setState({ confirmPassword: "" });
 
-		console.log(email, password);
+		// TODO: auth check
+
+		auth.setIsLogin(true);
+		auth.setEmail(form.elements.email.value);
+
+		console.log(auth.email);
 
 		form.reset();
 	};
@@ -87,7 +95,7 @@ export function Login() {
 							</div>
 							<div className={s.btnWrap}>
 								<button className={s.createBtn} type="submit">
-									login	
+									login
 								</button>
 								<button className={s.backBtn}>Back</button>
 							</div>
