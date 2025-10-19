@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AuthContext } from "../../../contexts/AuthContext";
 import { ShippingDetails } from "./ShippingDetails/ShippingDetails";
 import { Container } from "../../../components/Container/Container";
 import { OrderSummary } from "../../../components/CreateOrder/OrderSummary/OrderSummary";
@@ -8,9 +9,10 @@ import { PaymentDetails } from "./PaymentDetails/PaymentDetails";
 import { OrderSummaryModal } from "../../../components/CreateOrder/OrderSummaryModal/OrderSummaryModal";
 import { PaymentInfo } from "../../../components/CreateOrder/PaymentInfo/PaymentInfo";
 
-const BASE_URL = "https://68d9013490a75154f0d9471b.mockapi.io/crips-practice/";
+const BASE_URL = import.meta.env.VITE_USERS_API;
 
 export const CreateOrder = () => {
+  const auth = useContext(AuthContext);
 
   const [step, setStep] = useState(1);
   const [modalIsOpened, setModalIsOpened] = useState(false);
@@ -50,7 +52,10 @@ export const CreateOrder = () => {
     } catch (error) {
       console.error(error);
     }
+
     setShippingFormDetails(data);
+	auth.setIsLogin(true);
+	auth.setEmail(data.email);
     console.log('ShippingFormDetails', data);
   };
 
