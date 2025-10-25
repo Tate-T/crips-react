@@ -1,2 +1,2 @@
 # Документація для розробників
-[Використання API](https://github.com/tate-T/crips-react/tree/main/docs/api.md)
+[Створення та використання API](https://github.com/tate-T/crips-react/tree/main/docs/api_setup.md)
