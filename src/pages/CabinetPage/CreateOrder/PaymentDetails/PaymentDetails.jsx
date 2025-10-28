@@ -41,18 +41,13 @@ export const PaymentDetails = ({ children, onBack, onSubmitPayment }) => {
           <p className={s.payment__text}>Check / Money order</p>
 
           <label className={s.payment__label}>
-            <input
-              type="checkbox"
-              checked={isSameAddress}
-              onChange={handleCheckboxChange}
-            />
+            <input type="checkbox" checked={isSameAddress} onChange={handleCheckboxChange} />
             My billing and shipping address are the same
           </label>
 
           <div className={s.payment__subwrap}>
             <a href="#" className={s.payment__address}>
-              Vyacheslav Kulbitskii Moskovski prospect 39/1, Apt. 147 Vitebsk,
-              Vitebsk region 210038 Belarus
+              Vyacheslav Kulbitskii Moskovski prospect 39/1, Apt. 147 Vitebsk, Vitebsk region 210038 Belarus
             </a>
             <a className={s.payment__num} href="tel:+375292169179">
               +375292169179
@@ -60,17 +55,10 @@ export const PaymentDetails = ({ children, onBack, onSubmitPayment }) => {
           </div>
 
           <div className={s.payment__btns}>
-            <button
-              type="submit"
-              className={s["payment__btn--place"]}
-            >
+            <button type="submit" className={s["payment__btn--place"]}>
               Place Order
             </button>
-            <button
-              type="button"
-              className={s["payment__btn--next"]}
-              onClick={onBack}
-            >
+            <button type="button" className={s["payment__btn--next"]} onClick={onBack}>
               Back
             </button>
           </div>
@@ -79,12 +67,7 @@ export const PaymentDetails = ({ children, onBack, onSubmitPayment }) => {
         <form onSubmit={handleApplyDiscount}>
           <h2 className={s.payment__title}>Apply Discount Code</h2>
           <label className={s["payment__label--discount"]}>
-            <input
-              type="text"
-              placeholder="Enter discount code"
-              value={discountCode}
-              onChange={handleDiscountChange}
-            />
+            <input type="text" placeholder="Enter discount code" value={discountCode} onChange={handleDiscountChange} />
             <button type="submit" className={s["payment__btn--tablet"]}>
               Apply Discount
             </button>
