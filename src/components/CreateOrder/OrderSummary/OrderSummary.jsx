@@ -1,16 +1,10 @@
 import s from "./OrderSummary.module.scss";
-import { Component } from "react";
 import arrow from "../../../images/CreateOrder/arrow-bottom.svg";
 import dress1 from "../../../images/MiniCatalog/mini-catalog-04.jpg";
 import dress2 from "../../../images/MiniCatalog/mini-catalog-02.jpg";
 import bag from "../../../images/CreateOrder/bag.svg";
 
-export const OrderSummary = ({
-  stateOfDetails,
-  className,
-  toggleOrderSummary,
-  openModal,
-}) => {
+export const OrderSummary = ({ stateOfDetails, className, toggleOrderSummary, openModal }) => {
   return (
     <div className={className}>
       <div className={s.order__wrap}>
@@ -36,10 +30,7 @@ export const OrderSummary = ({
             </div>
           </div>
 
-          <div
-            className={`${s.order__que} ${stateOfDetails ? s.active : ""}`}
-            onClick={toggleOrderSummary}
-          >
+          <div className={`${s.order__que} ${stateOfDetails ? s.active : ""}`} onClick={toggleOrderSummary}>
             <p className={s.order__info}>1 Item in Cart</p>
             <img className={s.order__icon} src={arrow} alt="arrow icon" />
           </div>
@@ -49,9 +40,7 @@ export const OrderSummary = ({
             <img className={s.order__img} src={dress1} alt="dress" />
             <div className={s.order__subwrap}>
               <div>
-                <h3 className={s.order__subtitle}>
-                  Angels malu zip jeans slim black used
-                </h3>
+                <h3 className={s.order__subtitle}>Angels malu zip jeans slim black used</h3>
                 <p className={s.order__quantity}>
                   Qty: <span>1</span>
                 </p>
@@ -67,9 +56,7 @@ export const OrderSummary = ({
             <img className={s.order__img} src={dress2} alt="dress" />
             <div className={s.order__subwrap}>
               <div>
-                <h3 className={s.order__subtitle}>
-                  Angels malu zip jeans slim black used
-                </h3>
+                <h3 className={s.order__subtitle}>Angels malu zip jeans slim black used</h3>
                 <p className={s.order__quantity}>
                   Qty: <span>1</span>
                 </p>
