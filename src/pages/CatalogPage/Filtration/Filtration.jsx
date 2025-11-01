@@ -69,7 +69,7 @@ export const Filtration = () => {
     const rangeDistance = to.max - to.min;
     const fromPosition = from.value - to.min;
     const toPosition = to.value - to.min;
-    controlSlider.style.background = linear-gradient(to right, ${sliderColor} 0%, ${sliderColor} ${(fromPosition / rangeDistance) * 100}%, ${rangeColor} ${(fromPosition / rangeDistance) * 100}%, ${rangeColor} ${(toPosition / rangeDistance) * 100}%, ${sliderColor} ${(toPosition / rangeDistance) * 100}%, ${sliderColor} 100%);
+    controlSlider.style.background = `linear-gradient(to right, ${sliderColor} 0%, ${sliderColor} ${(fromPosition / rangeDistance) * 100}%, ${rangeColor} ${(fromPosition / rangeDistance) * 100}%, ${rangeColor} ${(toPosition / rangeDistance) * 100}%, ${sliderColor} ${(toPosition / rangeDistance) * 100}%, ${sliderColor} 100%);`
   };
 
   const setToggleAccessible = (currentTarget) => {
