@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import { FiltrName } from "./Filtration-Components/FiltrationName.jsx";
 import "./Filtration.scss";
 import arrowDown from "../../../images/arrow-down.svg";
@@ -188,22 +188,21 @@ export const Filtration = () => {
     document.querySelectorAll(".catalog-filtration__size-button").forEach(btn => btn.classList.remove("active"));
   };
 
-  const deleteDressSize = (dressSizeToDelete) => {
+  const deleteDressSize =  useCallback( (dressSizeToDelete) => {
     const updated = dressLength.filter((len) => len !== dressSizeToDelete);
     setDressLength(updated);
     if (!brands.length && !size && updated.length === 0 && !color && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
     document.querySelectorAll(".catalog-filtration__dress-length-input").forEach(input => {
       if (input.value === dressSizeToDelete) input.checked = false;
     });
-  };
+  }, [dressLength]);
 
-  const deleteColor = () => {
+  const deleteColor = useCallback( () => {
     setColor('');
     if (!brands.length && !size && !dressLength.length && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
     document.querySelectorAll(".catalog-filtration__form-color-btn").forEach(btn => btn.classList.remove("active"));
-  };
-
-  const deletePrice = () => {
+  }, [color]);
+  const deletePrice = useCallback( () => {
     setFromValue(0);
     setToValue(500);
     if (!brands.length && !size && !dressLength.length && !color) setIsFilterApplied(false);
@@ -214,7 +213,7 @@ export const Filtration = () => {
     const fromSlider = fromSliderRef.current;
     const toSlider = toSliderRef.current;
     const toInput = toInputRef.current;
-  };
+  }, [fromValue, toValue]);
 
   const resetAll = () => {
     setFromValue(0);
