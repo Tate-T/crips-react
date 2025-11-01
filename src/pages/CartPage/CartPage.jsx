@@ -130,11 +130,11 @@ export const CartPage = () => {
                             </p>
                             <p className={styles.cart__phone__color}>
                               Color:
-                              <div className={styles.cart__phone__square}>
-                                <div
+                              <span className={styles.cart__phone__square}>
+                                <span
                                   className={styles.cart__phone__color}
-                                ></div>
-                              </div>
+                                ></span>
+                              </span>
                             </p>
                           </div>
                           <div className={styles.cart__phone__actions}>

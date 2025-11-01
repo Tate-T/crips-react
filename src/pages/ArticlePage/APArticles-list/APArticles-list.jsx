@@ -1,10 +1,12 @@
 import { ArticleslistBox, ArticleslistTitle, ArticleslistFirstText, ArticleslistText, ArticleslistDresses } from "../../../pages/ArticlePage/APArticles-list/APArticle-list.js";
+import { Container } from "../../../components/Container/Container.jsx";
 import dresses from "../../../images/Article/ArticlePage-Dresses.jpg"
 
 
 export const APArticlesList = () => {
   return (
     <>
+    <Container>
       <ArticleslistBox>
         <ArticleslistTitle>The Dress</ArticleslistTitle>
         <ArticleslistFirstText>
@@ -106,6 +108,7 @@ export const APArticlesList = () => {
           like a chic French woman, or a dishevelled bird?” 
           </ArticleslistText>
       </ArticleslistBox>
+      </Container>
     </>
   );
 };

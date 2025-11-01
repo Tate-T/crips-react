@@ -3,6 +3,45 @@
     background: #F8F9FB;
 
 
+    &__container {
+        width: 1920px;
+        padding: 0 15px;
+        margin: 0 auto;
+        outline: 1px solid red;
+    }
+
+    @media screen and (max-width: 1200px) {
+        .blog__container {
+            width: 1200px;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .blog__container {
+            width: 768px;
+        }
+    }
+
+    @media screen and (max-width: 480px) {
+        .blog__container {
+            width: 480px;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .blog__container {
+            width: 320px;
+        }
+    }
+
+
+
+
+
+
+
+
+
     &__title {
         color: #000;
         font-family: Oswald;
@@ -59,7 +98,7 @@
 
     &__line_item {
         height: 3px;
-        width: 75%;
+        width: 90%;
         background: #000;
         position: absolute;
         bottom: 40px;

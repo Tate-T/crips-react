@@ -1,5 +1,13 @@
 @import "../../../sass/utils/variables.scss";
 
+.catalog{
+  @media screen  and (min-width : 1454px){
+    width: 1454px;
+    margin: 0 auto;
+
+  }
+}
+
 .catalog__list {
   display: flex;
   flex-wrap: wrap;
@@ -23,11 +31,11 @@
   }
 }
 .catalog__img {
-  width: 139px !important;
-  height: 182px !important;
+  width: 139px ;
+  height: 182px ;
   @media screen and (min-width: 768px) {
-    width: 344px !important;
-    height: 450px !important;
+    width: 344px ;
+    height: 450px ;
   }
 }
 .catalog__top {

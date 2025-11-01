@@ -1,16 +1,16 @@
-import { ApbanerBox, ApbanerTitlebox, ApbanerTitle } from "../../../pages/ArticlePage/APBaner/APBaner.js";
-
+import styles from "../../../pages/ArticlePage/APBaner/APBaner.module.scss";
 
 export const APBaner = () => {
   return (
     <>
-      <ApbanerBox>
-        <ApbanerTitlebox>
-          <ApbanerTitle>
+      <div className={styles.apbaner__box}>
+        <div className={styles.apbaner__titlebox}>
+          <h2 className={styles.apbaner__title}>
             WHAT TO WEAR TO A SUMMER WEDDING THIS YEAR?
-          </ApbanerTitle>
-        </ApbanerTitlebox>
-      </ApbanerBox>
+          </h2>
+        </div>
+      </div>
     </>
   );
 };
+
