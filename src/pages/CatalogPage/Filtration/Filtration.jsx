@@ -54,7 +54,7 @@ export const Filtration = () => {
       if (toSlider) toSlider.removeEventListener("input", updateToSlider);
       if (fromInput) fromInput.removeEventListener("input", updateFromInput);
       if (toInput) toInput.removeEventListener("input", updateToInput);
-    };
+    }
   }, []);
 
   const formatCurrency = (value) => `${Number(value)},00 EUR`;
