@@ -35,7 +35,7 @@ export const Banner = () => {
     return `${day}.${month}.${year}`;
   };
 
-  const [choose, setChoose] = useState(() => {
+  const [choose] = useState(() => {
     const savedChoose = JSON.parse(localStorage.getItem("catalogBannerChoose"));
     const today = curDate();
 
