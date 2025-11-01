@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const AdvertisementBox = styled.div``;
+export const AdvertisementBox = styled.div`
+position: relative;
+`;
 
 export const Advertisement1 = styled.img`
   display: none;
@@ -11,15 +13,15 @@ export const Advertisement1 = styled.img`
     width: 270px;
     height: 587px;
     position: absolute;
-    top: 700px;
-    right: 90px;
+    top: -2050px;
+    right: 80px;
   }
 
   @media screen and (min-width: 1920px) {
     max-width: 307px;
     width: 307px;
     height: 617px;
-    top: 700px;
+    top: -2300px;
     right: 357px;
   }
 `;
@@ -33,15 +35,15 @@ export const Advertisement2 = styled.img`
     width: 280px;
     height: 587px;
     position: absolute;
-    top: 1340px;
-    right: 85px;
+    top: -1440px;
+    right: 75px;
   }
 
   @media screen and (min-width: 1920px) {
     max-width: 332px;
     width: 332px;
     height: 617px;
-    top: 1340px;
+    top: -1640px;
     right: 339px;
   }
 `;

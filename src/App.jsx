@@ -6,18 +6,24 @@ import { CabinetPage } from "./pages/CabinetPage/CabinetPage.jsx";
 import { DashboardPage } from "./pages/Cabinet/DashboardPage/DashboardPage.jsx";
 import { CatalogPage } from "./pages/CatalogPage/CatalogPage.jsx";
 
+import { LoginPage } from "./pages/LoginPage/LoginPage.jsx";
+
 function App() {
-  return (
-    <>
-      <HomePage />
-      <CatalogPage />
-      <ProductPage />
-      <ArticlePage />
-      <CabinetPage />
-      <CartPage />
-      <DashboardPage />
-    </>
-  );
+	return (
+		<>
+			 <HomePage />
+			 <ArticlePage />
+			<CatalogPage />
+			 <ProductPage />
+			 <ArticlePage />
+			<CabinetPage />
+			
+			<LoginPage />
+
+			 <CartPage />
+			 <DashboardPage />
+		</>
+	);
 }
 
 export default App;

@@ -79,29 +79,33 @@ export const ArticleslistText = styled.p`
   line-height: 25px;
   padding-left: 10px;
   margin-bottom: 10px;
-  width: 400px;
+  width: 260px;
+
+  @media screen and (min-width: 420px) {
+    font-size: 16px;
+    padding-left: 15px;
+    width: 380px;
+  }
 
   @media screen and (min-width: 768px) {
-  font-size: 16px;
-  padding-left: 15px;
-  width: 730px;
+    width: 710px;
   }
 
   @media screen and (min-width: 1200px) {
-  font-size: 18px;
-  font-weight: 400;
-  padding-left: 100px;
-  margin-bottom: 20px;
-  width: 750px;
+    font-size: 18px;
+    font-weight: 400;
+    padding-left: 100px;
+    margin-bottom: 20px;
+    width: 750px;
   }
 
   @media screen and (min-width: 1920px) {
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 30px;
-  padding-left: 318px;
-  margin-bottom: 30px;
-  width: 1130px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    padding-left: 318px;
+    margin-bottom: 30px;
+    width: 1130px;
   }
 `;
 
@@ -109,29 +113,34 @@ export const ArticleslistDresses = styled.img`
   margin-bottom: 15px;
   padding-left: 10px;
   max-width: 420px;
-  width: 420px;
-  height: 280px;
+  width: 280px;
+  height: 220px;
+
+  @media screen and (min-width: 420px) {
+    width: 420px;
+    height: 280px;
+  }
 
   @media screen and (min-width: 768px) {
-  padding-left: 15px;
-  max-width: 720px;
-  width: 720px;
-  height: 510px;
+    padding-left: 15px;
+    max-width: 720px;
+    width: 720px;
+    height: 510px;
   }
 
   @media screen and (min-width: 1200px) {
-  margin-bottom: 25px;
-  padding-left: 100px;
-  max-width: 800px;
-  width: 800px;
-  height: 480px;
+    margin-bottom: 25px;
+    padding-left: 100px;
+    max-width: 800px;
+    width: 800px;
+    height: 480px;
   }
 
   @media screen and (min-width: 1920px) {
-  padding-left: 318px;
-  max-width: 1120px;
-  width: 1120px;
-  height: 610px;
+    padding-left: 318px;
+    max-width: 1120px;
+    width: 1120px;
+    height: 610px;
   }
 `;
 
