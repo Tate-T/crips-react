@@ -69,7 +69,7 @@ export const Filtration = () => {
     const rangeDistance = to.max - to.min;
     const fromPosition = from.value - to.min;
     const toPosition = to.value - to.min;
-    controlSlider.style.background = `linear-gradient(to right, ${sliderColor} 0%, ${sliderColor} ${(fromPosition / rangeDistance) * 100}%, ${rangeColor} ${(fromPosition / rangeDistance) * 100}%, ${rangeColor} ${(toPosition / rangeDistance) * 100}%, ${sliderColor} ${(toPosition / rangeDistance) * 100}%, ${sliderColor} 100%);`
+    controlSlider.style.background = `linear-gradient(to right, ${sliderColor} 0%, ${sliderColor} ${(fromPosition / rangeDistance) * 100}%, ${rangeColor} ${(fromPosition / rangeDistance) * 100}%, ${rangeColor} ${(toPosition / rangeDistance) * 100}%, ${sliderColor} ${(toPosition / rangeDistance) * 100}%, ${sliderColor} 100%)`;
   };
 
   const setToggleAccessible = (currentTarget) => {
@@ -93,7 +93,7 @@ export const Filtration = () => {
     }
   };
 
-const controlToInput = (toSlider, fromInput, toInput, controlSlider) => {
+  const controlToInput = (toSlider, fromInput, toInput, controlSlider) => {
     const [from, to] = getParsed(fromInput, toInput);
     fillSlider(fromInput, toInput, "#C6C6C6", "#000", controlSlider);
     setToggleAccessible(toInput);
@@ -164,10 +164,10 @@ const controlToInput = (toSlider, fromInput, toInput, controlSlider) => {
 
   const applyFilters = () => {
     const hasFilters =
-      fromValue !== 0 
-      toValue !== 500 
-      brands.length > 0 
-      size !== "" 
+      fromValue !== 0 ||
+      toValue !== 500 ||
+      brands.length > 0 ||
+      size !== "" ||
       dressLength.length > 0 ||
       color !== "";
     setIsFilterApplied(hasFilters);
@@ -197,7 +197,7 @@ const controlToInput = (toSlider, fromInput, toInput, controlSlider) => {
     });
   }, [dressLength]);
 
-const deleteColor = useCallback( () => {
+  const deleteColor = useCallback( () => {
     setColor('');
     if (!brands.length && !size && !dressLength.length && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
     document.querySelectorAll(".catalog-filtration__form-color-btn").forEach(btn => btn.classList.remove("active"));
@@ -214,7 +214,6 @@ const deleteColor = useCallback( () => {
     const toSlider = toSliderRef.current;
     const toInput = toInputRef.current;
   }, [fromValue, toValue]);
-  
 
   const resetAll = () => {
     setFromValue(0);
@@ -239,7 +238,7 @@ const deleteColor = useCallback( () => {
         <img src={arrowDown} alt="" />
       </button>
       <section className="filtration">
-        <div className={catalog-filtration__wrap ${isFilterApplied ? '' : 'is-hidden'}}>
+        <div className={`catalog-filtration__wrap ${isFilterApplied ? '' : 'is-hidden'}`}>
           <div className="filtration-text__wrap">
             <h2 className="catalog-filtration__title">Filter</h2>
             <p className="filtration-text__reset" onClick={resetAll}><img src={close} alt="" className="filtration-close" /> RESET ALL</p>
@@ -278,7 +277,7 @@ const deleteColor = useCallback( () => {
               <h3 className="filtration-list__title">Color:</h3>
               <li className="filtration-list__size">
                 <img src={close} alt="" className="filtration-close" onClick={deleteColor} />
-<div className={catalog-filtration__form-color-btn active ${color}}></div>
+                <div className={`catalog-filtration__form-color-btn active ${color}`}></div>
               </li>
             </li>
             <li className={fromValue === 0 && toValue === 500 ? "is-hidden" : ""}>
@@ -286,8 +285,8 @@ const deleteColor = useCallback( () => {
               <li className="filtration-list__size">
                 <img src={close} alt="" className="filtration-close" onClick={deletePrice} />
                 <p className="selected-filters">
-                  {fromValue === toValue ? ${fromValue},00 EUR :
-                    ${fromValue},00 EUR - ${toValue},00 EUR}
+                  {fromValue === toValue ? `${fromValue},00 EUR` :
+                    `${fromValue},00 EUR - ${toValue},00 EUR`}
                 </p>
               </li>
             </li>
@@ -364,8 +363,7 @@ const deleteColor = useCallback( () => {
             <button className="catalog-filtration__size-button" onClick={changeSize}>w29</button>
             <button className="catalog-filtration__size-button" onClick={changeSize}>w30</button>
             <button className="catalog-filtration__size-button" onClick={changeSize}>w31</button>
-
-<button className="catalog-filtration__size-button" onClick={changeSize}>w32</button>
+            <button className="catalog-filtration__size-button" onClick={changeSize}>w32</button>
             <button className="catalog-filtration__size-button" onClick={changeSize}>w33</button>
             <button className="catalog-filtration__size-button" onClick={changeSize}>w34</button>
             <button className="catalog-filtration__size-button" onClick={changeSize}>w35</button>
@@ -443,8 +441,7 @@ const deleteColor = useCallback( () => {
             ></button>
             <button
               style={{ backgroundColor: "rgba(243, 236, 226, 1)" }}
-
-className="catalog-filtration__form-color-btn"
+              className="catalog-filtration__form-color-btn"
               onClick={changeColor}
               value={'light'}
             ></button>
@@ -547,7 +544,7 @@ className="catalog-filtration__form-color-btn"
           <button className="catalog-filtration__apply" onClick={applyFilters}>Apply</button>
         </div>
         <div className="catalog-filtration__about-dresses">
-<h2 className="catalog-filtration__about-dresses-title">
+          <h2 className="catalog-filtration__about-dresses-title">
             About Dresses
           </h2>
           <p className="catalog-filtration__about-dresses-text">
