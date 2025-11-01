@@ -209,11 +209,14 @@ export const Filtration = () => {
     if (!brands.length && !size && !dressLength.length && !color) setIsFilterApplied(false);
     document.getElementById("fromSlider").value = 0;
     document.getElementById("toSlider").value = 500;
-    document.getElementById("fromInput").value = "0";
-    document.getElementById("toInput").value = "500";
+    document.getElementById("fromInput").value = "0 EUR";
+    document.getElementById("toInput").value = "500 EUR";
     const fromSlider = fromSliderRef.current;
     const toSlider = toSliderRef.current;
     const toInput = toInputRef.current;
+    fillSlider(fromSlider, toSlider, "#C6C6C6", "#000", toSlider);
+    setToggleAccessible(toInput);
+
   };
 
   const resetAll = () => {
@@ -226,8 +229,13 @@ export const Filtration = () => {
     setIsFilterApplied(false);
     document.getElementById("fromSlider").value = 0;
     document.getElementById("toSlider").value = 500;
-    document.getElementById("fromInput").value = "0";
-    document.getElementById("toInput").value = "500";
+    document.getElementById("fromInput").value = "0 EUR";
+    document.getElementById("toInput").value = "500 EUR";
+    const fromSlider = fromSliderRef.current;
+    const toSlider = toSliderRef.current;
+    const toInput = toInputRef.current;
+    fillSlider(fromSlider, toSlider, "#C6C6C6", "#000", toSlider);
+    setToggleAccessible(toInput);
     document.querySelectorAll(".catalog-filtration__brand-input").forEach(input => input.checked = false);
     document.querySelectorAll(".catalog-filtration__size-button").forEach(btn => btn.classList.remove("active"));
     document.querySelectorAll(".catalog-filtration__dress-length-input").forEach(input => input.checked = false);
