@@ -13,12 +13,12 @@ function App() {
 		<>
 			{/* <HomePage /> */}
 			{/* <ArticlePage /> */}
-			{/* <CatalogPage /> */}
+			<CatalogPage />
 			{/* <ProductPage /> */}
 			{/* <ArticlePage /> */}
-			<CabinetPage />
+			{/* <CabinetPage />
 
-			<LoginPage />
+			<LoginPage /> */}
 
 			{/* <CartPage /> */}
 			{/* <DashboardPage /> */}
