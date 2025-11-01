@@ -257,10 +257,10 @@ export const Filtration = () => {
             </li>
             <li className={size === "" ? "is-hidden" : ""}>
               <h3 className="filtration-list__title">Size(inches):</h3>
-              <li className="filtration-list__size">
+              <div className="filtration-list__size">
                 <img src={close} alt="" className="filtration-close" onClick={deleteSize} />
                 <p key={size} className="selected-filters">{size}</p>
-              </li>
+              </div>
             </li>
             <li className={dressLength.length === 0 ? "is-hidden" : ""}>
               <h3 className="filtration-list__title">Dress Length:</h3>
@@ -275,10 +275,10 @@ export const Filtration = () => {
             </li>
             <li className={color === "" ? "is-hidden" : ""}>
               <h3 className="filtration-list__title">Color:</h3>
-              <li className="filtration-list__size">
+              <div className="filtration-list__size">
                 <img src={close} alt="" className="filtration-close" onClick={deleteColor} />
                 <div className={`catalog-filtration__form-color-btn active ${color}`}></div>
-              </li>
+              </div>
             </li>
             <li className={fromValue === 0 && toValue === 500 ? "is-hidden" : ""}>
               <h3 className="filtration-list__title">Price:</h3>
