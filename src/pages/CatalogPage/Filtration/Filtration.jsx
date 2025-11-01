@@ -214,6 +214,7 @@ const deleteColor = useCallback( () => {
     const toSlider = toSliderRef.current;
     const toInput = toInputRef.current;
   }, [fromValue, toValue]);
+  
 
   const resetAll = () => {
     setFromValue(0);
