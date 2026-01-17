@@ -1,10 +1,52 @@
 // import { Header } from "../../../src/components/Header/Header.jsx";
 // import { Footer } from "../../../src/components/Footer/Footer.jsx";
 import { Container } from "../../components/Container/Container";
+import { useState} from "react";
 
 import s from "./CardInfo.module.scss";
 
-export const CardInfo = () => {
+export function CardInfo () {
+  const colors = [" #24426A", " wheat", "#666689"];
+  const sizes = [
+  "osfa", "w26", "w27", "w28", "w29", "w30", "w31", "w32", "w33",
+  "w34", "w35", "w36", "w38", "w40", "w42", "w44", "w46", "w48", "w50", "w52"
+];
+
+  const [selectColor, setSelectColor] = useState(null)
+  const [selectSize, setSelectSize] = useState(null)
+  const [quantity, setQuantity] = useState(1)
+  // const [price, setPrice] = useState(90);
+
+//   const [isMobile, setIsMobile] = useState(
+//     typeof window !== "undefined" ? window.innerWidth <= 768 : false);
+
+//   useEffect(() => {
+//   const handleResize = () => setIsMobile(window.innerWidth <= 768);
+//   handleResize(); 
+//   window.addEventListener("resize", handleResize);
+//   return () => window.removeEventListener("resize", handleResize);
+// }, []);
+
+const handleSelectColor = (color) => {
+  setSelectColor(color);
+};
+
+const handleSelectSize = (size) => {
+    setSelectSize(size);
+  };
+
+//   const handleChange = (e) => {
+//   setSelectSize(e.target.value);
+// };
+
+const handleMinus = () => {
+    if (quantity > 1) setQuantity(quantity - 1);
+  };
+
+const handlePlus =()=>{
+  setQuantity(quantity + 1)
+}
+
   return (
     <>
       <main>
@@ -162,20 +204,80 @@ export const CardInfo = () => {
                 </h2>
               </div>
               <p className={s.catalogeText}>Select Color</p>
+              {/* <div className={s.catalogeColorList}>
+                <button className={s.catalogeColorItem}></button>
+                <button className={s.catalogeColorItem}></button>
+                <button className={s.catalogeColorItem}></button>
+              </div> */}
+
+              {/* ///////// */}
+
               <div className={s.catalogeColorList}>
-                <button className={s.catalogeColorItem}></button>
-                <button className={s.catalogeColorItem}></button>
-                <button className={s.catalogeColorItem}></button>
+                {colors.map((color) => (
+                  <div
+                    key={color}
+                    className={`${s.catalogeColorItem} ${
+                      selectColor === color ? s.activeColor : ""
+                    }`}
+                    style={{ backgroundColor: color }}
+                    onClick={() => handleSelectColor(color)}
+                  />
+                ))}
               </div>
+
+              {/* /////////// */}
+
               <div className={s.selectBox}>
                 <p className={s.selectText}>Select size (Inches)</p>
                 <a href="./" className={s.selectLink}>
                   Size guide
                 </a>
               </div>
+                {/* ////// */}
+
+
+                {/* ............ */}
+
+
+
+
+
+                <select
+                  className={s.selectSize}
+                  value={selectSize}
+                  onChange={(e) => setSelectSize(e.target.value)}
+                >
+                  <option value="">Виберіть розмір</option>
+                  {sizes.map((size) => (
+                    <option key={size} value={size}>
+                      {size}
+                    </option>
+                  ))}
+                </select>
+
+
+                {/* ......................... */}
+
               <ul className={s.sizeList}>
+                {sizes.map((size) => (
+                  <li
+                    key={size}
+                    className={`${s.sizeItem} ${
+                      selectSize === size ? s.activeSize : ""
+                    }`}
+                    onClick={() => handleSelectSize(size)}
+                  >
+                    <p className={s.sizeText}>{size}</p>
+                  </li>
+                ))}
+              </ul>
+                {/* //////// */}
+
+
+
+              {/* <ul className={s.sizeList}>
                   <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>osfa</button>
+                  <button className={`${s.btnCatalogeSize}`}>osfa</button>
                 </li>
                 <li className={s.sizeItem}>
                   <button className={s.btnCatalogeSize}>w26</button>
@@ -190,7 +292,7 @@ export const CardInfo = () => {
                   <button className={s.btnCatalogeSize}>w29</button>
                 </li>
                 <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w30</button>
+                  <button className={`${s.btnCatalogeSize} ${s.activeBtnCataloge}`}>w30</button>
                 </li>
                 <li className={s.sizeItem}>
                   <button className={s.btnCatalogeSize}>w31</button>
@@ -234,43 +336,49 @@ export const CardInfo = () => {
                 <li className={s.sizeItem}>
                   <button className={s.btnCatalogeSize}>w52</button>
                 </li>
-              </ul>
+              </ul> */}
               <div className={s.quantityBox}>
                 <p className={s.quantityText}>Quantity</p>
                 <p className={s.quantityTextSub}>price total</p>
               </div>
               <div className={s.euroWrap}>
                 <div className={s.plusMinusBox}>
-                  <svg
-                    className={s.minusBoxIcon}
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <rect y="5" width="12" height="2" fill="#C4C4C4" />
-                  </svg>
-                  <p className={s.plusMinusText}>1</p>
-                  <svg
-                    className={s.plusBoxIcon}
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <rect y="5" width="12" height="2" fill="#C4C4C4" />
-                    <rect
-                      x="7"
+                  <button onClick={handleMinus} className={s.iconBtn}>
+                    <svg
+                      className={s.minusBoxIcon}
+                      xmlns="http://www.w3.org/2000/svg"
                       width="12"
-                      height="2"
-                      transform="rotate(90 7 0)"
-                      fill="#C4C4C4"
-                    />
-                  </svg>
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                    >
+                      <rect y="5" width="12" height="2" fill="#C4C4C4" />
+                    </svg>
+                  </button>
+
+                  <p className={s.plusMinusText}>{quantity}</p>
+
+                  <button onClick={handlePlus} className={s.iconBtn}>
+                    <svg
+                      className={s.plusBoxIcon}
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="none"
+                    >
+                      <rect y="5" width="12" height="2" fill="#C4C4C4" />
+                      <rect
+                        x="7"
+                        width="12"
+                        height="2"
+                        transform="rotate(90 7 0)"
+                        fill="#C4C4C4"
+                      />
+                    </svg>
+                  </button>
                 </div>
-                <p className={s.euroText}>90,00 EUR</p>
+                <p className={s.euroText}>{(90 * quantity).toFixed(2)} EUR</p>
               </div>
               <div className={s.btnBox}>
                 <button className={s.btnAdd}>Add to bag</button>
@@ -302,4 +410,4 @@ export const CardInfo = () => {
       </main>
     </>
   );
-};
+}
