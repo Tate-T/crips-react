@@ -8,22 +8,27 @@ import { CatalogPage } from "./pages/CatalogPage/CatalogPage.jsx";
 
 import { LoginPage } from "./pages/LoginPage/LoginPage.jsx";
 
-function App() {
-	return (
-		<>
-			 <HomePage />
-			 <ArticlePage />
-			<CatalogPage />
-			 <ProductPage />
-			 <ArticlePage />
-			<CabinetPage />
-			
-			<LoginPage />
+import { Routes, Route } from "react-router-dom";
 
-			 <CartPage />
-			 <DashboardPage />
-		</>
-	);
+
+
+
+function App() {
+  return (
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/articlepage" element={<ArticlePage />} />
+        <Route path="/catalogpage" element={<CatalogPage />} />
+        <Route path="/productpage" element={<ProductPage />} />
+        <Route path="/articlepage" element={<ArticlePage />} />
+        <Route path="/cabinetpage" element={<CabinetPage />} />
+        <Route path="/loginpage" element={<LoginPage />} />
+        <Route path="/cartpage" element={<CartPage />} />
+        <Route path="/dashboardpage" element={<DashboardPage />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;
