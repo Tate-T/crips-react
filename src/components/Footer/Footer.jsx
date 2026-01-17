@@ -18,7 +18,7 @@ export const Footer = () => {
   const [followOpen, setFollowOpen] = useState(false);
 
   return (
-    <footer className={style.footer}>
+    <footer id="footer" className={style.footer}>
       <div className={style.topFooter}>
         <Container>
           <ul className={style.topFooterList}>
