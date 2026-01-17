@@ -182,7 +182,15 @@
     }
   }
 
-  &__item.active {
+  &__link {
+    display: block;
+    text-transform: uppercase;
+    color: $contrast-text-color;
+
+    @include typography(Oswald, 600, 14px, 100%, 0%, center);
+  }
+
+  &__link.active {
     position: relative;
 
     &::after {
@@ -200,13 +208,5 @@
         width: calc(100% + 20px);
       }
     }
-  }
-
-  &__link {
-    display: block;
-    text-transform: uppercase;
-    color: $contrast-text-color;
-
-    @include typography(Oswald, 600, 14px, 100%, 0%, center);
   }
 }

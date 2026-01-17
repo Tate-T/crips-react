@@ -3,7 +3,7 @@ import { Footer } from "../../components/Footer/Footer.jsx";
 import { Banners } from "../../components/Banners/BannersSection.jsx";
 import { MiniCatalog } from "../../components/MiniCatalog/MiniCatalog.jsx";
 import SpecialList from "../../components/SpecialList/SpecialList.jsx";
-import { Blog } from "../main-page/blog/blog.jsx";
+import { Blog } from "./Blog/Blog.jsx";
 import { Hero } from "../../components/Hero/Hero.jsx";
 
 export const HomePage = () => {
