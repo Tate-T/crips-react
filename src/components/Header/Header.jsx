@@ -50,7 +50,7 @@ export function Header({ activePage }) {
 									</NavLink>
 								</li>
 								<li>
-									<a href="#blog" className={style.nav__link}>
+									<a href="/#blog" className={style.nav__link}>
 										BLOG
 									</a>
 								</li>
