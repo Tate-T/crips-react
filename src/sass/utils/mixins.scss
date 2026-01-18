@@ -17,3 +17,33 @@
 	flex-wrap: $flex-wrap;
 	flex-direction: $flex-direction;
 }
+
+@mixin mob-s() {
+	@media screen and (min-width: 320px) {
+		@content;
+	}
+}
+
+@mixin mob-l() {
+	@media screen and (min-width: 480px) {
+		@content;
+	}
+}
+
+@mixin tab() {
+	@media screen and (min-width: 768px) {
+		@content;
+	}
+}
+
+@mixin desk-s() {
+	@media screen and (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin desk-l() {
+	@media screen and (min-width: 1920px) {
+		@content;
+	}
+}
