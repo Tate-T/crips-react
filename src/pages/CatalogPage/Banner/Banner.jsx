@@ -57,18 +57,12 @@ export const Banner = () => {
 
   return (
     <div className="banner">
-      <Container>
-        <div className="banner__container">
-          <div className="banner__content">
-            <h1 className="banner__title">{phrases.title[choose[1].title]}</h1>
-            <p className="banner__subtitle-d">{phrases.long[choose[1].long]}</p>
-            <p className="banner__subtitile">
-              {phrases.short[choose[1].short]}
-            </p>
-            <button className="banner__btn">Shop Now</button>
-          </div>
-        </div>
-      </Container>
+      <div className="banner__content">
+        <h1 className="banner__title">{phrases.title[choose[1].title]}</h1>
+        <p className="banner__subtitle-d">{phrases.long[choose[1].long]}</p>
+        <p className="banner__subtitile">{phrases.short[choose[1].short]}</p>
+        <button className="banner__btn">Shop Now</button>
+      </div>
     </div>
   );
 };
