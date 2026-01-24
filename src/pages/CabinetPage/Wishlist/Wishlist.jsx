@@ -5,6 +5,7 @@ import { catalogData } from "../../../data/catalog-data";
 import { Container } from "../../../components/Container/Container";
 import editIcon from "../../../images/remark-wishlist.svg";
 import removeIcon from "../../../images/closeIcon-wishlist.svg";
+import NavBar from "../../../components/NavBar/NavBar";
 
 export function Wishlist() {
   //dynamic id's using useStated
@@ -19,14 +20,14 @@ export function Wishlist() {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("MY WISHLIST");
 
-  const navLinks = [
-    { name: "Account Dashboard", id: "dashboard" },
-    { name: "Account Information", id: "info" },
-    { name: "Address Book", id: "address" },
-    { name: "My Orders", id: "orders" },
-    { name: "My Wishlist", id: "wishlist" },
-    { name: "Newsletter Subscriptions", id: "newsletter" },
-  ];
+  // const navLinks = [
+  //   { name: "Account Dashboard", id: "dashboard" },
+  //   { name: "Account Information", id: "info" },
+  //   { name: "Address Book", id: "address" },
+  //   { name: "My Orders", id: "orders" },
+  //   { name: "My Wishlist", id: "wishlist" },
+  //   { name: "Newsletter Subscriptions", id: "newsletter" },
+  // ];
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -106,7 +107,7 @@ export function Wishlist() {
               </ul>
             </div>
 
-            <ul className={styles.desktopNav}>
+            {/* <ul className={styles.desktopNav}>
               {navLinks.map((link) => (
                 <li
                   key={link.id}
@@ -116,9 +117,9 @@ export function Wishlist() {
                   {link.name}
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
-
+          <NavBar />
           <p className={styles.mainWishlistCont_title}>{activeSection}</p>
 
           {activeSection === "MY WISHLIST" && (
