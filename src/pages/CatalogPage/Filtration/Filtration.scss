@@ -72,7 +72,7 @@ main.container {
     height: 100%;
     border: none;
     border-right: 1px solid $outline-color;
-    width: 400px;
+    width: 350px;
     display: flex;
     align-self: start;
     background: none;
@@ -93,11 +93,11 @@ main.container {
     padding-left: 21px;
     padding-bottom: 20px;
 
-    @media screen and (min-width: 768px) {
+    @media screen and (min-width: 1440px) {
       height: 100%;
       border: none;
       border-right: 1px solid $outline-color;
-      width: 400px;
+      width: 380px;
       display: flex;
       align-self: start;
       background: none;
