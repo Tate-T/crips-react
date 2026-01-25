@@ -4,7 +4,7 @@ import { Container } from "../Container/Container";
 import { Mobmenu } from "./Mobmenu/Mobmenu";
 import { useState, useContext } from "react";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import Logo from "../../images/logo.svg";
 import Search from "../../images/search.svg";
@@ -16,6 +16,7 @@ import style from "./Header.module.scss";
 
 // activePage може бути "home", "shop", "blog", "sale", "contact us"
 export function Header({ activePage }) {
+  const navigate = useNavigate();
 	const [isMenuOpen, setMenuOpen] = useState(false);
 	const auth = useContext(AuthContext);
 
@@ -26,6 +27,12 @@ export function Header({ activePage }) {
 			setMenuOpen(!isMenuOpen);
 		}
 	};
+
+	const handleCreateNewAccClicked = (e) => {
+    e.preventDefault();
+	//TODO:
+    // navigate("/CreateNewAcountPage", { replace: false });
+	}
 
 	return (
 		<header className={style.header}>
@@ -85,7 +92,7 @@ export function Header({ activePage }) {
 								<a className={style.auth__link} href=".">
 									SIGN IN
 								</a>
-								<a className={style.auth__link} href=".">
+								<a className={style.auth__link} href="." onClick={handleCreateNewAccClicked}>
 									CREATE AN ACCOUNT
 								</a>
 							</div>

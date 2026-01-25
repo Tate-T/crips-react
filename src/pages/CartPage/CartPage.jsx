@@ -13,7 +13,7 @@ export const CartPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate("/", { replace: true });
+    navigate("/CabinetPage", { replace: false });
   };
 
   return (
