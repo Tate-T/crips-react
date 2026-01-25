@@ -1,7 +1,10 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import s from "./PaymentDetails.module.scss";
 
 export const PaymentDetails = ({ children, onBack, onSubmitPayment }) => {
+  const navigate = useNavigate();
+
   const [isSameAddress, setIsSameAddress] = useState(false);
   const [discountCode, setDiscountCode] = useState("");
 
@@ -31,6 +34,8 @@ export const PaymentDetails = ({ children, onBack, onSubmitPayment }) => {
     };
 
     onSubmitPayment(paymentData);
+
+      navigate("/", { replace: true });
   };
 
   return (

@@ -4,6 +4,7 @@ import { CreateNewAcount } from "./CreateOrder/CreateNewAcountPage/CreateNewAcou
 import { Wishlist } from "./Wishlist/Wishlist";
 
 import { Header } from "../../components/Header/Header";
+import { Footer } from "../../components/Footer/Footer";
 
 export class CabinetPage extends Component {
   render() {
@@ -11,8 +12,9 @@ export class CabinetPage extends Component {
       <>
         <Header />
         <CreateOrder></CreateOrder>
-        <CreateNewAcount></CreateNewAcount>
-        <Wishlist />
+        {/* <CreateNewAcount></CreateNewAcount> */}
+        {/* <Wishlist /> */}
+        <Footer/>
       </>
     );
   }
