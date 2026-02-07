@@ -4,13 +4,16 @@
 	"private": true,
 	"homepage": "https://tate-t.github.io/crips-react/",
 	"dependencies": {
+		"@redux-devtools/extension": "^3.3.0",
 		"axios": "^1.12.2",
 		"countrycitystatejson": "^25.8.101",
 		"gh-pages": "^6.3.0",
 		"prop-types": "^15.8.1",
 		"react": "^19.2.0",
 		"react-dom": "^19.2.0",
+		"react-redux": "^9.2.0",
 		"react-router-dom": "^7.12.0",
+		"redux": "^5.0.1",
 		"sass-embedded": "^1.93.2",
 		"styled-components": "^6.1.19",
 		"web-vitals": "^5.1.0"
