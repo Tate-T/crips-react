@@ -1,9 +1,11 @@
 import s from "./ShippingDetails.module.scss";
 import { AuthContext } from "../../../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import ccsj from "countrycitystatejson";
 
 export const ShippingDetails = ({ shippingForm, shippingInfo, onSubmitForm, onSubmitInfo, children, onBack }) => {
+  const navigate = useNavigate();
   const [email, setEmail] = useState(shippingForm?.email || "");
   const [password, setPassword] = useState(shippingForm?.password || "");
   const [zip, setZip] = useState(shippingForm?.zip || "");
@@ -50,6 +52,8 @@ export const ShippingDetails = ({ shippingForm, shippingInfo, onSubmitForm, onSu
   const handleFormSubmit = (e) => {
     e.preventDefault();
     onSubmitForm({ email, password });
+
+      navigate("/LoginPage", { replace: true });
   };
 
   const handleFormInfo = (e) => {

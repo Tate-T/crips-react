@@ -1,8 +1,9 @@
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
-export function Catalog({ style, img, name, category, colors, price, media }) {
+export function Catalog({ style, img, name, category, colors, price, media, id }) {
 	return (
-		<li className={style.catalog__item}>
+		<NavLink to={id} className={style.catalog__item}>
 			<img className={style.catalog__img} src={img} alt="#" />
 			<p className={style.catalog__top}>{category}</p>
 			<h3 className={style.catalog__title}>{name}</h3>
@@ -19,7 +20,7 @@ export function Catalog({ style, img, name, category, colors, price, media }) {
 						))
 					: undefined}
 			</ul>
-		</li>
+		</NavLink>
 	);
 }
 

@@ -1,10 +1,12 @@
 import s from "./Login.module.scss";
 import { Container } from "../../components/Container/Container";
 // import { Component } from "react";
+import { useNavigate } from "react-router-dom";
 import { useState, useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 
 export function Login() {
+  const navigate = useNavigate();
 	const auth = useContext(AuthContext);
 
 	const [email, setEmail] = useState("");
@@ -48,6 +50,11 @@ export function Login() {
 
 		form.reset();
 	};
+
+	const handleBack = (e) => {
+      navigate("/", { replace: true });
+
+	}
 
 	// render() {
 	//   console.log(this.firstName)
@@ -97,7 +104,7 @@ export function Login() {
 								<button className={s.createBtn} type="submit">
 									login
 								</button>
-								<button className={s.backBtn}>Back</button>
+								<button className={s.backBtn} type="button" onClick={handleBack}>Back</button>
 							</div>
 						</form>
 					</div>
