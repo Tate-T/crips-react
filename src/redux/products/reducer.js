@@ -1,8 +1,8 @@
 // TODO: fetch
-import { miniCatalogData } from "../../data/mini-catalog-data";
+import { catalogData } from "../../data/catalog-data";
 
 const initialState = {
-	products: miniCatalogData
+	products: catalogData
 };
 
 export const productsReducer = (state = initialState, action) => {
