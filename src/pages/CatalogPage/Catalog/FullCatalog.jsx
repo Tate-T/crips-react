@@ -1,48 +1,29 @@
-import axios from "axios";
-import { useState } from "react";
+import { useSelector } from "react-redux";
+
 import { Catalog } from "./Catalog.jsx";
 import { Sorting } from "../Sorting/Sorting.jsx";
 import { Banner } from "../Banner/Banner.jsx";
-import styles from "./Catalog.module.scss";
-import { catalogData } from "../../../data/catalog-data.js";
-import { useEffect } from "react";
 
-const productsAPI = import.meta.env.VITE_PRODUCTS_API;
-axios.defaults.baseURL = productsAPI;
+import styles from "./Catalog.module.scss";
 
 export function FullCatalog() {
-  const userMedia = window.matchMedia("(min-width: 768px)");
-  const [products, setProducts] = useState([]);
+	const userMedia = window.matchMedia("(min-width: 768px)");
+	const products = useSelector((state) => state.products.products);
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const r = await axios.get("/");
-
-        setProducts(r.data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    fetchProducts();
-  }, []);
-
-
-
-  return (
-    <div className={styles.catalog}>
-      <Sorting />
-      <ul className={styles.catalog__list}>
-        {products.map((item, index) => (
-          <Catalog {...item} color={item.colors} style={styles} key={index} media={userMedia} />
-        ))}
-      </ul>
-      <Banner />
-      <ul className={styles.catalog__list}>
-        {products.map((item, index) => (
-          <Catalog {...item} color={item.colors} style={styles} key={index} media={userMedia} />
-        ))}
-      </ul>
-    </div>
-  );
+	return (
+		<div className={styles.catalog}>
+			<Sorting />
+			<ul className={styles.catalog__list}>
+				{products.map((item, index) => (
+					<Catalog {...item} color={item.colors} style={styles} key={index} media={userMedia} />
+				))}
+			</ul>
+			<Banner />
+			<ul className={styles.catalog__list}>
+				{products.map((item, index) => (
+					<Catalog {...item} color={item.colors} style={styles} key={index} media={userMedia} />
+				))}
+			</ul>
+		</div>
+	);
 }

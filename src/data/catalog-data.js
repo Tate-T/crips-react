@@ -1,642 +1,825 @@
 export const catalogData = [
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
-		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#24426A", "#18574A", "#666689"],
-		id: "1"
-	},
-	{
-		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
 		price: 139,
 		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
-		id: "2"
-	},
-	{
-		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
-		category: "Top Women",
-		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
-		id: "3"
-	},
-	{
-		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
-		category: "Top Women",
-		name: "Angels malu zip jeans slim black used",
-		price: 6,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "4"
-	},
-	{
-		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
-		category: "Top Women",
-		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#2B9FA7", "#971E34", "#666689"],
-		id: "5"
-	},
-	{
-		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
-		category: "Top Women",
-		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#666689", "#292A2D", "#F3ECE2"],
-		id: "6"
+		id: "1",
+		discount: 20,
+		size: "w26",
+		brand: "cece"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
-		price: 5,
-		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
-		id: "7"
+		price: 137,
+		colors: ["#24426A", "#F3ECE2", "#666689"],
+		id: "2",
+		discount: 5,
+		size: "w31",
+		brand: "bardot"
+	},
+	{
+		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
+		category: "collection: spring",
+		name: "Angels malu zip jeans slim black used",
+		price: 130,
+		colors: ["#24426A", "#18574A", "#666689"],
+		id: "3",
+		size: "w31",
+		brand: "cece"
+	},
+	{
+		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
+		category: "new arrivals",
+		name: "Angels malu zip jeans slim black used",
+		price: 198,
+		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
+		id: "4",
+		size: "w26",
+		brand: "Cooper"
+	},
+	{
+		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
+		category: "collection: summer",
+		name: "Angels malu zip jeans slim black used",
+		price: 172,
+		colors: ["#666689", "#292A2D", "#F3ECE2"],
+		id: "5",
+		size: "osfa",
+		brand: "donna ricco"
+	},
+	{
+		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
+		category: "best sellers",
+		name: "Angels malu zip jeans slim black used",
+		price: 162,
+		colors: ["#2B9FA7", "#971E34", "#666689"],
+		id: "6",
+		discount: 24,
+		size: "w26",
+		brand: "Cooper"
+	},
+	{
+		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
+		category: "collection: spring",
+		name: "Angels malu zip jeans slim black used",
+		price: 157,
+		colors: ["#24426A", "#18574A", "#666689"],
+		id: "7",
+		discount: 10,
+		size: "w30",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#666689", "#292A2D", "#F3ECE2"],
-		id: "8"
+		price: 111,
+		colors: ["#2B9FA7", "#971E34", "#666689"],
+		id: "8",
+		size: "osfa",
+		brand: "alfani"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#24426A", "#18574A", "#666689"],
-		id: "9"
+		price: 162,
+		colors: ["#24426A", "#F3ECE2", "#666689"],
+		id: "9",
+		size: "w35",
+		brand: "cece"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
-		id: "10"
+		price: 109,
+		colors: ["#24426A", "#18574A", "#666689"],
+		id: "10",
+		discount: 20,
+		size: "w40",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
-		id: "11"
+		price: 183,
+		colors: ["#2B9FA7", "#971E34", "#666689"],
+		id: "11",
+		size: "w34",
+		brand: "bardot"
 	},
 	{
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
-		category: "Top Women",
+		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "12"
+		price: 134,
+		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
+		id: "12",
+		size: "w46",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
-		category: "Top Women",
+		category: "top women",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
+		price: 165,
 		colors: ["#2B9FA7", "#971E34", "#666689"],
-		id: "13"
+		id: "13",
+		size: "w31",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
 		price: 139,
 		colors: ["#666689", "#292A2D", "#F3ECE2"],
-		id: "14"
+		id: "14",
+		size: "w28",
+		brand: "bardot"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
-		id: "15"
+		price: 164,
+		colors: ["#2B9FA7", "#971E34", "#666689"],
+		id: "15",
+		discount: 22,
+		size: "osfa",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#666689", "#292A2D", "#F3ECE2"],
-		id: "16"
+		price: 129,
+		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
+		id: "16",
+		size: "w27",
+		brand: "bardot"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#24426A", "#18574A", "#666689"],
-		id: "17"
+		price: 177,
+		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
+		id: "17",
+		size: "w44",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
-		id: "18"
+		price: 152,
+		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
+		id: "18",
+		size: "w33",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
+		price: 154,
 		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
-		id: "19"
+		id: "19",
+		size: "w31",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "20"
+		price: 153,
+		colors: ["#2B9FA7", "#971E34", "#666689"],
+		id: "20",
+		size: "w38",
+		brand: "cece"
 	},
 	{
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
-		category: "Top Women",
+		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#2B9FA7", "#971E34", "#666689"],
-		id: "21"
+		price: 140,
+		colors: ["#24426A", "#18574A", "#666689"],
+		id: "21",
+		discount: 27,
+		size: "w30",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
-		category: "Top Women",
+		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#666689", "#292A2D", "#F3ECE2"],
-		id: "22"
+		price: 187,
+		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
+		id: "22",
+		discount: 5,
+		size: "w50",
+		brand: "bardot"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
-		id: "23"
+		price: 186,
+		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
+		id: "23",
+		discount: 39,
+		size: "w28",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
-		category: "Top Women",
+		category: "top women",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#666689", "#292A2D", "#F3ECE2"],
-		id: "24"
+		price: 146,
+		colors: ["#24426A", "#F3ECE2", "#666689"],
+		id: "24",
+		size: "osfa",
+		brand: "alfani"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#24426A", "#18574A", "#666689"],
-		id: "25"
+		price: 117,
+		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
+		id: "25",
+		size: "w34",
+		brand: "cece"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "top women",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
+		price: 164,
 		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
-		id: "26"
+		id: "26",
+		discount: 33,
+		size: "w31",
+		brand: "cece"
 	},
 	{
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
+		price: 136,
 		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
-		id: "27"
+		id: "27",
+		size: "w35",
+		brand: "alfani"
 	},
 	{
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "28"
+		price: 110,
+		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
+		id: "28",
+		discount: 17,
+		size: "w42",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#2B9FA7", "#971E34", "#666689"],
-		id: "29"
+		price: 100,
+		colors: ["#24426A", "#F3ECE2", "#666689"],
+		id: "29",
+		size: "w52",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
+		price: 150,
 		colors: ["#666689", "#292A2D", "#F3ECE2"],
-		id: "30"
+		id: "30",
+		size: "w48",
+		brand: "cece"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "top women",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
-		id: "31"
+		price: 153,
+		colors: ["#24426A", "#18574A", "#666689"],
+		id: "31",
+		size: "w52",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#666689", "#292A2D", "#F3ECE2"],
-		id: "32"
+		price: 200,
+		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
+		id: "32",
+		size: "w48",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#24426A", "#18574A", "#666689"],
-		id: "33"
+		price: 132,
+		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
+		id: "33",
+		size: "w34",
+		brand: "cece"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
-		id: "34"
+		price: 144,
+		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
+		id: "34",
+		discount: 42,
+		size: "w29",
+		brand: "bardot"
 	},
 	{
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
-		id: "35"
+		price: 177,
+		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
+		id: "35",
+		size: "w27",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "36"
+		price: 136,
+		colors: ["#666689", "#292A2D", "#F3ECE2"],
+		id: "36",
+		size: "w36",
+		brand: "bardot"
 	},
 	{
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#2B9FA7", "#971E34", "#666689"],
-		id: "37"
+		price: 132,
+		colors: ["#666689", "#292A2D", "#F3ECE2"],
+		id: "37",
+		size: "w28",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 7,
-		colors: ["#666689", "#292A2D", "#F3ECE2"],
-		id: "38"
+		price: 174,
+		colors: ["#24426A", "#18574A", "#666689"],
+		id: "38",
+		size: "w42",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
-		price: 139,
-		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
-		id: "39"
+		price: 124,
+		colors: ["#24426A", "#18574A", "#666689"],
+		id: "39",
+		size: "w38",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 8,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "40"
+		price: 160,
+		colors: ["#2B9FA7", "#971E34", "#666689"],
+		id: "40",
+		size: "w34",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-1.jpg",
-		category: "Top Women",
+		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
-		price: 91,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "41"
+		price: 195,
+		colors: ["#24426A", "#18574A", "#666689"],
+		id: "41",
+		discount: 19,
+		size: "w29",
+		brand: "alfani"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 70,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "42"
+		price: 163,
+		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
+		id: "42",
+		size: "w52",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 12,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "43"
+		price: 125,
+		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
+		id: "43",
+		size: "osfa",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
-		category: "Top Women",
+		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
-		price: 8,
+		price: 176,
 		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "44"
+		id: "44",
+		size: "w38",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
-		category: "Top Women",
+		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
-		price: 9,
+		price: 178,
 		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "45"
+		id: "45",
+		size: "w40",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
-		category: "Top Women",
+		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
-		price: 28,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "46"
+		price: 103,
+		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
+		id: "46",
+		size: "osfa",
+		brand: "cece"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 76,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "47"
+		price: 177,
+		colors: ["#24426A", "#18574A", "#666689"],
+		id: "47",
+		size: "w26",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 25,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "48"
+		price: 103,
+		colors: ["#2B9FA7", "#971E34", "#666689"],
+		id: "48",
+		size: "w50",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 41,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "49"
+		price: 146,
+		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
+		id: "49",
+		discount: 16,
+		size: "w34",
+		brand: "cece"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 73,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "50"
+		price: 106,
+		colors: ["#666689", "#292A2D", "#F3ECE2"],
+		id: "50",
+		size: "w28",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-1.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 10,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "51"
+		price: 130,
+		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
+		id: "51",
+		size: "w40",
+		brand: "bardot"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 28,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "52"
+		price: 139,
+		colors: ["#2B9FA7", "#971E34", "#666689"],
+		id: "52",
+		size: "w28",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
-		category: "Top Women",
+		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
-		price: 33,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "53"
+		price: 148,
+		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
+		id: "53",
+		size: "w40",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
-		category: "Top Women",
+		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
-		price: 16,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "54"
+		price: 184,
+		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
+		id: "54",
+		size: "w32",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 86,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "55"
+		price: 150,
+		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
+		id: "55",
+		size: "w33",
+		brand: "alfani"
 	},
 	{
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 51,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "56"
+		price: 180,
+		colors: ["#24426A", "#18574A", "#666689"],
+		id: "56",
+		size: "w50",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 79,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "57"
+		price: 158,
+		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
+		id: "57",
+		size: "w26",
+		brand: "bardot"
 	},
 	{
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
-		category: "Top Women",
+		category: "top women",
 		name: "Angels malu zip jeans slim black used",
-		price: 21,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "58"
+		price: 153,
+		colors: ["#666689", "#292A2D", "#F3ECE2"],
+		id: "58",
+		discount: 44,
+		size: "w44",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 37,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "59"
+		price: 180,
+		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
+		id: "59",
+		size: "w30",
+		brand: "bardot"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
-		price: 91,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "60"
+		price: 195,
+		colors: ["#666689", "#292A2D", "#F3ECE2"],
+		id: "60",
+		discount: 14,
+		size: "w38",
+		brand: "alfani"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-1.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 69,
+		price: 200,
 		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "61"
+		id: "61",
+		discount: 49,
+		size: "w36",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "top women",
 		name: "Angels malu zip jeans slim black used",
-		price: 31,
+		price: 185,
 		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "62"
+		id: "62",
+		size: "w44",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 38,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "63"
+		price: 189,
+		colors: ["#2B9FA7", "#971E34", "#666689"],
+		id: "63",
+		size: "w52",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 77,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "64"
+		price: 108,
+		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
+		id: "64",
+		size: "w42",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
-		category: "Top Women",
+		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
-		price: 77,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "65"
+		price: 110,
+		colors: ["#2B9FA7", "#971E34", "#666689"],
+		id: "65",
+		discount: 8,
+		size: "w32",
+		brand: "alfani"
 	},
 	{
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
-		category: "Top Women",
+		category: "top women",
 		name: "Angels malu zip jeans slim black used",
-		price: 65,
+		price: 109,
 		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "66"
+		id: "66",
+		discount: 6,
+		size: "w38",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
-		price: 95,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "67"
+		price: 125,
+		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
+		id: "67",
+		discount: 12,
+		size: "osfa",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 7,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "68"
+		price: 133,
+		colors: ["#666689", "#292A2D", "#F3ECE2"],
+		id: "68",
+		discount: 44,
+		size: "osfa",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "top women",
 		name: "Angels malu zip jeans slim black used",
-		price: 33,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "69"
+		price: 110,
+		colors: ["#24426A", "#18574A", "#666689"],
+		id: "69",
+		size: "w48",
+		brand: "donna ricco"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 37,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "70"
+		price: 144,
+		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
+		id: "70",
+		size: "w27",
+		brand: "cece"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-1.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 9,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "71"
+		price: 105,
+		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
+		id: "71",
+		size: "w29",
+		brand: "alfani"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
-		price: 60,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "72"
+		price: 120,
+		colors: ["#C2BEB6", "#24426A", "#CBA13E"],
+		id: "72",
+		size: "w38",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
-		category: "Top Women",
+		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
-		price: 90,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "73"
+		price: 110,
+		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
+		id: "73",
+		size: "w50",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
-		category: "Top Women",
+		category: "trending",
 		name: "Angels malu zip jeans slim black used",
-		price: 24,
+		price: 106,
 		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "74"
+		id: "74",
+		size: "w30",
+		brand: "bardot"
 	},
 	{
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
-		category: "Top Women",
+		category: "top women",
 		name: "Angels malu zip jeans slim black used",
-		price: 77,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "75"
+		price: 131,
+		colors: ["#666689", "#292A2D", "#F3ECE2"],
+		id: "75",
+		discount: 24,
+		size: "w38",
+		brand: "bardot"
 	},
 	{
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
-		category: "Top Women",
+		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
-		price: 2,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "76"
+		price: 115,
+		colors: ["#F3ECE2", "#292A2D", "#AAABA7"],
+		id: "76",
+		size: "w27",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
-		category: "Top Women",
+		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
-		price: 48,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "77"
+		price: 135,
+		colors: ["#88ABCB", "#FACBCE", "#A75E5D"],
+		id: "77",
+		size: "w35",
+		brand: "Cooper"
 	},
 	{
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
-		category: "Top Women",
+		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
-		price: 30,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "78"
+		price: 138,
+		colors: ["#24426A", "#18574A", "#666689"],
+		id: "78",
+		size: "w44",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
-		price: 74,
+		price: 120,
 		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "79"
+		id: "79",
+		size: "w42",
+		brand: "State"
 	},
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
-		category: "Top Women",
+		category: "top women",
 		name: "Angels malu zip jeans slim black used",
-		price: 24,
-		colors: ["#24426A", "#F3ECE2", "#666689"],
-		id: "80"
+		price: 109,
+		colors: ["#666689", "#292A2D", "#F3ECE2"],
+		id: "80",
+		discount: 37,
+		size: "w48",
+		brand: "bardot"
 	}
 ];
