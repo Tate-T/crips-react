@@ -1,14 +1,14 @@
-import {useState, useEffect} from 'react';
-import {catalogData} from '../../data/catalog-data';
-import s from './SpecialList.module.scss';
-import {Container} from '../Container/Container';
+import { useState, useEffect } from "react";
+import { catalogData } from "../../data/catalog-data";
+import s from "./SpecialList.module.scss";
+import { Container } from "../Container/Container";
 
-export default function SpecialList({title}) {
+export default function SpecialList({ title }) {
 	const [seeMoreActive, setSeeMoreActive] = useState(true);
 	const [visibleCount, setVisibleCount] = useState(4);
 	const [isDesktop, setIsDesktop] = useState(false);
 	const [startIndex, setStartIndex] = useState(0);
-	
+
 	const checkScreenSize = () => {
 		const desktop = window.innerWidth >= 1200;
 		if (desktop) {
@@ -22,54 +22,45 @@ export default function SpecialList({title}) {
 			setVisibleCount(4);
 		}
 	};
-	
+
 	useEffect(() => {
 		checkScreenSize();
-		window.addEventListener('resize', checkScreenSize);
-		return () => window.removeEventListener('resize', checkScreenSize);
+		window.addEventListener("resize", checkScreenSize);
+		return () => window.removeEventListener("resize", checkScreenSize);
 	}, []);
-	
+
 	const handleSeeMore = () => {
-		setVisibleCount(prev => Math.min(prev + 4, catalogData.length));
+		setVisibleCount((prev) => Math.min(prev + 4, catalogData.length));
 	};
-	
+
 	const handlePrev = () => {
-		setStartIndex(prev => Math.max(prev - 1, 0));
+		setStartIndex((prev) => Math.max(prev - 1, 0));
 	};
-	
+
 	const handleNext = () => {
 		if (startIndex + visibleCount < catalogData.length) {
-			setStartIndex(prev => prev + 1);
+			setStartIndex((prev) => prev + 1);
 		}
 	};
-	
+
 	const isPrevDisabled = startIndex === 0;
 	const isNextDisabled = startIndex + visibleCount >= catalogData.length;
 	const isSeeMoreHidden = visibleCount >= catalogData.length;
-	
-	const currentItems = isDesktop
-		? catalogData.slice(startIndex, startIndex + visibleCount)
-		: catalogData.slice(0, visibleCount);
-	
+
+	const currentItems = isDesktop ? catalogData.slice(startIndex, startIndex + visibleCount) : catalogData.slice(0, visibleCount);
+
 	return (
 		<section className={s.special}>
 			<Container>
 				<div className={s.special__container}>
 					<h2 className={s.special__title}>{title}</h2>
-					
+
 					{isDesktop && (
 						<div>
-							<button
-								className={s.special__button}
-								onClick={handlePrev}
-								disabled={isPrevDisabled}>
+							<button className={s.special__button} onClick={handlePrev} disabled={isPrevDisabled}>
 								<div className={`${s.arrow} ${s.arrow__left}`}></div>
 							</button>
-							<button
-								className={s.special__button}
-								onClick={handleNext}
-								disabled={isNextDisabled}
-							>
+							<button className={s.special__button} onClick={handleNext} disabled={isNextDisabled}>
 								<div className={`${s.arrow} ${s.arrow__right}`}></div>
 							</button>
 						</div>
@@ -79,11 +70,7 @@ export default function SpecialList({title}) {
 					{currentItems.map((item, index) => (
 						<li className={s.special__item} key={index}>
 							<a>
-								<img
-									className={s.special__image}
-									src={item.img}
-									alt={item.name}
-								/>
+								<img className={s.special__image} src={item.img} alt={item.name} />
 								<div className={s.special__info}>
 									<p className={s.special__top}>{item.top}</p>
 									<h3 className={s.special__name}>{item.name}</h3>
@@ -94,16 +81,13 @@ export default function SpecialList({title}) {
 					))}
 				</ul>
 				{!isSeeMoreHidden && (
-					<button
-						onClick={handleSeeMore}
-						className={s.special__moreBtn}
-					>
+					<button onClick={handleSeeMore} className={s.special__moreBtn}>
 						See More
 					</button>
 				)}
 			</Container>
 		</section>
-	)
+	);
 }
 
 // import {Component} from 'react';
@@ -248,4 +232,3 @@ export default function SpecialList({title}) {
 //
 // export default SpecialList;
 //
-
