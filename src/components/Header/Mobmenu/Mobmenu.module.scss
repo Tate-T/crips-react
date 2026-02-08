@@ -43,12 +43,15 @@
 
   &__item {
     width: fit-content;
-  }
 
-  &__link {
-    color: white;
-    font-family: Oswald;
-    font-size: 24px;
+    &.active::after {
+      width: 100%;
+      display: block;
+      height: 2px;
+      background-color: $accent-color;
+      content: "";
+      transition: 0.3s;
+    }
 
     &:hover::after {
       width: 100%;
@@ -62,6 +65,12 @@
       content: "";
       transition: 0.3s;
     }
+  }
+
+  &__link {
+    color: white;
+    font-family: Oswald;
+    font-size: 24px;
   }
 
   &.open {

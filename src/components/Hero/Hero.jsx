@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Hero.module.scss";
-import firstSlide from "../../images/hero-slider.jpg";
+import { Container } from "../Container/Container";
+import firstSlide from "../../images/Hero/hero-slider.jpg";
+import firstSlideMob from "../../images/Hero/mobileHero-slider.jpg";
 import secondSlide from "../../images/banners-sittingWomen.jpg";
-import thirdSlide from "../../images/hero-slider.jpg";
+import thirdSlide from "../../images/Hero/hero-slider.jpg";
 import fourthSlide from "../../images/banners-sittingWomen.jpg";
-import heroLine from "../../images/hero-line.svg";
-import arrowLeft from "../../images/slider-arrowL.svg";
-import arrowRight from "../../images/slider-arrowR.svg";
+import heroLine from "../../images/Hero/hero-line.svg";
 const saleFirstSlide = "30% OFF";
 
 const slides = [
   {
     background: firstSlide,
+    mobileBackground: firstSlideMob,
     alt: "SUMMER SALE IMG",
     button: "SHOP NOW",
     textParts: {
@@ -22,19 +23,22 @@ const slides = [
   },
   {
     background: secondSlide,
-    text: "NEW COLLECTION LIMITED OFFER HURRY UP!",
+    mobileBackground: secondSlide,
+    text: "NEW COLLECTION LIMITED OFFER!",
     button: "SHOP NOW",
     alt: "NEW COLLECTION IMG",
   },
   {
     background: thirdSlide,
-    text: "WINTER LOOK FRESH STYLE DON’T MISS IT.",
+    mobileBackground: thirdSlide,
+    text: "WINTER LOOK FRESH STYLE.",
     button: "SHOP NOW",
     alt: "WINTER LOOK IMG",
   },
   {
     background: fourthSlide,
-    text: "SPRING VIBES FEEL THE BLOOM NEW ARRIVALS!",
+    mobileBackground: fourthSlide,
+    text: "FEEL THE BLOOM NEW ARRIVALS!",
     button: "SHOP NOW",
     alt: "SPRING VIBES IMG",
   },
@@ -56,17 +60,15 @@ export const Hero = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) =>
-        prevIndex === slides.length - 1 ? 0 : prevIndex + 1
-      );
+    const timer = setTimeout(() => {
+      nextSlide();
     }, 13000);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearTimeout(timer);
+  }, [currentIndex]);
 
   return (
-    <section>
+    <Container>
       <div className={styles.slider}>
         <div
           className={styles.slideTrack}
@@ -77,16 +79,19 @@ export const Hero = () => {
               key={index}
               alt={slide.alt}
               className={styles.slide}
-              style={{ backgroundImage: `url(${slide.background})` }}
+              style={{
+                "--bg-desktop": `url(${slide.background})`,
+                "--bg-mobile": `url(${slide.mobileBackground})`,
+              }}
             >
               <div className={styles.overlay}>
-                <div className={styles.content}>
+                <div className={styles.sliderContent}>
                   <img
                     src={heroLine}
                     alt="Hero line"
-                    className={styles.heroLine}
+                    className={styles.sliderContent_line}
                   />
-                  <p className={styles.heroText}>
+                  <p className={styles.sliderContent_text}>
                     {slide.textParts ? (
                       <>
                         {slide.textParts.before}
@@ -99,7 +104,9 @@ export const Hero = () => {
                       slide.text
                     )}
                   </p>
-                  <button className={styles.shopNowBtn}>{slide.button}</button>
+                  <button className={styles.sliderContent_buyBtn}>
+                    {slide.button}
+                  </button>
                 </div>
               </div>
             </div>
@@ -108,10 +115,10 @@ export const Hero = () => {
 
         <div className={styles.controls}>
           <button onClick={prevSlide} className={styles.sliderBtn}>
-            <img src={arrowLeft} className={styles.btnArrows}></img>
+            <span className={`${styles.arrow} ${styles.left}`}></span>
           </button>
           <button onClick={nextSlide} className={styles.sliderBtn}>
-            <img src={arrowRight} className={styles.btnArrows}></img>
+            <span className={`${styles.arrow} ${styles.right}`}></span>
           </button>
         </div>
 
@@ -127,6 +134,6 @@ export const Hero = () => {
           ))}
         </div>
       </div>
-    </section>
+    </Container>
   );
 };

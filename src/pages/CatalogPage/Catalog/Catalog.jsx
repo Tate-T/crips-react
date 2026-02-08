@@ -1,58 +1,34 @@
 import PropTypes from "prop-types";
+import { NavLink } from "react-router-dom";
 
-export function Catalog(
-  style,
-  img,
-  name,
-  category,
-  colors,
-  price,
-  media,
-  discount
-) {
-  return (
-    <li className={style.catalog__item}>
-      <img className={style.catalog__img} src={img} alt="#" />
-      {discount ? (
-        <p className={`${style.catalog__discount}--discount`}>{discount}</p>
-      ) : undefined}
+export function Catalog({ style, img, name, category, colors, price, media, id }) {
+	return (
+		<NavLink to={id} className={style.catalog__item}>
+			<img className={style.catalog__img} src={img} alt="#" />
+			<p className={style.catalog__top}>{category}</p>
+			<h3 className={style.catalog__title}>{name}</h3>
+			<p className={style.catalog__price}>{price}</p>
 
-      <p className={style.catalog__top}>{category}</p>
-      <h3 className={style.catalog__title}>{name}</h3>
-      {discount ? (
-        <p className={`${style.catalog__price}--discount`}>
-          {price}
-          <span className={style.catalog__discount}>{discount}</span>
-        </p>
-      ) : (
-        <p className={style.catalog__price}>{price}</p>
-      )}
-
-      <p className={style.catalog__price}>{price}</p>
-
-      <ul className={style.catalog__colors}>
-        {media
-          ? colors.map((item, index) => (
-              <li className={style.colors__item} key={index}>
-                <button type="button" className={style.catalog__color}>
-                  <div
-                    className={style.color}
-                    style={{ backgroundColor: item }}
-                  ></div>
-                </button>
-              </li>
-            ))
-          : undefined}
-      </ul>
-    </li>
-  );
+			<ul className={style.catalog__colors}>
+				{media
+					? colors.map((item, index) => (
+							<li className={style.colors__item} key={index}>
+								<button type="button" className={style.catalog__color}>
+									<div className={style.color} style={{ backgroundColor: item }}></div>
+								</button>
+							</li>
+						))
+					: undefined}
+			</ul>
+		</NavLink>
+	);
 }
 
 Catalog.propTypes = {
-  img: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  category: PropTypes.string.isRequired,
-  colors: PropTypes.array.isRequired,
-  price: PropTypes.string.isRequired,
-  style: PropTypes.object.isRequired,
+	img: PropTypes.string.isRequired,
+	name: PropTypes.string.isRequired,
+	category: PropTypes.string.isRequired,
+	colors: PropTypes.array.isRequired,
+	price: PropTypes.string.isRequired,
+	style: PropTypes.object.isRequired
 };
