@@ -1,5 +1,3 @@
-import { data } from "react-router-dom";
-
 export const catalogData = [
 	{
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
