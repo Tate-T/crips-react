@@ -1,0 +1,547 @@
+@use "../../../sass//utils//mixins.scss" as *;
+
+$arrow-size: 14px;
+$bar-thickness: 2px;
+$duration: 0.4s;
+$easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
+
+.wishlist {
+  @include flex($flex-direction: column, $align-items: center);
+  &_navigation {
+    color: rgb(130, 130, 130);
+    font-family: "Roboto", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 68px;
+    @include tab {
+      font-size: 12px;
+    }
+    @include desk-s {
+      font-size: 14px;
+    }
+  }
+}
+
+.mainWishlistCont {
+  @include flex(
+    $flex-direction: column,
+    $align-items: stretch,
+    $justify-content: flex-start
+  );
+  background: rgb(255, 255, 255);
+
+  @include desk-s {
+    @include flex(
+      $justify-content: space-between,
+      $flex-direction: row,
+      $align-items: stretch
+    );
+    gap: 108px;
+  }
+
+  &_title {
+    margin-bottom: 11px;
+    color: rgba(130, 130, 130, 1);
+    font-family: "Oswald", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    @include tab {
+      margin-bottom: 20px;
+      font-size: 27px;
+      text-align: center;
+    }
+
+    @include desk-s {
+      margin-bottom: 17px;
+      color: rgba(0, 0, 0, 1);
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 68px;
+      display: none;
+    }
+  }
+
+  &_titleDesk {
+    display: none;
+    @include desk-s {
+      display: flex;
+      margin-bottom: 17px;
+      font-family: "Oswald", sans-serif;
+      color: rgba(0, 0, 0, 1);
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 68px;
+    }
+  }
+}
+
+.active {
+  color: rgb(0, 0, 0);
+  font-family: "Oswald", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  background: rgb(240, 242, 242);
+}
+
+.wishlistCont {
+  &_grid {
+    display: grid;
+    margin-bottom: 28px;
+    gap: 28px 14px;
+    grid-template-columns: repeat(2, 1fr);
+    @include tab {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px 25px;
+    }
+    @include desk-s {
+      margin-bottom: 48px;
+    }
+  }
+
+  &_actions {
+    @include flex($flex-direction: column, $align-items: stretch);
+    gap: 10px;
+    @include desk-s {
+      @include flex($flex-direction: row, $justify-content: flex-start);
+      gap: 15px;
+    }
+  }
+
+  &_actionBtn {
+    position: relative;
+    width: 100%;
+    height: 32px;
+    color: rgba(130, 130, 130, 1);
+    font-family: "Oswald", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-sizing: border-box;
+    border: 1px solid rgba(196, 196, 196, 1);
+    background: transparent;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    transition:
+      color 1s ease,
+      border-color 1s ease;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(240, 242, 242, 1);
+      z-index: -2;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(0, 0, 0);
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    &:hover {
+      color: rgb(255, 255, 255);
+      border-color: rgb(0, 0, 0);
+      transition-delay: 0.22s;
+
+      &::before {
+        transform: scaleX(1);
+        transform-origin: left;
+        transition-delay: 0.22s;
+      }
+    }
+    @include desk-s {
+      width: 169px;
+      height: 40px;
+    }
+  }
+}
+
+.wishlistCard {
+  max-width: 139px;
+  @include tab {
+    max-width: 150px;
+  }
+  @include desk-s {
+    max-width: 200px;
+  }
+  &_imgWrapper {
+    display: flex;
+    gap: 6px;
+    @include desk-s {
+      gap: 9px;
+    }
+  }
+
+  &_img {
+    width: 113px;
+    height: 152px;
+    margin-bottom: 7px;
+    @include desk-s {
+      width: 167px;
+      height: 219px;
+    }
+  }
+
+  &_btnPositions {
+    @include flex($flex-direction: column, $justify-content: flex-start);
+    gap: 5px;
+    @include desk-s {
+      gap: 6px;
+    }
+  }
+
+  &_topWomen {
+    margin-bottom: 4px;
+    color: rgba(189, 189, 189, 1);
+    font-family: "Oswald", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 15px;
+    @include desk-s {
+      display: none;
+    }
+  }
+
+  &_title {
+    margin-bottom: 4px;
+    max-width: 113px;
+    color: rgba(0, 0, 0, 1);
+    font-family: "Oswald", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    line-height: 18px;
+    @include desk-s {
+      margin-bottom: 12px;
+      max-width: 167px;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 23px;
+    }
+  }
+
+  &_price {
+    margin-bottom: 10px;
+    color: rgba(0, 0, 0, 1);
+    font-family: "Oswald", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    @include desk-s {
+      margin-bottom: 17px;
+      color: rgba(130, 130, 130, 1);
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &_controls {
+    display: flex;
+    gap: 11px;
+  }
+
+  &_quantityInput {
+    display: none;
+    @include desk-s {
+      display: flex;
+      text-align: center;
+      width: 40px;
+      height: 40px;
+      box-sizing: border-box;
+      border: 1px solid rgb(196, 196, 196);
+      background: rgb(255, 255, 255);
+      color: rgb(63, 63, 63);
+      font-family: "Oswald", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+
+  &_addToCard {
+    position: relative;
+    width: 100%;
+    height: 38px;
+    background: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    font-family: "Oswald", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition:
+      transform 0.35s ease,
+      box-shadow 0.35s ease;
+    z-index: 0;
+    overflow: hidden;
+
+    &:hover {
+      transform: scale(1.07);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    @include desk-s {
+      width: 117px;
+      height: 40px;
+    }
+  }
+}
+
+.removeButton,
+.editButton {
+  @include flex($align-items: center, $justify-content: center);
+  width: 20px;
+  height: 20px;
+  background: rgb(230, 241, 250);
+  cursor: pointer;
+  border: none;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+  z-index: 0;
+  overflow: hidden;
+  @include desk-s {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.removeButton:hover,
+.editButton:hover {
+  transform: scale(1.09);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.removeIcon {
+  width: 8px;
+  height: 8px;
+  @include desk-s {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.editIcon {
+  width: 8px;
+  height: 8px;
+  @include desk-s {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 18px;
+  font-family: "Oswald", sans-serif;
+  user-select: none;
+
+  @include desk-s {
+    display: none;
+  }
+
+  &_trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 0 11px;
+    background-color: rgba(240, 242, 242, 1);
+    color: rgba(0, 0, 0, 1);
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  &_arrowIcon {
+    width: $arrow-size;
+    height: $arrow-size;
+    position: relative;
+    @include flex($align-items: center, $justify-content: center);
+    cursor: pointer;
+  }
+
+  &_leftBar,
+  &_rightBar {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    top: 50%;
+    width: 8px;
+    height: $bar-thickness;
+    border-radius: 2px;
+    transition: transform $duration $easing;
+
+    &:after {
+      content: "";
+      background-color: #000;
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: 2px;
+      transition: all $duration $easing;
+    }
+  }
+
+  &_leftBar {
+    left: 0;
+    transform: translateY(-50%) rotate(40deg);
+  }
+
+  &_rightBar {
+    right: 0;
+    transform: translateY(-50%) rotate(-40deg);
+  }
+
+  &_menu {
+    margin-top: 5px;
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    border: 1px solid #eee;
+    @include desk-s {
+      display: flex;
+    }
+  }
+
+  &_item {
+    display: block;
+    padding: 12px 15px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 400;
+    transition: all 0.2s;
+    border-bottom: 1px solid #f9f9f9;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #f0f0f0;
+      color: #000;
+      padding-left: 20px;
+    }
+  }
+
+  &.active {
+    .dropdown_trigger {
+      background-color: #e6e6e6;
+    }
+
+    .dropdown_menu {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .dropdown_leftBar {
+      transform: translateY(-50%) rotate(-40deg);
+    }
+    .dropdown_rightBar {
+      transform: translateY(-50%) rotate(40deg);
+    }
+  }
+}
+
+.pagination {
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+
+  @include desk-s {
+    margin-bottom: 48px;
+  }
+
+  &_btn {
+    width: 35px;
+    height: 35px;
+    border: 1px solid #c4c4c4;
+    background-color: #fff;
+    color: #333;
+    font-family: "Oswald", sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    @include flex($align-items: center, $justify-content: center);
+
+    &:hover {
+      border-color: #000;
+      color: #000;
+    }
+  }
+
+  &_active {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+
+    &:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  }
+}
+
+// .desktopNav {
+//   display: none;
+//   @include desk-s {
+//     display: flex;
+//     flex-direction: column;
+//   }
+//   &_item {
+//     display: flex;
+//     align-items: center;
+//     width: 100%;
+//     max-width: 288px;
+//     height: 44px;
+//     padding: 0 13px;
+//     color: rgba(0, 0, 0, 1);
+//     font-family: "Oswald", sans-serif;
+//     font-size: 18px;
+//     font-weight: 500;
+//     line-height: 24px;
+//     transition: all 0.3s ease;
+//     user-select: none;
+//     cursor: pointer;
+//     &:hover {
+//       background-color: rgba(240, 242, 242, 1);
+//     }
+//   }
+// }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

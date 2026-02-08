@@ -1,18 +1,21 @@
-import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+
+import { nextPage } from "../../redux/MiniCatalog/actions.js";
 
 import { Container } from "../Container/Container.jsx";
 import { MiniCatalogItem } from "./MiniCatalogItem.jsx";
 
-import { catalogData } from "../../data/catalog-data.js";
-
 import styles from "./MiniCatalog.module.scss";
 
 export const MiniCatalog = function () {
-	const [data, setData] = useState(catalogData);
-	const [currentPage, setCurrentPage] = useState(1);
+	const dispatch = useDispatch();
+
 	const step = 8;
 
-	useEffect(() => {})
+	const currentPage = useSelector((state) => state.miniCatalog.currentPage);
+	const products = useSelector((state) => state.products.products);
+
+	const handleNextPage = () => dispatch(nextPage);
 
 	return (
 		<>
@@ -51,17 +54,13 @@ export const MiniCatalog = function () {
 						<aside className={styles["mini-catalog__aside"]}>
 							<div className={styles["mini-catalog__list-wrap"]}>
 								<ul className={styles["mini-catalog__list"]}>
-									{data.slice(0, currentPage * step).map((item, id) => (
+									{products.slice(0, currentPage * step).map((item, id) => (
 										<MiniCatalogItem img={item.img} category={item.category} title={item.title} price={item.price} discountPrice={item.discountPrice} key={id} />
 									))}
 								</ul>
-								{data.slice(currentPage * step, (currentPage + 1) * step).length >= 4 && (
-									<button
-										className={styles["mini-catalog__load-button"]}
-										onClick={() => {
-											setCurrentPage(currentPage + 1);
-										}}
-									>
+
+								{products.slice(currentPage * step, (currentPage + 1) * step).length >= 4 && (
+									<button className={styles["mini-catalog__load-button"]} onClick={handleNextPage}>
 										load more
 									</button>
 								)}
