@@ -1,27 +1,27 @@
-// .desktopNav {
-//   display: none;
-//   @media screen and (min-width: 1200px) {
-//     display: flex;
-//     flex-direction: column;
-//   }
+.NavBar {
+  display: none;
+  @media screen and (min-width: 1200px) {
+    display: flex;
+    flex-direction: column;
+  }
 
-//   &_item {
-//     display: flex;
-//     align-items: center;
-//     width: 100%;
-//     max-width: 288px;
-//     height: 44px;
-//     padding: 0 13px;
-//     color: rgba(0, 0, 0, 1);
-//     font-family: "Oswald", sans-serif;
-//     font-size: 18px;
-//     font-weight: 500;
-//     line-height: 24px;
-//     transition: all 0.3s ease;
-//     user-select: none;
-//     cursor: pointer;
-//     &:hover {
-//       background-color: rgba(240, 242, 242, 1);
-//     }
-//   }
-// }
+  &_item {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 288px;
+    height: 44px;
+    padding: 0 13px;
+    color: rgba(0, 0, 0, 1);
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+    transition: all 0.3s ease;
+    user-select: none;
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(240, 242, 242, 1);
+    }
+  }
+}
