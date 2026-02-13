@@ -21,7 +21,6 @@ export const HomePage = () => {
         <SpecialList title="Most Popular" />
       </main>
       <Footer />
-      <AddNewAddress />
     </>
   );
 };
