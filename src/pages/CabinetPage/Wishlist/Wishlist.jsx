@@ -1,33 +1,38 @@
 import React, { useState, useEffect } from "react";
-import { Route, Routes, NavLink } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import styles from "./Wishlist.module.scss";
 import { catalogData } from "../../../data/catalog-data";
 import { Container } from "../../../components/Container/Container";
 import editIcon from "../../../images/remark-wishlist.svg";
 import removeIcon from "../../../images/closeIcon-wishlist.svg";
 import NavBar from "../../../components/NavBar/NavBar";
+import {
+  removeItem,
+  addItem,
+  setCurrentPage,
+  nextPage,
+  prevPage,
+} from "../../../redux/Wishlist/reducer";
 
 export function Wishlist() {
-  //dynamic id's using useStated
-  const [items, setItems] = useState(() =>
-    catalogData.map((item, index) => ({
-      ...item,
-      id: item.id || `item-${Date.now()}-${index}`,
-    })),
+  const dispatch = useDispatch();
+
+  const { items, currentPage, perPage } = useSelector(
+    (state) => state.wishlist,
   );
-  const [currentPage, setCurrentPage] = useState(1);
-  const [perPage, setPerpage] = useState(6);
+
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("MY WISHLIST");
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1200);
 
-  // const navLinks = [
-  //   { name: "Account Dashboard", id: "dashboard" },
-  //   { name: "Account Information", id: "info" },
-  //   { name: "Address Book", id: "address" },
-  //   { name: "My Orders", id: "orders" },
-  //   { name: "My Wishlist", id: "wishlist" },
-  //   { name: "Newsletter Subscriptions", id: "newsletter" },
-  // ];
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1200);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -38,32 +43,74 @@ export function Wishlist() {
   };
 
   const handleRemove = (id) => {
-    setItems((prev) => prev.filter((it) => it.id !== id));
+    dispatch(removeItem(id));
+  };
+
+  const handleDuplicate = (item) => {
+    dispatch(addItem(item));
+  };
+
+  const goToPage = (page) => {
+    dispatch(setCurrentPage(page));
+  };
+
+  const handlePrevPage = () => {
+    dispatch(prevPage());
+  };
+
+  const handleNextPage = () => {
+    dispatch(nextPage());
   };
 
   // !Pagination Logic
   const totalPages = Math.ceil(items.length / perPage);
-
-  const pageNumbers = [];
-  for (let i = 1; i <= totalPages; i++) {
-    pageNumbers.push(i);
-  }
-
   const start = (currentPage - 1) * perPage;
   const pageItems = items.slice(start, start + perPage);
 
-  const handleDuplicate = (item) => {
-    const newItem = { ...item, id: Date.now() };
-    setItems((prev) => {
-      const newItems = [...prev, newItem];
-      const newTotalPages = Math.ceil(newItems.length / perPage);
-      setCurrentPage(newTotalPages);
-      return newItems;
-    });
-  };
+  const renderPaginationItems = () => {
+    const pageNumbers = [];
+    const siblingCount = isMobile ? 0 : 1;
+    const totalPagesLimit = isMobile ? 5 : 7;
 
-  const goToPage = (page) => {
-    setCurrentPage(page);
+    if (totalPages <= totalPagesLimit) {
+      for (let i = 1; i <= totalPages; i++) {
+        pageNumbers.push(i);
+      }
+    } else {
+      const leftSiblingIndex = Math.max(currentPage - siblingCount, 1);
+      const rightSiblingIndex = Math.min(
+        currentPage + siblingCount,
+        totalPages,
+      );
+
+      const showLeftDots = leftSiblingIndex > 2;
+      const showRightDots = rightSiblingIndex < totalPages - 1;
+
+      if (!showLeftDots && showRightDots) {
+        let leftItemCount = 3 + 2 * siblingCount;
+        for (let i = 1; i <= leftItemCount; i++) {
+          pageNumbers.push(i);
+        }
+        pageNumbers.push("...");
+        pageNumbers.push(totalPages);
+      } else if (showLeftDots && !showRightDots) {
+        pageNumbers.push(1);
+        pageNumbers.push("...");
+        let rightItemCount = 3 + 2 * siblingCount;
+        for (let i = totalPages - rightItemCount + 1; i <= totalPages; i++) {
+          pageNumbers.push(i);
+        }
+      } else if (showLeftDots && showRightDots) {
+        pageNumbers.push(1);
+        pageNumbers.push("...");
+        for (let i = leftSiblingIndex; i <= rightSiblingIndex; i++) {
+          pageNumbers.push(i);
+        }
+        pageNumbers.push("...");
+        pageNumbers.push(totalPages);
+      }
+    }
+    return pageNumbers;
   };
 
   return (
@@ -106,18 +153,6 @@ export function Wishlist() {
                 ))}
               </ul>
             </div>
-
-            {/* <ul className={styles.desktopNav}>
-              {navLinks.map((link) => (
-                <li
-                  key={link.id}
-                  className={`${styles.desktopNav_item} ${activeSection === link.name ? styles.desktopNav_active : ""}`}
-                  onClick={() => goToSection(link.name)}
-                >
-                  {link.name}
-                </li>
-              ))}
-            </ul> */}
           </div>
           <NavBar />
           <p className={styles.mainWishlistCont_title}>{activeSection}</p>
@@ -125,65 +160,121 @@ export function Wishlist() {
           {activeSection === "MY WISHLIST" && (
             <div className={styles.wishlistCont}>
               <div className={styles.wishlistCont_grid}>
-                {pageItems.map((item) => (
-                  <div className={styles.wishlistCard} key={item.id}>
-                    <div className={styles.wishlistCard_imgWrapper}>
-                      <img
-                        src={item.img}
-                        alt={item.name}
-                        className={styles.wishlistCard_img}
-                      />
-                      <div className={styles.wishlistCard_btnPositions}>
-                        <button
-                          className={styles.removeButton}
-                          onClick={() => handleRemove(item.id)}
-                        >
-                          <img
-                            src={removeIcon}
-                            alt="Remove"
-                            className={styles.removeIcon}
-                          />
-                        </button>
-                        <button
-                          className={styles.editButton}
-                          onClick={() => handleDuplicate(item)}
-                        >
-                          <img
-                            src={editIcon}
-                            alt="Duplicate"
-                            className={styles.editIcon}
-                          />
+                {pageItems.map((item) => {
+                  const hasDiscount = item.discount;
+                  const originalPrice = parseFloat(item.price);
+                  const finalPrice = hasDiscount
+                    ? originalPrice - originalPrice * (item.discount / 100)
+                    : null;
+
+                  return (
+                    <div className={styles.wishlistCard} key={item.id}>
+                      <div className={styles.wishlistCard_imgWrapper}>
+                        <img
+                          src={item.img}
+                          alt={item.name}
+                          className={styles.wishlistCard_img}
+                        />
+                        <div className={styles.wishlistCard_btnPositions}>
+                          <button
+                            className={styles.removeButton}
+                            onClick={() => handleRemove(item.id)}
+                          >
+                            <img
+                              src={removeIcon}
+                              alt="Remove"
+                              className={styles.removeIcon}
+                            />
+                          </button>
+                          <button
+                            className={styles.editButton}
+                            onClick={() => handleDuplicate(item)}
+                          >
+                            <img
+                              src={editIcon}
+                              alt="Duplicate"
+                              className={styles.editIcon}
+                            />
+                          </button>
+                        </div>
+                      </div>
+                      <p className={styles.wishlistCard_topWomen}>{item.top}</p>
+                      <p className={styles.wishlistCard_title}>{item.name}</p>
+                      <div className={styles.wishlistCard_priceWrapper}>
+                        {hasDiscount ? (
+                          <>
+                            <span
+                              className={`${styles.wishlistCard_price} ${styles.wishlistCard_priceDiscount}`}
+                            >
+                              {finalPrice.toFixed(2) + " EUR"}
+                            </span>
+                            <span className={styles.wishlistCard_priceOld}>
+                              {originalPrice.toFixed(2) + " EUR"}
+                            </span>
+                          </>
+                        ) : (
+                          <span className={styles.wishlistCard_itemPrice}>
+                            {originalPrice.toFixed(2) + " EUR"}
+                          </span>
+                        )}
+                      </div>
+                      <div className={styles.wishlistCard_controls}>
+                        <input
+                          min="1"
+                          defaultValue="1"
+                          className={styles.wishlistCard_quantityInput}
+                        />
+                        <button className={styles.wishlistCard_addToCard}>
+                          ADD TO CART
                         </button>
                       </div>
                     </div>
-                    <p className={styles.wishlistCard_topWomen}>{item.top}</p>
-                    <p className={styles.wishlistCard_title}>{item.name}</p>
-                    <p className={styles.wishlistCard_price}>{item.price}</p>
-                    <div className={styles.wishlistCard_controls}>
-                      <input
-                        min="1"
-                        defaultValue="1"
-                        className={styles.wishlistCard_quantityInput}
-                      />
-                      <button className={styles.wishlistCard_addToCard}>
-                        ADD TO CART
-                      </button>
-                    </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
 
               {totalPages > 1 && (
                 <div className={styles.pagination}>
-                  {pageNumbers.map((number) => (
-                    <button
-                      key={number}
-                      onClick={() => goToPage(number)}
-                      className={`${styles.pagination_btn} ${currentPage === number ? styles.pagination_active : ""}`}
-                    >
-                      {number}
-                    </button>
-                  ))}
+                  <button
+                    onClick={handlePrevPage}
+                    disabled={currentPage === 1}
+                    className={`${styles.pagination_arrow} ${currentPage === 1 ? styles.disabled : ""}`}
+                  >
+                    <span className={`${styles.arrow} ${styles.left}`}></span>
+                  </button>
+
+                  {renderPaginationItems().map((number, index) => {
+                    if (number === "...") {
+                      return (
+                        <span
+                          key={`dots-${index}`}
+                          className={styles.pagination_dots}
+                        >
+                          ...
+                        </span>
+                      );
+                    }
+
+                    return (
+                      <button
+                        key={number}
+                        onClick={() => goToPage(number)}
+                        className={`${styles.pagination_btn} ${
+                          currentPage === number ? styles.pagination_active : ""
+                        }`}
+                      >
+                        {number}
+                      </button>
+                    );
+                  })}
+
+                  <button
+                    onClick={handleNextPage}
+                    disabled={currentPage === totalPages}
+                    className={`${styles.pagination_arrow} ${currentPage === totalPages ? styles.disabled : ""}`}
+                  >
+                    <span className={`${styles.arrow} ${styles.right}`}></span>
+                  </button>
                 </div>
               )}
 
