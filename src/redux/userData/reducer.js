@@ -30,10 +30,28 @@ const defaultUsers = [
         ammount: 1,
       },
     ],
-
   },
 ];
 
 export const userDataReducer = (state = [], action) => {
-  return state;
+  switch (action.type) {
+    case "address/addAddress": {
+      return [
+        ...state,
+        {
+          id: action.payload.id,
+          first_name: "-",
+          last_name: "-",
+          email: "-",
+          password: "-",
+          basket: [],
+          addresses: [action.payload.address],
+          wishlist: [],
+        },
+      ];
+    }
+    default: {
+      return state;
+    }
+  }
 };
