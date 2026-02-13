@@ -6,6 +6,7 @@ import SpecialList from "../../components/SpecialList/SpecialList.jsx";
 import { Blog } from "./Blog/Blog.jsx";
 import { Hero } from "../../components/Hero/Hero.jsx";
 import { Wishlist } from "../../pages/CabinetPage/Wishlist/Wishlist.jsx";
+import { AddNewAddress } from "../Cabinet/DashboardPage/AddNewAddress/AddNewAddress.jsx";
 
 export const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ export const HomePage = () => {
         <SpecialList title="Most Popular" />
       </main>
       <Footer />
+      <AddNewAddress />
     </>
   );
 };
