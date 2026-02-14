@@ -2,35 +2,41 @@ import { Container } from "../../../../components/Container/Container";
 import styles from "./AddNewAddress.module.scss";
 import { DashboardSidebar } from "../../../../components/DashboardSidebar/DashboardSidebar";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addAddress } from "../../../../redux/userData/actions";
+import { nanoid } from "nanoid";
 
-export const AddNewAddress = ({
-  firstNameP,
-  lastNameP,
-  companyP,
-  phoneP,
-  faxP,
-  streetaddressP,
-  streetaddress2P,
-  countryP,
-  stateP,
-  codeP,
-  changePage,
-  isInArray,
-  submitForm,
-}) => {
-  const [firstName, setFirstName] = useState(firstNameP);
-  const [lastName, setLastName] = useState(lastNameP);
-  const [company, setCompany] = useState(companyP);
-  const [phone, setPhone] = useState(phoneP);
-  const [fax, setFax] = useState(faxP);
-  const [streetaddress, setStreetaddress] = useState(streetaddressP);
-  const [streetaddress2, setStreetaddress2] = useState(streetaddress2P);
-  const [country, setCountry] = useState(countryP);
-  const [state, setState] = useState(stateP);
-  const [code, setCode] = useState(codeP);
+export const AddNewAddress = ({ changePage, isInArray }) => {
+  const [firstName, setFirstName] = useState();
+  const [lastName, setLastName] = useState();
+  const [company, setCompany] = useState();
+  const [phone, setPhone] = useState();
+  const [fax, setFax] = useState();
+  const [streetaddress, setStreetaddress] = useState();
+  const [streetaddress2, setStreetaddress2] = useState();
+  const [country, setCountry] = useState();
+  const [state, setState] = useState();
+  const [code, setCode] = useState();
+
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
-    submitForm(e);
+    e.preventDefault();
+    dispatch(
+      addAddress(
+        nanoid(4),
+        firstName,
+        lastName,
+        company,
+        phone,
+        fax,
+        streetaddress,
+        streetaddress2,
+        country,
+        state,
+        code,
+      ),
+    );
     setTimeout(() => {
       if (!isInArray) {
         setFirstName("");

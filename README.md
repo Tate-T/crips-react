@@ -8,4 +8,3 @@
 
 ## Developer docs
 [https://github.com/tate-T/crips-react/tree/main/docs/](https://github.com/tate-T/crips-react/tree/main/docs/)
-

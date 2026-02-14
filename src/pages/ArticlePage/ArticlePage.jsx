@@ -21,10 +21,10 @@ export const ArticlePage = () => {
           <Navigation aria-label="breadcrumb">
             <NavigationList>
               <NavigationItem>
-                <NavigationLink href="#">Home</NavigationLink>
+                <NavigationLink href="#">Home /</NavigationLink>
               </NavigationItem>
               <NavigationItem>
-                <NavigationLink href="#">Womens Dress</NavigationLink>
+                <NavigationLink href="#">Womens Dress /</NavigationLink>
               </NavigationItem>
               <NavigationItem>
                 <NavigationLink href="#">Angels malu</NavigationLink>

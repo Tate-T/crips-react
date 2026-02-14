@@ -1,6 +1,9 @@
 import style from "./Mobmenu.module.scss";
+import { useSelector } from "react-redux";
 
-export function Mobmenu({ activePage, open, change }) {
+export function Mobmenu({ activePage, change }) {
+  const open = useSelector(state => state.header.menuState);
+
   return (
     <div className={`${style.mobmenu}${open ? ` ${style.open}` : ""}`}>
       <div className={`${style.backdrop}${open ? ` ${style.open}` : ""}`} onClick={change}>

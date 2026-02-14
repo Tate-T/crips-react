@@ -3,8 +3,10 @@ import { Footer } from "../../components/Footer/Footer.jsx";
 import { Banners } from "../../components/Banners/BannersSection.jsx";
 import { MiniCatalog } from "../../components/MiniCatalog/MiniCatalog.jsx";
 import SpecialList from "../../components/SpecialList/SpecialList.jsx";
-import { Blog } from "../main-page/blog/blog.jsx";
+import { Blog } from "./Blog/Blog.jsx";
 import { Hero } from "../../components/Hero/Hero.jsx";
+import { Wishlist } from "../../pages/CabinetPage/Wishlist/Wishlist.jsx";
+import { AddNewAddress } from "../Cabinet/DashboardPage/AddNewAddress/AddNewAddress.jsx";
 
 export const HomePage = () => {
   return (
@@ -12,6 +14,7 @@ export const HomePage = () => {
       <Header activePage="home" />
       <main>
         <Hero />
+        <Wishlist />
         <Banners />
         <MiniCatalog />
         <Blog />

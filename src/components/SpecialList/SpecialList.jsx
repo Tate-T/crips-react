@@ -1,73 +1,58 @@
-import {useState, useEffect} from 'react';
-import {catalogData} from '../../data/catalog-data';
-import s from './SpecialList.module.scss';
-import {Container} from '../Container/Container';
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { catalogData } from '../../data/catalog-data'
+import { Container } from '../Container/Container'
+import s from './SpecialList.module.scss'
 
-export default function SpecialList({title}) {
-	const [seeMoreActive, setSeeMoreActive] = useState(true);
-	const [visibleCount, setVisibleCount] = useState(4);
-	const [isDesktop, setIsDesktop] = useState(false);
-	const [startIndex, setStartIndex] = useState(0);
-	
-	const checkScreenSize = () => {
-		const desktop = window.innerWidth >= 1200;
-		if (desktop) {
-			setSeeMoreActive(false);
-			setIsDesktop(true);
-			setVisibleCount(5);
-			setStartIndex(0);
-		} else {
-			setSeeMoreActive(true);
-			setIsDesktop(false);
-			setVisibleCount(4);
-		}
-	};
-	
+import { next, prev, seeMore, setLayout } from '../../redux/specialList/actions'
+
+export default function SpecialList({ title }) {
+	const dispatch = useDispatch()
+
+	const visibleCount = useSelector(state => state.specialList.visibleCount)
+	const isDesktop = useSelector(state => state.specialList.isDesktop)
+	const startIndex = useSelector(state => state.specialList.startIndex)
+
 	useEffect(() => {
-		checkScreenSize();
-		window.addEventListener('resize', checkScreenSize);
-		return () => window.removeEventListener('resize', checkScreenSize);
-	}, []);
-	
-	const handleSeeMore = () => {
-		setVisibleCount(prev => Math.min(prev + 4, catalogData.length));
-	};
-	
-	const handlePrev = () => {
-		setStartIndex(prev => Math.max(prev - 1, 0));
-	};
-	
-	const handleNext = () => {
-		if (startIndex + visibleCount < catalogData.length) {
-			setStartIndex(prev => prev + 1);
+		const checkScreenSize = () => {
+			const desktop = window.innerWidth >= 1200
+			dispatch(setLayout(desktop))
 		}
-	};
-	
-	const isPrevDisabled = startIndex === 0;
-	const isNextDisabled = startIndex + visibleCount >= catalogData.length;
-	const isSeeMoreHidden = visibleCount >= catalogData.length;
-	
+
+		checkScreenSize()
+		window.addEventListener('resize', checkScreenSize)
+		return () => window.removeEventListener('resize', checkScreenSize)
+	}, [dispatch])
+
+	const isPrevDisabled = startIndex === 0
+	const isNextDisabled = startIndex + visibleCount >= catalogData.length
+	const isSeeMoreHidden = visibleCount >= catalogData.length
+
 	const currentItems = isDesktop
 		? catalogData.slice(startIndex, startIndex + visibleCount)
-		: catalogData.slice(0, visibleCount);
-	
+		: catalogData.slice(0, visibleCount)
+
+	const formatPrice = value => `${parseFloat(value).toFixed(2)} EUR`
+
 	return (
 		<section className={s.special}>
 			<Container>
 				<div className={s.special__container}>
 					<h2 className={s.special__title}>{title}</h2>
-					
+
 					{isDesktop && (
 						<div>
 							<button
 								className={s.special__button}
-								onClick={handlePrev}
-								disabled={isPrevDisabled}>
+								onClick={() => dispatch(prev())}
+								disabled={isPrevDisabled}
+							>
 								<div className={`${s.arrow} ${s.arrow__left}`}></div>
 							</button>
+
 							<button
 								className={s.special__button}
-								onClick={handleNext}
+								onClick={() => dispatch(next(catalogData.length))}
 								disabled={isNextDisabled}
 							>
 								<div className={`${s.arrow} ${s.arrow__right}`}></div>
@@ -75,9 +60,13 @@ export default function SpecialList({title}) {
 						</div>
 					)}
 				</div>
+
 				<ul className={s.special__list}>
 					{currentItems.map((item, index) => (
-						<li className={s.special__item} key={index}>
+						<li
+							className={s.special__item}
+							key={index}
+						>
 							<a>
 								<img
 									className={s.special__image}
@@ -87,15 +76,30 @@ export default function SpecialList({title}) {
 								<div className={s.special__info}>
 									<p className={s.special__top}>{item.top}</p>
 									<h3 className={s.special__name}>{item.name}</h3>
-									<p className={s.special__price}>{item.price}</p>
+
+									{item.discountPrice ? (
+										<p
+											className={`${s.special__price} ${s.special__priceDiscount}`}
+										>
+											{formatPrice(item.discountPrice)}{' '}
+											<span className={s.special__priceOld}>
+												{formatPrice(item.price)}
+											</span>
+										</p>
+									) : (
+										<p className={s.special__price}>
+											{formatPrice(item.price)}
+										</p>
+									)}
 								</div>
 							</a>
 						</li>
 					))}
 				</ul>
+
 				{!isSeeMoreHidden && (
 					<button
-						onClick={handleSeeMore}
+						onClick={() => dispatch(seeMore(catalogData.length))}
 						className={s.special__moreBtn}
 					>
 						See More
@@ -248,4 +252,3 @@ export default function SpecialList({title}) {
 //
 // export default SpecialList;
 //
-

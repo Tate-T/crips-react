@@ -282,13 +282,13 @@ export const Filtration = () => {
             </li>
             <li className={fromValue === 0 && toValue === 500 ? "is-hidden" : ""}>
               <h3 className="filtration-list__title">Price:</h3>
-              <li className="filtration-list__size">
+              <div className="filtration-list__size">
                 <img src={close} alt="" className="filtration-close" onClick={deletePrice} />
                 <p className="selected-filters">
                   {fromValue === toValue ? `${fromValue},00 EUR` :
                     `${fromValue},00 EUR - ${toValue},00 EUR`}
                 </p>
-              </li>
+              </div>
             </li>
           </ul>
         </div>
