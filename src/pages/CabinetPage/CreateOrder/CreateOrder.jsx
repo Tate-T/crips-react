@@ -9,63 +9,46 @@ import { PaymentDetails } from "./PaymentDetails/PaymentDetails";
 import { OrderSummaryModal } from "../../../components/CreateOrder/OrderSummaryModal/OrderSummaryModal";
 import { PaymentInfo } from "../../../components/CreateOrder/PaymentInfo/PaymentInfo";
 
+import { useSelector, useDispatch } from "react-redux";
+import { goToNextStep, goToPrevStep, openModal, closeModal, toggleOrderSummary, setShippingFormDetails, setShippingInfo, setPaymentDetails } from "../../../redux/createOrder/actions";
+
 const BASE_URL = import.meta.env.VITE_USERS_API;
 
 export const CreateOrder = () => {
   const auth = useContext(AuthContext);
+  const dispatch = useDispatch();
 
-  const [step, setStep] = useState(1);
-  const [modalIsOpened, setModalIsOpened] = useState(false);
-  const [orderSummaryIsOpened, setOrderSummaryIsOpened] = useState(false);
-  const [shippingFormDetails, setShippingFormDetails] = useState({
-    email: "",
-    password: "",
-  });
-  const [shippingInfo, setShippingInfo] = useState({
-    firstName: "",
-    lastName: "",
-    company: "",
-    streetAddress: ["", "", ""],
-    country: "",
-    stateProvince: "",
-    shippingMethod: "fixed",
-    zip: "",
-  });
-  const [paymentDetails, setPaymentDetails] = useState({
-    isSameAddress: false,
-    discountCode: "",
-  });
+  const { step, modalIsOpened, orderSummaryIsOpened, shippingFormDetails, shippingInfo, paymentDetails } = useSelector((state) => state.createOrder);
 
-  const goToNextStep = () => setStep(2);
-  const goToPrevStep = () => setStep(1);
+  const handleNextStep = () => dispatch(goToNextStep());
+  const handlePrevStep = () => dispatch(goToPrevStep());
 
-  const openModal = () => setModalIsOpened(true);
-  const closeModal = () => setModalIsOpened(false);
+  const handleOpenModal = () => dispatch(openModal());
+  const handleCloseModal = () => dispatch(closeModal());
 
-  const toggleOrderSummary = () => setOrderSummaryIsOpened(!orderSummaryIsOpened);
+  const handleToggleSummary = () => dispatch(toggleOrderSummary());
 
-  const handleShippingFormSubmit = async (data) => {
+  const handleShippingFormSubmit = async (formData) => {
     try {
       const r = await fetch(`${BASE_URL}users`);
       const data = await r.json();
+
+      dispatch(setShippingFormDetails(formData));
+
+      auth.setIsLogin(true);
+      auth.setEmail(formData.email);
     } catch (error) {
       console.error(error);
     }
-
-    setShippingFormDetails(data);
-    auth.setIsLogin(true);
-    auth.setEmail(data.email);
-    console.log("ShippingFormDetails", data);
   };
 
   const handleShippingInfoSubmit = (data) => {
-    setShippingInfo(data);
-    goToNextStep();
-    console.log("ShippingInfo", data);
+    dispatch(setShippingInfo(data));
+    handleNextStep();
   };
+
   const handlePaymentSubmit = (data) => {
-    setPaymentDetails(data);
-    console.log("PaymentDetails", data);
+    dispatch(setPaymentDetails(data));
   };
 
   return (
@@ -109,20 +92,23 @@ export const CreateOrder = () => {
             </div>
 
             <div className={s.order__addition}>
-              <OrderSummary className={s.order__mobile} stateOfDetails={orderSummaryIsOpened} toggleOrderSummary={toggleOrderSummary} openModal={openModal} />
+              <OrderSummary className={s.order__mobile} stateOfDetails={orderSummaryIsOpened} toggleOrderSummary={handleToggleSummary} openModal={handleOpenModal} />
 
               {step === 1 ? (
                 <ShippingDetails shippingForm={shippingFormDetails} shippingInfo={shippingInfo} onSubmitForm={handleShippingFormSubmit} onSubmitInfo={handleShippingInfoSubmit}>
-                  <OrderSummary className={s.order__tablet} stateOfDetails={orderSummaryIsOpened} toggleOrderSummary={toggleOrderSummary} />
-                  <OrderSummaryModal modalIsOpened={modalIsOpened} closeModal={closeModal}>
+                  <OrderSummary className={s.order__tablet} stateOfDetails={orderSummaryIsOpened} toggleOrderSummary={handleToggleSummary} />
+
+                  <OrderSummaryModal modalIsOpened={modalIsOpened} closeModal={handleCloseModal}>
                     <PaymentInfo />
                   </OrderSummaryModal>
                 </ShippingDetails>
               ) : (
-                <PaymentDetails onBack={goToPrevStep} onSubmitPayment={handlePaymentSubmit}>
-                  <OrderSummary className={s.order__tablet} stateOfDetails={orderSummaryIsOpened} toggleOrderSummary={toggleOrderSummary} />
+                <PaymentDetails onBack={handlePrevStep} onSubmitPayment={handlePaymentSubmit}>
+                  <OrderSummary className={s.order__tablet} stateOfDetails={orderSummaryIsOpened} toggleOrderSummary={handleToggleSummary} />
+
                   <PaymentInfo className={s.order__tablet} />
-                  <OrderSummaryModal modalIsOpened={modalIsOpened}>
+
+                  <OrderSummaryModal modalIsOpened={modalIsOpened} closeModal={handleCloseModal}>
                     <PaymentInfo />
                   </OrderSummaryModal>
                 </PaymentDetails>

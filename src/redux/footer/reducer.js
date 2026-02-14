@@ -1,9 +1,7 @@
-import {
-  TOGGLE_FEATURES,
-  TOGGLE_MENU,
-  TOGGLE_CONTACT,
-  TOGGLE_FOLLOW,
-} from './types';
+const TOGGLE_FEATURES = 'TOGGLE_FEATURES';
+const TOGGLE_MENU = 'TOGGLE_MENU';
+const TOGGLE_CONTACT = 'TOGGLE_CONTACT';
+const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW';
 
 const initialState = {
   featuresOpen: false,

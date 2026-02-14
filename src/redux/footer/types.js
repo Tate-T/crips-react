@@ -1,4 +1,0 @@
-export const TOGGLE_FEATURES = 'TOGGLE_FEATURES';
-export const TOGGLE_MENU = 'TOGGLE_MENU';
-export const TOGGLE_CONTACT = 'TOGGLE_CONTACT';
-export const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW';

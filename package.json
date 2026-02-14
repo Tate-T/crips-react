@@ -8,6 +8,7 @@
 		"axios": "^1.12.2",
 		"countrycitystatejson": "^25.8.101",
 		"gh-pages": "^6.3.0",
+		"nanoid": "^5.1.6",
 		"prop-types": "^15.8.1",
 		"react": "^19.2.0",
 		"react-dom": "^19.2.0",

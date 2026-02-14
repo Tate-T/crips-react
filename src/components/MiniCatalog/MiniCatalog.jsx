@@ -55,7 +55,14 @@ export const MiniCatalog = function () {
 							<div className={styles["mini-catalog__list-wrap"]}>
 								<ul className={styles["mini-catalog__list"]}>
 									{products.slice(0, currentPage * step).map((item, id) => (
-										<MiniCatalogItem img={item.img} category={item.category} title={item.title} price={item.price} discountPrice={item.discountPrice} key={id} />
+										<MiniCatalogItem
+											img={item.img}
+											category={item.category}
+											title={item.title}
+											price={item.price}
+											discountPrice={item.discount ? item.price - item.price * (item.discount / 100) : null}
+											key={id}
+										/>
 									))}
 								</ul>
 

@@ -1,41 +1,52 @@
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setPaymentDetails } from "../../../../redux/createOrder/actions";
+
 import s from "./PaymentDetails.module.scss";
 
-export const PaymentDetails = ({ children, onBack, onSubmitPayment }) => {
+export const PaymentDetails = ({ children, onBack }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const [isSameAddress, setIsSameAddress] = useState(false);
-  const [discountCode, setDiscountCode] = useState("");
+  const { paymentDetails } = useSelector((state) => state.createOrder);
+
+  const { isSameAddress, discountCode } = paymentDetails;
 
   const handleCheckboxChange = (e) => {
-    const checked = e.target.checked;
-    setIsSameAddress(checked);
+    dispatch(
+      setPaymentDetails({
+        ...paymentDetails,
+        isSameAddress: e.target.checked,
+      }),
+    );
   };
 
   const handleDiscountChange = (e) => {
-    setDiscountCode(e.target.value);
+    dispatch(
+      setPaymentDetails({
+        ...paymentDetails,
+        discountCode: e.target.value,
+      }),
+    );
   };
 
   const handleApplyDiscount = (e) => {
     e.preventDefault();
+
     if (discountCode.trim() === "") {
       console.log("No discount code entered");
       return;
     }
+
     console.log("Discount code applied:", discountCode);
   };
 
   const handlePlaceOrder = (e) => {
     e.preventDefault();
-    const paymentData = {
-      isSameAddress,
-      discountCode,
-    };
 
-    onSubmitPayment(paymentData);
+    console.log("PaymentDetails:", paymentDetails);
 
-      navigate("/", { replace: true });
+    navigate("/", { replace: true });
   };
 
   return (
@@ -63,6 +74,7 @@ export const PaymentDetails = ({ children, onBack, onSubmitPayment }) => {
             <button type="submit" className={s["payment__btn--place"]}>
               Place Order
             </button>
+
             <button type="button" className={s["payment__btn--next"]} onClick={onBack}>
               Back
             </button>
@@ -71,11 +83,14 @@ export const PaymentDetails = ({ children, onBack, onSubmitPayment }) => {
 
         <form onSubmit={handleApplyDiscount}>
           <h2 className={s.payment__title}>Apply Discount Code</h2>
+
           <label className={s["payment__label--discount"]}>
             <input type="text" placeholder="Enter discount code" value={discountCode} onChange={handleDiscountChange} />
+
             <button type="submit" className={s["payment__btn--tablet"]}>
               Apply Discount
             </button>
+
             <button type="submit" className={s["payment__btn--mobile"]}>
               Apply
             </button>

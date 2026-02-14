@@ -13,9 +13,9 @@ export const CatalogPage = () => {
         <Container>
           <div>
             <p className="catalog-way">Home / Womens Dress / Best Chose</p>
-            {/* <Filtration /> */}
+            <Filtration />
           </div>
-          {/* <FullCatalog /> */}
+          <FullCatalog />
         </Container>
       </section>
       <Footer />

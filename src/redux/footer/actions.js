@@ -3,7 +3,7 @@ import {
   TOGGLE_MENU,
   TOGGLE_CONTACT,
   TOGGLE_FOLLOW,
-} from './types';
+} from './reducer';
 
 export const toggleFeatures = () => ({
   type: TOGGLE_FEATURES,
