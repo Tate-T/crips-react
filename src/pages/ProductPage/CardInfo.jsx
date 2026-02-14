@@ -5,6 +5,9 @@ import { Container } from "../../components/Container/Container";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+import { useDispatch, useSelector } from "react-redux";
+import { setProducts, selectColor, selectSize, increaseQuantity, decreaseQuantity } from "../../redux/cardInfo/actions";
+
 import s from "./CardInfo.module.scss";
 
 const productsAPI = import.meta.env.VITE_PRODUCTS_API;
@@ -14,22 +17,13 @@ export function CardInfo() {
   const colors = [" #24426A", " wheat", "#666689"];
   const sizes = ["osfa", "w26", "w27", "w28", "w29", "w30", "w31", "w32", "w33", "w34", "w35", "w36", "w38", "w40", "w42", "w44", "w46", "w48", "w50", "w52"];
 
+  /*const [products, setProducts] = useState([]);
   const [selectColor, setSelectColor] = useState(null);
   const [selectSize, setSelectSize] = useState(null);
-  const [quantity, setQuantity] = useState(1);
-  // const [price, setPrice] = useState(90);
+  const [quantity, setQuantity] = useState(1);*/
 
-  //   const [isMobile, setIsMobile] = useState(
-  //     typeof window !== "undefined" ? window.innerWidth <= 768 : false);
 
-  //   useEffect(() => {
-  //   const handleResize = () => setIsMobile(window.innerWidth <= 768);
-  //   handleResize();
-  //   window.addEventListener("resize", handleResize);
-  //   return () => window.removeEventListener("resize", handleResize);
-  // }, []);
-
-  const handleSelectColor = (color) => {
+  /*const handleSelectColor = (color) => {
     setSelectColor(color);
   };
 
@@ -37,9 +31,6 @@ export function CardInfo() {
     setSelectSize(size);
   };
 
-  //   const handleChange = (e) => {
-  //   setSelectSize(e.target.value);
-  // };
 
   const handleMinus = () => {
     if (quantity > 1) setQuantity(quantity - 1);
@@ -47,22 +38,44 @@ export function CardInfo() {
 
   const handlePlus = () => {
     setQuantity(quantity + 1);
+  };*/
+
+  const dispatch = useDispatch();
+
+  const { products, selectedColor, selectedSize, quantity } = useSelector(
+    (state) => state.product
+  );
+
+  const handleSelectColor = (color) => {
+  dispatch(selectColor(color));
   };
 
-  const [products, setProducts] = useState([]);
+  const handleSelectSize = (size) => {
+    dispatch(selectSize(size));
+  };
+
+  const handlePlus = () => {
+    dispatch(increaseQuantity());
+  };
+
+  const handleMinus = () => {
+    dispatch(decreaseQuantity());
+  };
+
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
         const r = await axios.get("/");
 
-        setProducts(r.data);
+        //setProducts(r.data);
+        dispatch(setProducts(r.data))
       } catch (err) {
         console.error(err);
       }
     };
     fetchProducts();
-  }, []);
+  }, [dispatch]);
 
   const { id } = useParams();
 
@@ -147,12 +160,7 @@ export function CardInfo() {
                 <h2 className={s.catalogeSubTitle}>Women Black Checked Fit and Flare Dress</h2>
               </div>
               <p className={s.catalogeText}>Select Color</p>
-              {/* <div className={s.catalogeColorList}>
-                <button className={s.catalogeColorItem}></button>
-                <button className={s.catalogeColorItem}></button>
-                <button className={s.catalogeColorItem}></button>
-              </div> */}
-
+             
               {/* ///////// */}
 
               <div className={s.catalogeColorList}>
@@ -173,7 +181,7 @@ export function CardInfo() {
 
               {/* ............ */}
 
-              <select className={s.selectSize} value={selectSize} onChange={(e) => setSelectSize(e.target.value)}>
+              //<select className={s.selectSize} value={selectSize} onChange={(e) => handleSelectSize(e.target.value)}>
                 <option value="">Виберіть розмір</option>
                 {sizes.map((size) => (
                   <option key={size} value={size}>
@@ -193,68 +201,7 @@ export function CardInfo() {
               </ul>
               {/* //////// */}
 
-              {/* <ul className={s.sizeList}>
-                  <li className={s.sizeItem}>
-                  <button className={`${s.btnCatalogeSize}`}>osfa</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w26</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w27</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w28</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w29</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={`${s.btnCatalogeSize} ${s.activeBtnCataloge}`}>w30</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w31</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w32</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w33</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w34</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w35</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w36</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w38</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w40</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w42</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w44</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w46</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w48</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w50</button>
-                </li>
-                <li className={s.sizeItem}>
-                  <button className={s.btnCatalogeSize}>w52</button>
-                </li>
-              </ul> */}
+
               <div className={s.quantityBox}>
                 <p className={s.quantityText}>Quantity</p>
                 <p className={s.quantityTextSub}>price total</p>
