@@ -236,15 +236,54 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     }
   }
 
-  &_price {
+  &_priceWrapper {
+    max-height: 21px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
     margin-bottom: 10px;
+
+    @include desk-s {
+      margin-bottom: 17px;
+    }
+  }
+
+  &_itemPrice {
+    color: rgba(0, 0, 0, 1);
+    font-family: "Oswald", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 21px;
+
+    @include desk-s {
+      color: rgba(130, 130, 130, 1);
+    }
+  }
+
+  &_priceDiscount {
+    color: #828282;
+    font-family: "Oswald", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+  }
+
+  &_priceOld {
+    color: #eb5757;
+    font-family: "Oswald", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: line-through;
+    line-height: 21px;
+  }
+
+  &_price {
     color: rgba(0, 0, 0, 1);
     font-family: "Oswald", sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 21px;
     @include desk-s {
-      margin-bottom: 17px;
       color: rgba(130, 130, 130, 1);
       font-size: 14px;
       line-height: 20px;
@@ -506,34 +545,79 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
       color: #fff;
     }
   }
+
+  &_active {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+
+    &:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  }
+
+  &_arrow {
+    width: 30px;
+    height: 30px;
+    border: none;
+    background-color: transparent;
+    font-family: "Oswald", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #000;
+    @include flex($align-items: center, $justify-content: center);
+    transition: opacity 0.3s ease;
+
+    &:hover {
+      background-color: #f0f0f0;
+    }
+
+    &.disabled {
+      opacity: 0.3;
+      cursor: default;
+      &:hover {
+        background-color: transparent;
+      }
+    }
+
+    @include desk-s {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  &_dots {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 20px;
+    height: 30px;
+    padding-bottom: 5px;
+    font-family: "Oswald", sans-serif;
+    font-size: 14px;
+    color: #333;
+    user-select: none;
+  }
 }
 
-// .desktopNav {
-//   display: none;
-//   @include desk-s {
-//     display: flex;
-//     flex-direction: column;
-//   }
-//   &_item {
-//     display: flex;
-//     align-items: center;
-//     width: 100%;
-//     max-width: 288px;
-//     height: 44px;
-//     padding: 0 13px;
-//     color: rgba(0, 0, 0, 1);
-//     font-family: "Oswald", sans-serif;
-//     font-size: 18px;
-//     font-weight: 500;
-//     line-height: 24px;
-//     transition: all 0.3s ease;
-//     user-select: none;
-//     cursor: pointer;
-//     &:hover {
-//       background-color: rgba(240, 242, 242, 1);
-//     }
-//   }
-// }
+.arrow {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  transition: border-color 0.3s ease;
+}
+.left {
+  transform: rotate(-135deg);
+  margin-left: 4px;
+}
+.right {
+  transform: rotate(45deg);
+  margin-right: 4px;
+}
 
 @keyframes fadeIn {
   from {

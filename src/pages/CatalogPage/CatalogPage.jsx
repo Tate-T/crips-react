@@ -1,11 +1,11 @@
 import { Filtration } from "./Filtration/Filtration.jsx";
 import { Header } from "../../components/Header/Header";
-import { FullCatalog } from "./Catalog/FullCatalog.jsx";
+import FullCatalog from "./Catalog/FullCatalog.jsx";
 import { Footer } from "../../components/Footer/Footer.jsx";
 import "./Catalog.scss";
 import { Container } from "../../components/Container/Container.jsx";
 
-export const CatalogPage = () => {
+const CatalogPage = () => {
   return (
     <>
       <Header />
@@ -13,12 +13,13 @@ export const CatalogPage = () => {
         <Container>
           <div>
             <p className="catalog-way">Home / Womens Dress / Best Chose</p>
-            {/* <Filtration /> */}
+            <Filtration />
           </div>
-          {/* <FullCatalog /> */}
+          <FullCatalog />
         </Container>
       </section>
       <Footer />
     </>
   );
 };
+export default CatalogPage;

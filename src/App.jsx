@@ -6,7 +6,7 @@ const ArticlePage = lazy(() => import("./pages/ArticlePage/ArticlePage.jsx").the
 const CartPage = lazy(() => import("./pages/CartPage/CartPage.jsx").then(module => ({ default: module.CartPage })));
 const CabinetPage = lazy(() => import("./pages/CabinetPage/CabinetPage.jsx").then(module => ({ default: module.CabinetPage })));
 const DashboardPage  = lazy(() => import("./pages/Cabinet/DashboardPage/DashboardPage.jsx").then(module => ({ default: module.DashboardPage })));
-const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage.jsx").then(module => ({ default: module.CatalogPage })));
+const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage.jsx"));
 const Dashboard = lazy(() => import("./pages/Cabinet/DashboardPage/Dashboard/Dashboard.jsx").then(module => ({ default: module.Dashboard })));
 const AddNewAddress = lazy(() => import("./pages/Cabinet/DashboardPage/AddNewAddress/AddNewAddress.jsx").then(module => ({ default: module.AddNewAddress })));
 const Wishlist = lazy(() => import("./pages/CabinetPage/Wishlist/Wishlist.jsx").then(module => ({ default: module.Wishlist })));

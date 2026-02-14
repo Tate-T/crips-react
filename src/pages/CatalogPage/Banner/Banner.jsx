@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import styles from "./Banner.module.scss";
 
-export const Banner = () => {
+const Banner = () => {
 	const phrases = {
 		title: ["shopping without limits", "unlimited shopping", "purchasing whatever you want", "an endless shopping spree", "spending freely"],
 		short: [
@@ -62,3 +62,4 @@ export const Banner = () => {
 		</div>
 	);
 };
+export default Banner;

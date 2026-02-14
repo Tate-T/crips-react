@@ -1,60 +1,50 @@
-import axios from "axios";
-import { useState } from "react";
-import { Catalog } from "./Catalog.jsx";
-import { Sorting } from "../Sorting/Sorting.jsx";
-import { Banner } from "../Banner/Banner.jsx";
+import { connect } from "react-redux";
+import Catalog from "./Catalog.jsx";
+import Sorting from "../Sorting/Sorting.jsx";
+import Banner  from "../Banner/Banner.jsx";
+
 import styles from "./Catalog.module.scss";
-import { catalogData } from "../../../data/catalog-data.js";
-import { useEffect } from "react";
 
-const productsAPI = import.meta.env.VITE_PRODUCTS_API;
-axios.defaults.baseURL = productsAPI;
+const FullCatalog = ({ products }) => {
+	const userMedia = window.matchMedia("(min-width: 768px)").matches;
 
-// {
-//   catalogData.then((item, index) => (
-//     <Catalog
-//       {...item}
-//       color={item.colors}
-//       style={styles}
-//       key={index}
-//       media={userMedia}
-//     />
-//   ));
-// }
+	if (!products || products.length === 0) {
+		return <p>Products not found</p>;
+	}
 
-export function FullCatalog() {
-  const userMedia = window.matchMedia("(min-width: 768px)");
-  const [products, setProducts] = useState([]);
+	return (
+		<div className={styles.catalog}>
+			<Sorting />
 
-  useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const r = await axios.get("/");
+			<ul className={styles.catalog__list}>
+				{products.map((item) => (
+					<Catalog
+						key={item.id}
+						{...item}
+						style={styles}
+						media={userMedia}
+					/>
+				))}
+			</ul>
 
-        setProducts(r.data);
-      } catch (err) {
-        console.error(err);
-      }
-    };
-    fetchProducts();
-  }, []);
+			<Banner />
 
-
-
-  return (
-    <div className={styles.catalog}>
-      <Sorting />
-      <ul className={styles.catalog__list}>
-        {products.map((item, index) => (
-          <Catalog {...item} color={item.colors} style={styles} key={index} media={userMedia} />
-        ))}
-      </ul>
-      <Banner />
-      <ul className={styles.catalog__list}>
-        {products.map((item, index) => (
-          <Catalog {...item} color={item.colors} style={styles} key={index} media={userMedia} />
-        ))}
-      </ul>
-    </div>
-  );
+			<ul className={styles.catalog__list}>
+				{products.map((item) => (
+					<Catalog
+						key={item.id}
+						{...item}
+						style={styles}
+						media={userMedia}
+					/>
+				))}
+			</ul>
+		</div>
+	);
 }
+
+const mapStateToProps = (state) => ({
+	products: state.products.products,
+});
+
+export default connect(mapStateToProps)(FullCatalog);

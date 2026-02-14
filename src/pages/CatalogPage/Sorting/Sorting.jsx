@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Sorting.scss";
 
-export const Sorting = () => {
+ const Sorting = () => {
   const sortByOptions = [
     { value: "prHtL", label: "price (High to low)" },
     { value: "prLtH", label: "price (Low to high)" },
@@ -42,3 +42,4 @@ export const Sorting = () => {
     </form>
   );
 }
+export default Sorting;
