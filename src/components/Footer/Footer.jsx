@@ -1,4 +1,5 @@
-import React, { Component , useState} from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Container } from "../Container/Container";
 import style from "./Footer.module.scss";
 
@@ -10,12 +11,18 @@ import twitt from "../../images/twitter.svg";
 import plus from "../../images/plus.svg";
 import minus from "../../images/minus.svg";
 
+import {
+  toggleFeatures,
+  toggleMenu,
+  toggleContact,
+  toggleFollow,
+} from "../../redux/footer/actions";
 
 export const Footer = () => {
-  const [featuresOpen, setFeaturesOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [contactOpen, setContactOpen] = useState(false);
-  const [followOpen, setFollowOpen] = useState(false);
+  const dispatch = useDispatch();
+  const { featuresOpen, menuOpen, contactOpen, followOpen } = useSelector(
+    (state) => state.footer
+  );
 
   return (
     <footer id="footer" className={style.footer}>
@@ -60,7 +67,7 @@ export const Footer = () => {
                 <h3 className={style.mainFooterItemTitle}>features</h3>
                 <button
                   className={style.footerFunctunalButton}
-                  onClick={() => setFeaturesOpen((open) => !open)}
+                  onClick={() => dispatch(toggleFeatures())}
                   aria-expanded={featuresOpen}
                 >
                   <img
@@ -103,7 +110,7 @@ export const Footer = () => {
                 <h3 className={style.mainFooterItemTitle}>Menu</h3>
                 <button
                   className={style.footerFunctunalButton}
-                  onClick={() => setMenuOpen((open) => !open)}
+                  onClick={() => dispatch(toggleMenu())}
                   aria-expanded={menuOpen}
                 >
                   <img
@@ -143,7 +150,7 @@ export const Footer = () => {
                 <h3 className={style.mainFooterItemTitle}>contact us</h3>
                 <button
                   className={style.footerFunctunalButton}
-                  onClick={() => setContactOpen((open) => !open)}
+                  onClick={() => dispatch(toggleContact())}
                   aria-expanded={contactOpen}
                 >
                   <img
@@ -178,7 +185,7 @@ export const Footer = () => {
                 <h3 className={style.mainFooterItemTitle}>follow us</h3>
                 <button
                   className={style.footerFunctunalButton}
-                  onClick={() => setFollowOpen((open) => !open)}
+                  onClick={() => dispatch(toggleFollow())}
                   aria-expanded={followOpen}
                 >
                   <img

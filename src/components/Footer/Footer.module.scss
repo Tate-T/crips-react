@@ -73,6 +73,7 @@
 .mainFooterSvg {
   width: 102.2px;
   height: 44px;
+ 
 }
 
 .footerTitleCenter {
@@ -87,7 +88,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  width: 19px;
+  width: 39px;
   height: 18px;
 }
 
@@ -178,7 +179,7 @@
 }
 
 .mainFooterSubscribeInput {
-  width: 280px;
+  width: 100%;
   height: 43.2px;
   background-color: #000;
   color: #FFF;
@@ -192,7 +193,7 @@
 }
 
 .mainFooterSubscribeButton {
-  width: 280px;
+  width: 100%;
   height: 40px;
   background-color: #FFF;
   color: #3F3F3F;
@@ -261,6 +262,7 @@
   .footerBottomHr {
     display: block;
   }
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -306,5 +308,14 @@
 
   .footerBottomHr {
     display: block;
+  }
+    .mainFooterSubscribeInput{
+    width: 280px;
+  }
+  .mainFooterSubscribeButton{
+    width: 280px;
+  }
+  .mainFooterSvg{
+    margin-right: 30%;
   }
 }

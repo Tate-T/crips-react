@@ -8,6 +8,7 @@ import { tableReducer } from "./table/reducer";
 import { blogReducer } from "./blog/reducer";
 import { bannerReducer } from "./banner/reducer";
 import { createOrderReducer } from "./createOrder/reducer";
+import { footerReducer } from "./footer/reducer";
 import { wishlistReducer } from "./Wishlist/reducer";
 
 import { productsReducer } from "./products/reducer";
@@ -26,4 +27,5 @@ export const rootReducer = combineReducers({
   banner: bannerReducer,
   createOrder: createOrderReducer,
   wishlist: wishlistReducer,
+  footer: footerReducer
 });
