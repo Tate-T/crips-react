@@ -1,7 +1,7 @@
-const TOGGLE_FEATURES = 'TOGGLE_FEATURES';
-const TOGGLE_MENU = 'TOGGLE_MENU';
-const TOGGLE_CONTACT = 'TOGGLE_CONTACT';
-const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW';
+export const TOGGLE_FEATURES = 'TOGGLE_FEATURES';
+export const TOGGLE_MENU = 'TOGGLE_MENU';
+export const TOGGLE_CONTACT = 'TOGGLE_CONTACT';
+export const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW';
 
 const initialState = {
   featuresOpen: false,
