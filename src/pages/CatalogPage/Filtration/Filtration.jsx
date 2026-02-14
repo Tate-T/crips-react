@@ -3,8 +3,12 @@ import { FiltrName } from "./Filtration-Components/FiltrationName.jsx";
 import "./Filtration.scss";
 import arrowDown from "../../../images/arrow-down.svg";
 import close from "../../../images/closeIcon-wishlist.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { applyFilters, clearFilters } from "../../../redux/filtration/actions.js";
 
 export const Filtration = () => {
+  const filtration = useSelector(state => state.filtration);
+  const dispatch = useDispatch();
   const [fromValue, setFromValue] = useState(0);
   const [toValue, setToValue] = useState(500);
   const [brands, setBrands] = useState([]);
@@ -48,12 +52,23 @@ export const Filtration = () => {
 
     if (fromInput && fromSlider) fromInput.value = formatCurrency(fromSlider.value);
     if (toInput && toSlider) toInput.value = formatCurrency(toSlider.value);
+    setBrands(filtration.brands || []);
+    setSize(filtration.size || '');
+    setDressLength(filtration.dressLength || []);
+    setColor(filtration.color || '');
+    setFromValue(filtration.price ? filtration.price.from : 0);
+    setToValue(filtration.price ? filtration.price.to : 500);
+    setIsFilterApplied(filtration && Object.keys(filtration).length > 0);
+
+
+
 
     return () => {
       if (fromSlider) fromSlider.removeEventListener("input", updateFromSlider);
       if (toSlider) toSlider.removeEventListener("input", updateToSlider);
       if (fromInput) fromInput.removeEventListener("input", updateFromInput);
       if (toInput) toInput.removeEventListener("input", updateToInput);
+      
     }
   }, []);
 
@@ -171,6 +186,15 @@ export const Filtration = () => {
       dressLength.length > 0 ||
       color !== "";
     setIsFilterApplied(hasFilters);
+    const filters = {
+      price: { from: fromValue, to: toValue },
+      brands,
+      size,
+      dressLength,
+      color,
+    }
+    console.log(filters);
+    dispatch(applyFilters(filters));
   };
 
   const deleteBrand = (brandToDelete) => {
@@ -180,12 +204,14 @@ export const Filtration = () => {
     document.querySelectorAll(".catalog-filtration__brand-input").forEach(input => {
       if (input.value === brandToDelete) input.checked = false;
     });
+    dispatch(applyFilters({ brands: updated }));
   };
 
   const deleteSize = () => {
     setSize('');
     if (!brands.length && !dressLength.length && !color && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
     document.querySelectorAll(".catalog-filtration__size-button").forEach(btn => btn.classList.remove("active"));
+    dispatch(applyFilters({ size: '' }));
   };
 
   const deleteDressSize =  useCallback( (dressSizeToDelete) => {
@@ -195,12 +221,14 @@ export const Filtration = () => {
     document.querySelectorAll(".catalog-filtration__dress-length-input").forEach(input => {
       if (input.value === dressSizeToDelete) input.checked = false;
     });
+    dispatch(applyFilters({ dressLength: updated }));
   }, [dressLength]);
 
   const deleteColor = useCallback( () => {
     setColor('');
     if (!brands.length && !size && !dressLength.length && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
     document.querySelectorAll(".catalog-filtration__form-color-btn").forEach(btn => btn.classList.remove("active"));
+    dispatch(applyFilters({ color: '' }));
   }, [color]);
   const deletePrice = useCallback( () => {
     setFromValue(0);
@@ -213,6 +241,7 @@ export const Filtration = () => {
     const fromSlider = fromSliderRef.current;
     const toSlider = toSliderRef.current;
     const toInput = toInputRef.current;
+    dispatch(applyFilters({ price: { from: 0, to: 500 } }));
   }, [fromValue, toValue]);
 
   const resetAll = () => {
@@ -231,6 +260,7 @@ export const Filtration = () => {
     document.querySelectorAll(".catalog-filtration__size-button").forEach(btn => btn.classList.remove("active"));
     document.querySelectorAll(".catalog-filtration__dress-length-input").forEach(input => input.checked = false);
     document.querySelectorAll(".catalog-filtration__form-color-btn").forEach(btn => btn.classList.remove("active"));
+    dispatch(clearFilters());
   };
   return (
     <>
@@ -282,13 +312,13 @@ export const Filtration = () => {
             </li>
             <li className={fromValue === 0 && toValue === 500 ? "is-hidden" : ""}>
               <h3 className="filtration-list__title">Price:</h3>
-              <li className="filtration-list__size">
+              <div className="filtration-list__size">
                 <img src={close} alt="" className="filtration-close" onClick={deletePrice} />
                 <p className="selected-filters">
                   {fromValue === toValue ? `${fromValue},00 EUR` :
                     `${fromValue},00 EUR - ${toValue},00 EUR`}
                 </p>
-              </li>
+              </div>
             </li>
           </ul>
         </div>
@@ -434,76 +464,76 @@ export const Filtration = () => {
           <FiltrName className="color" filtrName="Color" closeClass=".catalog-filtration__form-color" />
           <form action="" className="catalog-filtration__form-color">
             <button
-              style={{ backgroundColor: "rgba(41, 42, 45, 1)" }}
+              style={{ backgroundColor: "#292a2d" }}
               className="catalog-filtration__form-color-btn"
               onClick={changeColor}
-              value={'dark'}
+              value={'#292a2d'}
             ></button>
             <button
-              style={{ backgroundColor: "rgba(243, 236, 226, 1)" }}
+              style={{ backgroundColor: "#f3ece2" }}
               className="catalog-filtration__form-color-btn"
               onClick={changeColor}
-              value={'light'}
+              value={'#f3ece2'}
             ></button>
             <button
-              style={{ backgroundColor: "rgba(36, 66, 106, 1)" }}
+              style={{ backgroundColor: "#24426a" }}
               className="catalog-filtration__form-color-btn"
               onClick={changeColor}
-              value={'blue'}
+              value={'#24426a'}
             ></button>
             <button
-              style={{ backgroundColor: "rgba(41, 42, 45, 1)" }}
+              style={{ backgroundColor: "#292a2d" }}
               className="catalog-filtration__form-color-btn"
               onClick={changeColor}
-              value={'black'}
+              value={'#292a2d'}
             ></button>
             <button
-              style={{ backgroundColor: "rgba(102, 102, 137, 1)" }}
+              style={{ backgroundColor: "#666689" }}
               className="catalog-filtration__form-color-btn"
               onClick={changeColor}
-              value={'gray'}
+              value={'#666689'}
             ></button>
             <button
-              style={{ backgroundColor: "rgba(194, 190, 182, 1)" }}
+              style={{ backgroundColor: "#c2beb6" }}
               className="catalog-filtration__form-color-btn"
               onClick={changeColor}
-              value={'light-gray'}
+              value={'#c2beb6'}
             ></button>
             <button
-              style={{ backgroundColor: "rgba(170, 171, 167, 1)" }}
+              style={{ backgroundColor: "#aaaba7" }}
               className="catalog-filtration__form-color-btn"
               onClick={changeColor}
-              value={'silver'}
+              value={'#aaaba7'}
             ></button>
             <button
-              style={{ backgroundColor: "rgba(151, 30, 52, 1)" }}
+              style={{ backgroundColor: "#971e34" }}
               className="catalog-filtration__form-color-btn"
               onClick={changeColor}
-              value={'red'}
+              value={'#971e34'}
             ></button>
             <button
-              style={{ backgroundColor: "rgba(203, 161, 62, 1)" }}
+              style={{ backgroundColor: "#cba13e" }}
               className="catalog-filtration__form-color-btn"
               onClick={changeColor}
-              value={'gold'}
+              value={'#cba13e'}
             ></button>
             <button
-              style={{ backgroundColor: "rgba(115, 81, 60, 1)" }}
+              style={{ backgroundColor: "#73513c" }}
               className="catalog-filtration__form-color-btn"
               onClick={changeColor}
-              value={'brown'}
+              value={'#73513c'}
             ></button>
             <button
-              style={{ backgroundColor: "rgba(218, 177, 177, 1)" }}
+              style={{ backgroundColor: "#dab1b1" }}
               className="catalog-filtration__form-color-btn"
               onClick={changeColor}
-              value={'dark-pink'}
+              value={'#dab1b1'}
             ></button>
             <button
-              style={{ backgroundColor: "rgba(43, 159, 167, 1)" }}
+              style={{ backgroundColor: "#2b9fa7" }}
               className="catalog-filtration__form-color-btn"
               onClick={changeColor}
-              value={'green'}
+              value={'#2b9fa7'}
             ></button>
           </form>
         </div>

@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import "./Sorting.scss";
+import { useSelector, useDispatch } from "react-redux";
+import { setSorting } from "../../../redux/sortingSlice";
 
 export const Sorting = () => {
+  const dispatch = useDispatch();
+  const sorting = useSelector((state) => state.sorting);
   const sortByOptions = [
     { value: "prHtL", label: "price (High to low)" },
     { value: "prLtH", label: "price (Low to high)" },
@@ -21,9 +25,11 @@ export const Sorting = () => {
   const getSorting = (e) => {
     if (e.target.name === "sortBy") {
       setSelectedSortBy(e.target.value);
+      dispatch(setSorting({ sortBy: e.target.value, sortNum: selectedSortNum }));
     }
     if (e.target.name === "sortNum") {
       setSelectedSortNum(e.target.value);
+      dispatch(setSorting({ sortBy: selectedSortBy, sortNum: e.target.value }));
     }
   }
 
