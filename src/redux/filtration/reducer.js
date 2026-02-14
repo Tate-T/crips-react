@@ -1,4 +1,10 @@
 
 export const filtrationReducer = (state =[], action) => {
-    return state;
+    switch (action.type) {
+        case 'APPLY_FILTERS':
+            return action.payload;
+        default:
+            return state;
+    }
+
 }
