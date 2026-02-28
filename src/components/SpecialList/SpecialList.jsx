@@ -4,7 +4,7 @@ import { catalogData } from '../../data/catalog-data'
 import { Container } from '../Container/Container'
 import s from './SpecialList.module.scss'
 
-import { next, prev, seeMore, setLayout } from '../../redux/specialList/actions'
+import { next, prev, seeMore, setLayout } from '../../redux/specialList/specialListSlice'
 
 export default function SpecialList({ title }) {
 	const dispatch = useDispatch()

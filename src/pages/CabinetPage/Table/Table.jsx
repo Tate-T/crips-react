@@ -13,12 +13,7 @@ export function TableSection() {
   return (
     <div>
      
-      {/* <button
-        className="modal__btn modal__btn--open"
-        onClick={() => dispatch(openModal())}
-      >
-        Open modal
-      </button> */}
+ 
 
   
       {isOpen && (
@@ -68,3 +63,10 @@ export function TableSection() {
     </div>
   );
 }
+
+     {/* <button
+        className="modal__btn modal__btn--open"
+        onClick={() => dispatch(openModal())}
+      >
+        Open modal
+      </button> */}
