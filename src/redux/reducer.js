@@ -11,8 +11,8 @@ import { createOrderReducer } from "./createOrder/reducer";
 import { footerReducer } from "./footer/reducer";
 import { wishlistReducer } from "./Wishlist/reducer";
 import { cartReducer } from "./cart/reducer";
-import { productsReducer } from "./products/reducer";
 import { miniCatalogReducer } from "./MiniCatalog/reducer";
+import { productsReducer } from "./products/productSlice"
 
 
 export const rootReducer = combineReducers({
@@ -29,5 +29,7 @@ export const rootReducer = combineReducers({
   banner: bannerReducer,
   createOrder: createOrderReducer,
   wishlist: wishlistReducer,
-  footer: footerReducer
+  footer: footerReducer,
+  // setProducts:setProducts,
+  // sortProducts: sortProducts,
 });
