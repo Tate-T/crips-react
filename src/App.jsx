@@ -1,4 +1,17 @@
 import { lazy, Suspense } from "react";
+
+const HomePage = lazy(() => import("./pages/HomePage/HomePage.jsx").then(module => ({ default: module.HomePage  })));
+const ProductPage = lazy(() => import("./pages/ProductPage/ProductPage.jsx").then(module => ({ default: module.ProductPage })));
+const ArticlePage = lazy(() => import("./pages/ArticlePage/ArticlePage.jsx").then(module => ({ default: module.ArticlePage  })));
+const CartPage = lazy(() => import("./pages/CartPage/CartPage.jsx").then(module => ({ default: module.CartPage })));
+const CabinetPage = lazy(() => import("./pages/CabinetPage/CabinetPage.jsx").then(module => ({ default: module.CabinetPage })));
+const DashboardPage  = lazy(() => import("./pages/Cabinet/DashboardPage/DashboardPage.jsx").then(module => ({ default: module.DashboardPage })));
+const CatalogPage = lazy(() => import("./pages/CatalogPage/CatalogPage.jsx"));
+const Dashboard = lazy(() => import("./pages/Cabinet/DashboardPage/Dashboard/Dashboard.jsx").then(module => ({ default: module.Dashboard })));
+const AddNewAddress = lazy(() => import("./pages/Cabinet/DashboardPage/AddNewAddress/AddNewAddress.jsx").then(module => ({ default: module.AddNewAddress })));
+const Wishlist = lazy(() => import("./pages/CabinetPage/Wishlist/Wishlist.jsx").then(module => ({ default: module.Wishlist })));
+const LoginPage = lazy(() => import("./pages/LoginPage/LoginPage.jsx").then(module => ({ default: module.LoginPage })));
+
 import { Routes, Route } from "react-router-dom";
 
 const HomePage = lazy(() =>

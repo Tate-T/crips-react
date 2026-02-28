@@ -48,3 +48,4 @@ export const Sorting = () => {
     </form>
   );
 }
+export default Sorting;
