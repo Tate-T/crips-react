@@ -10,6 +10,7 @@ import { bannerReducer } from "./banner/reducer";
 import { createOrderReducer } from "./createOrder/reducer";
 import { footerReducer } from "./footer/reducer";
 import { wishlistReducer } from "./Wishlist/reducer";
+import { cartReducer } from "./cart/reducer";
 import { productsReducer } from "./products/reducer";
 import { miniCatalogReducer } from "./MiniCatalog/reducer";
 
@@ -22,6 +23,7 @@ export const rootReducer = combineReducers({
   specialList: specialListReducer,
   filtration: filtrationReducer,
   cardinfo: cardInfoReducer,
+  cart: cartReducer,
   table: tableReducer,
   blog: blogReducer,
   banner: bannerReducer,
