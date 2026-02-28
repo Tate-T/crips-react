@@ -1,4 +1,4 @@
-const initialState = {
+/*const initialState = {
   products: [],
   selectedColor: null,
   selectedSize: null,
@@ -43,3 +43,44 @@ export const cardInfoReducer = (state = initialState, action) => {
       return state;
   }
 };
+*/
+
+import {createSlice} from "@reduxjs/toolkit"
+
+const initialState = {
+  products: [],
+  selectedColor: null,
+  selectedSize: null,
+  quantity: 1,
+};
+
+const cardInfoReducer = createSlice({
+  name: 'cardInfo',
+  initialState,
+  reducers:{
+    setProducts(state, action){
+      state.products = action.payload
+    },
+
+    selectColor(state, action){
+      state.selectColor = action.payload
+    },
+
+    selectSize(state, action){
+      state.selectSize = action.payload
+    },
+
+    increaseQuantity(state){
+      state.quantity++
+    },
+
+    decreaseQuantity(state){
+      if(state.quantity > 1) {
+        state.quantity--
+      }
+    },
+  },
+})
+
+export const {setProducts, selectColor, selectSize, increaseQuantity, decreaseQuantity} = cardInfoReducer.actions
+export default cardInfoSlice.reducer

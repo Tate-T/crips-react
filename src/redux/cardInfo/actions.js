@@ -1,4 +1,4 @@
-export const setProducts = (products) => ({
+/*export const setProducts = (products) => ({
   type: "setProducts",
   payload: products,
 });
@@ -19,4 +19,4 @@ export const increaseQuantity = () => ({
 
 export const decreaseQuantity = () => ({
   type: "decreaseQuantity",
-});
+});*/
