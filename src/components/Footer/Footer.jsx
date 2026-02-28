@@ -1,6 +1,11 @@
+
+import React from "react";
+
 import { Link } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
 import { Container } from "../Container/Container";
+import { Link } from "react-router-dom";
 import style from "./Footer.module.scss";
 
 import check from "../../images/check.svg";
@@ -21,7 +26,7 @@ import {
 export const Footer = () => {
   const dispatch = useDispatch();
   const { featuresOpen, menuOpen, contactOpen, followOpen } = useSelector(
-    (state) => state.footer,
+    (state) => state.footer
   );
 
   return (
@@ -81,44 +86,28 @@ export const Footer = () => {
               </div>
               <ul className={`${style.footerFeaturesList} ${style.footerList}`}>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>
-                    men
-                  </a>
+                  <Link to="/catalogpage" className={style.footerFeaturesItemLink}>men</Link>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>
-                    women
-                  </a>
+                  <Link to="/catalogpage" className={style.footerFeaturesItemLink}>women</Link>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>
-                    boys
-                  </a>
+                  <Link to="/catalogpage" className={style.footerFeaturesItemLink}>boys</Link>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>
-                    girls
-                  </a>
+                  <Link to="/catalogpage" className={style.footerFeaturesItemLink}>girls</Link>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>
-                    new arrivals
-                  </a>
+                  <Link to="/catalogpage" className={style.footerFeaturesItemLink}>new arrivals</Link>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>
-                    shoes
-                  </a>
+                  <Link to="/catalogpage" className={style.footerFeaturesItemLink}>shoes</Link>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>
-                    clothes
-                  </a>
+                  <Link to="/catalogpage" className={style.footerFeaturesItemLink}>clothes</Link>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>
-                    accessories
-                  </a>
+                  <Link to="/catalogpage" className={style.footerFeaturesItemLink}>accessories</Link>
                 </li>
               </ul>
             </li>
@@ -142,45 +131,25 @@ export const Footer = () => {
               </div>
               <ul className={`${style.footerMenuList} ${style.footerList}`}>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>
-                    About us
-                  </a>
+                  <Link to="/" className={style.footerMenuItemLink}>About us</Link>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>
-                    contact us
-                  </a>
+                  <Link to="/" className={style.footerMenuItemLink}>contact us</Link>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>
-                    my account
-                  </a>
+                  <Link to="/cabinetpage" className={style.footerMenuItemLink}>my account</Link>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>
-                    orders history
-                  </a>
+                  <Link to="/cabinetpage" className={style.footerMenuItemLink}>orders history</Link>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <Link
-                    to="/account/wishlist"
-                    className={style.footerMenuItemLink}
-                  >
-                    my wishlist
-                  </Link>
-                  {/* <a href="#" className={style.footerMenuItemLink}>
-                    my wishlist
-                  </a> */}
+                  <Link to="/mywishlist" className={style.footerMenuItemLink}>my wishlist</Link>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>
-                    blog
-                  </a>
+                  <Link to="/articlepage" className={style.footerMenuItemLink}>blog</Link>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>
-                    login
-                  </a>
+                  <Link to="/loginpage" className={style.footerMenuItemLink}>login</Link>
                 </li>
               </ul>
             </li>
@@ -207,29 +176,19 @@ export const Footer = () => {
               >
                 <li className={style.footerContactUsItem}>
                   <h4 className={style.mainFooterItemSubtitle}>Address:</h4>
-                  <a href="#" className={style.mainFooterItemContacts}>
-                    123 STREET NAME, CITY, ENGLAND
-                  </a>
+                  <a href="https://maps.google.com/?q=123 STREET NAME, CITY, ENGLAND" className={style.mainFooterItemContacts}>123 STREET NAME, CITY, ENGLAND</a>
                 </li>
                 <li className={style.footerContactUsItem}>
                   <h4 className={style.mainFooterItemSubtitle}>Phone:</h4>
-                  <a href="#" className={style.mainFooterItemContacts}>
-                    (123) 456-7890
-                  </a>
+                  <a href="tel:(123) 456-7890" className={style.mainFooterItemContacts}>(123) 456-7890</a>
                 </li>
                 <li className={style.footerContactUsItem}>
                   <h4 className={style.mainFooterItemSubtitle}>Email:</h4>
-                  <a href="#" className={style.mainFooterItemContacts}>
-                    MAIL@EXAMPLE.COM
-                  </a>
+                  <a href="mailto:MAIL@EXAMPLE.COM" className={style.mainFooterItemContacts}>MAIL@EXAMPLE.COM</a>
                 </li>
                 <li className={style.footerContactUsItem}>
-                  <h4 className={style.mainFooterItemSubtitle}>
-                    working days/hours
-                  </h4>
-                  <a href="#" className={style.mainFooterItemContacts}>
-                    MON - SUN / 9:00AM - 8:00PM
-                  </a>
+                  <h4 className={style.mainFooterItemSubtitle}>working days/hours</h4>
+                  <span className={style.mainFooterItemContacts}>MON - SUN / 9:00AM - 8:00PM</span>
                 </li>
               </ul>
             </li>
@@ -253,34 +212,16 @@ export const Footer = () => {
               </div>
               <ul className={`${style.footerFollowUsList} ${style.footerList}`}>
                 <li className={style.footerFollowUsItem}>
-                  <img
-                    src={fb}
-                    alt="facebook"
-                    className={style.footerFollowUsIcon}
-                  />
-                  <a href="#" className={style.footerFollowUsSocialMedia}>
-                    FACEBOOK
-                  </a>
+                  <img src={fb} alt="facebook" className={style.footerFollowUsIcon} />
+                  <a href="https://facebook.com"  className={style.footerFollowUsSocialMedia}>FACEBOOK</a>
                 </li>
                 <li className={style.footerFollowUsItem}>
-                  <img
-                    src={twitt}
-                    alt="twitter"
-                    className={style.footerFollowUsIcon}
-                  />
-                  <a href="#" className={style.footerFollowUsSocialMedia}>
-                    TWITTER
-                  </a>
+                  <img src={twitt} alt="twitter" className={style.footerFollowUsIcon} />
+                  <a href="https://twitter.com"  className={style.footerFollowUsSocialMedia}>TWITTER</a>
                 </li>
                 <li className={style.footerFollowUsItem}>
-                  <img
-                    src={insta}
-                    alt="instagram"
-                    className={style.footerFollowUsIcon}
-                  />
-                  <a href="#" className={style.footerFollowUsSocialMedia}>
-                    INSTAGRAM
-                  </a>
+                  <img src={insta} alt="instagram" className={style.footerFollowUsIcon} />
+                  <a href="https://instagram.com"  className={style.footerFollowUsSocialMedia}>INSTAGRAM</a>
                 </li>
               </ul>
             </li>
@@ -306,7 +247,7 @@ export const Footer = () => {
           <div className={style.footerBottom}>
             <hr className={style.footerBottomHr} />
             <p className={style.footerBottomText}>
-              © 2019. Crisp theme Developed by Belvg
+              © 2026. Crisp theme Developed by Belvg
             </p>
           </div>
         </Container>
