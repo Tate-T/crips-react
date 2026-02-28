@@ -6,7 +6,7 @@ import { filtrationReducer } from "./filtration/reducer";
 import { cardInfoReducer } from "./cardInfo/reducer";
 import { tableReducer } from "./table/reducer";
 import { blogReducer } from "./blog/reducer";
-import { bannerReducer } from "./banner/reducer";
+import { bannerReducer } from "./bannerSlice";
 import { createOrderReducer } from "./createOrder/reducer";
 import { footerReducer } from "./footer/reducer";
 import { wishlistReducer } from "./Wishlist/reducer";
