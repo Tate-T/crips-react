@@ -1,3 +1,5 @@
+import { createSlice } from "@reduxjs/toolkit";
+
 const allPostsData = [
   {
     id: 1,
@@ -35,15 +37,17 @@ const allPostsData = [
   }
 ];
 
-
-
-export const blogReducer = (state = { posts: allPostsData }, action) => {
-  switch (action.type) {
-    case "GET_POSTS":
-      return {
-        ...state
-      };
-    default:
+export const blogSlice = createSlice({
+  name: "blog",
+  initialState: {
+    posts: allPostsData,
+  },
+  reducers: {
+    getPosts: (state) => {
       return state;
-  }
-};
+    },
+  },
+});
+
+export const { getPosts } = blogSlice.actions;
+export const blogReducer = blogSlice.reducer;
