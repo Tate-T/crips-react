@@ -13,7 +13,6 @@ const defaultCart = [
   }
 ];
 
-// 1. Read from localStorage when the reducer first initializes
 const persistedCart = localStorage.getItem('cartProducts');
 
 const initialState = {
@@ -54,6 +53,3 @@ export const cartReducer = (state = initialState, action) => {
       return state;
   }
 };
-
-// Selector
-export const getCartItems = (state) => state.cart.items;
