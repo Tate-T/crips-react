@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { headerReducer } from "./Header/menuSlice.js";
-import { specialListReducer } from "./specialList/reducer";
+import { specialListReducer } from "./specialList/specialListSlice.js";
 import { filtrationReducer } from "./filtration/reducer";
 import { cardInfoReducer } from "./cardInfo/reducer";
 import { tableReducer } from "./table/reducer";
