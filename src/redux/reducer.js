@@ -1,7 +1,7 @@
 import { combineReducers } from "redux";
 import { userDataReducer } from "./userData/reducer";
 import { HeaderReducer } from "./Header/reducer";
-import { specialListReducer } from "./specialList/reducer";
+import specialListReducer from "./specialList/specialListSlice";
 import { filtrationReducer } from "./filtration/reducer";
 import { cardInfoReducer } from "./cardInfo/reducer";
 import { tableReducer } from "./table/reducer";
