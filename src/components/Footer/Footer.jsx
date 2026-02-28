@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { Container } from "../Container/Container";
 import style from "./Footer.module.scss";
@@ -21,7 +21,7 @@ import {
 export const Footer = () => {
   const dispatch = useDispatch();
   const { featuresOpen, menuOpen, contactOpen, followOpen } = useSelector(
-    (state) => state.footer
+    (state) => state.footer,
   );
 
   return (
@@ -62,7 +62,9 @@ export const Footer = () => {
               </div>
             </li>
 
-            <li className={`${style.mainFooterItem} ${featuresOpen ? style.open : ""}`}>
+            <li
+              className={`${style.mainFooterItem} ${featuresOpen ? style.open : ""}`}
+            >
               <div className={style.footerTitleCenter}>
                 <h3 className={style.mainFooterItemTitle}>features</h3>
                 <button
@@ -79,33 +81,51 @@ export const Footer = () => {
               </div>
               <ul className={`${style.footerFeaturesList} ${style.footerList}`}>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>men</a>
+                  <a href="#" className={style.footerFeaturesItemLink}>
+                    men
+                  </a>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>women</a>
+                  <a href="#" className={style.footerFeaturesItemLink}>
+                    women
+                  </a>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>boys</a>
+                  <a href="#" className={style.footerFeaturesItemLink}>
+                    boys
+                  </a>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>girls</a>
+                  <a href="#" className={style.footerFeaturesItemLink}>
+                    girls
+                  </a>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>new arrivals</a>
+                  <a href="#" className={style.footerFeaturesItemLink}>
+                    new arrivals
+                  </a>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>shoes</a>
+                  <a href="#" className={style.footerFeaturesItemLink}>
+                    shoes
+                  </a>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>clothes</a>
+                  <a href="#" className={style.footerFeaturesItemLink}>
+                    clothes
+                  </a>
                 </li>
                 <li className={style.footerFeaturesItem}>
-                  <a href="#" className={style.footerFeaturesItemLink}>accessories</a>
+                  <a href="#" className={style.footerFeaturesItemLink}>
+                    accessories
+                  </a>
                 </li>
               </ul>
             </li>
 
-            <li className={`${style.mainFooterItem} ${menuOpen ? style.open : ""}`}>
+            <li
+              className={`${style.mainFooterItem} ${menuOpen ? style.open : ""}`}
+            >
               <div className={style.footerTitleCenter}>
                 <h3 className={style.mainFooterItemTitle}>Menu</h3>
                 <button
@@ -122,30 +142,52 @@ export const Footer = () => {
               </div>
               <ul className={`${style.footerMenuList} ${style.footerList}`}>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>About us</a>
+                  <a href="#" className={style.footerMenuItemLink}>
+                    About us
+                  </a>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>contact us</a>
+                  <a href="#" className={style.footerMenuItemLink}>
+                    contact us
+                  </a>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>my account</a>
+                  <a href="#" className={style.footerMenuItemLink}>
+                    my account
+                  </a>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>orders history</a>
+                  <a href="#" className={style.footerMenuItemLink}>
+                    orders history
+                  </a>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>my wishlist</a>
+                  <Link
+                    to="/account/wishlist"
+                    className={style.footerMenuItemLink}
+                  >
+                    my wishlist
+                  </Link>
+                  {/* <a href="#" className={style.footerMenuItemLink}>
+                    my wishlist
+                  </a> */}
                 </li>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>blog</a>
+                  <a href="#" className={style.footerMenuItemLink}>
+                    blog
+                  </a>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <a href="#" className={style.footerMenuItemLink}>login</a>
+                  <a href="#" className={style.footerMenuItemLink}>
+                    login
+                  </a>
                 </li>
               </ul>
             </li>
 
-            <li className={`${style.mainFooterItem} ${contactOpen ? style.open : ""}`}>
+            <li
+              className={`${style.mainFooterItem} ${contactOpen ? style.open : ""}`}
+            >
               <div className={style.footerTitleCenter}>
                 <h3 className={style.mainFooterItemTitle}>contact us</h3>
                 <button
@@ -160,27 +202,41 @@ export const Footer = () => {
                   />
                 </button>
               </div>
-              <ul className={`${style.footerContactUsList} ${style.footerList}`}>
+              <ul
+                className={`${style.footerContactUsList} ${style.footerList}`}
+              >
                 <li className={style.footerContactUsItem}>
                   <h4 className={style.mainFooterItemSubtitle}>Address:</h4>
-                  <a href="#" className={style.mainFooterItemContacts}>123 STREET NAME, CITY, ENGLAND</a>
+                  <a href="#" className={style.mainFooterItemContacts}>
+                    123 STREET NAME, CITY, ENGLAND
+                  </a>
                 </li>
                 <li className={style.footerContactUsItem}>
                   <h4 className={style.mainFooterItemSubtitle}>Phone:</h4>
-                  <a href="#" className={style.mainFooterItemContacts}>(123) 456-7890</a>
+                  <a href="#" className={style.mainFooterItemContacts}>
+                    (123) 456-7890
+                  </a>
                 </li>
                 <li className={style.footerContactUsItem}>
                   <h4 className={style.mainFooterItemSubtitle}>Email:</h4>
-                  <a href="#" className={style.mainFooterItemContacts}>MAIL@EXAMPLE.COM</a>
+                  <a href="#" className={style.mainFooterItemContacts}>
+                    MAIL@EXAMPLE.COM
+                  </a>
                 </li>
                 <li className={style.footerContactUsItem}>
-                  <h4 className={style.mainFooterItemSubtitle}>working days/hours</h4>
-                  <a href="#" className={style.mainFooterItemContacts}>MON - SUN / 9:00AM - 8:00PM</a>
+                  <h4 className={style.mainFooterItemSubtitle}>
+                    working days/hours
+                  </h4>
+                  <a href="#" className={style.mainFooterItemContacts}>
+                    MON - SUN / 9:00AM - 8:00PM
+                  </a>
                 </li>
               </ul>
             </li>
 
-            <li className={`${style.mainFooterItem} ${followOpen ? style.open : ""}`}>
+            <li
+              className={`${style.mainFooterItem} ${followOpen ? style.open : ""}`}
+            >
               <div className={style.footerTitleCenter}>
                 <h3 className={style.mainFooterItemTitle}>follow us</h3>
                 <button
@@ -197,16 +253,34 @@ export const Footer = () => {
               </div>
               <ul className={`${style.footerFollowUsList} ${style.footerList}`}>
                 <li className={style.footerFollowUsItem}>
-                  <img src={fb} alt="facebook" className={style.footerFollowUsIcon} />
-                  <a href="#" className={style.footerFollowUsSocialMedia}>FACEBOOK</a>
+                  <img
+                    src={fb}
+                    alt="facebook"
+                    className={style.footerFollowUsIcon}
+                  />
+                  <a href="#" className={style.footerFollowUsSocialMedia}>
+                    FACEBOOK
+                  </a>
                 </li>
                 <li className={style.footerFollowUsItem}>
-                  <img src={twitt} alt="twitter" className={style.footerFollowUsIcon} />
-                  <a href="#" className={style.footerFollowUsSocialMedia}>TWITTER</a>
+                  <img
+                    src={twitt}
+                    alt="twitter"
+                    className={style.footerFollowUsIcon}
+                  />
+                  <a href="#" className={style.footerFollowUsSocialMedia}>
+                    TWITTER
+                  </a>
                 </li>
                 <li className={style.footerFollowUsItem}>
-                  <img src={insta} alt="instagram" className={style.footerFollowUsIcon} />
-                  <a href="#" className={style.footerFollowUsSocialMedia}>INSTAGRAM</a>
+                  <img
+                    src={insta}
+                    alt="instagram"
+                    className={style.footerFollowUsIcon}
+                  />
+                  <a href="#" className={style.footerFollowUsSocialMedia}>
+                    INSTAGRAM
+                  </a>
                 </li>
               </ul>
             </li>
@@ -241,8 +315,6 @@ export const Footer = () => {
   );
 };
 
-
-
 //  export class Footer extends Component {
 //   state = {
 //     featuresOpen: false,
@@ -260,7 +332,7 @@ export const Footer = () => {
 
 //     return (
 //       <footer className={style.footer}>
-       
+
 //         <div className={style.topFooter}>
 //           <Container>
 //             <ul className={style.topFooterList}>
@@ -290,12 +362,10 @@ export const Footer = () => {
 //           </Container>
 //         </div>
 
-      
 //         <div className={style.mainFooter}>
 //           <Container>
 //             <ul className={style.mainFooterList}>
-              
-          
+
 //               <li className={style.mainFooterItem}>
 //                 <div className={style.mainFooterLogo}>
 //                   <img
@@ -306,7 +376,6 @@ export const Footer = () => {
 //                 </div>
 //               </li>
 
-           
 //               <li
 //                 className={`${style.mainFooterItem} ${
 //                   featuresOpen ? style.open : ""
@@ -396,7 +465,6 @@ export const Footer = () => {
 //                 </ul>
 //               </li>
 
-            
 //               <li
 //                 className={`${style.mainFooterItem} ${
 //                   menuOpen ? style.open : ""
@@ -476,7 +544,6 @@ export const Footer = () => {
 //                 </ul>
 //               </li>
 
-             
 //               <li
 //                 className={`${style.mainFooterItem} ${
 //                   contactOpen ? style.open : ""
@@ -610,7 +677,6 @@ export const Footer = () => {
 //                 </ul>
 //               </li>
 
-         
 //               <li className={style.mainFooterItem}>
 //                 <div className={style.mainFooterSubscribe}>
 //                   <h3 className={style.mainFooterItemTitle}>join us</h3>
@@ -632,10 +698,9 @@ export const Footer = () => {
 //                   </button>
 //                 </div>
 //               </li>
-             
+
 //             </ul>
 
-          
 //             <div className={style.footerBottom}>
 //               <hr className={style.footerBottomHr} />
 //               <p className={style.footerBottomText}>

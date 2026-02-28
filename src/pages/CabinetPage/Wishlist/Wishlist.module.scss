@@ -7,6 +7,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
 
 .wishlist {
   @include flex($flex-direction: column, $align-items: center);
+  padding-bottom: 40px;
   &_navigation {
     color: rgb(130, 130, 130);
     font-family: "Roboto", sans-serif;
@@ -48,17 +49,17 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     line-height: 21px;
     @include tab {
       margin-bottom: 20px;
-      font-size: 27px;
       text-align: center;
+      font-size: 27px;
     }
 
     @include desk-s {
+      display: none;
       margin-bottom: 17px;
       color: rgba(0, 0, 0, 1);
       font-size: 48px;
       font-weight: 400;
       line-height: 68px;
-      display: none;
     }
   }
 
@@ -67,8 +68,8 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     @include desk-s {
       display: flex;
       margin-bottom: 17px;
-      font-family: "Oswald", sans-serif;
       color: rgba(0, 0, 0, 1);
+      font-family: "Oswald", sans-serif;
       font-size: 48px;
       font-weight: 400;
       line-height: 68px;
@@ -77,12 +78,12 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
 }
 
 .active {
+  background-color: rgb(240, 242, 242);
   color: rgb(0, 0, 0);
   font-family: "Oswald", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
-  background: rgb(240, 242, 242);
 }
 
 .wishlistCont {
@@ -114,15 +115,15 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     width: 100%;
     height: 32px;
     color: rgba(130, 130, 130, 1);
+    border: 1px solid rgba(196, 196, 196, 1);
+    background: transparent;
+    box-sizing: border-box;
     font-family: "Oswald", sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 21px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    box-sizing: border-box;
-    border: 1px solid rgba(196, 196, 196, 1);
-    background: transparent;
     cursor: pointer;
     overflow: hidden;
     z-index: 1;
@@ -193,6 +194,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     width: 113px;
     height: 152px;
     margin-bottom: 7px;
+    user-select: none;
     @include desk-s {
       width: 167px;
       height: 219px;
@@ -332,6 +334,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
       box-shadow 0.35s ease;
     z-index: 0;
     overflow: hidden;
+    user-select: none;
 
     &:hover {
       transform: scale(1.07);
@@ -353,11 +356,10 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
   background: rgb(230, 241, 250);
   cursor: pointer;
   border: none;
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
+  transition: all 0.35s ease;
   z-index: 0;
   overflow: hidden;
+  user-select: none;
   @include desk-s {
     width: 24px;
     height: 24px;
@@ -388,124 +390,6 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
   }
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  margin-bottom: 18px;
-  font-family: "Oswald", sans-serif;
-  user-select: none;
-
-  @include desk-s {
-    display: none;
-  }
-
-  &_trigger {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 40px;
-    padding: 0 11px;
-    background-color: rgba(240, 242, 242, 1);
-    color: rgba(0, 0, 0, 1);
-    font-size: 12px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  &_arrowIcon {
-    width: $arrow-size;
-    height: $arrow-size;
-    position: relative;
-    @include flex($align-items: center, $justify-content: center);
-    cursor: pointer;
-  }
-
-  &_leftBar,
-  &_rightBar {
-    display: block;
-    position: absolute;
-    background-color: transparent;
-    top: 50%;
-    width: 8px;
-    height: $bar-thickness;
-    border-radius: 2px;
-    transition: transform $duration $easing;
-
-    &:after {
-      content: "";
-      background-color: #000;
-      width: 100%;
-      height: 100%;
-      display: block;
-      border-radius: 2px;
-      transition: all $duration $easing;
-    }
-  }
-
-  &_leftBar {
-    left: 0;
-    transform: translateY(-50%) rotate(40deg);
-  }
-
-  &_rightBar {
-    right: 0;
-    transform: translateY(-50%) rotate(-40deg);
-  }
-
-  &_menu {
-    margin-top: 5px;
-    display: none;
-    position: absolute;
-    top: 100%;
-    width: 100%;
-    list-style: none;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 100;
-    border: 1px solid #eee;
-    @include desk-s {
-      display: flex;
-    }
-  }
-
-  &_item {
-    display: block;
-    padding: 12px 15px;
-    color: #333;
-    font-size: 14px;
-    font-weight: 400;
-    transition: all 0.2s;
-    border-bottom: 1px solid #f9f9f9;
-    cursor: pointer;
-
-    &:hover {
-      background-color: #f0f0f0;
-      color: #000;
-      padding-left: 20px;
-    }
-  }
-
-  &.active {
-    .dropdown_trigger {
-      background-color: #e6e6e6;
-    }
-
-    .dropdown_menu {
-      display: block;
-      animation: fadeIn 0.3s ease;
-    }
-
-    .dropdown_leftBar {
-      transform: translateY(-50%) rotate(-40deg);
-    }
-    .dropdown_rightBar {
-      transform: translateY(-50%) rotate(40deg);
-    }
-  }
-}
-
 .pagination {
   margin-bottom: 28px;
   display: flex;
@@ -517,6 +401,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
   }
 
   &_btn {
+    @include flex($align-items: center, $justify-content: center);
     width: 35px;
     height: 35px;
     border: 1px solid #c4c4c4;
@@ -527,7 +412,6 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    @include flex($align-items: center, $justify-content: center);
 
     &:hover {
       border-color: #000;
@@ -558,6 +442,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
   }
 
   &_arrow {
+    @include flex($align-items: center, $justify-content: center);
     width: 30px;
     height: 30px;
     border: none;
@@ -567,7 +452,6 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     font-weight: 600;
     cursor: pointer;
     color: #000;
-    @include flex($align-items: center, $justify-content: center);
     transition: opacity 0.3s ease;
 
     &:hover {
