@@ -1,0 +1,71 @@
+@use "../../../sass/utils/mixins.scss" as *;
+
+.ContactUs {
+  position: fixed;
+  top: 40%;
+  right: -280px;
+  z-index: 100;
+  display: flex;
+  align-items: flex-start;
+  transition: right 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  @include desk-s {
+    display: none;
+  }
+
+  &:hover {
+    right: 0;
+  }
+
+  &_btn {
+    background-color: #000;
+    color: #fff;
+    width: 35px;
+    padding: 15px 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    user-select: none;
+  }
+
+  &_content {
+    width: 280px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    min-height: 180px;
+  }
+
+  &_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+
+  &_informationTitle {
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &_information {
+    color: #000;
+    font-family: "Roboto", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}

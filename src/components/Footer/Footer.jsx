@@ -1,4 +1,8 @@
+
 import React from "react";
+
+import { Link } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
 import { Container } from "../Container/Container";
 import { Link } from "react-router-dom";
@@ -63,7 +67,9 @@ export const Footer = () => {
               </div>
             </li>
 
-            <li className={`${style.mainFooterItem} ${featuresOpen ? style.open : ""}`}>
+            <li
+              className={`${style.mainFooterItem} ${featuresOpen ? style.open : ""}`}
+            >
               <div className={style.footerTitleCenter}>
                 <h3 className={style.mainFooterItemTitle}>features</h3>
                 <button
@@ -106,7 +112,9 @@ export const Footer = () => {
               </ul>
             </li>
 
-            <li className={`${style.mainFooterItem} ${menuOpen ? style.open : ""}`}>
+            <li
+              className={`${style.mainFooterItem} ${menuOpen ? style.open : ""}`}
+            >
               <div className={style.footerTitleCenter}>
                 <h3 className={style.mainFooterItemTitle}>Menu</h3>
                 <button
@@ -146,7 +154,9 @@ export const Footer = () => {
               </ul>
             </li>
 
-            <li className={`${style.mainFooterItem} ${contactOpen ? style.open : ""}`}>
+            <li
+              className={`${style.mainFooterItem} ${contactOpen ? style.open : ""}`}
+            >
               <div className={style.footerTitleCenter}>
                 <h3 className={style.mainFooterItemTitle}>contact us</h3>
                 <button
@@ -161,7 +171,9 @@ export const Footer = () => {
                   />
                 </button>
               </div>
-              <ul className={`${style.footerContactUsList} ${style.footerList}`}>
+              <ul
+                className={`${style.footerContactUsList} ${style.footerList}`}
+              >
                 <li className={style.footerContactUsItem}>
                   <h4 className={style.mainFooterItemSubtitle}>Address:</h4>
                   <a href="https://maps.google.com/?q=123 STREET NAME, CITY, ENGLAND" className={style.mainFooterItemContacts}>123 STREET NAME, CITY, ENGLAND</a>
@@ -181,7 +193,9 @@ export const Footer = () => {
               </ul>
             </li>
 
-            <li className={`${style.mainFooterItem} ${followOpen ? style.open : ""}`}>
+            <li
+              className={`${style.mainFooterItem} ${followOpen ? style.open : ""}`}
+            >
               <div className={style.footerTitleCenter}>
                 <h3 className={style.mainFooterItemTitle}>follow us</h3>
                 <button
@@ -242,8 +256,6 @@ export const Footer = () => {
   );
 };
 
-
-
 //  export class Footer extends Component {
 //   state = {
 //     featuresOpen: false,
@@ -261,7 +273,7 @@ export const Footer = () => {
 
 //     return (
 //       <footer className={style.footer}>
-       
+
 //         <div className={style.topFooter}>
 //           <Container>
 //             <ul className={style.topFooterList}>
@@ -291,12 +303,10 @@ export const Footer = () => {
 //           </Container>
 //         </div>
 
-      
 //         <div className={style.mainFooter}>
 //           <Container>
 //             <ul className={style.mainFooterList}>
-              
-          
+
 //               <li className={style.mainFooterItem}>
 //                 <div className={style.mainFooterLogo}>
 //                   <img
@@ -307,7 +317,6 @@ export const Footer = () => {
 //                 </div>
 //               </li>
 
-           
 //               <li
 //                 className={`${style.mainFooterItem} ${
 //                   featuresOpen ? style.open : ""
@@ -397,7 +406,6 @@ export const Footer = () => {
 //                 </ul>
 //               </li>
 
-            
 //               <li
 //                 className={`${style.mainFooterItem} ${
 //                   menuOpen ? style.open : ""
@@ -477,7 +485,6 @@ export const Footer = () => {
 //                 </ul>
 //               </li>
 
-             
 //               <li
 //                 className={`${style.mainFooterItem} ${
 //                   contactOpen ? style.open : ""
@@ -611,7 +618,6 @@ export const Footer = () => {
 //                 </ul>
 //               </li>
 
-         
 //               <li className={style.mainFooterItem}>
 //                 <div className={style.mainFooterSubscribe}>
 //                   <h3 className={style.mainFooterItemTitle}>join us</h3>
@@ -633,10 +639,9 @@ export const Footer = () => {
 //                   </button>
 //                 </div>
 //               </li>
-             
+
 //             </ul>
 
-          
 //             <div className={style.footerBottom}>
 //               <hr className={style.footerBottomHr} />
 //               <p className={style.footerBottomText}>
