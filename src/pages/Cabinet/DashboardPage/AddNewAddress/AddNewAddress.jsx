@@ -3,8 +3,8 @@ import styles from "./AddNewAddress.module.scss";
 import { DashboardSidebar } from "../../../../components/DashboardSidebar/DashboardSidebar";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addAddress } from "../../../../redux/userData/actions";
 import { nanoid } from "nanoid";
+import { addAddress } from "../../../../redux/userData/useDataSlice";
 
 export const AddNewAddress = ({ changePage, isInArray }) => {
   const [firstName, setFirstName] = useState();

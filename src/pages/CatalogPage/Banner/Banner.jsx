@@ -2,7 +2,7 @@ import styles from "./Banner.module.scss";
 import { useSelector } from "react-redux";
 import { BANNER_PHRASES } from "../../../data/banner-phrases";
 
-export const Banner = () => {
+export function Banner (){
   const { indices } = useSelector((state) => state.banner);
 
   return (
@@ -24,3 +24,4 @@ export const Banner = () => {
     </div>
   );
 };
+export default Banner;

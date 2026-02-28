@@ -1,6 +1,112 @@
-.NavBar {
+@use "../../sass/utils/mixins.scss" as *;
+
+$arrow-size: 12px;
+$bar-thickness: 2px;
+$duration: 0.3s;
+$easing: ease;
+
+.dropdown {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: "Oswald", sans-serif;
+  user-select: none;
+  z-index: 10;
+
+  @include desk-s {
+    display: none;
+  }
+
+  &_trigger {
+    @include flex($justify-content: space-between, $align-items: center);
+    height: 40px;
+    padding: 0 15px;
+    background-color: rgba(240, 242, 242, 1);
+    color: rgba(0, 0, 0, 1);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: 1px solid #e0e0e0;
+  }
+
+  &_arrowIcon {
+    width: $arrow-size;
+    height: $arrow-size;
+    position: relative;
+    @include flex($align-items: center, $justify-content: center);
+  }
+
+  &_leftBar,
+  &_rightBar {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 7px;
+    height: 2px;
+    background-color: #000;
+    transition: transform $duration $easing;
+  }
+
+  &_leftBar {
+    left: 0;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &_rightBar {
+    right: 0;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+
+  &.active {
+    .dropdown_leftBar {
+      transform: translateY(-50%) rotate(-45deg);
+    }
+    .dropdown_rightBar {
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  &_menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    list-style: none;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 1px solid #eee;
+    padding: 0;
+    margin: 0;
+    animation: dropdownSlideIn 0.3s ease-out forwards;
+    transform-origin: top center;
+  }
+
+  &_item {
+    display: block;
+    padding: 12px 15px;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid #f9f9f9;
+    transition: background-color 0.2s;
+
+    &:hover,
+    &.active {
+      background-color: #f0f0f0;
+      color: #000;
+    }
+  }
+}
+
+.sidebar {
   display: none;
-  @media screen and (min-width: 1200px) {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @include desk-s {
     display: flex;
     flex-direction: column;
   }
@@ -17,11 +123,30 @@
     font-size: 18px;
     font-weight: 500;
     line-height: 24px;
+    text-decoration: none;
     transition: all 0.3s ease;
     user-select: none;
     cursor: pointer;
+
     &:hover {
       background-color: rgba(240, 242, 242, 1);
     }
+  }
+
+  &_active {
+    background-color: rgba(240, 242, 242, 1);
+    font-weight: 600;
+    border-left: 2px solid #000;
+  }
+}
+
+@keyframes dropdownSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

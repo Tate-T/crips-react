@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styles from "./Wishlist.module.scss";
-import { catalogData } from "../../../data/catalog-data";
 import { Container } from "../../../components/Container/Container";
 import editIcon from "../../../images/remark-wishlist.svg";
 import removeIcon from "../../../images/closeIcon-wishlist.svg";
@@ -33,14 +32,6 @@ export function Wishlist() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleSelect = (sectionName) => {
-    setIsOpen(false);
-  };
 
   const handleRemove = (id) => {
     dispatch(removeItem(id));
@@ -122,38 +113,6 @@ export function Wishlist() {
         <p className={styles.mainWishlistCont_titleDesk}>{activeSection}</p>
 
         <div className={styles.mainWishlistCont}>
-          <div className={styles.wishlistCont_actionItem}>
-            <div
-              className={`${styles.dropdown} ${isOpen ? styles.active : ""}`}
-            >
-              <div className={styles.dropdown_trigger} onClick={toggleDropdown}>
-                {activeSection}
-                <div className={styles.dropdown_arrowIcon}>
-                  <span className={styles.dropdown_leftBar}></span>
-                  <span className={styles.dropdown_rightBar}></span>
-                </div>{" "}
-              </div>
-
-              <ul className={styles.dropdown_menu}>
-                {[
-                  "Account Dashboard",
-                  "Account Information",
-                  "Address Book",
-                  "My Orders",
-                  "My Wishlist",
-                  "Newsletter Subscriptions",
-                ].map((item) => (
-                  <li
-                    key={item}
-                    className={styles.dropdown_item}
-                    onClick={() => handleSelect(item)}
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
           <NavBar />
           <p className={styles.mainWishlistCont_title}>{activeSection}</p>
 
