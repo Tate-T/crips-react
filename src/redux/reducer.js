@@ -6,7 +6,7 @@ import { cardInfoReducer } from "./cardInfo/reducer";
 import { tableReducer } from "./table/reducer";
 import { blogReducer } from "./blog/reducer";
 import { bannerReducer } from "./bannerSlice";
-import { createOrderReducer } from "./createOrder/reducer";
+import { createOrderReducer } from "./createOrder/createOrderSlice.js";
 import { footerReducer } from "./footer/reducer";
 import { wishlistReducer } from "./Wishlist/wishlistSlice.js";
 import { miniCatalogReducer } from "./MiniCatalog/miniCatalogSlice.js";
