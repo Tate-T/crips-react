@@ -8,10 +8,10 @@ import { blogReducer } from "./blog/reducer";
 import { bannerReducer } from "./bannerSlice";
 import { createOrderReducer } from "./createOrder/reducer";
 import { footerReducer } from "./footer/reducer";
-import { wishlistReducer } from "./Wishlist/reducer";
+import { wishlistReducer } from "./Wishlist/wishlistSlice.js";
 import { miniCatalogReducer } from "./MiniCatalog/miniCatalogSlice.js";
 import { cartReducer } from "./cart/cartSlice.js";
-import { productsReducer } from "./products/productSlice"
+import { productsReducer } from "./products/productSlice";
 import { userDataReducer } from "./userData/useDataSlice";
 
 export const rootReducer = combineReducers({
