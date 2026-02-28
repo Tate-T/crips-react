@@ -17,7 +17,7 @@ export const Sorting = () => {
     { value: "50", label: "50" },
     { value: "51", label: "51" },
   ];
-
+z
   const [selectedSortBy, setSelectedSortBy] = useState(sortByOptions[0].value);
   const [selectedSortNum, setSelectedSortNum] = useState(sortNumOptions[0].value);
 
