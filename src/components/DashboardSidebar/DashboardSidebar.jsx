@@ -1,38 +1,39 @@
 import styles from "./DashboardSidebar.module.scss";
+import { NavLink } from "react-router-dom";
 
 export const DashboardSidebar = ({ changePage }) => {
   return (
     <div className={styles.dashbar}>
       <ul onClick={changePage} className={styles.dashbar__list}>
-        <li id="dashSide1" className={styles.dashbar__item__active}>
-          <a className={styles.dashbar__link__active} href="#">
+        <li className={styles.dashbar__item__active}>
+          <NavLink className={styles.dashbar__link} to="/account/dashboard">
             Account Dashboard
-          </a>
+          </NavLink>
         </li>
         <li id="dashSide2" className={styles.dashbar__item}>
-          <a className={styles.dashbar__link} href="#">
+          <NavLink className={styles.dashbar__link} href="#">
             Account Information
-          </a>
+          </NavLink>
         </li>
         <li id="dashSide3" className={styles.dashbar__item}>
-          <a className={styles.dashbar__link} href="#">
+          <NavLink className={styles.dashbar__link} to="/account/address-book">
             Address Book
-          </a>
+          </NavLink>
         </li>
         <li id="dashSide4" className={styles.dashbar__item}>
-          <a className={styles.dashbar__link} href="#">
+          <NavLink className={styles.dashbar__link} href="#">
             My Orders
-          </a>
+          </NavLink>
         </li>
         <li id="dashSide5" className={styles.dashbar__item}>
-          <a className={styles.dashbar__link} href="#">
+          <NavLink className={styles.dashbar__link} href="/account/wishlist">
             My Wishlist
-          </a>
+          </NavLink>
         </li>
         <li id="dashSide6" className={styles.dashbar__item}>
-          <a className={styles.dashbar__link} href="#">
+          <NavLink className={styles.dashbar__link} href="#">
             Newsletter Subscriptions
-          </a>
+          </NavLink>
         </li>
       </ul>
     </div>
