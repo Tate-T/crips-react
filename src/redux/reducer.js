@@ -9,7 +9,7 @@ import { bannerReducer } from "./bannerSlice";
 import { createOrderReducer } from "./createOrder/reducer";
 import { footerReducer } from "./footer/reducer";
 import { wishlistReducer } from "./Wishlist/reducer";
-import { cartReducer } from "./cart/reducer";
+import { cartReducer } from "./cart/cartSlice.js";
 import { miniCatalogReducer } from "./MiniCatalog/reducer";
 import { productsReducer } from "./products/productSlice"
 import { userDataReducer } from "./userData/useDataSlice";
