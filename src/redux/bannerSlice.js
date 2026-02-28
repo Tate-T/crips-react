@@ -1,5 +1,5 @@
-import { BANNER_PHRASES } from "../../data/banner-phrases"; 
-import { SET_BANNER_DATA } from "./actions";
+import { createSlice } from "@reduxjs/toolkit";
+import { BANNER_PHRASES } from "../data/banner-phrases";
 
 const getTodayStr = () => {
   const d = new Date();
@@ -24,16 +24,19 @@ const getInitialState = () => {
     "catalogBannerChoose",
     JSON.stringify([today, newIndices]),
   );
+
   return { indices: newIndices, date: today };
 };
 
-const initialState = getInitialState();
+const bannerSlice = createSlice({
+  name: "banner",
+  initialState: getInitialState(),
+  reducers: {
+    setBannerData: (state, action) => {
+      state.indices = action.payload;
+    },
+  },
+});
 
-export const bannerReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case SET_BANNER_DATA:
-      return { ...state, indices: action.payload };
-    default:
-      return state;
-  }
-};
+export const { setBannerData } = bannerSlice.actions;
+export const bannerReducer = bannerSlice.reducer;
