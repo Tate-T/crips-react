@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 
-import { nextPage } from "../../redux/MiniCatalog/actions.js";
+import { nextPage } from "../../redux/MiniCatalog/miniCatalogSlice.js";
 
 import { Container } from "../Container/Container.jsx";
 import { MiniCatalogItem } from "./MiniCatalogItem.jsx";
@@ -15,7 +15,11 @@ export const MiniCatalog = function () {
 	const currentPage = useSelector((state) => state.miniCatalog.currentPage);
 	const products = useSelector((state) => state.products.products);
 
-	const handleNextPage = () => dispatch(nextPage);
+	const handleNextPage = () => {
+		dispatch(nextPage());
+		console.log(nextPage);
+		console.log(nextPage());
+	};
 
 	return (
 		<>
