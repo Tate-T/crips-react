@@ -1,11 +1,7 @@
-
-import React from "react";
-
 import { Link } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { Container } from "../Container/Container";
-import { Link } from "react-router-dom";
 import style from "./Footer.module.scss";
 
 import check from "../../images/check.svg";
