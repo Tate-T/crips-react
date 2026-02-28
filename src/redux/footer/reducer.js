@@ -3,11 +3,17 @@ export const TOGGLE_MENU = 'TOGGLE_MENU';
 export const TOGGLE_CONTACT = 'TOGGLE_CONTACT';
 export const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW';
 
+// new actions for subscription
+export const SUBSCRIBE_EMAIL = 'SUBSCRIBE_EMAIL';
+export const CLOSE_SUBSCRIBE_MODAL = 'CLOSE_SUBSCRIBE_MODAL';
+
 const initialState = {
   featuresOpen: false,
   menuOpen: false,
   contactOpen: false,
   followOpen: false,
+  subscribedEmail: '',
+  isSubscribeModalOpen: false,
 };
 
 export const footerReducer = (state = initialState, action) => {
@@ -31,6 +37,17 @@ export const footerReducer = (state = initialState, action) => {
       return {
         ...state,
         followOpen: !state.followOpen,
+      };
+    case SUBSCRIBE_EMAIL:
+      return {
+        ...state,
+        subscribedEmail: action.payload,
+        isSubscribeModalOpen: true,
+      };
+    case CLOSE_SUBSCRIBE_MODAL:
+      return {
+        ...state,
+        isSubscribeModalOpen: false,
       };
     default:
       return state;

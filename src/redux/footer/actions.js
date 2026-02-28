@@ -3,6 +3,8 @@ import {
   TOGGLE_MENU,
   TOGGLE_CONTACT,
   TOGGLE_FOLLOW,
+  SUBSCRIBE_EMAIL,
+  CLOSE_SUBSCRIBE_MODAL,
 } from './reducer';
 
 export const toggleFeatures = () => ({
@@ -19,4 +21,13 @@ export const toggleContact = () => ({
 
 export const toggleFollow = () => ({
   type: TOGGLE_FOLLOW,
+});
+
+export const subscribeEmail = (email) => ({
+  type: SUBSCRIBE_EMAIL,
+  payload: email,
+});
+
+export const closeSubscribeModal = () => ({
+  type: CLOSE_SUBSCRIBE_MODAL,
 });
