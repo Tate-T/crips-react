@@ -49,7 +49,6 @@ export const CartDesktopItem = ({ product, onIncrement, onDecrement, onRemove })
         <li className={styles.cart__item__button}>
           <img className={styles.cart__item__icon} src={editIcon} alt="Edit" />
         </li>
-        {/* Added onClick here for deletion */}
         <li className={styles.cart__item__button} onClick={onRemove}>
           <img className={styles.cart__item__icon} src={deleteIcon} alt="Delete" />
         </li>
