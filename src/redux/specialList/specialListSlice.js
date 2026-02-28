@@ -11,7 +11,7 @@ const specialListSlice = createSlice({
 	initialState,
 	reducers: {
 		setLayout(state, action) {
-			const { isDesktop } = action.payload
+			const isDesktop = action.payload
 			
 			if (isDesktop) {
 				state.isDesktop = true
@@ -26,7 +26,7 @@ const specialListSlice = createSlice({
 		},
 		
 		seeMore(state, action) {
-			const { maxLength } = action.payload
+			const maxLength = action.payload
 			state.visibleCount = Math.min(state.visibleCount + 4, maxLength)
 		},
 		
@@ -35,7 +35,7 @@ const specialListSlice = createSlice({
 		},
 		
 		next(state, action) {
-			const { maxLength } = action.payload
+			const maxLength = action.payload
 			if (state.startIndex + state.visibleCount < maxLength) {
 				state.startIndex += 1
 			}
