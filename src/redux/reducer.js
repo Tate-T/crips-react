@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
-import { HeaderReducer } from "./Header/reducer";
-import specialListReducer from "./specialList/specialListSlice";
+import { headerReducer } from "./Header/menuSlice.js";
+import { specialListReducer } from "./specialList/reducer";
 import { filtrationReducer } from "./filtration/reducer";
 import { cardInfoReducer } from "./cardInfo/reducer";
 import { tableReducer } from "./table/reducer";
@@ -18,7 +18,7 @@ export const rootReducer = combineReducers({
   products: productsReducer,
   miniCatalog: miniCatalogReducer,
   userData: userDataReducer,
-  header: HeaderReducer,
+  header: headerReducer,
   specialList: specialListReducer,
   filtration: filtrationReducer,
   cardinfo: cardInfoReducer,
