@@ -1,12 +1,12 @@
 import { Container } from "../../../../components/Container/Container";
 import styles from "./AddNewAddress.module.scss";
-import { DashboardSidebar } from "../../../../components/DashboardSidebar/DashboardSidebar";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { nanoid } from "nanoid";
 import { addAddress } from "../../../../redux/userData/useDataSlice";
+import NavBar from "../../../../components/NavBar/NavBar";
 
-export const AddNewAddress = ({ changePage, isInArray }) => {
+export const AddNewAddress = ({ isInArray }) => {
   const [firstName, setFirstName] = useState();
   const [lastName, setLastName] = useState();
   const [company, setCompany] = useState();
@@ -34,8 +34,8 @@ export const AddNewAddress = ({ changePage, isInArray }) => {
         streetaddress2,
         country,
         state,
-        code,
-      ),
+        code
+      )
     );
     setTimeout(() => {
       if (!isInArray) {
@@ -61,7 +61,7 @@ export const AddNewAddress = ({ changePage, isInArray }) => {
         </h2>
         <h1 className={styles.address__title}>Add New Address</h1>
         <div className={styles.address__wrap}>
-          <DashboardSidebar changePage={changePage} />
+          <NavBar />
           <form onSubmit={handleSubmit} className={styles.address__form}>
             <div>
               <h3 className={styles.address__header}>Contact Information</h3>
