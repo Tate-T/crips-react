@@ -2,9 +2,9 @@ import { useState } from "react";
 import "./Sorting.scss";
 import { useSelector, useDispatch } from "react-redux";
 
-export const Sorting = () => {
+const Sorting = () => {
   const dispatch = useDispatch();
-  // const sorting = useSelector((state) => state.sorting);
+  const sorting = useSelector((state) => state.sorting);
   const sortByOptions = [
     { value: "prHtL", label: "price (High to low)" },
     { value: "prLtH", label: "price (Low to high)" },
@@ -17,7 +17,7 @@ export const Sorting = () => {
     { value: "50", label: "50" },
     { value: "51", label: "51" },
   ];
-z
+
   const [selectedSortBy, setSelectedSortBy] = useState(sortByOptions[0].value);
   const [selectedSortNum, setSelectedSortNum] = useState(sortNumOptions[0].value);
 
