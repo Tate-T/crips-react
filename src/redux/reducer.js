@@ -1,5 +1,4 @@
 import { combineReducers } from "redux";
-import { userDataReducer } from "./userData/reducer";
 import { HeaderReducer } from "./Header/reducer";
 import { specialListReducer } from "./specialList/reducer";
 import { filtrationReducer } from "./filtration/reducer";
@@ -13,7 +12,7 @@ import { wishlistReducer } from "./Wishlist/reducer";
 import { cartReducer } from "./cart/reducer";
 import { miniCatalogReducer } from "./MiniCatalog/reducer";
 import { productsReducer } from "./products/productSlice"
-
+import { userDataReducer } from "./userData/useDataSlice";
 
 export const rootReducer = combineReducers({
   products: productsReducer,
@@ -30,6 +29,4 @@ export const rootReducer = combineReducers({
   createOrder: createOrderReducer,
   wishlist: wishlistReducer,
   footer: footerReducer,
-  // setProducts:setProducts,
-  // sortProducts: sortProducts,
 });
