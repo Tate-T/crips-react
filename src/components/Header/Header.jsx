@@ -2,9 +2,9 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 import { Container } from "../Container/Container";
 import { Mobmenu } from "./Mobmenu/Mobmenu";
-import { use, useContext } from "react";
+import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeMenuState } from "../../redux/Header/actions";
+import { changeMenuState } from "../../redux/Header/menuSlice.js";
 
 import { NavLink, useNavigate } from "react-router-dom";
 

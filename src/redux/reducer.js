@@ -1,31 +1,32 @@
 import { combineReducers } from "redux";
-import { userDataReducer } from "./userData/reducer";
-import { HeaderReducer } from "./Header/reducer";
-import { specialListReducer } from "./specialList/reducer";
+import { headerReducer } from "./Header/menuSlice.js";
+import { specialListReducer } from "./specialList/specialListSlice.js";
 import { filtrationReducer } from "./filtration/reducer";
 import { cardInfoReducer } from "./cardInfo/reducer";
 import { tableReducer } from "./table/reducer";
 import { blogReducer } from "./blog/reducer";
-import { bannerReducer } from "./banner/reducer";
+import { bannerReducer } from "./bannerSlice";
 import { createOrderReducer } from "./createOrder/reducer";
 import { footerReducer } from "./footer/reducer";
 import { wishlistReducer } from "./Wishlist/reducer";
-
-import { productsReducer } from "./products/reducer";
+import { cartReducer } from "./cart/reducer";
 import { miniCatalogReducer } from "./MiniCatalog/reducer";
+import { productsReducer } from "./products/productSlice"
+import { userDataReducer } from "./userData/useDataSlice";
 
 export const rootReducer = combineReducers({
   products: productsReducer,
   miniCatalog: miniCatalogReducer,
   userData: userDataReducer,
-  header: HeaderReducer,
+  header: headerReducer,
   specialList: specialListReducer,
   filtration: filtrationReducer,
   cardinfo: cardInfoReducer,
+  cart: cartReducer,
   table: tableReducer,
   blog: blogReducer,
   banner: bannerReducer,
   createOrder: createOrderReducer,
   wishlist: wishlistReducer,
-  footer: footerReducer
+  footer: footerReducer,
 });

@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Sorting.scss";
 import { useSelector, useDispatch } from "react-redux";
-import { setSorting } from "../../../redux/sortingSlice";
 
 export const Sorting = () => {
   const dispatch = useDispatch();
-  const sorting = useSelector((state) => state.sorting);
+  // const sorting = useSelector((state) => state.sorting);
   const sortByOptions = [
     { value: "prHtL", label: "price (High to low)" },
     { value: "prLtH", label: "price (Low to high)" },
@@ -48,3 +47,4 @@ export const Sorting = () => {
     </form>
   );
 }
+export default Sorting;

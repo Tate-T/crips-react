@@ -1,3 +1,1 @@
-export const tableReducer = (state = [], action) => {
-  return state;
-};
+export { default as tableReducer } from "./slice.js";
