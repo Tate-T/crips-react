@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import { headerReducer } from "./Header/menuSlice.js";
 import { specialListReducer } from "./specialList/specialListSlice.js";
 import { filtrationReducer } from "./filtration/reducer";
-import { cardInfoReducer } from "./cardInfo/reducer";
+import { cardInfoReducer } from "./cardInfo/cardInfoSlice.js";
 import { tableReducer } from "./table/reducer";
 import { blogReducer } from "./blog/reducer";
 import { bannerReducer } from "./bannerSlice";
