@@ -37,16 +37,18 @@
     @include flex($align-items: center, $justify-content: center);
     padding: 256px 15px 76px;
     text-align: center;
+
     @include tab {
       display: flex;
-      align-items: left;
+      align-items: flex-start;
+      justify-content: flex-start;
       padding: 150px 0;
     }
 
     @include desk-s {
       display: block;
       text-align: left;
-      padding: 204px 0px 204px 234px;
+      padding: 204px 0;
     }
   }
 
@@ -54,7 +56,11 @@
     position: relative;
     max-width: 500px;
     @include flex($flex-wrap: wrap, $justify-content: center);
+    @include tab {
+      max-width: none;
+    }
     @include desk-s {
+      max-width: 508px;
       display: block;
     }
 
