@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./Sorting.scss";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { setSorting } from "../../../redux/filtration/reducer.js";
 
 const Sorting = () => {
-  const dispatch = useDispatch();
   const sorting = useSelector((state) => state.sorting);
   const sortByOptions = [
     { value: "prHtL", label: "price (High to low)" },
@@ -24,16 +24,16 @@ const Sorting = () => {
   const getSorting = (e) => {
     if (e.target.name === "sortBy") {
       setSelectedSortBy(e.target.value);
-      dispatch(setSorting({ sortBy: e.target.value, sortNum: selectedSortNum }));
+      setSorting({ sortBy: e.target.value, sortNum: selectedSortNum });
     }
     if (e.target.name === "sortNum") {
       setSelectedSortNum(e.target.value);
-      dispatch(setSorting({ sortBy: selectedSortBy, sortNum: e.target.value }));
+      setSorting({ sortBy: selectedSortBy, sortNum: e.target.value });
     }
   }
 
   return (
-    <form action="" className="sorting__form">
+    <form action="" className="sorting__form" onChange={getSorting}>
       <select name="sortBy" id="" className="sorting__select-sortBy" onChange={getSorting} value={selectedSortBy}>
         {sortByOptions.map(option => (
           <option key={option.value} value={option.value}>{option.label}</option>

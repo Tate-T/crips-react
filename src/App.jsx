@@ -68,24 +68,24 @@ function App() {
     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/account" element={<AccountLayout />}>
-          <Route path="dashboard" element={<Dashboard />} />
+        {/* <Route path="/account" element={<AccountLayout />}> */}
+          {/* <Route path="dashboard" element={<Dashboard />} /> */}
           {/* <Route path="accountinformation" element={}/> */}
-          <Route path="address-book" element={<AddNewAddress />} />
+          {/* <Route path="address-book" element={<AddNewAddress />} /> */}
           {/* <Route path="myorders" element={}/> */}
-          <Route path="wishlist" element={<Wishlist />} />
+          {/* <Route path="wishlist" element={<Wishlist />} /> */}
           {/* <Route path="newslettersubscriptions" element={}/> */}
-        </Route>
-        <Route path="/articlepage" element={<ArticlePage />} />
+        {/* </Route> */}
+        {/* <Route path="/articlepage" element={<ArticlePage />} /> */}
         <Route path="/catalogpage" element={<CatalogPage />} />
-        <Route path="/catalogpage/:productId" element={<ProductPage />} />
+        {/* <Route path="/catalogpage/:productId" element={<ProductPage />} /> */}
 
-        <Route path="/productpage" element={<ProductPage />} />
-        <Route path="/articlepage" element={<ArticlePage />} />
-        <Route path="/cabinetpage" element={<CabinetPage />} />
-        <Route path="/loginpage" element={<LoginPage />} />
-        <Route path="/cartpage" element={<CartPage />} />
-        <Route path="/dashboardpage" element={<DashboardPage />} />
+        {/* <Route path="/productpage" element={<ProductPage />} /> */}
+        {/* <Route path="/articlepage" element={<ArticlePage />} /> */}
+        {/* <Route path="/cabinetpage" element={<CabinetPage />} /> */}
+        {/* <Route path="/loginpage" element={<LoginPage />} /> */}
+        {/* <Route path="/cartpage" element={<CartPage />} /> */}
+        {/* <Route path="/dashboardpage" element={<DashboardPage />} /> */}
       </Routes>
     </Suspense>
   );
