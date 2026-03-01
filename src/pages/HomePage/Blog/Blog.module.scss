@@ -3,12 +3,12 @@
     background: #EEEEEE;
     font-family: 'Oswald', sans-serif;
 
-    &__container {
-        width: 100%;
-        max-width: 100%;
-        margin: 0 auto;
-        padding: 0 10px;
-    }
+    // &__container {
+    //     width: 100%;
+    //     max-width: 100%;
+    //     margin: 0 auto;
+    //     padding: 0 10px;
+    // }
 
     &__title {
         color: #000;
@@ -27,10 +27,8 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 20px;
-        padding-bottom: 40px;
         list-style: none;
         margin: 0;
-        padding-left: 0;
 
         @media (max-width: 1200px) {
             grid-template-columns: repeat(2, 1fr);
