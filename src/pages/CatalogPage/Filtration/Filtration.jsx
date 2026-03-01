@@ -3,19 +3,25 @@ import { FiltrName } from "./Filtration-Components/FiltrationName.jsx";
 import "./Filtration.scss";
 import arrowDown from "../../../images/arrow-down.svg";
 import close from "../../../images/closeIcon-wishlist.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { applyFilters, clearFilters } from "../../../redux/filtration/actions.js";
+import { useSelector, useDispatch } from "react-redux";
+import { applyFilters as applyFiltersAction, clearFilters } from "../../../redux/filtration/reducer.js";
 
 export const Filtration = () => {
-  const filtration = useSelector(state => state.filtration);
   const dispatch = useDispatch();
+  const filtration = useSelector(state => state.filtration) || {};
   const [fromValue, setFromValue] = useState(0);
   const [toValue, setToValue] = useState(500);
   const [brands, setBrands] = useState([]);
   const [size, setSize] = useState('');
   const [dressLength, setDressLength] = useState([]);
   const [color, setColor] = useState('');
-  const [isFilterApplied, setIsFilterApplied] = useState(false);
+  const isFilterApplied = filtration && (
+    (filtration.brands && filtration.brands.length > 0) ||
+    (filtration.size && filtration.size !== '') ||
+    (filtration.dressLength && filtration.dressLength.length > 0) ||
+    (filtration.color && filtration.color !== '') ||
+    (filtration.price && (filtration.price.from !== 0 || filtration.price.to !== 500))
+  );
 
   const fromInputRef = useRef(null);
   const toInputRef = useRef(null);
@@ -52,23 +58,13 @@ export const Filtration = () => {
 
     if (fromInput && fromSlider) fromInput.value = formatCurrency(fromSlider.value);
     if (toInput && toSlider) toInput.value = formatCurrency(toSlider.value);
-    setBrands(filtration.brands || []);
-    setSize(filtration.size || '');
-    setDressLength(filtration.dressLength || []);
-    setColor(filtration.color || '');
-    setFromValue(filtration.price ? filtration.price.from : 0);
-    setToValue(filtration.price ? filtration.price.to : 500);
-    setIsFilterApplied(filtration && Object.keys(filtration).length > 0);
-
-
-
 
     return () => {
       if (fromSlider) fromSlider.removeEventListener("input", updateFromSlider);
       if (toSlider) toSlider.removeEventListener("input", updateToSlider);
       if (fromInput) fromInput.removeEventListener("input", updateFromInput);
       if (toInput) toInput.removeEventListener("input", updateToInput);
-      
+
     }
   }, []);
 
@@ -177,15 +173,7 @@ export const Filtration = () => {
   const changeFromValue = (e) => setFromValue(Number(e.target.value));
   const changeToValue = (e) => setToValue(Number(e.target.value));
 
-  const applyFilters = () => {
-    const hasFilters =
-      fromValue !== 0 ||
-      toValue !== 500 ||
-      brands.length > 0 ||
-      size !== "" ||
-      dressLength.length > 0 ||
-      color !== "";
-    setIsFilterApplied(hasFilters);
+  const handleApplyFilters = () => {
     const filters = {
       price: { from: fromValue, to: toValue },
       brands,
@@ -193,47 +181,44 @@ export const Filtration = () => {
       dressLength,
       color,
     }
-    console.log(filters);
-    dispatch(applyFilters(filters));
+    console.log('Applying filters:', filters);
+    console.log('isFilterApplied before dispatch:', isFilterApplied);
+    dispatch(applyFiltersAction(filters));
+    console.log('After dispatch, filtration state:', filtration);
   };
 
   const deleteBrand = (brandToDelete) => {
     const updated = brands.filter((b) => b !== brandToDelete);
     setBrands(updated);
-    if (updated.length === 0 && !size && !dressLength.length && !color && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
     document.querySelectorAll(".catalog-filtration__brand-input").forEach(input => {
       if (input.value === brandToDelete) input.checked = false;
     });
-    dispatch(applyFilters({ brands: updated }));
+    dispatch(applyFiltersAction({ ...filtration, brands: updated }));
   };
 
   const deleteSize = () => {
     setSize('');
-    if (!brands.length && !dressLength.length && !color && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
     document.querySelectorAll(".catalog-filtration__size-button").forEach(btn => btn.classList.remove("active"));
-    dispatch(applyFilters({ size: '' }));
+    dispatch(applyFiltersAction({ ...filtration, size: '' }));
   };
 
-  const deleteDressSize =  useCallback( (dressSizeToDelete) => {
+  const deleteDressSize = useCallback((dressSizeToDelete) => {
     const updated = dressLength.filter((len) => len !== dressSizeToDelete);
     setDressLength(updated);
-    if (!brands.length && !size && updated.length === 0 && !color && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
     document.querySelectorAll(".catalog-filtration__dress-length-input").forEach(input => {
       if (input.value === dressSizeToDelete) input.checked = false;
     });
-    dispatch(applyFilters({ dressLength: updated }));
-  }, [dressLength]);
+    dispatch(applyFiltersAction({ ...filtration, dressLength: updated }));
+  }, [dressLength, filtration, dispatch]);
 
-  const deleteColor = useCallback( () => {
+  const deleteColor = useCallback(() => {
     setColor('');
-    if (!brands.length && !size && !dressLength.length && fromValue === 0 && toValue === 500) setIsFilterApplied(false);
     document.querySelectorAll(".catalog-filtration__form-color-btn").forEach(btn => btn.classList.remove("active"));
-    dispatch(applyFilters({ color: '' }));
-  }, [color]);
-  const deletePrice = useCallback( () => {
+    dispatch(applyFiltersAction({ ...filtration, color: '' }));
+  }, [filtration, dispatch]);
+  const deletePrice = useCallback(() => {
     setFromValue(0);
     setToValue(500);
-    if (!brands.length && !size && !dressLength.length && !color) setIsFilterApplied(false);
     document.getElementById("fromSlider").value = 0;
     document.getElementById("toSlider").value = 500;
     document.getElementById("fromInput").value = "0";
@@ -241,8 +226,8 @@ export const Filtration = () => {
     const fromSlider = fromSliderRef.current;
     const toSlider = toSliderRef.current;
     const toInput = toInputRef.current;
-    dispatch(applyFilters({ price: { from: 0, to: 500 } }));
-  }, [fromValue, toValue]);
+    dispatch(applyFiltersAction({ ...filtration, price: { from: 0, to: 500 } }));
+  }, [filtration, dispatch]);
 
   const resetAll = () => {
     setFromValue(0);
@@ -251,7 +236,6 @@ export const Filtration = () => {
     setSize('');
     setDressLength([]);
     setColor('');
-    setIsFilterApplied(false);
     document.getElementById("fromSlider").value = 0;
     document.getElementById("toSlider").value = 500;
     document.getElementById("fromInput").value = "0";
@@ -274,10 +258,10 @@ export const Filtration = () => {
             <p className="filtration-text__reset" onClick={resetAll}><img src={close} alt="" className="filtration-close" /> RESET ALL</p>
           </div>
           <ul>
-            <li className={brands.length === 0 ? "is-hidden" : ""}>
+            <li className={(filtration.brands || []).length === 0 ? "is-hidden" : ""}>
               <h3 className="filtration-list__title">Brand:</h3>
               <ul className="filtration-list__brand">
-                {brands.map((brand) => (
+                {(filtration.brands || []).map((brand) => (
                   <li key={brand} className="filtration-wrap">
                     <img src={close} alt="" className="filtration-close" onClick={() => deleteBrand(brand)} />
                     <p className="selected-filters">{brand}</p>
@@ -285,17 +269,17 @@ export const Filtration = () => {
                 ))}
               </ul>
             </li>
-            <li className={size === "" ? "is-hidden" : ""}>
+            <li className={(filtration.size || '') === "" ? "is-hidden" : ""}>
               <h3 className="filtration-list__title">Size(inches):</h3>
               <div className="filtration-list__size">
                 <img src={close} alt="" className="filtration-close" onClick={deleteSize} />
-                <p key={size} className="selected-filters">{size}</p>
+                <p key={filtration.size} className="selected-filters">{filtration.size}</p>
               </div>
             </li>
-            <li className={dressLength.length === 0 ? "is-hidden" : ""}>
+            <li className={(filtration.dressLength || []).length === 0 ? "is-hidden" : ""}>
               <h3 className="filtration-list__title">Dress Length:</h3>
               <ul className="filtration-list__dressLength">
-                {dressLength.map((dressLen) => (
+                {(filtration.dressLength || []).map((dressLen) => (
                   <li key={dressLen} className="filtration-wrap">
                     <img src={close} alt="" className="filtration-close" onClick={() => deleteDressSize(dressLen)} />
                     <p className="selected-filters">{dressLen}</p>
@@ -303,20 +287,20 @@ export const Filtration = () => {
                 ))}
               </ul>
             </li>
-            <li className={color === "" ? "is-hidden" : ""}>
+            <li className={(filtration.color || '') === "" ? "is-hidden" : ""}>
               <h3 className="filtration-list__title">Color:</h3>
               <div className="filtration-list__size">
                 <img src={close} alt="" className="filtration-close" onClick={deleteColor} />
-                <div className={`catalog-filtration__form-color-btn active ${color}`}></div>
+                <div className={`catalog-filtration__form-color-btn active`} style={{ backgroundColor: filtration.color }}></div>
               </div>
             </li>
-            <li className={fromValue === 0 && toValue === 500 ? "is-hidden" : ""}>
+            <li className={(filtration.price?.from === 0 || !filtration.price?.from) && (filtration.price?.to === 500 || !filtration.price?.to) ? "is-hidden" : ""}>
               <h3 className="filtration-list__title">Price:</h3>
               <div className="filtration-list__size">
                 <img src={close} alt="" className="filtration-close" onClick={deletePrice} />
                 <p className="selected-filters">
-                  {fromValue === toValue ? `${fromValue},00 EUR` :
-                    `${fromValue},00 EUR - ${toValue},00 EUR`}
+                  {(filtration.price?.from === filtration.price?.to) ? `${filtration.price?.from},00 EUR` :
+                    `${filtration.price?.from},00 EUR - ${filtration.price?.to},00 EUR`}
                 </p>
               </div>
             </li>
@@ -571,7 +555,7 @@ export const Filtration = () => {
               <input id="toSlider" ref={toSliderRef} type="range" min="0" max="500" defaultValue={500} onInput={changeToValue} />
             </div>
           </div>
-          <button className="catalog-filtration__apply" onClick={applyFilters}>Apply</button>
+          <button className="catalog-filtration__apply" onClick={handleApplyFilters}>Apply</button>
         </div>
         <div className="catalog-filtration__about-dresses">
           <h2 className="catalog-filtration__about-dresses-title">
