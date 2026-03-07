@@ -11,7 +11,7 @@ import {
   setCurrentPage,
   nextPage,
   prevPage,
-} from "../../../redux/Wishlist/reducer";
+} from "../../../redux/Wishlist/wishlistSlice";
 
 export function Wishlist() {
   const dispatch = useDispatch();

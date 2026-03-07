@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setPaymentDetails } from "../../../../redux/createOrder/actions";
+import { setPaymentDetails } from "../../../../redux/createOrder/createOrderSlice";
 
 import s from "./PaymentDetails.module.scss";
 

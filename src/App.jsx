@@ -65,7 +65,7 @@ const LoginPage = lazy(() =>
 
 function App() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+     <Suspense fallback={<div>Loading...</div>}>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/account" element={<AccountLayout />}>

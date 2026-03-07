@@ -68,23 +68,23 @@ export const Hero = () => {
   }, [currentIndex]);
 
   return (
-    <Container>
-      <div className={styles.slider}>
-        <div
-          className={styles.slideTrack}
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-        >
-          {slides.map((slide, index) => (
-            <div
-              key={index}
-              alt={slide.alt}
-              className={styles.slide}
-              style={{
-                "--bg-desktop": `url(${slide.background})`,
-                "--bg-mobile": `url(${slide.mobileBackground})`,
-              }}
-            >
-              <div className={styles.overlay}>
+    <div className={styles.slider}>
+      <div
+        className={styles.slideTrack}
+        style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+      >
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            alt={slide.alt}
+            className={styles.slide}
+            style={{
+              "--bg-desktop": `url(${slide.background})`,
+              "--bg-mobile": `url(${slide.mobileBackground})`,
+            }}
+          >
+            <div className={styles.overlay}>
+              <Container>
                 <div className={styles.sliderContent}>
                   <img
                     src={heroLine}
@@ -108,32 +108,32 @@ export const Hero = () => {
                     {slide.button}
                   </button>
                 </div>
-              </div>
+              </Container>
             </div>
-          ))}
-        </div>
-
-        <div className={styles.controls}>
-          <button onClick={prevSlide} className={styles.sliderBtn}>
-            <span className={`${styles.arrow} ${styles.left}`}></span>
-          </button>
-          <button onClick={nextSlide} className={styles.sliderBtn}>
-            <span className={`${styles.arrow} ${styles.right}`}></span>
-          </button>
-        </div>
-
-        <div className={styles.dots}>
-          {slides.map((_, index) => (
-            <span
-              key={index}
-              onClick={() => goToSlide(index)}
-              className={`${styles.dot} ${
-                index === currentIndex ? styles.activeDot : ""
-              }`}
-            />
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
-    </Container>
+
+      <div className={styles.controls}>
+        <button onClick={prevSlide} className={styles.sliderBtn}>
+          <span className={`${styles.arrow} ${styles.left}`}></span>
+        </button>
+        <button onClick={nextSlide} className={styles.sliderBtn}>
+          <span className={`${styles.arrow} ${styles.right}`}></span>
+        </button>
+      </div>
+
+      <div className={styles.dots}>
+        {slides.map((_, index) => (
+          <span
+            key={index}
+            onClick={() => goToSlide(index)}
+            className={`${styles.dot} ${
+              index === currentIndex ? styles.activeDot : ""
+            }`}
+          />
+        ))}
+      </div>
+    </div>
   );
 };

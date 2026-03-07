@@ -10,7 +10,7 @@ import { OrderSummaryModal } from "../../../components/CreateOrder/OrderSummaryM
 import { PaymentInfo } from "../../../components/CreateOrder/PaymentInfo/PaymentInfo";
 
 import { useSelector, useDispatch } from "react-redux";
-import { goToNextStep, goToPrevStep, openModal, closeModal, toggleOrderSummary, setShippingFormDetails, setShippingInfo, setPaymentDetails } from "../../../redux/createOrder/actions";
+import { goToNextStep, goToPrevStep, openModal, closeModal, toggleOrderSummary, setShippingFormDetails, setShippingInfo, setPaymentDetails } from "../../../redux/createOrder/createOrderSlice";
 
 const BASE_URL = import.meta.env.VITE_USERS_API;
 

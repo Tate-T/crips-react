@@ -40,7 +40,7 @@ const useDataSlice = createSlice({
   initialState: defaultUsers,
   reducers: {
     addAddress: {
-      reducer() {
+      reducer(state, action) {
         return [
           ...state,
           {

@@ -5,7 +5,6 @@ import { useContext, useState } from "react";
 import { useSelector } from "react-redux";
 import ccsj from "countrycitystatejson";
 
-
 export const ShippingDetails = ({ children, onBack, onSubmitInfo }) => {
   const navigate = useNavigate();
   const auth = useContext(AuthContext);

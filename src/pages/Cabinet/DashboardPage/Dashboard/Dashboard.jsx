@@ -1,6 +1,6 @@
 import styles from "./Dashboard.module.scss";
-import { DashboardSidebar } from "../../../../components/DashboardSidebar/DashboardSidebar";
 import { Container } from "../../../../components/Container/Container";
+import NavBar from "../../../../components/NavBar/NavBar";
 
 export const Dashboard = () => {
   return (
@@ -10,7 +10,7 @@ export const Dashboard = () => {
         <h2 className={styles.dashboard__title}>My Dashboard</h2>
         <div className={styles.dashboard__cont}>
           <div className={styles.dashboard__main}>
-            <DashboardSidebar />
+            <NavBar />
             <div className={styles.dashboard__parts}>
               <div className={styles.dashboard__part}>
                 <h3 className={styles.dashboard__subtitle}>
