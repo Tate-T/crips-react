@@ -15,8 +15,8 @@ export const HomePage = () => {
         <Hero />
         <Banners />
         <MiniCatalog />
-        <Blog />
         <SpecialList title="Most Popular" />
+        <Blog />
       </main>
       <Footer />
     </>

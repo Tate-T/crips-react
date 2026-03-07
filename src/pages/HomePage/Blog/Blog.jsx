@@ -1,13 +1,14 @@
 import { useSelector } from "react-redux";
 import style from "./Blog.module.scss";
 import { NavLink } from "react-router-dom";
+import { Container } from "../../../components/Container/Container";
 
 export const Blog = () => {
   const posts = useSelector((state) => state.blog.posts);
 
   return (
     <section id="blog" className={style.blog}>
-      <div className={style.blog__container}>
+      <Container>
         <h1 className={style.blog__title}>Blog</h1>
 
         <ul className={style.blog__list}>
@@ -25,7 +26,7 @@ export const Blog = () => {
             </li>
           ))}
         </ul>
-      </div>
+        </Container>
     </section>
   );
 };

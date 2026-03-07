@@ -5,7 +5,7 @@ import { Footer } from "../../components/Footer/Footer.jsx";
 import "./Catalog.scss";
 import { Container } from "../../components/Container/Container.jsx";
 
-const CatalogPage = () => {
+export const CatalogPage = () => {
   return (
     <>
       <Header />
@@ -22,4 +22,3 @@ const CatalogPage = () => {
     </>
   );
 };
-export default CatalogPage;
