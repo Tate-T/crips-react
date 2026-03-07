@@ -1,4 +1,5 @@
 @use "../../sass/utils/mixins.scss" as *;
+@use "../../sass/utils/variables.scss" as *;
 
 .slider {
   overflow: hidden;
@@ -186,8 +187,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #000;
-      border: 1px solid #000;
+      background: $main-text-color;
+      border: 1px solid $main-text-color;
       cursor: pointer;
       pointer-events: auto;
       user-select: none;
@@ -207,8 +208,8 @@
         display: block;
         width: 10px;
         height: 10px;
-        border-top: 2px solid #fff;
-        border-right: 2px solid #fff;
+        border-top: 2px solid $bg-color;
+        border-right: 2px solid $bg-color;
         transition: border-color 0.3s ease;
       }
       .left {
@@ -222,9 +223,9 @@
 
       @media (hover: hover) {
         &:hover {
-          background: #fff;
+          background: $bg-color;
           .arrow {
-            border-color: #000;
+            border-color: $main-text-color;
           }
         }
       }
@@ -232,9 +233,9 @@
       &:active {
         transform: scale(0.9);
         transition: transform 0.1s;
-        background: #fff;
+        background: $bg-color;
         .arrow {
-          border-color: #000;
+          border-color: $main-text-color;
         }
       }
     }
