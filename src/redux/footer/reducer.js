@@ -3,7 +3,6 @@ export const TOGGLE_MENU = 'TOGGLE_MENU';
 export const TOGGLE_CONTACT = 'TOGGLE_CONTACT';
 export const TOGGLE_FOLLOW = 'TOGGLE_FOLLOW';
 
-// new actions for subscription
 export const SUBSCRIBE_EMAIL = 'SUBSCRIBE_EMAIL';
 export const CLOSE_SUBSCRIBE_MODAL = 'CLOSE_SUBSCRIBE_MODAL';
 

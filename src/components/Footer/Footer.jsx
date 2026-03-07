@@ -4,7 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container } from "../Container/Container";
 import style from "./Footer.module.scss";
 
-import { subscribeEmail, closeSubscribeModal } from "../../redux/footer/actions";
+import {
+  subscribeEmail,
+  closeSubscribeModal,
+  toggleFeatures,
+  toggleMenu,
+  toggleContact,
+  toggleFollow,
+} from "../../redux/footer/footerSlice";
 
 import check from "../../images/check.svg";
 import logo from "../../images/logo.svg";
@@ -13,13 +20,6 @@ import fb from "../../images/facebook.svg";
 import twitt from "../../images/twitter.svg";
 import plus from "../../images/plus.svg";
 import minus from "../../images/minus.svg";
-
-import {
-  toggleFeatures,
-  toggleMenu,
-  toggleContact,
-  toggleFollow,
-} from "../../redux/footer/actions";
 
 export const Footer = () => {
   const dispatch = useDispatch();
@@ -160,7 +160,7 @@ export const Footer = () => {
                   <Link to="/cabinetpage" className={style.footerMenuItemLink}>orders history</Link>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <Link to="/mywishlist" className={style.footerMenuItemLink}>my wishlist</Link>
+                  <Link to="/account/wishlist" className={style.footerMenuItemLink}>my wishlist</Link>
                 </li>
                 <li className={style.footerMenuItem}>
                   <Link to="/articlepage" className={style.footerMenuItemLink}>blog</Link>
@@ -289,7 +289,6 @@ export const Footer = () => {
                 You have successfully subscribed with:
               </p>
               <p className={style.modalEmail}>{subscribedEmail}</p>
-            
               <button className={style.modalButton} onClick={handleCloseModal}>
                 Close
               </button>

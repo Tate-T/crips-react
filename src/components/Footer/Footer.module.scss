@@ -320,7 +320,7 @@
   }
 }
 
-/* subscription modal styles */
+
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -332,17 +332,9 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
-  animation: fadeIn 0.3s ease-in;
+  
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 
 .modalContent {
   background-color: #fff;
@@ -351,20 +343,10 @@
   max-width: 400px;
   width: 90%;
   position: relative;
-  animation: slideUp 0.3s ease-out;
+  
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 
 .closeButton {
   position: absolute;
@@ -375,7 +357,6 @@
   font-size: 24px;
   cursor: pointer;
   color: #666;
-  transition: color 0.2s;
   padding: 0;
   width: 30px;
   height: 30px;
@@ -415,7 +396,7 @@
   font-size: 16px;
   color: #000;
   margin: 0 0 15px 0;
-  word-break: break-all;
+
 }
 
 .modalSubText {
@@ -437,7 +418,7 @@
   text-transform: uppercase;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s;
+  
 }
 
 .modalButton:hover {
