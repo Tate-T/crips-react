@@ -2,9 +2,10 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 import { Container } from "../Container/Container";
 import { Mobmenu } from "./Mobmenu/Mobmenu";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeMenuState } from "../../redux/Header/menuSlice.js";
+import { useStyle } from "../../hooks/useStyle.js";
 
 import { NavLink, useNavigate } from "react-router-dom";
 
@@ -14,7 +15,9 @@ import Bag from "../../images/bag.svg";
 import Heart from "../../images/heart.svg";
 import Menu from "../../images/menu.svg";
 
-import style from "./Header.module.scss";
+import baseStyle from "./Header.module.scss";
+import darkStyle from "./dark.module.scss";
+import lightStyle from "./light.module.scss";
 
 // activePage може бути "home", "shop", "blog", "sale", "contact us"
 export function Header({ activePage }) {
@@ -22,6 +25,12 @@ export function Header({ activePage }) {
   const open = useSelector(state => state.header.menuState);
   const dispatcher = useDispatch();
   const auth = useContext(AuthContext);
+  // const style = useStyle(baseStyle, darkStyle, lightStyle);
+  const style = baseStyle;
+
+  useEffect(() => {
+    console.log(style);
+  }, []);
 
   const handleMenuChange = (ev) => {
     if (ev.target === ev.currentTarget || ev.currentTarget.className === `${style.header__menu}`) {
