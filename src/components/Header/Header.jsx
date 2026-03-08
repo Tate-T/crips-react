@@ -2,7 +2,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 
 import { Container } from "../Container/Container";
 import { Mobmenu } from "./Mobmenu/Mobmenu";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeMenuState } from "../../redux/Header/menuSlice.js";
 import { useStyle } from "../../hooks/useStyle.js";
@@ -19,14 +19,23 @@ import baseStyle from "./Header.module.scss";
 import darkStyle from "./dark.module.scss";
 import lightStyle from "./light.module.scss";
 
+import { changeTheme } from "../../redux/styleState/styleSlice.js";
+
 // activePage може бути "home", "shop", "blog", "sale", "contact us"
 export function Header({ activePage }) {
   const navigate = useNavigate();
   const open = useSelector(state => state.header.menuState);
   const dispatcher = useDispatch();
   const auth = useContext(AuthContext);
-  // const style = useStyle(baseStyle, darkStyle, lightStyle);
-  const style = baseStyle;
+
+  const [themeIdx, setThemeIdx] = useState(true);
+
+  const toggleTheme = () => {
+	dispatcher(changeTheme(themeIdx ? "dark" : "light"));
+	setThemeIdx(!themeIdx);
+  }
+
+  const style = useStyle(baseStyle, darkStyle, lightStyle);
 
   useEffect(() => {
     console.log(style);
@@ -48,6 +57,7 @@ export function Header({ activePage }) {
 
   return (
     <header className={style.header}>
+	  <button onClick={toggleTheme}>click</button>
       <Mobmenu activePage={activePage} change={handleMenuChange} />
       <Container>
         <div className={style.header__wrap}>
