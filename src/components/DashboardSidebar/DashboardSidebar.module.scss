@@ -4,7 +4,7 @@
   &__list {
     display: flex;
     flex-direction: column;
-    border: 1px solid $main-text-color;
+    border: 1px solid $main-text-color-light;
 
     @media screen and (min-width: 768px) {
     }
@@ -80,7 +80,7 @@
       font-size: 12px;
       line-height: 1.2;
       text-transform: uppercase;
-      color: $main-text-color;
+      color: $main-text-color-light;
 
       @media screen and (min-width: 768px) {
       }

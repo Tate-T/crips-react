@@ -14,7 +14,7 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 133%;
-    color: $main-text-color;
+    color: $main-text-color-light;
   }
   &__label {
     font-size: 12px;
@@ -57,14 +57,14 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: $contrast-text-color;
-    background-color: $main-text-color;
+    background-color: $main-text-color-light;
     padding: 8px 29px;
-    border: 1px solid $main-text-color;
+    border: 1px solid $main-text-color-light;
     transition: all $st-transition;
   }
   &__btn--place:hover {
     background-color: transparent;
-    color: $main-text-color;
+    color: $main-text-color-light;
   }
   &__btn--next {
     background-color: transparent;
@@ -73,7 +73,7 @@
     padding: 0;
   }
   &__btn--next:hover {
-    color: $main-text-color;
+    color: $main-text-color-light;
   }
   &__label--discount {
     margin-top: 10px;
@@ -86,7 +86,7 @@
       line-height: 167%;
     }
     button:hover {
-      color: $main-text-color;
+      color: $main-text-color-light;
     }
   }
   &__btn--tablet {
@@ -116,7 +116,7 @@
     }
     &__title {
       font-size: 24px;
-      color: $main-text-color;
+      color: $main-text-color-light;
     }
     &__text {
       font-weight: 500;
@@ -158,7 +158,7 @@
         transition: all $st-transition;
       }
       button:hover {
-        color: $main-text-color;
+        color: $main-text-color-light;
       }
     }
     &__btn--tablet {

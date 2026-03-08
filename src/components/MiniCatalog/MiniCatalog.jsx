@@ -5,7 +5,11 @@ import { nextPage } from "../../redux/MiniCatalog/miniCatalogSlice.js";
 import { Container } from "../Container/Container.jsx";
 import { MiniCatalogItem } from "./MiniCatalogItem.jsx";
 
-import styles from "./MiniCatalog.module.scss";
+import { useStyle } from "../../hooks/useStyle.js";
+
+import baseStyle from "./MiniCatalog.module.scss";
+import darkStyle from "./dark.module.scss";
+import lightStyle from "./light.module.scss";
 
 export const MiniCatalog = function () {
 	const dispatch = useDispatch();
@@ -20,6 +24,8 @@ export const MiniCatalog = function () {
 		console.log(nextPage);
 		console.log(nextPage());
 	};
+
+	const styles = useStyle(baseStyle, darkStyle, lightStyle);
 
 	return (
 		<>

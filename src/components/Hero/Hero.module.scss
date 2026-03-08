@@ -187,8 +187,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: $main-text-color;
-      border: 1px solid $main-text-color;
+      background: $main-text-color-light;
+      border: 1px solid $main-text-color-light;
       cursor: pointer;
       pointer-events: auto;
       user-select: none;
@@ -225,7 +225,7 @@
         &:hover {
           background: $bg-color;
           .arrow {
-            border-color: $main-text-color;
+            border-color: $main-text-color-light;
           }
         }
       }
@@ -235,7 +235,7 @@
         transition: transform 0.1s;
         background: $bg-color;
         .arrow {
-          border-color: $main-text-color;
+          border-color: $main-text-color-light;
         }
       }
     }
