@@ -15,7 +15,7 @@ import {
   clearCart, 
   getCartItems 
 } from "../../redux/cart/cartSlice.js"; 
-import { setShippingInfo } from "../../redux/createOrder/actions.js";
+import { setShippingInfo } from "../../redux/createOrder/createOrderSlice.js";
 
 import styles from "./CartPage.module.scss";
 
