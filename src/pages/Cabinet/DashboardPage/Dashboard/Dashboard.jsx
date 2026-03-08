@@ -1,6 +1,7 @@
 import styles from "./Dashboard.module.scss";
 import { Container } from "../../../../components/Container/Container";
 import NavBar from "../../../../components/NavBar/NavBar";
+import { Link } from "react-router-dom";
 
 export const Dashboard = () => {
   return (
@@ -25,10 +26,18 @@ export const Dashboard = () => {
                       Alex Driver ExampeAdress@gmail.com
                     </p>
                     <div className={styles.dashboard__btns}>
-                      <button className={styles.dashboard__btn}>Edit</button>
-                      <button className={styles.dashboard__btn}>
+                      <Link
+                        className={styles.dashboard__btn}
+                        to="/account/accountinformation"
+                      >
+                        Edit
+                      </Link>
+                      <Link
+                        className={styles.dashboard__btn}
+                        to="/account/accountinformation"
+                      >
                         Change Password
-                      </button>
+                      </Link>
                     </div>
                   </li>
                   <li className={styles.dashboard__item}>
@@ -36,7 +45,12 @@ export const Dashboard = () => {
                     <p className={styles.dashboard__desc}>
                       You don't subscribe to our newsletter.
                     </p>
-                    <button className={styles.dashboard__btn}>Edit</button>
+                    <Link
+                      className={styles.dashboard__btn}
+                      to="/account/newsletter"
+                    >
+                      Edit
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -51,9 +65,12 @@ export const Dashboard = () => {
                     <p className={styles.dashboard__desc}>
                       You have not set a default billing address.
                     </p>
-                    <button className={styles.dashboard__btn}>
+                    <Link
+                      className={styles.dashboard__btn}
+                      to="/account/address-book"
+                    >
                       Edit Address
-                    </button>
+                    </Link>
                   </li>
                   <li className={styles.dashboard__item}>
                     <h4 className={styles.dashboard__info}>
@@ -62,9 +79,9 @@ export const Dashboard = () => {
                     <p className={styles.dashboard__desc}>
                       You have not set a default shipping address.
                     </p>
-                    <button className={styles.dashboard__btn}>
+                    <Link className={styles.dashboard__btn} to="/CabinetPage">
                       Edit Address
-                    </button>
+                    </Link>
                   </li>
                 </ul>
               </div>
