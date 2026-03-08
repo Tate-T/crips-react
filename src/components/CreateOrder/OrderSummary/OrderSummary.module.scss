@@ -19,7 +19,7 @@
   &__total {
     font-weight: 500;
     font-size: 12px;
-    color: $main-text-color;
+    color: $main-text-color-light;
     font-family: "Oswald", sans-serif;
     span {
       font-weight: 400;
@@ -31,7 +31,7 @@
     align-items: center;
     font-weight: 400;
     font-size: 12px;
-    color: $main-text-color;
+    color: $main-text-color-light;
     text-decoration: underline;
     text-decoration-skip-ink: none;
     font-family: "Oswald", sans-serif;
@@ -81,7 +81,7 @@ button {
       font-weight: 400;
       font-size: 24px;
       line-height: 283%;
-      color: $main-text-color;
+      color: $main-text-color-light;
       font-family: "Oswald", sans-serif;
     }
     &__ans {

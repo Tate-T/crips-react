@@ -13,7 +13,7 @@
     // }
 
     &__title {
-        color: $main-text-color;
+        color: $main-text-color-light;
         font-size: 24px;
         font-family: "Roboto", sans-serif;
         font-weight: 500;
@@ -70,7 +70,7 @@
     }
 
     &__subtitle_item {
-        color: $main-text-color;
+        color: $main-text-color-light;
         font-size: 24px;
         font-weight: 400;
         line-height: 1.2;
@@ -89,7 +89,7 @@
     &__line_item {
         height: 2px;
         width: 100%;
-        background: $main-text-color;
+        background: $main-text-color-light;
         margin-top: auto;
         margin-bottom: 15px;
     }

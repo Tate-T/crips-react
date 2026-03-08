@@ -1,5 +1,4 @@
-@import "../../sass/utils/variables.scss";
-@import "../../sass/utils/mixins.scss";
+@import "../../sass/base/base.scss";
 
 .mini-catalog {
 	&__wrap {
@@ -72,14 +71,14 @@
 
 		&-title {
 			@include typography(Oswald, 300, 12px, 18px, 0%, _);
-			color: $main-text-color;
+			color: $main-text-color-light;
 		}
 
 		&-price {
 			@include typography(Oswald, 500, 14px, 100%, 0%, _);
 			margin-top: 18px;
 			text-transform: uppercase;
-			color: $main-text-color;
+			color: $main-text-color-light;
 
 			display: flex;
 			align-items: center;

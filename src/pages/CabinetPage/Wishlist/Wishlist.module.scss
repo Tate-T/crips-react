@@ -57,7 +57,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     @include desk-s {
       display: none;
       margin-bottom: 17px;
-      color: $main-text-color;
+      color: $main-text-color-light;
       font-size: 48px;
       font-weight: 400;
       line-height: 68px;
@@ -415,15 +415,15 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: $main-text-color;
-      color: $main-text-color;
+      border-color: $main-text-color-light;
+      color: $main-text-color-light;
     }
   }
 
   &_active {
-    background-color: $main-text-color;
+    background-color: $main-text-color-light;
     color: $bg-color;
-    border-color: $main-text-color;
+    border-color: $main-text-color-light;
 
     &:hover {
       background-color: $inactive-color;
@@ -432,9 +432,9 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
   }
 
   &_active {
-    background-color: $main-text-color;
+    background-color: $main-text-color-light;
     color: $bg-color;
-    border-color: $main-text-color;
+    border-color: $main-text-color-light;
 
     &:hover {
       background-color: $inactive-color;
@@ -452,7 +452,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
-    color: $main-text-color;
+    color: $main-text-color-light;
     transition: opacity 0.3s ease;
 
     &:hover {
@@ -491,8 +491,8 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
   display: block;
   width: 10px;
   height: 10px;
-  border-top: 2px solid $main-text-color;
-  border-right: 2px solid $main-text-color;
+  border-top: 2px solid $main-text-color-light;
+  border-right: 2px solid $main-text-color-light;
   transition: border-color 0.3s ease;
 }
 .left {

@@ -106,7 +106,7 @@
 }
 
 .mainImgText{
-    color: $main-text-color;
+    color: $main-text-color-light;
     font-family: Oswald;
     font-size: 12px;
     font-style: normal;
@@ -243,7 +243,7 @@
 
 
 .catalogeSubTitle {
-    color: $main-text-color;
+    color: $main-text-color-light;
     font-family: Oswald;
     font-size: 18px;
     font-style: normal;
@@ -270,7 +270,7 @@
 }
 
 .catalogeText{
-    color: $main-text-color;
+    color: $main-text-color-light;
     font-family: Oswald;
     font-size: 14px;
     font-style: normal;
@@ -294,7 +294,7 @@
 }
 
 .selectText{
-    color: $main-text-color;
+    color: $main-text-color-light;
     font-family: Oswald;
     font-size: 14px;
     font-style: normal;
@@ -415,7 +415,7 @@
 }
 
 .activeBtnCataloge{
-    outline: solid $main-text-color 3px;
+    outline: solid $main-text-color-light 3px;
     // background-color: darkslategray;
 }
 
@@ -427,7 +427,7 @@
 }
 
 .quantityText{
-    color: $main-text-color;
+    color: $main-text-color-light;
     font-family: Oswald;
     font-size: 14px;
     font-style: normal;
@@ -441,7 +441,7 @@
 }
 
 .quantityTextSub{
-    color: $main-text-color;
+    color: $main-text-color-light;
     font-family: Oswald;
     font-size: 14px;
     font-style: normal;
@@ -457,7 +457,7 @@
 }
 
 .euroText{
-    color: $main-text-color;
+    color: $main-text-color-light;
     font-family: Oswald;
     font-size: 26px;
     font-style: normal;
@@ -479,7 +479,7 @@
 }
 
 .plusMinusText{
-    color: $main-text-color;
+    color: $main-text-color-light;
     text-align: center;
     font-family: Oswald;
     font-size: 16px;
@@ -521,7 +521,7 @@
     line-height: normal;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    background-color: $main-text-color;
+    background-color: $main-text-color-light;
 
     
 
@@ -636,7 +636,7 @@ color: $inactive-color;
 .activeSize {
 //   background-color: black;
     // color: black;
-    outline: 2px solid $main-text-color; 
+    outline: 2px solid $main-text-color-light; 
     outline-offset: 2px; 
 }
 
@@ -653,7 +653,7 @@ color: $inactive-color;
 }
 
 .activeColor {
-    outline: 2px solid $main-text-color; 
+    outline: 2px solid $main-text-color-light; 
     outline-offset: 2.5px; 
 }
 
