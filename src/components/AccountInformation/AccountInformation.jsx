@@ -1,46 +1,84 @@
-import { Container } from "../../../../components/Container/Container";
-import NavBar from "../../../../components/NavBar/NavBar";
+import { useState } from "react";
+import { Container } from "../Container/Container";
+import NavBar from "../NavBar/NavBar";
+import {
+  Sect,
+  Way,
+  Title,
+  Wrap,
+  Form,
+  Subtitle,
+  Labels,
+  Label,
+  Desc,
+  Red,
+  Input,
+  LabelC,
+  Checkbox,
+  Button,
+} from "./AccountInformation";
 
 export const AccountInformation = () => {
+  const [showEmailInput, setShowEmailInput] = useState(false);
+  const [showPasswordInput, setShowPasswordInput] = useState(false);
+
   return (
-    <section>
+    <Sect>
       <Container>
-        <p>Home / My Dashboard</p>
-        <h2>Edit Account Information</h2>
-        <div>
-          <div>
-            <NavBar />
-            <form>
-              <h2>Account Information</h2>
-              <label>
-                First name *
-                <input required type="text" />
-              </label>
-              <label>
-                Last Name *
-                <input required type="text" />
-              </label>
-              <label>
-                Email
-                <input required type="email" />
-              </label>
-              <label>
-                Password
-                <input required type="password" />
-              </label>
-              <label>
-                <input required type="checkbox" />
+        <Way>Home / My Dashboard</Way>
+        <Title>Edit Account Information</Title>
+        <Wrap>
+          <NavBar />
+          <Form>
+            <Subtitle>Account Information</Subtitle>
+            <Labels>
+              <Label>
+                <Desc>
+                  First name <Red>*</Red>
+                </Desc>
+                <Input placeholder="Alex" required type="text" />
+              </Label>
+
+              <Label>
+                <Desc>
+                  Last name <Red>*</Red>
+                </Desc>
+                <Input placeholder="Driver" required type="text" />
+              </Label>
+
+              {showEmailInput && (
+                <Label>
+                  Email
+                  <Input required type="email" />
+                </Label>
+              )}
+              {showPasswordInput && (
+                <Label>
+                  Password
+                  <Input required type="password" />
+                </Label>
+              )}
+              <LabelC>
+                <Checkbox
+                  type="checkbox"
+                  checked={showEmailInput}
+                  onChange={(e) => setShowEmailInput(e.target.checked)}
+                />
                 Change Email
-              </label>
-              <label>
-                <input required type="checkbox" />
+              </LabelC>
+              <LabelC>
+                <Checkbox
+                  type="checkbox"
+                  checked={showPasswordInput}
+                  onChange={(e) => setShowPasswordInput(e.target.checked)}
+                />
                 Change Password
-              </label>
-              <button type="submit">Save</button>
-            </form>
-          </div>
-        </div>
+              </LabelC>
+            </Labels>
+            <Button type="submit">Save</Button>
+          </Form>
+        </Wrap>
       </Container>
-    </section>
+    </Sect>
   );
 };
