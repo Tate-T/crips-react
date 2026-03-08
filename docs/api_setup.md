@@ -22,6 +22,17 @@ VITE_SOMETHING=value
    * Вставте у поле Name назву вашої змінної середовища у .env, але вже без префікса VITE_ (наприклад, USERS_API або PIXABAY_API_KEY);
    * Вставте у поле Secret значення змінної (саме посилання або ключ);
    * Натисніть "Add secret".
+4. Додайте ключ у .github/workflows/main.yml
+додайте рядок зі своїм ключем у .github/workflows/main.yml:
+```diff
+      - name: Build with Vite
+        run: npm run build
+        env:
+          VITE_X: ${{ secrets.VITE_X }}
+          VITE_Y: ${{ secrets.VITE_Y }}
+          VITE_Z: ${{ secrets.VITE_Z }}
++         VITE_SOMETHING: ${{ secrets.VITE_SOMETHING }}
+```
 
 ## Використання в коді
 Для того, щоб використати вашу змінну середовища у коді, використовується наступний синтаксис:
