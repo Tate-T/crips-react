@@ -8,6 +8,7 @@ import { changeMenuState } from "../../redux/Header/menuSlice.js";
 import { useStyle } from "../../hooks/useStyle.js";
 
 import { NavLink, useNavigate } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 import Logo from "../../images/logo.svg";
 import Search from "../../images/search.svg";
@@ -79,9 +80,9 @@ export function Header({ activePage }) {
                   </NavLink>
                 </li>
                 <li>
-                  <a href="/#blog" className={style.nav__link}>
+                  <HashLink smooth to="/#blog" className={style.nav__link}>
                     BLOG
-                  </a>
+                  </HashLink>
                 </li>
                 <li>
                   <NavLink to="/cartpage" className={({ isActive }) => (isActive ? `${style.nav__link} ${style.active}` : style.nav__link)}>
@@ -89,9 +90,9 @@ export function Header({ activePage }) {
                   </NavLink>
                 </li>
                 <li>
-                  <a href="#footer" className={style.nav__link}>
+                  <HashLink smooth to="#footer" className={style.nav__link}>
                     CONTACT US
-                  </a>
+                  </HashLink>
                 </li>
               </ul>
             </nav>
