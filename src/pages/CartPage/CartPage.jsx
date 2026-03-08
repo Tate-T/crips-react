@@ -14,7 +14,8 @@ import {
   removeItem, 
   clearCart, 
   getCartItems 
-} from "../../redux/cart/actions.js"; 
+} from "../../redux/cart/cartSlice.js"; 
+import { setShippingInfo } from "../../redux/createOrder/actions.js";
 
 import styles from "./CartPage.module.scss";
 
@@ -26,8 +27,31 @@ export const CartPage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    let form=e.target;
+    const formData = {
+      email:   "",
+      password:  "",
+      firstName:   "",
+      lastName:  "",
+      company:  "",
+      streetAddress: ["","",""],
+      country: form.countries?.value || "",
+      stateProvince: form.states?.value || "",
+      shippingMethod: form.shipping?.value || "fixed",
+      zip: form.postCode?.value || "",
+    };
+
+    console.log(formData);
+
+    dispatch(setShippingInfo(formData));
     navigate("/CabinetPage", { replace: false });
   };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    navigate("/", { replace: false });
+
+  }
 
   const subtotal = products.reduce(
     (acc, curr) => acc + curr.price * (curr.quantity || 1),
@@ -80,7 +104,7 @@ export const CartPage = () => {
                   ))}
                 </ul>
                 <div className={styles.cart__wrapper}>
-                  <button type="button" className={styles.cart__button}>
+                  <button onClick={handleClick} type="button" className={styles.cart__button}>
                     continue shopping
                   </button>
                   <button 

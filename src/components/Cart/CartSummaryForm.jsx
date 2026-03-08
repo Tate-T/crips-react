@@ -41,7 +41,7 @@ export const CartSummaryForm = ({ subtotal, handleSubmit }) => {
           </div>
           <div className={styles.cart__details__information}>
             <p className={styles.cart__details__info}>Zip/Postal Code</p>
-            <input type="text" className={styles.cart__details__postcode} />
+            <input name="postCode" type="text" className={styles.cart__details__postcode} />
           </div>
         </div>
         <p className={styles.cart__details__tax}>Flat Rate</p>
