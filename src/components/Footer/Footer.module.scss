@@ -1,5 +1,9 @@
+@import "../../sass/utils/variables.scss";
+
 .footer {
-  background-color: #000;
+ 
+  background-color: $main-text-color;
+  color: $contrast-text-color;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,9 +11,10 @@
   width: 100%;
 }
 
+
 .topFooter {
   width: 100%;
-  background-color: #E6F1FA;
+  background-color: $functional-bg-color;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,11 +46,12 @@
   font-family: Oswald, sans-serif;
   font-weight: 400;
   font-size: 14px;
+  color: $main-text-color;
 }
 
 .mainFooter {
   width: 100%;
-  background-color: #000;
+  background-color: $main-text-color;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,7 +105,7 @@
 
 .mainFooterItemTitle {
   text-transform: uppercase;
-  color: #FFF;
+  color: $contrast-text-color;
   font-family: Oswald, sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -128,7 +134,7 @@
 .footerFeaturesItemLink,
 .footerMenuItemLink {
   text-transform: uppercase;
-  color: #828282;
+  color: $secondary-text-color;
   font-size: 13px;
 }
 
@@ -139,12 +145,12 @@
 
 .mainFooterItemSubtitle {
   text-transform: uppercase;
-  color: #FFF;
+  color: $contrast-text-color;
   margin: 0 0 5px;
 }
 
 .mainFooterItemContacts {
-  color: #828282;
+  color: $secondary-text-color;
   font-size: 13px;
 }
 
@@ -159,7 +165,7 @@
 }
 
 .footerFollowUsSocialMedia {
-  color: #828282;
+  color: $secondary-text-color;
   font-size: 13px;
 }
 
@@ -172,7 +178,7 @@
 
 .mainFooterSubscribeText {
   text-transform: uppercase;
-  color: #828282;
+  color: $secondary-text-color;
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 13px;
@@ -181,22 +187,22 @@
 .mainFooterSubscribeInput {
   width: 100%;
   height: 43.2px;
-  background-color: #000;
-  color: #FFF;
-  border: 1px solid #FFF;
+  background-color: $main-text-color;
+  color: $contrast-text-color;
+  border: 1px solid $contrast-text-color;
   padding-left: 15px;
 }
 
 .mainFooterSubscribeInput::placeholder {
-  color: #FFF;
+  color: $contrast-text-color;
   opacity: 1;
 }
 
 .mainFooterSubscribeButton {
   width: 100%;
   height: 40px;
-  background-color: #FFF;
-  color: #3F3F3F;
+  background-color: $contrast-text-color;
+  color: $inactive-color;
   text-transform: uppercase;
   font-family: Oswald, sans-serif;
   font-weight: 400;
@@ -220,6 +226,7 @@
 }
 
 .footerBottomHr {
+  color: #4F4F4F;
   width: 100%;
   border: none;
   border-top: 1px solid #4F4F4F;
@@ -228,7 +235,7 @@
 
 .footerBottomText {
   text-transform: uppercase;
-  color: #FFF;
+  color: $contrast-text-color;
   font-family: Roboto, sans-serif;
   font-weight: 700;
   font-size: 12px;
@@ -337,7 +344,7 @@
 
 
 .modalContent {
-  background-color: #fff;
+  background-color: $bg-color;
   border-radius: 8px;
   padding: 40px 30px;
   max-width: 400px;
@@ -366,7 +373,7 @@
 }
 
 .closeButton:hover {
-  color: #000;
+  color: $main-text-color;
 }
 
 .modalBody {
@@ -378,7 +385,7 @@
   font-weight: 600;
   font-size: 28px;
   margin: 0 0 20px 0;
-  color: #000;
+  color: $main-text-color;
   text-transform: uppercase;
 }
 
@@ -394,7 +401,7 @@
   font-family: Roboto, sans-serif;
   font-weight: 600;
   font-size: 16px;
-  color: #000;
+  color: $main-text-color;
   margin: 0 0 15px 0;
 
 }
@@ -403,15 +410,15 @@
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 13px;
-  color: #999;
+  color: $subtitle-text-color;
   margin: 0 0 30px 0;
 }
 
 .modalButton {
   width: 100%;
   height: 45px;
-  background-color: #000;
-  color: #fff;
+  background-color: $main-text-color;
+  color: $contrast-text-color;
   font-family: Oswald, sans-serif;
   font-weight: 500;
   font-size: 14px;
