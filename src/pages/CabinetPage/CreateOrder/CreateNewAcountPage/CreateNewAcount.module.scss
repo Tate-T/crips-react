@@ -1,5 +1,9 @@
+@import "../../../../sass/utils/variables.scss";
+@import "../../../../sass/utils/mixins.scss";
+
+
 .createMainText{
-    color: var($secondary-text-color);
+    color: $secondary-text-color;
     font-family: Roboto;
     font-size: 10px;
     font-style: normal;
@@ -22,7 +26,7 @@
 }
 
 .createMainTitle{
-    color: var($main-text-color);
+    color: $main-text-color;
     text-align: center;
     font-family: Oswald;
     font-size: 18px;
@@ -48,7 +52,7 @@
 .createMainBox {
     width: 300px;
     flex-shrink: 0;
-    background: var($bg-color);
+    background: $bg-color;
     margin-left: auto;
     margin-right: auto;
 
@@ -58,7 +62,7 @@
     @media screen and (min-width: 1200px) {
         width: 1200px;
 
-        border: 1px solid var($divider-color);
+        border: 1px solid $divider-color;
         height: 845px;
        
     }
@@ -89,7 +93,7 @@
 }
 
 .createPersonalText{
-    color: var($main-text-color);
+    color: $main-text-color;
     font-family: Oswald;
     font-size: 14px;
     font-style: normal;
@@ -114,7 +118,7 @@
 }
 
 .createPersonalTextSec{
-    color: var($main-text-color);
+    color: $main-text-color;
     font-family: Oswald;
     font-size: 14px;
     font-style: normal;
@@ -156,7 +160,7 @@
 }
 
 .create__label{
-    color: var($inactive-color);
+    color: $inactive-color;
 
     /* Roboto Regular 16 */
     font-family: Roboto;
@@ -179,7 +183,7 @@
 }
 
 .create__labelSign{
-    color: var($secondary-text-color);
+    color: $secondary-text-color;
     /* Roboto Regular 14 */
     font-family: Roboto;
     font-size: 10px;
@@ -202,7 +206,7 @@
 }
 
 .create__required{
-    color: var($accent-color);
+    color: $accent-color;
 
     /* Roboto Regular 16 */
     font-family: Roboto;
@@ -251,7 +255,7 @@
 }
 
 .createBtn{
-    color: var($bg-color);
+    color: $bg-color;
     text-align: center;
     font-family: Oswald;
     font-size: 14px;
@@ -281,8 +285,8 @@
 }
 
 .backBtn{
-    background-color: var($bg-color);
-    color: var(--Gray-1, #828282);
+    background-color: $bg-color;
+    color: $secondary-text-color;
     text-align: right;
 
     /* Oswald Medium 14 */
