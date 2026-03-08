@@ -1,6 +1,8 @@
+@import '../../../sass/utils/variables.scss'; 
+
 .blog {
     padding: 60px 0;
-    background: #EEEEEE;
+    background: $form-bg-color;
     font-family: 'Oswald', sans-serif;
 
     // &__container {
@@ -11,7 +13,7 @@
     // }
 
     &__title {
-        color: #000;
+        color: $main-text-color;
         font-size: 24px;
         font-family: "Roboto", sans-serif;
         font-weight: 500;
@@ -40,8 +42,8 @@
     }
 
     &__item {
-        background: #FFF;
-        transition: all 0.3s ease;
+        background: $bg-color;
+        transition: all $st-transition;
 
         a {
             display: flex;
@@ -58,7 +60,7 @@
     }
 
     &__title_item {
-        color: #BDBDBD;
+        color: $subtitle-text-color;
         font-family: "Oswald", sans-serif;
         font-size: 12px;
         font-weight: 500;
@@ -68,7 +70,7 @@
     }
 
     &__subtitle_item {
-        color: #000;
+        color: $main-text-color;
         font-size: 24px;
         font-weight: 400;
         line-height: 1.2;
@@ -76,7 +78,7 @@
     }
 
     &__info_item {
-        color: #666;
+        color: $secondary-text-color;
         font-family: "Roboto", sans-serif;
         font-size: 13px;
         font-weight: 300;
@@ -87,13 +89,13 @@
     &__line_item {
         height: 2px;
         width: 100%;
-        background: #000;
+        background: $main-text-color;
         margin-top: auto;
         margin-bottom: 15px;
     }
 
     &__date_item {
-        color: #999;
+        color: $secondary-text-color;
         font-family: "Roboto", sans-serif;
         font-size: 10px;
         text-transform: lowercase;
