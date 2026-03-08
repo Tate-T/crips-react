@@ -1,5 +1,5 @@
 .createMainText{
-    color: var(--Gray-1, #828282);
+    color: var($secondary-text-color);
     font-family: Roboto;
     font-size: 10px;
     font-style: normal;
@@ -22,7 +22,7 @@
 }
 
 .createMainTitle{
-    color: #000;
+    color: var($main-text-color);
     text-align: center;
     font-family: Oswald;
     font-size: 18px;
@@ -48,7 +48,7 @@
 .createMainBox {
     width: 300px;
     flex-shrink: 0;
-    background: #FFF;
+    background: var($bg-color);
     margin-left: auto;
     margin-right: auto;
 
@@ -58,7 +58,7 @@
     @media screen and (min-width: 1200px) {
         width: 1200px;
 
-        border: 1px solid var(--Divider, #C4C4C4);
+        border: 1px solid var($divider-color);
         height: 845px;
        
     }
@@ -89,7 +89,7 @@
 }
 
 .createPersonalText{
-    color: #000;
+    color: var($main-text-color);
     font-family: Oswald;
     font-size: 14px;
     font-style: normal;
@@ -114,7 +114,7 @@
 }
 
 .createPersonalTextSec{
-     color: #000;
+    color: var($main-text-color);
     font-family: Oswald;
     font-size: 14px;
     font-style: normal;
@@ -156,7 +156,7 @@
 }
 
 .create__label{
-    color: var(--Black-2, #3F3F3F);
+    color: var($inactive-color);
 
     /* Roboto Regular 16 */
     font-family: Roboto;
@@ -179,7 +179,7 @@
 }
 
 .create__labelSign{
-    color: var(--Gray-1, #828282);
+    color: var($secondary-text-color);
     /* Roboto Regular 14 */
     font-family: Roboto;
     font-size: 10px;
@@ -202,7 +202,7 @@
 }
 
 .create__required{
-    color: var(--Main-Color-2, #EB5757);
+    color: var($accent-color);
 
     /* Roboto Regular 16 */
     font-family: Roboto;
@@ -251,7 +251,7 @@
 }
 
 .createBtn{
-    color: #FFF;
+    color: var($bg-color);
     text-align: center;
     font-family: Oswald;
     font-size: 14px;
@@ -281,7 +281,7 @@
 }
 
 .backBtn{
-    background-color: #FFF;
+    background-color: var($bg-color);
     color: var(--Gray-1, #828282);
     text-align: right;
 
