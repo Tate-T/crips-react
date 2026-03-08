@@ -4,9 +4,12 @@ import axios from "axios";
 import { Container } from "../../components/Container/Container";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import {catalogData} from "../../../src/data/catalog-data";
 
 import { useDispatch, useSelector } from "react-redux";
-import {
+
+
+import { 
   setProducts,
   selectColor,
   selectSize,
@@ -20,7 +23,6 @@ const productsAPI = import.meta.env.VITE_PRODUCTS_API;
 axios.defaults.baseURL = productsAPI;
 
 export function CardInfo() {
-  const colors = [" #24426A", " wheat", "#666689"];
   const sizes = [
     "osfa",
     "w26",
@@ -44,6 +46,54 @@ export function CardInfo() {
     "w52",
   ];
 
+
+  const { id } = useParams();
+  const dispatch = useDispatch();
+ 
+  const {
+    products,
+    selectedColor,
+    selectedSize,
+    quantity,
+  } = useSelector(state => state.cardinfo);
+
+  useEffect(() => {
+    if (products.length === 0) {
+      dispatch(setProducts(catalogData));
+    }
+  }, [dispatch, products.length]);
+
+
+  const product = products.find(p => p.id === id);
+
+  if (products.length === 0) {
+    return <p>Loading products...</p>;
+  }
+
+  if (!product) {
+    return <p>Product with ID {id} not found</p>;
+  }
+
+  
+  const handleSelectColor = (color) => {
+    dispatch(selectColor(color));
+  };
+
+  const handleSelectSize = (size) => {
+    dispatch(selectSize(size));
+  };
+
+  const handlePlus = () => {
+    dispatch(increaseQuantity());
+  };
+
+  const handleMinus = () => {
+    dispatch(decreaseQuantity());
+  };
+
+
+
+
   /*const [products, setProducts] = useState([]);
   const [selectColor, setSelectColor] = useState(null);
   const [selectSize, setSelectSize] = useState(null);
@@ -66,32 +116,19 @@ export function CardInfo() {
     setQuantity(quantity + 1);
   };*/
 
-  const dispatch = useDispatch();
+  
 
-  const { products, selectedColor, selectedSize, quantity } = useSelector(
+  /*const { products, selectedColor, selectedSize, quantity } = useSelector(
     (state) => state.product,
-  );
+  );*/
 
-  const handleSelectColor = (color) => {
-    dispatch(selectColor(color));
-  };
 
-  const handleSelectSize = (size) => {
-    dispatch(selectSize(size));
-  };
+  
 
-  const handlePlus = () => {
-    dispatch(increaseQuantity());
-  };
-
-  const handleMinus = () => {
-    dispatch(decreaseQuantity());
-  };
-
-  useEffect(() => {
+  /*useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const r = await axios.get("/");
+        const r = await axios.get("https://catalog-data");
 
         //setProducts(r.data);
         dispatch(setProducts(r.data));
@@ -100,12 +137,19 @@ export function CardInfo() {
       }
     };
     fetchProducts();
-  }, [dispatch]);
+  }, [dispatch]);*/
 
-  const { id } = useParams();
 
-  const product = products.find((product) => product.id == id);
-  console.log(id);
+
+  // const productsData = useSelector(state => state.cardinfo)
+  // console.log(productsData)
+
+  
+  
+
+   //const product = products.find((product) => product.id == id);
+  //console.log(id);
+
 
   return (
     <>
@@ -118,22 +162,22 @@ export function CardInfo() {
                 <li className={s.cardImgItem}>
                   <img
                     className={s.cardImg}
-                    src="https://img.gepur.com/products/45000/44507/webp/origins/44507_1_1.webp?1684224571https://img.gepur.com/products/45000/44507/webp/origins/44507_1_1.webp?1684224571"
-                    alt=""
+                    src={product.img}
+                    alt={product.name}
                   />
                 </li>
                 <li className={s.cardImgItem}>
                   <img
                     className={s.cardImg}
-                    src="https://img.gepur.com/products/45000/44507/webp/origins/44507_1_1.webp?1684224571https://img.gepur.com/products/45000/44507/webp/origins/44507_1_1.webp?1684224571"
-                    alt=""
+                    src={product.img}
+                    alt={product.name}
                   />
                 </li>
                 <li className={s.cardImgItem}>
                   <img
                     className={s.cardImg}
-                    src="https://img.gepur.com/products/45000/44507/webp/origins/44507_1_1.webp?1684224571https://img.gepur.com/products/45000/44507/webp/origins/44507_1_1.webp?1684224571"
-                    alt=""
+                    src={product.img}
+                    alt={product.name}
                   />
                 </li>
               </ul>
@@ -141,8 +185,8 @@ export function CardInfo() {
             <div className={s.mainImgBox}>
               <img
                 className={s.mainImg}
-                src="https://img.gepur.com/products/45000/44507/webp/origins/44507_1_1.webp?1684224571https://img.gepur.com/products/45000/44507/webp/origins/44507_1_1.webp?1684224571"
-                alt=""
+                src={product.img}
+                alt={product.name}
               />
               <div className={s.mainIconListBox}>
                 <p className={s.mainImgText}>Share:</p>
@@ -259,34 +303,32 @@ export function CardInfo() {
                 </div>
 
                 <h2 className={s.catalogeSubTitle}>
+                  {product.name}
                   Women Black Checked Fit and Flare Dress
                 </h2>
               </div>
               <p className={s.catalogeText}>Select Color</p>
-              {/* ///////// */}
               <div className={s.catalogeColorList}>
-                {colors.map((color) => (
+                {product.colors.map((color) => (
                   <div
                     key={color}
-                    className={`${s.catalogeColorItem} ${selectColor === color ? s.activeColor : ""}`}
+                    className={`${s.catalogeColorItem} ${selectedColor === color ? s.activeColor : ""}`}
                     style={{ backgroundColor: color }}
                     onClick={() => handleSelectColor(color)}
                   />
                 ))}
               </div>
-              {/* /////////// */}
+             
               <div className={s.selectBox}>
                 <p className={s.selectText}>Select size (Inches)</p>
                 <a href="./" className={s.selectLink}>
                   Size guide
                 </a>
               </div>
-              {/* ////// */}
-              {/* ............ */}
-              //
+
               <select
                 className={s.selectSize}
-                value={selectSize}
+                value={selectedSize || ""}
                 onChange={(e) => handleSelectSize(e.target.value)}
               >
                 <option value="">Виберіть розмір</option>
@@ -301,7 +343,7 @@ export function CardInfo() {
                 {sizes.map((size) => (
                   <li
                     key={size}
-                    className={`${s.sizeItem} ${selectSize === size ? s.activeSize : ""}`}
+                    className={`${s.sizeItem} ${selectedSize === size ? s.activeSize : ""}`}
                     onClick={() => handleSelectSize(size)}
                   >
                     <p className={s.sizeText}>{size}</p>
@@ -329,7 +371,7 @@ export function CardInfo() {
                   </button>
 
                   <p className={s.plusMinusText}>{quantity}</p>
-
+                  
                   <button onClick={handlePlus} className={s.iconBtn}>
                     <svg
                       className={s.plusBoxIcon}
@@ -350,14 +392,11 @@ export function CardInfo() {
                     </svg>
                   </button>
                 </div>
-                <p className={s.euroText}>{(90 * quantity).toFixed(2)} EUR</p>
+                <p className={s.euroText}>{product.price * quantity} EUR</p>
               </div>
               <div className={s.btnBox}>
                 <button className={s.btnAdd}>Add to bag</button>
                 <button className={s.btnSave}>
-                  {/* <svg>
-
-                    </svg> */}
                   <p className={s.btnSaveText}>Save</p>
                 </button>
               </div>
