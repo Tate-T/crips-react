@@ -1,7 +1,8 @@
-
+@import "../../sass/utils/mixins.scss";
+@import "../../sass/utils/variables.scss";
 
 .mainTitle{
-    color: var($secondary-text-color);
+    color: $secondary-text-color;
     font-family: Roboto;
     font-size: 10px;
     font-style: normal;
@@ -105,7 +106,7 @@
 }
 
 .mainImgText{
-    color: var($main-text-color);
+    color: $main-text-color;
     font-family: Oswald;
     font-size: 12px;
     font-style: normal;
@@ -153,7 +154,7 @@
 }
 
 .catalogeTitle{
-    color: var($secondary-text-color);
+    color: $secondary-text-color;
     font-family: Roboto;
     font-size: 14px;
     font-style: normal;
@@ -192,7 +193,7 @@
 }
 
 .fendiBox {
-    background: var($form-bg-color);
+    background: $form-bg-color;
     width: 48px;
     height: 22px;
    
@@ -242,7 +243,7 @@
 
 
 .catalogeSubTitle {
-    color: var($main-text-color);
+    color: $main-text-color;
     font-family: Oswald;
     font-size: 18px;
     font-style: normal;
@@ -269,7 +270,7 @@
 }
 
 .catalogeText{
-    color: var($main-text-color);
+    color: $main-text-color;
     font-family: Oswald;
     font-size: 14px;
     font-style: normal;
@@ -293,7 +294,7 @@
 }
 
 .selectText{
-    color: var($main-text-color);
+    color: $main-text-color;
     font-family: Oswald;
     font-size: 14px;
     font-style: normal;
@@ -304,7 +305,7 @@
 }
 
 .selectLink{
-    color: var($link-color);
+    color: $link-color;
     text-align: right;
     font-family: Roboto;
     font-size: 14px;
@@ -360,7 +361,7 @@
     display: flex;
     padding: 10px;
     width: 290px;
-    border: solid var($divider-color) 1.5px;
+    border: solid $divider-color 1.5px;
 
 
     @media screen and (min-width: 768px) {
@@ -371,20 +372,20 @@
 .sizeItem{
     width: 46px;
     height: 46px;
-    border: solid var($divider-color) 1.5px;
+    border: solid $divider-color 1.5px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     &:hover{
-            border: solid var($secondary-text-color) 2px;
+            border: solid $secondary-text-color 2px;
             
             outline-offset: 2px;
     }
 }
 
 .sizeText{
-    color: var($secondary-text-color);
+    color: $secondary-text-color;
     text-align: center;
     font-family: Oswald;
     font-size: 14px;
@@ -401,9 +402,9 @@
 .btnCatalogeSize{
     width: 46px;
     height: 46px;
-    background-color: var(bg-color);
+    background-color: bg-color;
 
-    color: var($secondary-text-color);
+    color: $secondary-text-color;
     // text-align: center;
     font-family: Oswald;
     font-size: 14px;
@@ -414,7 +415,7 @@
 }
 
 .activeBtnCataloge{
-    outline: solid var($main-text-color) 3px;
+    outline: solid $main-text-color 3px;
     // background-color: darkslategray;
 }
 
@@ -426,7 +427,7 @@
 }
 
 .quantityText{
-    color: var($main-text-color);
+    color: $main-text-color;
     font-family: Oswald;
     font-size: 14px;
     font-style: normal;
@@ -440,7 +441,7 @@
 }
 
 .quantityTextSub{
-    color: var($main-text-color);
+    color: $main-text-color;
     font-family: Oswald;
     font-size: 14px;
     font-style: normal;
@@ -456,7 +457,7 @@
 }
 
 .euroText{
-    color: var($main-text-color);
+    color: $main-text-color;
     font-family: Oswald;
     font-size: 26px;
     font-style: normal;
@@ -471,14 +472,14 @@
     display: flex;
     align-items: center;
 
-    border: 1px solid var($divider-color);
-    background: var($bg-color);
+    border: 1px solid $divider-color;
+    background: $bg-color;
     width: 120px;
     margin-bottom: 36px;
 }
 
 .plusMinusText{
-    color: var($main-text-color);
+    color: $main-text-color;
     text-align: center;
     font-family: Oswald;
     font-size: 16px;
@@ -511,7 +512,7 @@
 }
 
 .btnAdd{
-    color: var($bg-color);
+    color: $bg-color;
     text-align: center;
     font-family: Oswald;
     font-size: 14px;
@@ -520,7 +521,7 @@
     line-height: normal;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    background-color: var($main-text-color);
+    background-color: $main-text-color;
 
     
 
@@ -551,14 +552,14 @@
     line-height: normal;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    background-color:var($bg-color);
+    background-color:$bg-color;
 
     flex-shrink: 0;
     width: 139px;
     height: 38px;
 
 
-    border: 2px solid var($divider-color);
+    border: 2px solid $divider-color;
 
     @media screen and (min-width: 768px) {
 	
@@ -573,7 +574,7 @@
 }
 
 .btnSaveText{
-color: var($inactive-color);
+color: $inactive-color;
 }
 
 .underBtnList{
@@ -595,7 +596,7 @@ color: var($inactive-color);
 }
 
 .underBtnText{
-    color: var($secondary-text-color);
+    color: $secondary-text-color;
     font-family: Oswald;
     font-size: 12px;
     font-style: normal;
@@ -635,7 +636,7 @@ color: var($inactive-color);
 .activeSize {
 //   background-color: black;
     // color: black;
-    outline: 2px solid var($main-text-color); 
+    outline: 2px solid $main-text-color; 
     outline-offset: 2px; 
 }
 
@@ -652,13 +653,13 @@ color: var($inactive-color);
 }
 
 .activeColor {
-    outline: 2px solid var($main-text-color); 
+    outline: 2px solid $main-text-color; 
     outline-offset: 2.5px; 
 }
 
 
 .iconBtn{
-    background-color: var($bg-color);
+    background-color: $bg-color;
     margin-left: 16px;
     margin-right: 16px;
 }
