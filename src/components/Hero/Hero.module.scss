@@ -208,8 +208,8 @@
         display: block;
         width: 10px;
         height: 10px;
-        border-top: 2px solid $bg-color;
-        border-right: 2px solid $bg-color;
+        border-top: 2px solid $main-bg-color-light;
+        border-right: 2px solid $main-bg-color-light;
         transition: border-color 0.3s ease;
       }
       .left {
@@ -223,7 +223,7 @@
 
       @media (hover: hover) {
         &:hover {
-          background: $bg-color;
+          background: $main-bg-color-light;
           .arrow {
             border-color: $main-text-color-light;
           }
@@ -233,7 +233,7 @@
       &:active {
         transform: scale(0.9);
         transition: transform 0.1s;
-        background: $bg-color;
+        background: $main-bg-color-light;
         .arrow {
           border-color: $main-text-color-light;
         }

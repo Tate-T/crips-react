@@ -197,7 +197,7 @@
       width: 41px;
       height: 41px;
       padding: 0;
-      background-color: $bg-color;
+      background-color: $main-bg-color-light;
       transition: background-color $st-transition;
       @include flex;
 
@@ -220,7 +220,7 @@
     &__add {
       position: relative;
       width: 41px;
-      background-color: $bg-color;
+      background-color: $main-bg-color-light;
       height: 41px;
       transition: background-color $st-transition;
 
@@ -400,7 +400,7 @@
       width: 41px;
       height: 41px;
       padding: 0;
-      background-color: $bg-color;
+      background-color: $main-bg-color-light;
       transition: background-color $st-transition;
       @include flex;
 
@@ -423,7 +423,7 @@
     &__quantity__add {
       position: relative;
       width: 41px;
-      background-color: $bg-color;
+      background-color: $main-bg-color-light;
       height: 41px;
       transition: background-color $st-transition;
 
@@ -524,7 +524,7 @@
   &__details {
     width: 292px;
     border: none;
-    background: $bg-color;
+    background: $main-bg-color-light;
 padding: 0;
 
     @media screen and (min-width: 768px) {
@@ -561,7 +561,7 @@ padding-right: 24px;
       width: 292px;
       height: 40px;
       border: 1px solid $divider-color;
-      background: $bg-color;
+      background: $main-bg-color-light;
       padding-left: 16px;
       font-family: Roboto;
       font-size: 16px;
@@ -654,7 +654,7 @@ padding-right: 24px;
       width: 289px;
       height: 44px;
       border: 1px solid $divider-color;
-      background: $bg-color;
+      background: $main-bg-color-light;
       appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -678,7 +678,7 @@ padding-right: 24px;
       width: 289px;
       height: 44px;
       border: 1px solid $divider-color;
-      background: $bg-color;
+      background: $main-bg-color-light;
       padding-left: 16px;
       font-family: Roboto;
       font-size: 16px;

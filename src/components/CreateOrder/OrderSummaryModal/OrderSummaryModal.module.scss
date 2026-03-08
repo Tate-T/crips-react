@@ -13,13 +13,13 @@
     justify-content: center;
   }
   &__modalWrap {
-    background-color: $bg-color;
+    background-color: $main-bg-color-light;
     z-index: 999;
     border-radius: 8px;
     padding: 15px;
   }
   &__wrap {
-    background-color: $bg-color;
+    background-color: $main-bg-color-light;
     padding: 15px;
     height: fit-content;
     margin-top: 20px;
