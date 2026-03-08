@@ -4,6 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Container } from "../Container/Container";
 import style from "./Footer.module.scss";
 
+import {
+  subscribeEmail,
+  closeSubscribeModal,
+  toggleFeatures,
+  toggleMenu,
+  toggleContact,
+  toggleFollow,
+} from "../../redux/footer/footerSlice";
+
 import check from "../../images/check.svg";
 import logo from "../../images/logo.svg";
 import insta from "../../images/instagram.svg";
@@ -12,18 +21,30 @@ import twitt from "../../images/twitter.svg";
 import plus from "../../images/plus.svg";
 import minus from "../../images/minus.svg";
 
-import {
-  toggleFeatures,
-  toggleMenu,
-  toggleContact,
-  toggleFollow,
-} from "../../redux/footer/actions";
-
 export const Footer = () => {
   const dispatch = useDispatch();
-  const { featuresOpen, menuOpen, contactOpen, followOpen } = useSelector(
-    (state) => state.footer
-  );
+  const {
+    featuresOpen,
+    menuOpen,
+    contactOpen,
+    followOpen,
+    subscribedEmail,
+    isSubscribeModalOpen,
+  } = useSelector((state) => state.footer);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    const input = e.target.elements.email;
+    const value = input.value.trim();
+    if (value) {
+      dispatch(subscribeEmail(value));
+      input.value = "";
+    }
+  };
+
+  const handleCloseModal = () => {
+    dispatch(closeSubscribeModal());
+  };
 
   return (
     <footer id="footer" className={style.footer}>
@@ -139,7 +160,7 @@ export const Footer = () => {
                   <Link to="/cabinetpage" className={style.footerMenuItemLink}>orders history</Link>
                 </li>
                 <li className={style.footerMenuItem}>
-                  <Link to="/mywishlist" className={style.footerMenuItemLink}>my wishlist</Link>
+                  <Link to="/account/wishlist" className={style.footerMenuItemLink}>my wishlist</Link>
                 </li>
                 <li className={style.footerMenuItem}>
                   <Link to="/articlepage" className={style.footerMenuItemLink}>blog</Link>
@@ -228,14 +249,21 @@ export const Footer = () => {
                 <a href="#" className={style.mainFooterSubscribeText}>
                   Subscribe to our newsletters
                 </a>
-                <input
-                  type="email"
-                  className={style.mainFooterSubscribeInput}
-                  placeholder="Email address"
-                />
-                <button className={style.mainFooterSubscribeButton}>
-                  Subscribe!
-                </button>
+                <form onSubmit={handleSubscribe}>
+                  <input
+                    name="email"
+                    type="email"
+                    className={style.mainFooterSubscribeInput}
+                    placeholder="Email address"
+                    required
+                  />
+                  <button
+                    type="submit"
+                    className={style.mainFooterSubscribeButton}
+                  >
+                    Subscribe!
+                  </button>
+                </form>
               </div>
             </li>
           </ul>
@@ -248,6 +276,26 @@ export const Footer = () => {
           </div>
         </Container>
       </div>
+
+      {isSubscribeModalOpen && (
+        <div className={style.modalOverlay} onClick={handleCloseModal}>
+          <div className={style.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button className={style.closeButton} onClick={handleCloseModal}>
+              ✕
+            </button>
+            <div className={style.modalBody}>
+              <h2 className={style.modalTitle}>Thank You!</h2>
+              <p className={style.modalText}>
+                You have successfully subscribed with:
+              </p>
+              <p className={style.modalEmail}>{subscribedEmail}</p>
+              <button className={style.modalButton} onClick={handleCloseModal}>
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </footer>
   );
 };

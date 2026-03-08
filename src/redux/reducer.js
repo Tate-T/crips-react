@@ -8,7 +8,8 @@ import { tableReducer } from "./table/reducer";
 import { blogReducer } from "./blog/reducer";
 import { bannerReducer } from "./bannerSlice";
 import { createOrderReducer } from "./createOrder/createOrderSlice.js";
-import { footerReducer } from "./footer/reducer";
+import { footerReducer } from "./footer/footerSlice";
+
 import { wishlistReducer } from "./Wishlist/wishlistSlice.js";
 import { miniCatalogReducer } from "./MiniCatalog/miniCatalogSlice.js";
 import { cartReducer } from "./cart/cartSlice.js";
