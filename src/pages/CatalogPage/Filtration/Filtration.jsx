@@ -36,6 +36,41 @@ export const Filtration = () => {
   };
 
   useEffect(() => {
+    if (filtration && Object.keys(filtration).length > 0) {
+      if (filtration.price) {
+        setFromValue(filtration.price.from || 0);
+        setToValue(filtration.price.to || 500);
+      }
+      if (filtration.brands) {
+        setBrands(filtration.brands);
+        document.querySelectorAll(".catalog-filtration__brand-input").forEach(input => {
+          input.checked = filtration.brands.includes(input.value);
+        });
+      }
+      if (filtration.size) {
+        setSize(filtration.size);
+        document.querySelectorAll(".catalog-filtration__size-button").forEach(btn => {
+          btn.classList.remove("active");
+          if (btn.textContent === filtration.size) btn.classList.add("active");
+        });
+      }
+      if (filtration.dressLength) {
+        setDressLength(filtration.dressLength);
+        document.querySelectorAll(".catalog-filtration__dress-length-input").forEach(input => {
+          input.checked = filtration.dressLength.includes(input.value);
+        });
+      }
+      if (filtration.color) {
+        setColor(filtration.color);
+        document.querySelectorAll(".catalog-filtration__form-color-btn").forEach(btn => {
+          btn.classList.remove("active");
+          if (btn.value === filtration.color) btn.classList.add("active");
+        });
+      }
+    }
+  }, [filtration]);
+
+  useEffect(() => {
     const fromSlider = fromSliderRef.current;
     const toSlider = toSliderRef.current;
     const fromInput = fromInputRef.current;
@@ -56,8 +91,14 @@ export const Filtration = () => {
       setToggleAccessible(toSlider);
     }
 
-    if (fromInput && fromSlider) fromInput.value = formatCurrency(fromSlider.value);
-    if (toInput && toSlider) toInput.value = formatCurrency(toSlider.value);
+    if (fromSlider) fromSlider.value = fromValue;
+    if (toSlider) toSlider.value = toValue;
+    if (fromInput) fromInput.value = formatCurrency(fromValue);
+    if (toInput) toInput.value = formatCurrency(toValue);
+
+    if (fromSlider && toSlider) {
+      fillSlider(fromSlider, toSlider, "#C6C6C6", "#000", toSlider);
+    }
 
     return () => {
       if (fromSlider) fromSlider.removeEventListener("input", updateFromSlider);
@@ -66,7 +107,7 @@ export const Filtration = () => {
       if (toInput) toInput.removeEventListener("input", updateToInput);
 
     }
-  }, []);
+  }, [fromValue, toValue]);
 
   const formatCurrency = (value) => `${Number(value)},00 EUR`;
 
@@ -530,7 +571,7 @@ export const Filtration = () => {
                 type="text"
                 id="fromInput"
                 ref={fromInputRef}
-                defaultValue="0"
+                defaultValue={formatCurrency(filtration.price?.from || 0)}
                 min="0"
                 max="500"
                 readOnly
@@ -542,7 +583,7 @@ export const Filtration = () => {
                 type="text"
                 id="toInput"
                 ref={toInputRef}
-                defaultValue="500"
+                defaultValue={formatCurrency(filtration.price?.to || 500)}
                 min="0"
                 max="500"
                 readOnly
@@ -551,8 +592,8 @@ export const Filtration = () => {
           </div>
           <div className="range_container">
             <div className="sliders_control">
-              <input id="fromSlider" ref={fromSliderRef} type="range" min="0" max="500" defaultValue={0} onChange={changeFromValue} />
-              <input id="toSlider" ref={toSliderRef} type="range" min="0" max="500" defaultValue={500} onInput={changeToValue} />
+              <input id="fromSlider" ref={fromSliderRef} type="range" min="0" max="500" defaultValue={filtration.price?.from || 0} onChange={changeFromValue} />
+              <input id="toSlider" ref={toSliderRef} type="range" min="0" max="500" defaultValue={filtration.price?.to || 500} onInput={changeToValue} />
             </div>
           </div>
           <button className="catalog-filtration__apply" onClick={handleApplyFilters}>Apply</button>
