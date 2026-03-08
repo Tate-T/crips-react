@@ -473,7 +473,7 @@
     align-items: center;
 
     border: 1px solid $divider-color;
-    background: $bg-color;
+    background: $main-bg-color-light;
     width: 120px;
     margin-bottom: 36px;
 }
@@ -512,7 +512,7 @@
 }
 
 .btnAdd{
-    color: $bg-color;
+    color: $main-bg-color-light;
     text-align: center;
     font-family: Oswald;
     font-size: 14px;
@@ -552,7 +552,7 @@
     line-height: normal;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    background-color:$bg-color;
+    background-color:$main-bg-color-light;
 
     flex-shrink: 0;
     width: 139px;
@@ -659,7 +659,7 @@ color: $inactive-color;
 
 
 .iconBtn{
-    background-color: $bg-color;
+    background-color: $main-bg-color-light;
     margin-left: 16px;
     margin-right: 16px;
 }
