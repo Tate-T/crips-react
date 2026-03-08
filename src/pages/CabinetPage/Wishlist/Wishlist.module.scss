@@ -1,4 +1,5 @@
-@use "../../../sass//utils//mixins.scss" as *;
+@use "../../../sass/utils/mixins.scss" as *;
+@use "../../../sass/utils/variables.scss" as *;
 
 $arrow-size: 14px;
 $bar-thickness: 2px;
@@ -9,7 +10,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
   @include flex($flex-direction: column, $align-items: center);
   padding-bottom: 40px;
   &_navigation {
-    color: rgb(130, 130, 130);
+    color: $secondary-text-color;
     font-family: "Roboto", sans-serif;
     font-size: 10px;
     font-weight: 400;
@@ -29,7 +30,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     $align-items: stretch,
     $justify-content: flex-start
   );
-  background: rgb(255, 255, 255);
+  background: $bg-color;
 
   @include desk-s {
     @include flex(
@@ -42,7 +43,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
 
   &_title {
     margin-bottom: 11px;
-    color: rgba(130, 130, 130, 1);
+    color: $secondary-text-color;
     font-family: "Oswald", sans-serif;
     font-size: 14px;
     font-weight: 400;
@@ -56,7 +57,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     @include desk-s {
       display: none;
       margin-bottom: 17px;
-      color: rgba(0, 0, 0, 1);
+      color: $main-text-color;
       font-size: 48px;
       font-weight: 400;
       line-height: 68px;
@@ -68,7 +69,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     @include desk-s {
       display: flex;
       margin-bottom: 17px;
-      color: rgba(0, 0, 0, 1);
+      color: $secondary-text-color;
       font-family: "Oswald", sans-serif;
       font-size: 48px;
       font-weight: 400;
@@ -78,8 +79,8 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
 }
 
 .active {
-  background-color: rgb(240, 242, 242);
-  color: rgb(0, 0, 0);
+  background-color: $form-bg-color;
+  color: $secondary-text-color;
   font-family: "Oswald", sans-serif;
   font-size: 18px;
   font-weight: 500;
@@ -114,8 +115,8 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     position: relative;
     width: 100%;
     height: 32px;
-    color: rgba(130, 130, 130, 1);
-    border: 1px solid rgba(196, 196, 196, 1);
+    color: $secondary-text-color;
+    border: 1px solid $divider-color;
     background: transparent;
     box-sizing: border-box;
     font-family: "Oswald", sans-serif;
@@ -149,7 +150,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgb(0, 0, 0);
+      background: $secondary-text-color;
       z-index: -1;
       transform: scaleX(0);
       transform-origin: right;
@@ -158,7 +159,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
 
     &:hover {
       color: rgb(255, 255, 255);
-      border-color: rgb(0, 0, 0);
+      border-color: $secondary-text-color;
       transition-delay: 0.22s;
 
       &::before {
@@ -224,7 +225,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
   &_title {
     margin-bottom: 4px;
     max-width: 113px;
-    color: rgba(0, 0, 0, 1);
+    color: $secondary-text-color;
     font-family: "Oswald", sans-serif;
     font-size: 12px;
     font-weight: 300;
@@ -251,19 +252,19 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
   }
 
   &_itemPrice {
-    color: rgba(0, 0, 0, 1);
+    color: $secondary-text-color;
     font-family: "Oswald", sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 21px;
 
     @include desk-s {
-      color: rgba(130, 130, 130, 1);
+      color: $secondary-text-color;
     }
   }
 
   &_priceDiscount {
-    color: #828282;
+    color: $secondary-text-color;
     font-family: "Oswald", sans-serif;
     font-size: 14px;
     font-weight: 600;
@@ -271,7 +272,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
   }
 
   &_priceOld {
-    color: #eb5757;
+    color: $accent-color;
     font-family: "Oswald", sans-serif;
     font-size: 12px;
     font-weight: 400;
@@ -280,13 +281,13 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
   }
 
   &_price {
-    color: rgba(0, 0, 0, 1);
+    color: $secondary-text-color;
     font-family: "Oswald", sans-serif;
     font-size: 14px;
     font-weight: 500;
     line-height: 21px;
     @include desk-s {
-      color: rgba(130, 130, 130, 1);
+      color: $secondary-text-color;
       font-size: 14px;
       line-height: 20px;
     }
@@ -305,9 +306,9 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
       width: 40px;
       height: 40px;
       box-sizing: border-box;
-      border: 1px solid rgb(196, 196, 196);
-      background: rgb(255, 255, 255);
-      color: rgb(63, 63, 63);
+      border: 1px solid $subtitle-text-color;
+      background: $contrast-text-color;
+      color: $inactive-color;
       font-family: "Oswald", sans-serif;
       font-size: 16px;
       font-weight: 400;
@@ -319,8 +320,8 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     position: relative;
     width: 100%;
     height: 38px;
-    background: rgb(0, 0, 0);
-    color: rgb(255, 255, 255);
+    background: $secondary-text-color;
+    color: $bg-color;
     font-family: "Oswald", sans-serif;
     font-size: 14px;
     font-weight: 500;
@@ -404,9 +405,9 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     @include flex($align-items: center, $justify-content: center);
     width: 35px;
     height: 35px;
-    border: 1px solid #c4c4c4;
-    background-color: #fff;
-    color: #333;
+    border: 1px solid $divider-color;
+    background-color: $bg-color;
+    color: $inactive-color;
     font-family: "Oswald", sans-serif;
     font-size: 16px;
     font-weight: 500;
@@ -414,30 +415,30 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     transition: all 0.3s ease;
 
     &:hover {
-      border-color: #000;
-      color: #000;
+      border-color: $main-text-color;
+      color: $main-text-color;
     }
   }
 
   &_active {
-    background-color: #000;
-    color: #fff;
-    border-color: #000;
+    background-color: $main-text-color;
+    color: $bg-color;
+    border-color: $main-text-color;
 
     &:hover {
-      background-color: #333;
-      color: #fff;
+      background-color: $inactive-color;
+      color: $bg-color;
     }
   }
 
   &_active {
-    background-color: #000;
-    color: #fff;
-    border-color: #000;
+    background-color: $main-text-color;
+    color: $bg-color;
+    border-color: $main-text-color;
 
     &:hover {
-      background-color: #333;
-      color: #fff;
+      background-color: $inactive-color;
+      color: $bg-color;
     }
   }
 
@@ -451,11 +452,11 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     font-size: 18px;
     font-weight: 600;
     cursor: pointer;
-    color: #000;
+    color: $main-text-color;
     transition: opacity 0.3s ease;
 
     &:hover {
-      background-color: #f0f0f0;
+      background-color: $form-bg-color;
     }
 
     &.disabled {
@@ -481,7 +482,7 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
     padding-bottom: 5px;
     font-family: "Oswald", sans-serif;
     font-size: 14px;
-    color: #333;
+    color: $inactive-color;
     user-select: none;
   }
 }
@@ -490,8 +491,8 @@ $easing: cubic-bezier(0.25, 1.7, 0.35, 0.8);
   display: block;
   width: 10px;
   height: 10px;
-  border-top: 2px solid #000;
-  border-right: 2px solid #000;
+  border-top: 2px solid $main-text-color;
+  border-right: 2px solid $main-text-color;
   transition: border-color 0.3s ease;
 }
 .left {

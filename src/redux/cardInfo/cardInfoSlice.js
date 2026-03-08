@@ -63,11 +63,11 @@ const cardInfoSlice = createSlice({
     },
 
     selectColor(state, action) {
-      state.selectColor = action.payload;
+      state.selectedColor = action.payload;
     },
 
     selectSize(state, action) {
-      state.selectSize = action.payload;
+      state.selectedSize = action.payload;
     },
 
     increaseQuantity(state) {
@@ -90,3 +90,5 @@ export const {
   decreaseQuantity,
 } = cardInfoSlice.actions;
 export const cardInfoReducer = cardInfoSlice.reducer;
+
+
