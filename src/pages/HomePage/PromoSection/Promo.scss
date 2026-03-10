@@ -1,0 +1,43 @@
+@import "../../../sass/utils/variables.scss";
+.promo {
+  padding: 40px 0;
+
+  &__box {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+  }
+
+  &__image {
+    width: 1060px;
+    height: 365px;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    color: var(secondary-text-color);
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  &__btn {
+    padding: 14px 28px;
+    border: 2px solid black;
+    background: transparent;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      background: black;
+      color: white;
+    }
+  }
+}
