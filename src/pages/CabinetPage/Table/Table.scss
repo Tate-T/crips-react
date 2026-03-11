@@ -1,3 +1,4 @@
+@import '../../../styles/variables';
 .modal {
     &__overlay {
         position: fixed;
@@ -13,7 +14,7 @@
     }
 
     &__content {
-        background: #fff;
+        background: var(bg-color);
         padding: 20px;
         border-radius: 8px;
         width: 80%;
@@ -22,6 +23,7 @@
 
         h2 {
             margin-top: 0;
+            color: var(contrast-text-color);
         }
     }
 
@@ -34,6 +36,7 @@
             border: 1px solid #ddd;
             padding: 8px;
             text-align: left;
+            color: var(main-text-color);
         }
 
         th {
@@ -42,15 +45,15 @@
         }
 
         tr:nth-child(even) {
-            background: #f9f9f9;
+            background: var(info-bg-color);
         }
     }
 
     &__btn {
         padding: 8px 14px;
         border: none;
-        background: #4a90e2;
-        color: #fff;
+        background: var(link-color);
+        color: var(contrast-text-color);
         border-radius: 4px;
         cursor: pointer;
         margin-top: 10px;
