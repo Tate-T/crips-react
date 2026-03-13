@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import styles from "./Wishlist.module.scss";
+import { useStyle } from "../../../hooks/useStyle.js";
+import baseStyle from "./Wishlist.module.scss";
+import darkStyle from "./dark.module.scss";
+import lightStyle from "./light.module.scss";
 import { Container } from "../../../components/Container/Container";
 import editIcon from "../../../images/remark-wishlist.svg";
 import removeIcon from "../../../images/closeIcon-wishlist.svg";
@@ -103,6 +106,8 @@ export function Wishlist() {
     }
     return pageNumbers;
   };
+
+  const styles = useStyle(baseStyle, darkStyle, lightStyle);
 
   return (
     <Container>

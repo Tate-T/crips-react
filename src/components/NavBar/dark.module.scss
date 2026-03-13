@@ -1,0 +1,48 @@
+@use "../../sass/utils/mixins.scss" as *;
+@use "../../sass/utils/variables.scss" as *;
+
+.dropdown {
+  &_trigger {
+    background-color: transparent;
+    color: $main-text-color-dark;
+    border: 1px solid $inactive-color;
+  }
+
+  &_leftBar,
+  &_rightBar {
+    background-color: $main-text-color-dark;
+  }
+  &_menu {
+    background-color: $main-bg-color-dark;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+    border: 1px solid $inactive-color;
+  }
+
+  &_item {
+    color: $subtitle-text-color;
+    border-bottom: 1px solid $inactive-color;
+
+    &:hover,
+    &.active {
+      background-color: $inactive-color;
+      color: $main-text-color-dark;
+    }
+  }
+}
+
+.sidebar {
+  &_item {
+    color: $main-text-color-dark;
+    background-color: transparent;
+
+    &:hover {
+      background-color: $inactive-color;
+    }
+  }
+
+  &_active {
+    background-color: $inactive-color;
+    border-left: 2px solid $main-text-color-dark;
+    color: $main-text-color-dark;
+  }
+}

@@ -1,0 +1,153 @@
+@use "../../../sass/utils/mixins.scss" as *;
+@use "../../../sass/utils/variables.scss" as *;
+
+.wishlist {
+  &_navigation {
+    color: $main-text-color-light;
+  }
+}
+
+.mainWishlistCont {
+  background: $main-bg-color-light;
+
+  &_title {
+    color: $main-text-color-light;
+
+    @include desk-s {
+      color: $main-text-color-light;
+    }
+  }
+
+  &_titleDesk {
+    @include desk-s {
+      color: $main-text-color-light;
+    }
+  }
+}
+
+.active {
+  background-color: $form-bg-color;
+  color: $main-text-color-light;
+}
+
+.wishlistCont {
+  &_actionBtn {
+    color: $main-text-color-light;
+    border: 1px solid $divider-color;
+
+    &::before {
+      background: $main-text-color-light;
+    }
+
+    &:hover {
+      border-color: $main-text-color-light;
+      color: $main-bg-color-light;
+    }
+  }
+}
+
+.wishlistCard {
+  &_topWomen {
+    color: rgba(189, 189, 189, 1);
+  }
+
+  &_title {
+    color: $main-text-color-light;
+  }
+
+  &_itemPrice {
+    color: $main-text-color-light;
+    @include desk-s {
+      color: $main-text-color-light;
+    }
+  }
+
+  &_priceDiscount {
+    color: $main-text-color-light;
+  }
+
+  &_priceOld {
+    color: $accent-color;
+  }
+
+  &_price {
+    color: $main-text-color-light;
+    @include desk-s {
+      color: $main-text-color-light;
+    }
+  }
+
+  &_quantityInput {
+    @include desk-s {
+      border: 1px solid $subtitle-text-color;
+      background: $contrast-text-color;
+      color: $inactive-color;
+    }
+  }
+
+  &_addToCard {
+    background: $main-text-color-light;
+    color: $main-bg-color-light;
+  }
+}
+
+.removeButton,
+.editButton {
+  background: rgb(230, 241, 250);
+}
+
+.removeButton:hover,
+.editButton:hover {
+  transform: scale(1.09);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pagination {
+  &_btn {
+    border: 1px solid $divider-color;
+    background-color: $main-bg-color-light;
+    color: $inactive-color;
+    &:hover {
+      border-color: $main-text-color-light;
+      color: $main-text-color-light;
+    }
+  }
+
+  &_active {
+    background-color: $main-text-color-light;
+    color: $main-bg-color-light;
+    border-color: $main-text-color-light;
+
+    &:hover {
+      background-color: $inactive-color;
+      color: $main-bg-color-light;
+    }
+  }
+
+  &_active {
+    background-color: $main-text-color-light;
+    color: $main-bg-color-light;
+    border-color: $main-text-color-light;
+
+    &:hover {
+      background-color: $inactive-color;
+      color: $main-bg-color-light;
+    }
+  }
+
+  &_arrow {
+    color: $main-text-color-light;
+    &:hover {
+      background-color: $form-bg-color;
+    }
+  }
+
+  &_dots {
+    color: $inactive-color;
+  }
+}
+
+.arrow {
+  border-top: 2px solid $main-text-color-light;
+  border-right: 2px solid $main-text-color-light;
+}

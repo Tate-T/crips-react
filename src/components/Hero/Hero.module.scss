@@ -72,7 +72,6 @@
       right: -41px;
       width: 497px;
       height: 100px;
-      fill: #000;
       user-select: none;
       -webkit-user-drag: none;
       display: none;
@@ -82,7 +81,6 @@
     }
 
     &_text {
-      color: rgb(0, 0, 0);
       font-family: "Oswald";
       font-style: "SemiBold";
       font-weight: 600;
@@ -101,7 +99,6 @@
 
     &_buyBtn {
       position: relative;
-      color: rgb(0, 0, 0);
       font-family: "Oswald";
       font-weight: 500;
       letter-spacing: 0.5px;
@@ -112,7 +109,6 @@
       box-sizing: border-box;
       user-select: none;
       -webkit-user-drag: none;
-      border: 2px solid rgb(0, 0, 0);
       overflow: hidden;
       transition: color 0.4s ease;
       z-index: 1;
@@ -135,13 +131,11 @@
         left: 0;
         width: 0%;
         height: 100%;
-        background: #000;
         z-index: -1;
         transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
       }
 
       &:hover {
-        color: #fff;
         &::before {
           width: 100%;
         }
@@ -151,7 +145,6 @@
 
   .highlight {
     -webkit-text-fill-color: transparent;
-    -webkit-text-stroke: 2px #000;
     font-weight: 600;
     font-family: "Oswald";
     text-transform: uppercase;
@@ -187,8 +180,6 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: $main-text-color-light;
-      border: 1px solid $main-text-color-light;
       cursor: pointer;
       pointer-events: auto;
       user-select: none;
@@ -208,8 +199,6 @@
         display: block;
         width: 10px;
         height: 10px;
-        border-top: 2px solid $main-bg-color-light;
-        border-right: 2px solid $main-bg-color-light;
         transition: border-color 0.3s ease;
       }
       .left {
@@ -221,22 +210,9 @@
         margin-right: 4px;
       }
 
-      @media (hover: hover) {
-        &:hover {
-          background: $main-bg-color-light;
-          .arrow {
-            border-color: $main-text-color-light;
-          }
-        }
-      }
-
       &:active {
         transform: scale(0.9);
         transition: transform 0.1s;
-        background: $main-bg-color-light;
-        .arrow {
-          border-color: $main-text-color-light;
-        }
       }
     }
   }
@@ -259,7 +235,6 @@
   .dot {
     width: 18px;
     height: 18px;
-    border: 1px solid rgb(130, 130, 130);
     transition: background-color 0.6s ease;
     cursor: pointer;
   }
@@ -267,6 +242,5 @@
   .activeDot {
     width: 22px;
     height: 22px;
-    background-color: #000;
   }
 }
