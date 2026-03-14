@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from "react";
-import styles from "./Hero.module.scss";
+import { useState, useEffect } from "react";
+import { useStyle } from "../../hooks/useStyle.js";
+import baseStyle from "./Hero.module.scss";
+import darkStyle from "./dark.module.scss";
+import lightStyle from "./light.module.scss";
 import { Container } from "../Container/Container";
 import firstSlide from "../../images/Hero/hero-slider.jpg";
 import firstSlideMob from "../../images/Hero/mobileHero-slider.jpg";
@@ -66,6 +69,8 @@ export const Hero = () => {
 
     return () => clearTimeout(timer);
   }, [currentIndex]);
+
+  const styles = useStyle(baseStyle, darkStyle, lightStyle);
 
   return (
     <div className={styles.slider}>

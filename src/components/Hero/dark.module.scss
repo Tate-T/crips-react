@@ -1,0 +1,76 @@
+@use "../../sass/utils/mixins.scss" as *;
+@use "../../sass/utils/variables.scss" as *;
+
+.slider {
+  //   .slide {
+  //     position: relative;
+  //     width: 100%;
+  //     height: 100%;
+  //     flex-shrink: 0;
+  //     background-size: cover;
+  //     background-position: center;
+  //     background-image: var(--bg-mobile);
+  //     @include tab {
+  //       background-image: var(--bg-desktop);
+  //     }
+  //   }
+
+  .sliderContent {
+    &_line {
+      fill: $main-text-color-light;
+    }
+
+    &_text {
+      color: $main-text-color-light;
+    }
+
+    &_buyBtn {
+      color: $main-text-color-light;
+      border: 2px solid $main-text-color-light;
+
+      &::before {
+        background: $main-text-color-dark;
+      }
+    }
+  }
+
+  .highlight {
+    -webkit-text-stroke: 2px $main-text-color-light;
+  }
+
+  .controls {
+    .sliderBtn {
+      background: $main-text-color-light;
+      border: 1px solid $main-text-color-light;
+
+      .arrow {
+        border-top: 2px solid $main-bg-color-light;
+        border-right: 2px solid $main-bg-color-light;
+      }
+
+      @media (hover: hover) {
+        &:hover {
+          background: $main-bg-color-light;
+          .arrow {
+            border-color: $main-text-color-light;
+          }
+        }
+      }
+
+      &:active {
+        background: $main-bg-color-light;
+        .arrow {
+          border-color: $main-text-color-light;
+        }
+      }
+    }
+  }
+
+  .dot {
+    border: 1px solid $secondary-text-color;
+  }
+
+  .activeDot {
+    background-color: $main-text-color-light;
+  }
+}

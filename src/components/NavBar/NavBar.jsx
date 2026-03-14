@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
+import { useStyle } from "../../hooks/useStyle.js";
 import { NavLink, useLocation } from "react-router-dom";
-import styles from "./NavBar.module.scss";
+import baseStyle from "./NavBar.module.scss";
+import darkStyle from "./dark.module.scss";
+import lightStyle from "./light.module.scss";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +25,11 @@ export default function NavBar() {
 
   const handleLinkClick = () => setIsOpen(false);
 
+  const styles = useStyle(baseStyle, darkStyle, lightStyle);
+
+  useEffect(() => {
+    console.log(styles);
+  }, []);
   return (
     <>
       <div className={`${styles.dropdown} ${isOpen ? styles.active : ""}`}>
