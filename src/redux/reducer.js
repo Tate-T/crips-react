@@ -15,7 +15,7 @@ import { miniCatalogReducer } from "./MiniCatalog/miniCatalogSlice.js";
 import { cartReducer } from "./cart/cartSlice.js";
 import { productsReducer } from "./products/productSlice";
 import { userDataReducer } from "./userData/useDataSlice";
-import { styleReducer } from "./styleState/styleSlice.js";
+import { themeReducer } from "./theme/themeSlice.js";
 
 export const rootReducer = combineReducers({
   products: productsReducer,
@@ -32,5 +32,5 @@ export const rootReducer = combineReducers({
   createOrder: createOrderReducer,
   wishlist: wishlistReducer,
   footer: footerReducer,
-  style: styleReducer,
+  theme: themeReducer
 });

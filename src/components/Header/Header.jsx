@@ -20,7 +20,7 @@ import baseStyle from "./Header.module.scss";
 import darkStyle from "./dark.module.scss";
 import lightStyle from "./light.module.scss";
 
-import { changeTheme } from "../../redux/styleState/styleSlice.js";
+import { changeTheme } from "../../redux/theme/themeSlice.js";
 
 // activePage може бути "home", "shop", "blog", "sale", "contact us"
 export function Header({ activePage }) {

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const styleSlice = createSlice({
-  name: "style",
+const themeSlice = createSlice({
+  name: "theme",
   initialState: {
     theme: "light",
   },
@@ -12,5 +12,5 @@ const styleSlice = createSlice({
   },
 });
 
-export const { changeTheme } = styleSlice.actions;
-export const styleReducer = styleSlice.reducer;
+export const { changeTheme } = themeSlice.actions;
+export const themeReducer = themeSlice.reducer;
