@@ -5,6 +5,7 @@ import { Container } from "../../../components/Container/Container";
 
 export const Blog = () => {
   const posts = useSelector((state) => state.blog.posts);
+	console.log(posts)
 
   return (
     <section id="blog" className={style.blog}>
