@@ -1,4 +1,4 @@
-
+@import "../../sass/utils/variables.scss";
 
 
 
@@ -28,7 +28,7 @@
   display: flex;
   align-items: center;
 
-  background: linear-gradient(to top, #F1EFF0 , #F1F0F0 , #F3F0EF);
+  background: $bannergadientf;
 }
 
 .bannersBacImage1 {
@@ -54,7 +54,7 @@
   display: flex;
   align-items: center;
   
-  background: linear-gradient(to top, #E0DED3 , #E0DDD5 , #E0DDD5);
+  background: $bannergradients;
 }
 
 .bannersBacImage2 {
@@ -81,7 +81,7 @@ width: 280px;
   display: flex;
   align-items: center;
 
-  background: linear-gradient( to right, #F7E0D5 0% , #F3DCD2 86% , #F3DCD224 14%);
+  background: $bannergradientt;
 }
 
 .bannersBacImage3{
@@ -127,7 +127,7 @@ font-weight: 500;
 // font-size: 18px;
 font-size: 10px;
 text-transform: uppercase;
-border: 2px solid #000;
+border: 2px solid $main-text-color;
 }
 .bannersContent{
   display: flex;

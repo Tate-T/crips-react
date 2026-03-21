@@ -87,7 +87,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 16px 0 14px;
-  border-bottom: 1px solid #4F4F4F;
+  border-bottom: 1px solid $footer-divider-color;
 }
 
 .footerFunctunalButton {
@@ -226,10 +226,10 @@
 }
 
 .footerBottomHr {
-  color: #4F4F4F;
+  color: $footer-divider-color;
   width: 100%;
   border: none;
-  border-top: 1px solid #4F4F4F;
+  border-top: 1px solid $footer-divider-color;
   display: none;
 }
 
@@ -334,7 +334,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: $modal-overlay-bg;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -351,7 +351,7 @@
   width: 90%;
   position: relative;
   
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 40px $modal-shadow;
 }
 
 
@@ -363,7 +363,7 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #666;
+  color: $modal-text-color;
   padding: 0;
   width: 30px;
   height: 30px;
@@ -393,7 +393,7 @@
   font-family: Roboto, sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: #666;
+  color: $modal-text-color;
   margin: 0 0 15px 0;
 }
 
@@ -429,7 +429,7 @@
 }
 
 .modalButton:hover {
-  background-color: #333;
+  background-color: $modal-hover-color;
 }
 
 @media screen and (max-width: 480px) {
