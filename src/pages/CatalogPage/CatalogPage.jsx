@@ -6,19 +6,19 @@ import "./Catalog.scss";
 import { Container } from "../../components/Container/Container.jsx";
 
 export const CatalogPage = () => {
-  return (
-    <>
-      <Header />
-      <section className="catalogSection">
-        <Container>
-          <div>
-            <p className="catalog-way">Home / Womens Dress / Best Chose</p>
-            <Filtration />
-          </div>
-          <FullCatalog />
-        </Container>
-      </section>
-      <Footer />
-    </>
-  );
+	return (
+		<>
+			<Header />
+			<section className="catalogSection">
+				<Container>
+					<div>
+						<p className="catalog-way">Home / Womens Dress / Best Chose</p>
+						<Filtration />
+					</div>
+					<FullCatalog />
+				</Container>
+			</section>
+			<Footer />
+		</>
+	);
 };

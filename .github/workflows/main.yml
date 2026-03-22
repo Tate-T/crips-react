@@ -36,6 +36,8 @@ jobs:
 
       - name: Build with Vite
         run: npm run build
+        env:
+          VITE_PRODUCTS_API: ${{ secrets.VITE_PRODUCTS_API }}
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
