@@ -1,5 +1,6 @@
 export const catalogData = [
 	{
+		length: "short",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -11,6 +12,7 @@ export const catalogData = [
 		brand: "cece"
 	},
 	{
+		length: "long",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
@@ -22,6 +24,7 @@ export const catalogData = [
 		brand: "bardot"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -32,6 +35,7 @@ export const catalogData = [
 		brand: "cece"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
 		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
@@ -42,6 +46,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -52,6 +57,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
 		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
@@ -63,6 +69,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -74,6 +81,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -84,6 +92,7 @@ export const catalogData = [
 		brand: "alfani"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
@@ -94,6 +103,7 @@ export const catalogData = [
 		brand: "cece"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -105,6 +115,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -115,6 +126,7 @@ export const catalogData = [
 		brand: "bardot"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
 		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
@@ -125,6 +137,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "knee length",
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
 		category: "top women",
 		name: "Angels malu zip jeans slim black used",
@@ -135,6 +148,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -145,6 +159,7 @@ export const catalogData = [
 		brand: "bardot"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -156,6 +171,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -166,6 +182,7 @@ export const catalogData = [
 		brand: "bardot"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -176,6 +193,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
@@ -186,6 +204,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "knee length",
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -196,6 +215,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "long",
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -206,6 +226,7 @@ export const catalogData = [
 		brand: "cece"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
 		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
@@ -217,6 +238,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "long",
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
 		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
@@ -228,6 +250,7 @@ export const catalogData = [
 		brand: "bardot"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -239,6 +262,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
 		category: "top women",
 		name: "Angels malu zip jeans slim black used",
@@ -249,6 +273,7 @@ export const catalogData = [
 		brand: "alfani"
 	},
 	{
+		length: "knee length",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -259,6 +284,7 @@ export const catalogData = [
 		brand: "cece"
 	},
 	{
+		length: "long",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "top women",
 		name: "Angels malu zip jeans slim black used",
@@ -270,6 +296,7 @@ export const catalogData = [
 		brand: "cece"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -280,6 +307,7 @@ export const catalogData = [
 		brand: "alfani"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -291,6 +319,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -301,6 +330,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "knee length",
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -311,6 +341,7 @@ export const catalogData = [
 		brand: "cece"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "top women",
 		name: "Angels malu zip jeans slim black used",
@@ -321,6 +352,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "long",
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -331,6 +363,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -341,6 +374,7 @@ export const catalogData = [
 		brand: "cece"
 	},
 	{
+		length: "long",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -352,6 +386,7 @@ export const catalogData = [
 		brand: "bardot"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -362,6 +397,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -372,6 +408,7 @@ export const catalogData = [
 		brand: "bardot"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -382,6 +419,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -392,6 +430,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "knee length",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
@@ -402,6 +441,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -412,6 +452,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-1.jpg",
 		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
@@ -423,6 +464,7 @@ export const catalogData = [
 		brand: "alfani"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -433,6 +475,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -443,6 +486,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
 		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
@@ -453,6 +497,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
 		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
@@ -463,6 +508,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
 		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
@@ -473,6 +519,7 @@ export const catalogData = [
 		brand: "cece"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -483,6 +530,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -493,6 +541,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -504,6 +553,7 @@ export const catalogData = [
 		brand: "cece"
 	},
 	{
+		length: "knee length",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -514,6 +564,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-1.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -524,6 +575,7 @@ export const catalogData = [
 		brand: "bardot"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -534,6 +586,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
 		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
@@ -544,6 +597,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
 		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
@@ -554,6 +608,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -564,6 +619,7 @@ export const catalogData = [
 		brand: "alfani"
 	},
 	{
+		length: "knee length",
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -574,6 +630,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -584,6 +641,7 @@ export const catalogData = [
 		brand: "bardot"
 	},
 	{
+		length: "knee length",
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
 		category: "top women",
 		name: "Angels malu zip jeans slim black used",
@@ -595,6 +653,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "knee length",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -605,6 +664,7 @@ export const catalogData = [
 		brand: "bardot"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
@@ -616,6 +676,7 @@ export const catalogData = [
 		brand: "alfani"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-1.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -627,6 +688,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "top women",
 		name: "Angels malu zip jeans slim black used",
@@ -637,6 +699,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -647,6 +710,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "knee length",
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -657,6 +721,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
 		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
@@ -668,6 +733,7 @@ export const catalogData = [
 		brand: "alfani"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
 		category: "top women",
 		name: "Angels malu zip jeans slim black used",
@@ -679,6 +745,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
@@ -690,6 +757,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "long",
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -701,6 +769,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "top women",
 		name: "Angels malu zip jeans slim black used",
@@ -711,6 +780,7 @@ export const catalogData = [
 		brand: "donna ricco"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -721,6 +791,7 @@ export const catalogData = [
 		brand: "cece"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-1.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -731,6 +802,7 @@ export const catalogData = [
 		brand: "alfani"
 	},
 	{
+		length: "long",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
@@ -741,6 +813,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "knee length",
 		img: "https://i.postimg.cc/TPtCR70b/catalog-image-3.jpg",
 		category: "new arrivals",
 		name: "Angels malu zip jeans slim black used",
@@ -751,6 +824,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "short",
 		img: "https://i.postimg.cc/HkCS37jr/catalog-image-4.jpg",
 		category: "trending",
 		name: "Angels malu zip jeans slim black used",
@@ -761,6 +835,7 @@ export const catalogData = [
 		brand: "bardot"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/YCfdPqmb/catalog-image-5.jpg",
 		category: "top women",
 		name: "Angels malu zip jeans slim black used",
@@ -772,6 +847,7 @@ export const catalogData = [
 		brand: "bardot"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/6QWMxJrw/catalog-image-6.jpg",
 		category: "collection: spring",
 		name: "Angels malu zip jeans slim black used",
@@ -782,6 +858,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "midi",
 		img: "https://i.postimg.cc/bNnCQRYX/catalog-image-2.jpg",
 		category: "collection: summer",
 		name: "Angels malu zip jeans slim black used",
@@ -792,6 +869,7 @@ export const catalogData = [
 		brand: "Cooper"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/9076w5gK/catalog-image-8.jpg",
 		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
@@ -802,6 +880,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "knee length",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "best sellers",
 		name: "Angels malu zip jeans slim black used",
@@ -812,6 +891,7 @@ export const catalogData = [
 		brand: "State"
 	},
 	{
+		length: "high low",
 		img: "https://i.postimg.cc/YqS20htm/catalog-Image1.jpg",
 		category: "top women",
 		name: "Angels malu zip jeans slim black used",

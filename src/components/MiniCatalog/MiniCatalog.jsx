@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import { nextPage } from "../../redux/MiniCatalog/miniCatalogSlice.js";
@@ -21,9 +22,11 @@ export const MiniCatalog = function () {
 
 	const handleNextPage = () => {
 		dispatch(nextPage());
-		console.log(nextPage);
-		console.log(nextPage());
 	};
+
+	useEffect(() => {
+		console.log(products);
+	}, [products]);
 
 	const styles = useStyle(baseStyle, darkStyle, lightStyle);
 
@@ -34,6 +37,7 @@ export const MiniCatalog = function () {
 					<div className={styles["mini-catalog__wrap"]}>
 						<div className={styles["mini-catalog__main-wrap"]}>
 							<h2 className={styles["mini-catalog__main-title"]}>Shop Some Wear:</h2>
+
 							<ul className={styles["mini-catalog__main-list"]}>
 								<li className={styles["mini-catalog__main-list__item"]}>
 									<input className={styles["mini-catalog__main-list__checkbox"]} type="checkbox" />
@@ -63,18 +67,20 @@ export const MiniCatalog = function () {
 						</div>
 						<aside className={styles["mini-catalog__aside"]}>
 							<div className={styles["mini-catalog__list-wrap"]}>
-								<ul className={styles["mini-catalog__list"]}>
-									{products.slice(0, currentPage * step).map((item, id) => (
-										<MiniCatalogItem
-											img={item.img}
-											category={item.category}
-											title={item.title}
-											price={item.price}
-											discountPrice={item.discount ? item.price - item.price * (item.discount / 100) : null}
-											key={id}
-										/>
-									))}
-								</ul>
+								{Boolean(products.length) && (
+									<ul className={styles["mini-catalog__list"]}>
+										{products.slice(0, currentPage * step).map((item) => (
+											<MiniCatalogItem
+												img={item.img}
+												category={item.category}
+												title={item.title}
+												price={item.price}
+												discountPrice={item.discount ? item.price - item.price * (item.discount / 100) : null}
+												key={item.id}
+											/>
+										))}
+									</ul>
+								)}
 
 								{products.slice(currentPage * step, (currentPage + 1) * step).length >= 4 && (
 									<button className={styles["mini-catalog__load-button"]} onClick={handleNextPage}>

@@ -1,22 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// TODO: fetch
-import { catalogData } from "../../data/catalog-data";
+import { fetchProducts } from "./operations";
 
 const productSlice = createSlice({
 	name: "products",
 	initialState: {
-		products: catalogData
+		products: [],
+		isLoading: false,
+		error: null
+	},
+	reducers: {},
+	extraReducers: (builder) => {
+		builder
+			.addCase(fetchProducts.pending, (state) => {
+				state.isLoading = true;
+				state.error = null;
+			})
+
+			.addCase(fetchProducts.fulfilled, (state, action) => {
+				state.isLoading = false;
+				state.products = action.payload;
+			})
+
+			.addCase(fetchProducts.rejected, (state, action) => {
+				state.isLoading = false;
+				state.error = action.error.message;
+			});
 	}
-	// reducers: {
-	// 	setProducts: (state, action) => {
-	// 		state.products = action.payload;
-	// 	},
-	// 	sortProducts: (state, action) => {
-	// 		state.products.sort(action.payload);
-	// 	}
-	// }
 });
 
-export const { setProducts, sortProducts } = productSlice.actions;
 export const productsReducer = productSlice.reducer;

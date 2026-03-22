@@ -1,6 +1,7 @@
 {
 	"name": "crips-react",
 	"version": "0.1.0",
+	"type": "module",
 	"private": true,
 	"homepage": "https://tate-t.github.io/crips-react/",
 	"dependencies": {
