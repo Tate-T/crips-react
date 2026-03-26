@@ -2,8 +2,7 @@ import { Container } from "../../../../components/Container/Container";
 import styles from "./AddNewAddress.module.scss";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { nanoid } from "nanoid";
-import { addAddress } from "../../../../redux/userData/useDataSlice";
+import { addAddress } from "../../../../redux/userData/operations";
 import NavBar from "../../../../components/NavBar/NavBar";
 
 export const AddNewAddress = ({ isInArray }) => {
@@ -23,8 +22,7 @@ export const AddNewAddress = ({ isInArray }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(
-      addAddress(
-        nanoid(4),
+      addAddress({
         firstName,
         lastName,
         company,
@@ -34,8 +32,8 @@ export const AddNewAddress = ({ isInArray }) => {
         streetaddress2,
         country,
         state,
-        code
-      )
+        code,
+      }),
     );
     setTimeout(() => {
       if (!isInArray) {
