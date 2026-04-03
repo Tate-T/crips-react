@@ -58,23 +58,23 @@
 		width: 139px;
 		height: 260px;
 
-		&-image {
+		&__image {
 			width: 100%;
 			height: auto;
 		}
 
-		&-category {
+		&__category {
 			@include typography(Oswald, 600, 12px, 22px, 0%, _);
 			text-transform: uppercase;
 			color: $subtitle-text-color;
 		}
 
-		&-title {
+		&__title {
 			@include typography(Oswald, 300, 12px, 18px, 0%, _);
 			color: $main-text-color-light;
 		}
 
-		&-price {
+		&__price {
 			@include typography(Oswald, 500, 14px, 100%, 0%, _);
 			margin-top: 18px;
 			text-transform: uppercase;
@@ -83,11 +83,11 @@
 			display: flex;
 			align-items: center;
 
-			&-discount {
+			&--discount {
 				color: $accent-color;
 			}
 
-			&-old {
+			&--old {
 				@include typography(Oswald, 400, 8px, 100%, 0px, _);
 
 				color: $secondary-text-color;
@@ -128,7 +128,6 @@
 
 		&__list {
 			max-width: 100%;
-			// justify-content: space-between;
 			gap: 14px;
 		}
 	}
@@ -153,7 +152,6 @@
 		}
 
 		&__list {
-			// justify-content: space-between;
 			gap: 31px;
 		}
 
@@ -161,14 +159,17 @@
 			width: 210px;
 			height: 420px;
 
-			&-title {
-				@include typography(Oswald, 300, 18px, 100%, 0%, _);
+			&__title {
+				@include typography(Oswald, 300, 18px, 22px, 0%, _);
 			}
 
-			&-price {
+			&__price {
+                display: flex;
+                align-items: center;
+
 				@include typography(Oswald, 500, 22px, 100%, 0%, _);
 
-				&-old {
+				&--old {
 					@include typography(Oswald, 400, 14px, 100%, 0px, _);
 				}
 			}

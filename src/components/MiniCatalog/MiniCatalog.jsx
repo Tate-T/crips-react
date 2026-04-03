@@ -3,6 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { nextPage } from "../../redux/MiniCatalog/miniCatalogSlice.js";
 
+import { selectCurrentPage } from "../../redux/MiniCatalog/selectors.js";
+import { selectProducts } from "../../redux/products/selectors.js";
+import { getCategories } from "../../redux/products/selectors.js";
+
 import { Container } from "../Container/Container.jsx";
 import { MiniCatalogItem } from "./MiniCatalogItem.jsx";
 
@@ -17,14 +21,16 @@ export const MiniCatalog = function () {
 
 	const step = 8;
 
-	const currentPage = useSelector((state) => state.miniCatalog.currentPage);
-	const products = useSelector((state) => state.products.products);
+	const currentPage = useSelector(selectCurrentPage);
+	const products = useSelector(selectProducts);
+	const categories = useSelector(getCategories);
 
 	const handleNextPage = () => {
 		dispatch(nextPage());
 	};
 
 	useEffect(() => {
+		console.log("useEffect[products] @ MiniCatalog.jsx:");
 		console.log(products);
 	}, [products]);
 
@@ -39,30 +45,12 @@ export const MiniCatalog = function () {
 							<h2 className={styles["mini-catalog__main-title"]}>Shop Some Wear:</h2>
 
 							<ul className={styles["mini-catalog__main-list"]}>
-								<li className={styles["mini-catalog__main-list__item"]}>
-									<input className={styles["mini-catalog__main-list__checkbox"]} type="checkbox" />
-									<p className={styles["mini-catalog__main-list__text"]}>best sellers</p>
-								</li>
-								<li className={styles["mini-catalog__main-list__item"]}>
-									<input className={styles["mini-catalog__main-list__checkbox"]} type="checkbox" />
-									<p className={styles["mini-catalog__main-list__text"]}>new arrivals</p>
-								</li>
-								<li className={styles["mini-catalog__main-list__item"]}>
-									<input className={styles["mini-catalog__main-list__checkbox"]} type="checkbox" defaultChecked />
-									<p className={styles["mini-catalog__main-list__text"]}>top women</p>
-								</li>
-								<li className={styles["mini-catalog__main-list__item"]}>
-									<input className={styles["mini-catalog__main-list__checkbox"]} type="checkbox" />
-									<p className={styles["mini-catalog__main-list__text"]}>collection: summer</p>
-								</li>
-								<li className={styles["mini-catalog__main-list__item"]}>
-									<input className={styles["mini-catalog__main-list__checkbox"]} type="checkbox" />
-									<p className={styles["mini-catalog__main-list__text"]}>collection: spring</p>
-								</li>
-								<li className={styles["mini-catalog__main-list__item"]}>
-									<input className={styles["mini-catalog__main-list__checkbox"]} type="checkbox" />
-									<p className={styles["mini-catalog__main-list__text"]}>trending</p>
-								</li>
+								{categories.map((category) => (
+									<li className={styles["mini-catalog__main-list__item"]}>
+										<input className={styles["mini-catalog__main-list__checkbox"]} type="checkbox" />
+										<p className={styles["mini-catalog__main-list__text"]}>{category}</p>
+									</li>
+								))}
 							</ul>
 						</div>
 						<aside className={styles["mini-catalog__aside"]}>
@@ -73,7 +61,7 @@ export const MiniCatalog = function () {
 											<MiniCatalogItem
 												img={item.img}
 												category={item.category}
-												title={item.title}
+												name={item.name}
 												price={item.price}
 												discountPrice={item.discount ? item.price - item.price * (item.discount / 100) : null}
 												key={item.id}
