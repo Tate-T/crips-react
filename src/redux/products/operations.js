@@ -1,9 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 
-axios.defaults.baseURL = import.meta.env.VITE_PRODUCTS_API;
+import { productsApi } from "../../apis/productsApi";
 
 export const fetchProducts = createAsyncThunk("products/fetchProducts", async () => {
-	const res = await axios.get("/");
+	const res = await productsApi.get("/");
 	return res.data;
 })

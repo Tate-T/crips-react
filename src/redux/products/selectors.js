@@ -4,7 +4,9 @@ function onlyUnique(value, index, array) {
 	return array.indexOf(value) === index;
 }
 
-const selectProducts = (state) => state.products.products;
+export const selectProducts = (state) => state.products.products;
+
+export const getCategories = createSelector([selectProducts], (products) => products.map((product) => product.category).filter(onlyUnique));
 
 export const getBrands = createSelector([selectProducts], (products) => products.map((product) => product.brand).filter(onlyUnique));
 
