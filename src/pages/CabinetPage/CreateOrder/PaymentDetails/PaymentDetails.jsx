@@ -2,13 +2,16 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setPaymentDetails } from "../../../../redux/createOrder/createOrderSlice";
 
+import { selectPaymentDetails, selectFormattedAddress } from "../../../../redux/createOrder/selectors";
+
 import s from "./PaymentDetails.module.scss";
 
 export const PaymentDetails = ({ children, onBack }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const { paymentDetails } = useSelector((state) => state.createOrder);
+  const paymentDetails = useSelector(selectPaymentDetails);
+  const address = useSelector(selectFormattedAddress);
 
   const { isSameAddress, discountCode } = paymentDetails;
 
@@ -63,7 +66,7 @@ export const PaymentDetails = ({ children, onBack }) => {
 
           <div className={s.payment__subwrap}>
             <a href="#" className={s.payment__address}>
-              Vyacheslav Kulbitskii Moskovski prospect 39/1, Apt. 147 Vitebsk, Vitebsk region 210038 Belarus
+              {address}
             </a>
             <a className={s.payment__num} href="tel:+375292169179">
               +375292169179
