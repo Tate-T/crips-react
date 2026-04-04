@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { AuthContext } from "../../../contexts/AuthContext";
 import { ShippingDetails } from "./ShippingDetails/ShippingDetails";
 import { Container } from "../../../components/Container/Container";
@@ -9,6 +9,8 @@ import { PaymentDetails } from "./PaymentDetails/PaymentDetails";
 import { OrderSummaryModal } from "../../../components/CreateOrder/OrderSummaryModal/OrderSummaryModal";
 import { PaymentInfo } from "../../../components/CreateOrder/PaymentInfo/PaymentInfo";
 
+import { selectStep, selectModalIsOpened, selectOrderSummaryIsOpened, selectShippingFormDetails, selectShippingInfo } from "../../../redux/createOrder/selectors";
+
 import { useSelector, useDispatch } from "react-redux";
 import { goToNextStep, goToPrevStep, openModal, closeModal, toggleOrderSummary, setShippingFormDetails, setShippingInfo, setPaymentDetails } from "../../../redux/createOrder/createOrderSlice";
 
@@ -18,7 +20,11 @@ export const CreateOrder = () => {
   const auth = useContext(AuthContext);
   const dispatch = useDispatch();
 
-  const { step, modalIsOpened, orderSummaryIsOpened, shippingFormDetails, shippingInfo, paymentDetails } = useSelector((state) => state.createOrder);
+  const step = useSelector(selectStep);
+  const modalIsOpened = useSelector(selectModalIsOpened);
+  const orderSummaryIsOpened = useSelector(selectOrderSummaryIsOpened);
+  const shippingFormDetails = useSelector(selectShippingFormDetails);
+  const shippingInfo = useSelector(selectShippingInfo);
 
   const handleNextStep = () => dispatch(goToNextStep());
   const handlePrevStep = () => dispatch(goToPrevStep());
@@ -90,7 +96,6 @@ export const CreateOrder = () => {
                 <p className={s.order__stage}>Review & Payments</p>
               </div>
             </div>
-
             <div className={s.order__addition}>
               <OrderSummary className={s.order__mobile} stateOfDetails={orderSummaryIsOpened} toggleOrderSummary={handleToggleSummary} openModal={handleOpenModal} />
 

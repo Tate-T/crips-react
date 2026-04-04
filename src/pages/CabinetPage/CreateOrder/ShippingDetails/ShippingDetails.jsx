@@ -5,11 +5,14 @@ import { useContext, useState } from "react";
 import { useSelector } from "react-redux";
 import ccsj from "countrycitystatejson";
 
+import { selectShippingFormDetails, selectShippingInfo } from "../../../../redux/createOrder/selectors";
+
 export const ShippingDetails = ({ children, onBack, onSubmitInfo }) => {
   const navigate = useNavigate();
   const auth = useContext(AuthContext);
 
-  const { shippingFormDetails, shippingInfo } = useSelector((state) => state.createOrder);
+  const shippingFormDetails = useSelector(selectShippingFormDetails);
+  const shippingInfo = useSelector(selectShippingInfo);
 
   const [statesList, setStatesList] = useState([]);
 
@@ -95,7 +98,6 @@ export const ShippingDetails = ({ children, onBack, onSubmitInfo }) => {
             </label>
             <input className={s.ship__input} type="text" name="lastName" defaultValue={shippingInfo?.lastName || ""} required />
           </div>
-
           <div className={s.ship__row}>
             <label className={s.ship__label}>Company</label>
             <input className={s.ship__input} type="text" name="company" defaultValue={shippingInfo?.company || ""} />
